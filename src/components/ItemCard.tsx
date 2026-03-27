@@ -27,15 +27,27 @@ export default function ItemCard({ item, index }: ItemCardProps) {
       onMouseLeave={() => setShowTooltip(false)}
       onClick={() => setShowTooltip((p) => !p)}
     >
+      {/* Discount Badge */}
+      <div className="absolute top-2 right-2 z-10 px-2 py-0.5 rounded-md bg-primary/90 text-primary-foreground text-[10px] font-semibold tracking-wide">
+        5%–15% OFF
+      </div>
+
+      {/* Temporary Badge */}
+      {item.is_temporary && (
+        <div className="absolute top-2 left-2 z-10 px-2 py-0.5 rounded-md bg-destructive/90 text-destructive-foreground text-[10px] font-semibold">
+          14 dias
+        </div>
+      )}
+
       {/* Tooltip */}
       {showTooltip && item.tooltip_ptbr && (
-        <div className="absolute -top-12 left-1/2 -translate-x-1/2 z-20 px-3 py-1.5 rounded-lg bg-foreground text-background text-xs max-w-[200px] text-center animate-fade-in-up whitespace-pre-line">
+        <div className="absolute -top-14 left-1/2 -translate-x-1/2 z-20 px-3 py-2 rounded-lg bg-foreground text-background text-xs max-w-[220px] text-center animate-fade-in-up whitespace-pre-line leading-relaxed">
           {item.tooltip_ptbr}
         </div>
       )}
 
       {/* Image */}
-      <div className="w-[80px] h-[80px] flex items-center justify-center">
+      <div className="w-[80px] h-[80px] flex items-center justify-center mt-2">
         {item.image && !imgError ? (
           <img
             src={item.image}
