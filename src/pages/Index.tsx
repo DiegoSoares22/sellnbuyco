@@ -1,16 +1,82 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState, useMemo, useCallback } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { GAME_ITEMS, ItemCategory } from "@/data/items";
+import HeroSection from "@/components/HeroSection";
+import CategoryFilter from "@/components/CategoryFilter";
+import ItemGrid from "@/components/ItemGrid";
+import Chatbot from "@/components/Chatbot";
+import GamerTips from "@/components/GamerTips";
+import MusicPlayer from "@/components/MusicPlayer";
+import DebugPanel from "@/components/DebugPanel";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+export default function Index() {
+  const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const initialCats = useMemo(() => {
+    const p = searchParams.get("cat");
+    if (p) return new Set(p.split(",") as (ItemCategory | "all")[]);
+    return new Set<ItemCategory | "all">(["all"]);
+  }, []);
+
+  const [selectedCats, setSelectedCats] = useState<Set<ItemCategory | "all">>(initialCats);
+
+  const handleToggle = useCallback((cat: ItemCategory | "all") => {
+    setSelectedCats((prev) => {
+      const next = new Set(prev);
+      if (cat === "all") {
+        return new Set(["all"]);
+      }
+      next.delete("all");
+      if (next.has(cat)) {
+        next.delete(cat);
+        if (next.size === 0) next.add("all");
+      } else {
+        next.add(cat);
+      }
+      // Update URL
+      const arr = Array.from(next);
+      if (arr.length === 1 && arr[0] === "all") {
+        setSearchParams({});
+      } else {
+        setSearchParams({ cat: arr.join(",") });
+      }
+      return next;
+    });
+  }, [setSearchParams]);
+
+  const handleFilterFromChat = useCallback((category: ItemCategory) => {
+    setSelectedCats(new Set([category]));
+    setSearchParams({ cat: category });
+    document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth" });
+  }, [setSearchParams]);
+
+  const filteredItems = useMemo(() => {
+    if (selectedCats.has("all")) return GAME_ITEMS;
+    return GAME_ITEMS.filter((item) => selectedCats.has(item.category));
+  }, [selectedCats]);
+
+  const activeCategory: ItemCategory | null = useMemo(() => {
+    const cats = Array.from(selectedCats).filter((c) => c !== "all") as ItemCategory[];
+    return cats.length === 1 ? cats[0] : null;
+  }, [selectedCats]);
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-background">
+      <DebugPanel />
+      <HeroSection />
+
+      <div id="catalog" className="container py-8 space-y-4">
+        <CategoryFilter selected={selectedCats} onToggle={handleToggle} />
+        <div className="text-center text-xs text-muted-foreground mb-2">
+          {filteredItems.length} item(s) carregado(s)
+        </div>
+        <ItemGrid items={filteredItems} />
+      </div>
+
+      <GamerTips activeCategory={activeCategory} />
+      <Chatbot onFilterSelect={handleFilterFromChat} onNavigateRewards={() => navigate("/recompensas")} />
+      <MusicPlayer />
     </div>
   );
-};
-
-const Index = PlaceholderIndex;
-
-export default Index;
+}
