@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Gift, ArrowLeft, MessageCircle, Loader2 } from "lucide-react";
+import { Gift, ArrowLeft, MessageCircle, Loader2, Trophy, Star, Shield, Crown } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Progress } from "@/components/ui/progress";
 
 interface RewardResult {
   type: "gold" | "cps";
@@ -23,6 +24,13 @@ const CPS_TABLE: RewardResult[] = [
   { type: "cps", amount: "1000 CPs", chance: "5%" },
 ];
 
+const VIP_TIERS = [
+  { name: "Bronze", icon: Shield, minPoints: 0, discount: "5%", color: "text-amber-600" },
+  { name: "Prata", icon: Star, minPoints: 500, discount: "8%", color: "text-gray-400" },
+  { name: "Ouro", icon: Trophy, minPoints: 1500, discount: "12%", color: "text-yellow-400" },
+  { name: "VIP", icon: Crown, minPoints: 3000, discount: "15%", color: "text-primary" },
+];
+
 export default function Rewards() {
   const [accountId, setAccountId] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -34,7 +42,6 @@ export default function Rewards() {
     e.preventDefault();
     if (!accountId.trim() || !firstName.trim() || !lastName.trim()) return;
     setLoading(true);
-    // Simulate — no real backend
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
@@ -49,7 +56,7 @@ export default function Rewards() {
       }}
     >
       <div className="min-h-screen bg-background/85 dark:bg-background/80 glass-panel">
-        <div className="container max-w-2xl py-8 px-4">
+        <div className="container max-w-3xl py-8 px-4">
           <Link to="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6">
             <ArrowLeft size={16} /> Voltar à Loja
           </Link>
@@ -61,8 +68,35 @@ export default function Rewards() {
             </div>
 
             <p className="text-muted-foreground text-sm mb-6">
-              💎 Se você comprou recentemente, já pode ter recompensas disponíveis.
+              Se você comprou recentemente, já pode ter recompensas disponíveis.
             </p>
+
+            {/* VIP Tiers */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+              {VIP_TIERS.map((tier) => (
+                <div key={tier.name} className="bg-card border border-border rounded-xl p-4 text-center">
+                  <tier.icon className={`mx-auto mb-2 ${tier.color}`} size={24} />
+                  <h3 className="text-sm font-semibold text-card-foreground">{tier.name}</h3>
+                  <p className="text-xs text-muted-foreground mt-1">{tier.minPoints}+ pts</p>
+                  <p className="text-xs text-primary font-medium mt-1">{tier.discount} desconto</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Progress Example */}
+            <div className="bg-card border border-border rounded-xl p-4 mb-6">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm font-medium text-card-foreground">Seu progresso</span>
+                <span className="text-xs text-muted-foreground">Verifique sua conta para ver</span>
+              </div>
+              <Progress value={0} className="h-2" />
+              <div className="flex justify-between mt-2 text-[10px] text-muted-foreground">
+                <span>Bronze</span>
+                <span>Prata</span>
+                <span>Ouro</span>
+                <span>VIP</span>
+              </div>
+            </div>
 
             {!submitted ? (
               <form onSubmit={handleSubmit} className="space-y-4 bg-card border border-border rounded-xl p-6">
@@ -127,7 +161,7 @@ export default function Rewards() {
                 {/* Reward tables */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="bg-card border border-border rounded-xl p-4">
-                    <h3 className="font-semibold text-card-foreground text-sm mb-3">💰 Tabela Gold</h3>
+                    <h3 className="font-semibold text-card-foreground text-sm mb-3">Tabela Gold</h3>
                     {GOLD_TABLE.map((r) => (
                       <div key={r.amount} className="flex justify-between py-1.5 border-b border-border last:border-0 text-sm">
                         <span className="text-card-foreground">{r.amount}</span>
@@ -136,7 +170,7 @@ export default function Rewards() {
                     ))}
                   </div>
                   <div className="bg-card border border-border rounded-xl p-4">
-                    <h3 className="font-semibold text-card-foreground text-sm mb-3">💎 Tabela CPs</h3>
+                    <h3 className="font-semibold text-card-foreground text-sm mb-3">Tabela CPs</h3>
                     {CPS_TABLE.map((r) => (
                       <div key={r.amount} className="flex justify-between py-1.5 border-b border-border last:border-0 text-sm">
                         <span className="text-card-foreground">{r.amount}</span>

@@ -1,15 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Bot, ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import { ItemCategory, GAMER_TIPS } from "@/data/items";
 
 interface GamerTipsProps {
-  activeCategory: ItemCategory | null;
+  activeCategory: ItemCategory | "all" | null;
 }
+
+const ROBOT_IMAGE = "https://imgs.search.brave.com/C0w9x_jJYHZcSKpagnUFZnDfdbfpNIZwHyw2QEHSWc8/rs:fit:860:900:1/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNy8w/MS8zMS8xNS8yMi9j/eWJvcmctMjAyMjQ1/OF82NDAuanBn";
 
 export default function GamerTips({ activeCategory }: GamerTipsProps) {
   const [expanded, setExpanded] = useState(false);
-  const tip = activeCategory ? GAMER_TIPS[activeCategory] : null;
+  const category = activeCategory || "all";
+  const tip = GAMER_TIPS[category];
 
   if (!tip) return null;
 
@@ -23,8 +26,13 @@ export default function GamerTips({ activeCategory }: GamerTipsProps) {
         onClick={() => setExpanded((p) => !p)}
         className="flex items-center gap-2 px-3 py-2 rounded-xl bg-card border border-border shadow-lg text-sm font-medium text-card-foreground hover:border-primary/50 transition-colors"
       >
-        <Bot size={18} className="text-primary animate-float" />
-        <span className="hidden sm:inline">Dica do Robot</span>
+        <img
+          src={ROBOT_IMAGE}
+          alt="Robot"
+          className="w-6 h-6 rounded-full object-cover"
+          onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+        />
+        <span className="hidden sm:inline">Dicas / Sugestões</span>
         {expanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
       </button>
 

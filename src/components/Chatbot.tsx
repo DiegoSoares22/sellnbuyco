@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, X, ExternalLink } from "lucide-react";
+import { MessageCircle, X, ExternalLink, ShoppingBag, CreditCard, Truck, HelpCircle } from "lucide-react";
 import { ItemCategory } from "@/data/items";
 
 interface ChatbotProps {
@@ -8,16 +8,16 @@ interface ChatbotProps {
   onNavigateRewards: () => void;
 }
 
-const BUTTONS = [
-  { emoji: "🔶", label: "Runas Amarelas", category: "rune" as ItemCategory },
-  { emoji: "💰", label: "CPs & Gold", category: "currency" as ItemCategory },
-  { emoji: "⚔️", label: "Awakening Items", category: "awakening" as ItemCategory },
-  { emoji: "🎼", label: "Collections", category: "collection" as ItemCategory },
-  { emoji: "🧰", label: "Utilitários", category: "misc" as ItemCategory },
-];
-
 export default function Chatbot({ onFilterSelect, onNavigateRewards }: ChatbotProps) {
   const [open, setOpen] = useState(false);
+  const [activeAnswer, setActiveAnswer] = useState<string | null>(null);
+
+  const FAQ_ANSWERS: Record<string, string> = {
+    bestsellers: "Nossos itens mais vendidos são: Runas Amarelas, CPs e itens de Awakening. Use os filtros acima para encontrá-los!",
+    howto: "1. Escolha o item desejado\n2. Clique no botão WhatsApp\n3. Confirme com nosso atendente\n4. Efetue o pagamento\n5. Receba seu item no jogo!",
+    payment: "Aceitamos: PIX, transferência bancária e cartão de crédito. Consulte via WhatsApp para mais detalhes.",
+    delivery: "Entrega imediata após confirmação do pagamento! Itens são enviados diretamente para sua conta no jogo.",
+  };
 
   return (
     <>
@@ -41,7 +41,7 @@ export default function Chatbot({ onFilterSelect, onNavigateRewards }: ChatbotPr
             {/* Header */}
             <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-primary/5">
               <span className="font-semibold text-card-foreground text-sm">Assistente S&B</span>
-              <button onClick={() => setOpen(false)} className="text-muted-foreground hover:text-foreground">
+              <button onClick={() => { setOpen(false); setActiveAnswer(null); }} className="text-muted-foreground hover:text-foreground">
                 <X size={18} />
               </button>
             </div>
@@ -50,19 +50,56 @@ export default function Chatbot({ onFilterSelect, onNavigateRewards }: ChatbotPr
             <div className="flex-1 overflow-y-auto p-4 space-y-3 scrollbar-hide">
               <div className="bg-muted rounded-xl p-3 text-sm text-foreground">
                 Olá, Conquistador! 👋<br />
-                Precisa de ajuda para encontrar o melhor item ou aproveitar suas vantagens?
+                Como posso te ajudar hoje?
               </div>
 
+              {activeAnswer && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="bg-primary/10 rounded-xl p-3 text-sm text-foreground whitespace-pre-line"
+                >
+                  {activeAnswer}
+                </motion.div>
+              )}
+
               <div className="space-y-2">
-                {BUTTONS.map((btn) => (
-                  <button
-                    key={btn.category}
-                    onClick={() => { onFilterSelect(btn.category); setOpen(false); }}
-                    className="w-full text-left px-3 py-2 rounded-lg bg-secondary text-secondary-foreground text-sm hover:bg-primary/10 transition-colors flex items-center gap-2"
-                  >
-                    <span>{btn.emoji}</span> {btn.label}
-                  </button>
-                ))}
+                <button
+                  onClick={() => setActiveAnswer(FAQ_ANSWERS.bestsellers)}
+                  className="w-full text-left px-3 py-2 rounded-lg bg-secondary text-secondary-foreground text-sm hover:bg-primary/10 transition-colors flex items-center gap-2"
+                >
+                  <ShoppingBag size={14} /> Ver produtos mais vendidos
+                </button>
+
+                <button
+                  onClick={() => setActiveAnswer(FAQ_ANSWERS.howto)}
+                  className="w-full text-left px-3 py-2 rounded-lg bg-secondary text-secondary-foreground text-sm hover:bg-primary/10 transition-colors flex items-center gap-2"
+                >
+                  <HelpCircle size={14} /> Como comprar?
+                </button>
+
+                <button
+                  onClick={() => setActiveAnswer(FAQ_ANSWERS.payment)}
+                  className="w-full text-left px-3 py-2 rounded-lg bg-secondary text-secondary-foreground text-sm hover:bg-primary/10 transition-colors flex items-center gap-2"
+                >
+                  <CreditCard size={14} /> Formas de pagamento
+                </button>
+
+                <button
+                  onClick={() => setActiveAnswer(FAQ_ANSWERS.delivery)}
+                  className="w-full text-left px-3 py-2 rounded-lg bg-secondary text-secondary-foreground text-sm hover:bg-primary/10 transition-colors flex items-center gap-2"
+                >
+                  <Truck size={14} /> Prazo de entrega
+                </button>
+
+                <a
+                  href={`https://wa.me/5575981382799?text=${encodeURIComponent("Olá, Diego! Preciso de ajuda.")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full text-left px-3 py-2 rounded-lg bg-secondary text-secondary-foreground text-sm hover:bg-primary/10 transition-colors flex items-center gap-2"
+                >
+                  <MessageCircle size={14} /> Falar no WhatsApp
+                </a>
 
                 <button
                   onClick={() => { onNavigateRewards(); setOpen(false); }}
@@ -77,13 +114,12 @@ export default function Chatbot({ onFilterSelect, onNavigateRewards }: ChatbotPr
                   rel="noopener noreferrer"
                   className="w-full text-left px-3 py-2 rounded-lg bg-secondary text-secondary-foreground text-sm hover:bg-primary/10 transition-colors flex items-center gap-2"
                 >
-                  📢 Entrar no grupo da comunidade <ExternalLink size={12} />
+                  📢 Entrar no grupo <ExternalLink size={12} />
                 </a>
               </div>
 
               <div className="bg-muted/50 rounded-xl p-3 text-xs text-muted-foreground">
-                🔥 Quer ficar por dentro das novidades, promoções exclusivas e trocar ideia com outros players?
-                Entre agora no nosso grupo oficial 👆
+                Acesse nosso grupo e fique por dentro das novidades, tire dúvidas e receba suporte!
               </div>
             </div>
           </motion.div>

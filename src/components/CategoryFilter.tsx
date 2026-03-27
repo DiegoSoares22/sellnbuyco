@@ -12,7 +12,7 @@ export default function CategoryFilter({ selected, onToggle }: CategoryFilterPro
   return (
     <div className="flex flex-wrap gap-2 justify-center py-4">
       {categories.map((cat) => {
-        const { label, emoji } = CATEGORY_LABELS[cat];
+        const { label } = CATEGORY_LABELS[cat];
         const active = selected.has(cat);
         return (
           <motion.button
@@ -27,7 +27,6 @@ export default function CategoryFilter({ selected, onToggle }: CategoryFilterPro
               }
             `}
           >
-            <span className="mr-1.5">{emoji}</span>
             {label}
           </motion.button>
         );

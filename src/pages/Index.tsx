@@ -34,7 +34,6 @@ export default function Index() {
       } else {
         next.add(cat);
       }
-      // Update URL
       const arr = Array.from(next);
       if (arr.length === 1 && arr[0] === "all") {
         setSearchParams({});
@@ -56,9 +55,10 @@ export default function Index() {
     return GAME_ITEMS.filter((item) => selectedCats.has(item.category));
   }, [selectedCats]);
 
-  const activeCategory: ItemCategory | null = useMemo(() => {
-    const cats = Array.from(selectedCats).filter((c) => c !== "all") as ItemCategory[];
-    return cats.length === 1 ? cats[0] : null;
+  const activeCategory: ItemCategory | "all" = useMemo(() => {
+    const cats = Array.from(selectedCats);
+    if (cats.length === 1) return cats[0];
+    return "all";
   }, [selectedCats]);
 
   return (
