@@ -2,23 +2,23 @@ import { ItemCategory, CATEGORY_LABELS } from "@/data/items";
 import { motion } from "framer-motion";
 
 interface CategoryFilterProps {
-  selected: Set<ItemCategory | "all">;
-  onToggle: (cat: ItemCategory | "all") => void;
+  selected: ItemCategory | "all";
+  onSelect: (cat: ItemCategory | "all") => void;
 }
 
 const categories: (ItemCategory | "all")[] = ["all", "currency", "rune", "awakening", "collection", "anima", "donate", "misc"];
 
-export default function CategoryFilter({ selected, onToggle }: CategoryFilterProps) {
+export default function CategoryFilter({ selected, onSelect }: CategoryFilterProps) {
   return (
     <div className="flex flex-wrap gap-2 justify-center py-4">
       {categories.map((cat) => {
         const { label } = CATEGORY_LABELS[cat];
-        const active = selected.has(cat);
+        const active = selected === cat;
         return (
           <motion.button
             key={cat}
             whileTap={{ scale: 0.95 }}
-            onClick={() => onToggle(cat)}
+            onClick={() => onSelect(cat)}
             className={`
               px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 border
               ${active

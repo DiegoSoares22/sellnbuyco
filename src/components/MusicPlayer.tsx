@@ -4,9 +4,15 @@ import { Volume2, VolumeX } from "lucide-react";
 const MUSIC_URL = "https://www.youtube.com/embed/B0xna59xvgg?autoplay=1&loop=1&playlist=B0xna59xvgg&controls=0&showinfo=0&rel=0&modestbranding=1";
 
 export default function MusicPlayer() {
-  const [muted, setMuted] = useState(true);
+  const [muted, setMuted] = useState(false);
   const [started, setStarted] = useState(false);
-  const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  useEffect(() => {
+    const t = setTimeout(() => {
+      setStarted(true);
+    }, 1000);
+    return () => clearTimeout(t);
+  }, []);
 
   const handleToggle = () => {
     if (!started) setStarted(true);
@@ -25,7 +31,6 @@ export default function MusicPlayer() {
 
       {started && (
         <iframe
-          ref={iframeRef}
           src={`${MUSIC_URL}&mute=${muted ? 1 : 0}`}
           className="hidden"
           allow="autoplay"

@@ -1,13 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, MessageCircle } from "lucide-react";
 import { ItemCategory, GAMER_TIPS } from "@/data/items";
 
 interface GamerTipsProps {
   activeCategory: ItemCategory | "all" | null;
 }
 
-const ROBOT_IMAGE = "https://imgs.search.brave.com/C0w9x_jJYHZcSKpagnUFZnDfdbfpNIZwHyw2QEHSWc8/rs:fit:860:900:1/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNy8w/MS8zMS8xNS8yMi9j/eWJvcmctMjAyMjQ1/OF82NDAuanBn";
+const ROBOT_IMAGE = "https://imgs.search.brave.com/C0w9x_jJYHZcSKpagnUFZnDfdbfpNIZwHyw2QEHSWc8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9ody45OS5jb20vdXBsb2Fk/cy9jb25xdWVyOTFlL2ltYWdlcy9mYXEvbWFsZXRhb2lzdGR0LmpwZw";
+
+const WHATSAPP_CATS = new Set<string>(["collection", "anima"]);
 
 export default function GamerTips({ activeCategory }: GamerTipsProps) {
   const [expanded, setExpanded] = useState(false);
@@ -16,11 +18,14 @@ export default function GamerTips({ activeCategory }: GamerTipsProps) {
 
   if (!tip) return null;
 
+  const showWhatsapp = WHATSAPP_CATS.has(category);
+
   return (
     <motion.div
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
-      className="fixed top-20 left-4 z-40 max-w-[260px]"
+      key={category}
+      className="fixed top-20 left-4 z-40 max-w-[280px]"
     >
       <button
         onClick={() => setExpanded((p) => !p)}
@@ -29,7 +34,7 @@ export default function GamerTips({ activeCategory }: GamerTipsProps) {
         <img
           src={ROBOT_IMAGE}
           alt="Robot"
-          className="w-6 h-6 rounded-full object-cover"
+          className="w-7 h-7 rounded-full object-cover"
           onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
         />
         <span className="hidden sm:inline">Dicas / Sugestões</span>
@@ -42,9 +47,19 @@ export default function GamerTips({ activeCategory }: GamerTipsProps) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="mt-2 p-3 rounded-xl bg-card border border-border shadow-lg text-xs text-card-foreground whitespace-pre-line overflow-hidden"
+            className="mt-2 p-3 rounded-xl bg-card border border-border shadow-lg text-xs text-card-foreground whitespace-pre-line overflow-hidden space-y-2"
           >
-            {tip}
+            <p>{tip}</p>
+            {showWhatsapp && (
+              <a
+                href={`https://wa.me/5575981382799?text=${encodeURIComponent("Olá, Diego! Gostaria de saber mais sobre os itens disponíveis.")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-primary text-[11px] font-medium hover:underline"
+              >
+                <MessageCircle size={12} /> Falar comigo no WhatsApp
+              </a>
+            )}
           </motion.div>
         )}
       </AnimatePresence>

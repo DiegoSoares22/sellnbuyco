@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Gift, ArrowLeft, MessageCircle, Loader2, Trophy, Star, Shield, Crown } from "lucide-react";
+import { Gift, ArrowLeft, MessageCircle, Loader2, Trophy, Star, Shield, Crown, AlertCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Progress } from "@/components/ui/progress";
 
@@ -31,16 +31,31 @@ const VIP_TIERS = [
   { name: "VIP", icon: Crown, minPoints: 3000, discount: "15%", color: "text-primary" },
 ];
 
+function sanitize(val: string): string {
+  return val.replace(/[<>&"'/]/g, "").trim();
+}
+
 export default function Rewards() {
   const [accountId, setAccountId] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!accountId.trim() || !firstName.trim() || !lastName.trim()) return;
+    setError(null);
+
+    const safeId = sanitize(accountId);
+    const safeFn = sanitize(firstName);
+    const safeLn = sanitize(lastName);
+
+    if (!safeId || !safeFn || !safeLn) {
+      setError("Preencha todos os campos corretamente.");
+      return;
+    }
+
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
@@ -68,10 +83,9 @@ export default function Rewards() {
             </div>
 
             <p className="text-muted-foreground text-sm mb-6">
-              Se você comprou recentemente, já pode ter recompensas disponíveis.
+              💎 Se você comprou recentemente, já pode ter recompensas disponíveis.
             </p>
 
-            {/* VIP Tiers */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
               {VIP_TIERS.map((tier) => (
                 <div key={tier.name} className="bg-card border border-border rounded-xl p-4 text-center">
@@ -83,7 +97,6 @@ export default function Rewards() {
               ))}
             </div>
 
-            {/* Progress Example */}
             <div className="bg-card border border-border rounded-xl p-4 mb-6">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-sm font-medium text-card-foreground">Seu progresso</span>
@@ -100,8 +113,11 @@ export default function Rewards() {
 
             {!submitted ? (
               <form onSubmit={handleSubmit} className="space-y-4 bg-card border border-border rounded-xl p-6">
+                <p className="text-xs text-muted-foreground mb-2">
+                  Utilize o ID da conta que realizou compras conosco.
+                </p>
                 <div>
-                  <label className="text-sm font-medium text-card-foreground">ID da Conta</label>
+                  <label className="text-sm font-medium text-card-foreground">ID da Conta *</label>
                   <input
                     type="text"
                     value={accountId}
@@ -109,30 +125,41 @@ export default function Rewards() {
                     className="mt-1 w-full px-3 py-2 rounded-lg bg-muted border border-border text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
                     placeholder="Seu ID do jogo"
                     required
+                    maxLength={50}
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="text-sm font-medium text-card-foreground">Nome</label>
+                    <label className="text-sm font-medium text-card-foreground">Nome *</label>
                     <input
                       type="text"
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
                       className="mt-1 w-full px-3 py-2 rounded-lg bg-muted border border-border text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
                       required
+                      maxLength={50}
                     />
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-card-foreground">Sobrenome</label>
+                    <label className="text-sm font-medium text-card-foreground">Sobrenome *</label>
                     <input
                       type="text"
                       value={lastName}
                       onChange={(e) => setLastName(e.target.value)}
                       className="mt-1 w-full px-3 py-2 rounded-lg bg-muted border border-border text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
                       required
+                      maxLength={50}
                     />
                   </div>
                 </div>
+
+                {error && (
+                  <div className="flex items-center gap-2 text-destructive text-sm">
+                    <AlertCircle size={14} />
+                    {error}
+                  </div>
+                )}
+
                 <button
                   type="submit"
                   disabled={loading}
@@ -147,7 +174,9 @@ export default function Rewards() {
                   <p className="text-muted-foreground text-sm">
                     Não encontramos recompensas para esses dados no momento.
                   </p>
-                  <p className="text-xs text-muted-foreground mt-2">Dados aguardando fonte real — nenhum dado simulado.</p>
+                  <p className="text-xs text-muted-foreground mt-2">
+                    Se tiver qualquer problema, entre em contato comigo:
+                  </p>
                   <a
                     href={`https://wa.me/5575981382799?text=${encodeURIComponent("Olá, Diego. Gostaria de verificar minhas recompensas.")}`}
                     target="_blank"
@@ -158,7 +187,6 @@ export default function Rewards() {
                   </a>
                 </div>
 
-                {/* Reward tables */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="bg-card border border-border rounded-xl p-4">
                     <h3 className="font-semibold text-card-foreground text-sm mb-3">Tabela Gold</h3>
@@ -180,7 +208,7 @@ export default function Rewards() {
                   </div>
                 </div>
 
-                <button onClick={() => setSubmitted(false)} className="text-sm text-primary hover:underline">
+                <button onClick={() => { setSubmitted(false); setError(null); }} className="text-sm text-primary hover:underline">
                   ← Tentar novamente
                 </button>
               </motion.div>
