@@ -2,6 +2,7 @@ export type ItemCategory = "currency" | "rune" | "awakening" | "collection" | "a
 
 export interface GameItem {
   name: string;
+  displayName: string;
   image: string | null;
   price: number | null;
   tooltip_en: string;
@@ -74,6 +75,10 @@ const IMAGE_MAP: Record<string, string> = {
   "Prism Stone * 100": "https://hsimages.99.com/zfstore/productimg/e89bf8df9b8849b6bdc8984051cf3ff2.png",
 };
 
+const DISPLAY_NAMES: Record<string, string> = {
+  "10000CP(B)": "10.000 CPs Bound",
+};
+
 const ITEM_TOOLTIPS: Record<string, string> = {
   "200KK Silver Bag": "Contém 200.000.000 de Silver. Clique com o botão direito para abrir.",
   "10000CP(B)": "Contém 10.000 CPs (Bound). Use para compras no jogo.",
@@ -141,6 +146,7 @@ const ITEM_TOOLTIPS: Record<string, string> = {
 function buildItem(name: string, category: ItemCategory, isTemporary = false): GameItem {
   return {
     name,
+    displayName: DISPLAY_NAMES[name] || name,
     image: IMAGE_MAP[name] || null,
     price: null,
     tooltip_en: `${category.charAt(0).toUpperCase() + category.slice(1)} item from the Conquer Online store.`,
@@ -151,10 +157,8 @@ function buildItem(name: string, category: ItemCategory, isTemporary = false): G
 }
 
 export const GAME_ITEMS: GameItem[] = [
-  // Currency
   buildItem("200KK Silver Bag", "currency"),
   buildItem("10000CP(B)", "currency"),
-  // Runes
   buildItem("Damage Pierce (+1)(B)", "rune"),
   buildItem("Arcane Drain (+1) (B)", "rune"),
   buildItem("Firm Heart (+1) (B)", "rune"),
@@ -184,7 +188,6 @@ export const GAME_ITEMS: GameItem[] = [
   buildItem("Universal Rune Essence (B) * 300", "rune"),
   buildItem("14D Strike Booster (+9) Box", "rune", true),
   buildItem("14D Wild Cleave (+9) Box", "rune", true),
-  // Awakening
   buildItem("Focus Pebble Box(Taoist)", "awakening"),
   buildItem("Immense Zest Box(Pirata)", "awakening"),
   buildItem("Solar Orb Box(Dragon Warrior)", "awakening"),
@@ -192,16 +195,12 @@ export const GAME_ITEMS: GameItem[] = [
   buildItem("Arcane Essence Chest (Ninja)", "awakening"),
   buildItem("100LegendaryEssencePack (Trojan)", "awakening"),
   buildItem("Super Soul Stone *10 (Warrior)", "awakening"),
-  // Collection
   buildItem("Stellar Canopy (B)", "collection"),
   buildItem("Scrap Selection Box", "collection"),
   buildItem("Flute Scrap Box", "collection"),
-  // Anima
   buildItem("High Phase Anima Wheel", "anima"),
   buildItem("P13 Anima", "anima"),
-  // Donate
   buildItem("1KKK Contribution Seal", "donate"),
-  // Misc
   buildItem("Rare Inner Power Book Box", "misc"),
   buildItem("Stone(+8)(B)", "misc"),
   buildItem("Tough Drill (B) * 2", "misc"),
@@ -234,11 +233,11 @@ export const CATEGORY_LABELS: Record<ItemCategory | "all", { label: string }> = 
 
 export const GAMER_TIPS: Record<ItemCategory | "all", string> = {
   all: "Bem-vindo! Se precisar de ajuda para escolher seus itens, estou aqui para te ajudar 😊",
-  rune: "Se for roleta de anima... fuja 😅\nPassar de 45k CPs é mais comum do que parece.",
-  awakening: "Atalho caro. Eventos costumam compensar mais.",
-  collection: "Ótimo pra server novo. Pode sair mais barato em eventos.",
-  anima: "Boa pra BP rápido. Server antigo? Pesquisa antes 👍",
+  rune: "Se você está pensando em investir em runas, calma lá 😄\nEssa opção é mais indicada para runas específicas como a azul do Pirata, temporárias ou situações urgentes.\nAgora, se estiver pensando em roleta de anima... melhor ir com cuidado — já vimos gente gastar mais de 45k CPs tentando a sorte 👀",
+  awakening: "Olha... Awakening direto assim só vale a pena em último caso 😅\nSe você joga em servidor mais antigo, eventos mensais costumam entregar muito mais pelo mesmo investimento.",
+  collection: "Se você está em servidor novo, aqui é uma excelente escolha 👌\nMas fica a dica: às vezes o jogo libera roletas com collections mais baratas — e em servidores como Storm dá pra encontrar bons preços também.\nPrecisando de CPs, me chama direto 😉",
+  anima: "Quer subir BP ou testar a sorte? Então animas são uma boa 🎯\nMas se você joga em servidor antigo… vale MUITO a pena comparar preços antes, principalmente no Storm.\nOu fala comigo que te ajudo nisso 😉",
   currency: "Interessante em servidores novos ou em último caso.\nFale com a gente pra melhores valores.",
-  donate: "Contribuição pra guild. Verifique se vale a pena no seu server.",
-  misc: "Perfeito pra quem está começando ou voltando.",
+  donate: "Se for servidor antigo, segura esse impulso 😄\nEventos mensais geralmente compensam muito mais.\nUse donate direto só se for realmente necessário.",
+  misc: "Perfeito pra quem está começando ou voltou agora 👌\nMas se você já joga há mais tempo, vale dar uma olhada no market antes ou esperar eventos — pode economizar bem.",
 };
