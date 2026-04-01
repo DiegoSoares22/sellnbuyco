@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
+import popupImage from "@/assets/popup-2.jpg";
 
 const STORAGE_KEY = "sb_welcome_shown";
-const POPUP_IMAGE = "https://imgs.search.brave.com/APXepE5vACZgc-D6uXfd_80p2m7PaXaA4wWUcWc3bbE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxscGFwZXJjYXZlLmNv/bS93cC93cDEyOTc2MzI5LmpwZw";
 
 export default function WelcomePopup() {
   const [show, setShow] = useState(false);
@@ -46,7 +46,7 @@ export default function WelcomePopup() {
           >
             <div className="h-40 sm:h-48 overflow-hidden">
               <img
-                src={POPUP_IMAGE}
+                src={popupImage}
                 alt="Welcome"
                 className="w-full h-full object-cover"
               />
