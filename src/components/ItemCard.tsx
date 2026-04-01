@@ -13,7 +13,7 @@ export default function ItemCard({ item, index }: ItemCardProps) {
   const [imgError, setImgError] = useState(false);
 
   const whatsappMsg = encodeURIComponent(
-    `Olá, Diego. Fiquei interessado pelo ${item.name}. Você poderia me informar o valor e como funciona?`
+    `Olá, Diego. Fiquei interessado por ${item.name}. Você poderia me informar o valor e como funciona?`
   );
   const whatsappUrl = `https://wa.me/5575981382799?text=${whatsappMsg}`;
 
@@ -28,7 +28,7 @@ export default function ItemCard({ item, index }: ItemCardProps) {
       onClick={() => setShowTooltip((p) => !p)}
     >
       <div className="absolute top-2 right-2 z-10 px-2 py-0.5 rounded-md bg-primary/90 text-primary-foreground text-[10px] font-semibold tracking-wide">
-        5%–15% OFF
+        5% a 15% OFF
       </div>
 
       {item.is_temporary && (

@@ -44,7 +44,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background">
       <WelcomePopup />
-      <HeroSection onNavigateRewards={() => navigate("/recompensas")} />
+      <HeroSection />
 
       <div id="catalog" className="container py-8 space-y-4">
         <CategoryFilter selected={activeCategory} onSelect={handleSelect} />

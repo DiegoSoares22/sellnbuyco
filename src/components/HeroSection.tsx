@@ -1,11 +1,6 @@
 import { motion } from "framer-motion";
-import { Sparkles, Gift } from "lucide-react";
 
-interface HeroSectionProps {
-  onNavigateRewards: () => void;
-}
-
-export default function HeroSection({ onNavigateRewards }: HeroSectionProps) {
+export default function HeroSection() {
   return (
     <div
       className="relative min-h-[50vh] flex items-center justify-center bg-cover bg-center bg-fixed"
@@ -28,13 +23,6 @@ export default function HeroSection({ onNavigateRewards }: HeroSectionProps) {
         <p className="mt-4 text-muted-foreground text-base sm:text-lg max-w-lg mx-auto">
           Os melhores itens, runas e recursos para seu personagem. Atendimento direto via WhatsApp.
         </p>
-        <button
-          onClick={onNavigateRewards}
-          className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
-        >
-          <Gift size={16} />
-          Ver minhas recompensas
-        </button>
       </motion.div>
     </div>
   );
