@@ -1,35 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Gift, ArrowLeft, MessageCircle, Loader2, Trophy, Star, Shield, Crown, AlertCircle } from "lucide-react";
+import { Gift, ArrowLeft, MessageCircle, Loader2, AlertCircle } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Progress } from "@/components/ui/progress";
-
-interface RewardResult {
-  type: "gold" | "cps";
-  amount: string;
-  chance: string;
-}
-
-const GOLD_TABLE: RewardResult[] = [
-  { type: "gold", amount: "10KK Gold", chance: "65%" },
-  { type: "gold", amount: "30KK Gold", chance: "30%" },
-  { type: "gold", amount: "50KK Gold", chance: "20%" },
-  { type: "gold", amount: "100KK Gold", chance: "10%" },
-];
-
-const CPS_TABLE: RewardResult[] = [
-  { type: "cps", amount: "100 CPs", chance: "65%" },
-  { type: "cps", amount: "250 CPs", chance: "30%" },
-  { type: "cps", amount: "500 CPs", chance: "15%" },
-  { type: "cps", amount: "1000 CPs", chance: "5%" },
-];
-
-const VIP_TIERS = [
-  { name: "Bronze", icon: Shield, minPoints: 0, discount: "5%", color: "text-amber-600" },
-  { name: "Prata", icon: Star, minPoints: 500, discount: "8%", color: "text-gray-400" },
-  { name: "Ouro", icon: Trophy, minPoints: 1500, discount: "12%", color: "text-yellow-400" },
-  { name: "VIP", icon: Crown, minPoints: 3000, discount: "15%", color: "text-primary" },
-];
 
 function sanitize(val: string): string {
   return val.replace(/[<>&"'/]/g, "").trim();
@@ -83,33 +55,8 @@ export default function Rewards() {
             </div>
 
             <p className="text-muted-foreground text-sm mb-6">
-              💎 Se você comprou recentemente, já pode ter recompensas disponíveis.
+              Se você comprou recentemente, já pode ter recompensas disponíveis.
             </p>
-
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-              {VIP_TIERS.map((tier) => (
-                <div key={tier.name} className="bg-card border border-border rounded-xl p-4 text-center">
-                  <tier.icon className={`mx-auto mb-2 ${tier.color}`} size={24} />
-                  <h3 className="text-sm font-semibold text-card-foreground">{tier.name}</h3>
-                  <p className="text-xs text-muted-foreground mt-1">{tier.minPoints}+ pts</p>
-                  <p className="text-xs text-primary font-medium mt-1">{tier.discount} desconto</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="bg-card border border-border rounded-xl p-4 mb-6">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-medium text-card-foreground">Seu progresso</span>
-                <span className="text-xs text-muted-foreground">Verifique sua conta para ver</span>
-              </div>
-              <Progress value={0} className="h-2" />
-              <div className="flex justify-between mt-2 text-[10px] text-muted-foreground">
-                <span>Bronze</span>
-                <span>Prata</span>
-                <span>Ouro</span>
-                <span>VIP</span>
-              </div>
-            </div>
 
             {!submitted ? (
               <form onSubmit={handleSubmit} className="space-y-4 bg-card border border-border rounded-xl p-6">
@@ -123,7 +70,7 @@ export default function Rewards() {
                     value={accountId}
                     onChange={(e) => setAccountId(e.target.value)}
                     className="mt-1 w-full px-3 py-2 rounded-lg bg-muted border border-border text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
-                    placeholder="Seu ID do jogo"
+                    placeholder="70006285222 (Seu ID utilizado para recebimento de gold e cps)"
                     required
                     maxLength={50}
                   />
@@ -170,9 +117,44 @@ export default function Rewards() {
               </form>
             ) : (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6">
+                {/* Dashboard sections - empty state */}
+                <div className="bg-card border border-border rounded-xl p-6">
+                  <h2 className="text-sm font-semibold text-card-foreground mb-3">Total Gasto (Mês Atual)</h2>
+                  <p className="text-muted-foreground text-sm">Você ainda não possui registros.</p>
+                </div>
+
+                <div className="bg-card border border-border rounded-xl p-6">
+                  <h2 className="text-sm font-semibold text-card-foreground mb-3">Histórico de Transações</h2>
+                  <div className="text-muted-foreground text-sm">
+                    <p>Você ainda não possui registros.</p>
+                  </div>
+                </div>
+
+                <div className="bg-card border border-border rounded-xl p-6">
+                  <h2 className="text-sm font-semibold text-card-foreground mb-3">Recompensas Recebidas</h2>
+                  <div className="text-muted-foreground text-sm">
+                    <p>Você ainda não possui registros.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-3">
+                  <button
+                    disabled
+                    className="flex-1 py-2 rounded-lg bg-secondary text-secondary-foreground text-sm font-medium opacity-50 cursor-not-allowed"
+                  >
+                    Exportar PDF
+                  </button>
+                  <button
+                    disabled
+                    className="flex-1 py-2 rounded-lg bg-secondary text-secondary-foreground text-sm font-medium opacity-50 cursor-not-allowed"
+                  >
+                    Exportar Excel
+                  </button>
+                </div>
+
                 <div className="bg-card border border-border rounded-xl p-6 text-center">
                   <p className="text-muted-foreground text-sm">
-                    Não encontramos recompensas para esses dados no momento.
+                    Não encontramos dados para essa conta no momento.
                   </p>
                   <p className="text-xs text-muted-foreground mt-2">
                     Se tiver qualquer problema, entre em contato comigo:
@@ -187,29 +169,8 @@ export default function Rewards() {
                   </a>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="bg-card border border-border rounded-xl p-4">
-                    <h3 className="font-semibold text-card-foreground text-sm mb-3">Tabela Gold</h3>
-                    {GOLD_TABLE.map((r) => (
-                      <div key={r.amount} className="flex justify-between py-1.5 border-b border-border last:border-0 text-sm">
-                        <span className="text-card-foreground">{r.amount}</span>
-                        <span className="text-muted-foreground text-xs">{r.chance}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="bg-card border border-border rounded-xl p-4">
-                    <h3 className="font-semibold text-card-foreground text-sm mb-3">Tabela CPs</h3>
-                    {CPS_TABLE.map((r) => (
-                      <div key={r.amount} className="flex justify-between py-1.5 border-b border-border last:border-0 text-sm">
-                        <span className="text-card-foreground">{r.amount}</span>
-                        <span className="text-muted-foreground text-xs">{r.chance}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
                 <button onClick={() => { setSubmitted(false); setError(null); }} className="text-sm text-primary hover:underline">
-                  ← Tentar novamente
+                  Tentar novamente
                 </button>
               </motion.div>
             )}

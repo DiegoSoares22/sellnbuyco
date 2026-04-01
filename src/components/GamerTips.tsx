@@ -2,12 +2,11 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronUp, MessageCircle } from "lucide-react";
 import { ItemCategory, GAMER_TIPS } from "@/data/items";
+import taoistImg from "@/assets/taoist.png";
 
 interface GamerTipsProps {
   activeCategory: ItemCategory | "all" | null;
 }
-
-const ROBOT_IMAGE = "https://imgs.search.brave.com/C0w9x_jJYHZcSKpagnUFZnDfdbfpNIZwHyw2QEHSWc8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9ody45OS5jb20vdXBsb2Fk/cy9jb25xdWVyOTFlL2ltYWdlcy9mYXEvbWFsZXRhb2lzdGR0LmpwZw";
 
 const WHATSAPP_CATS = new Set<string>(["collection", "anima"]);
 
@@ -32,10 +31,9 @@ export default function GamerTips({ activeCategory }: GamerTipsProps) {
         className="flex items-center gap-2 px-3 py-2 rounded-xl bg-card border border-border shadow-lg text-sm font-medium text-card-foreground hover:border-primary/50 transition-colors"
       >
         <img
-          src={ROBOT_IMAGE}
-          alt="Robot"
+          src={taoistImg}
+          alt="Dicas"
           className="w-7 h-7 rounded-full object-cover"
-          onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
         />
         <span className="hidden sm:inline">Dicas / Sugestões</span>
         {expanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
@@ -52,7 +50,7 @@ export default function GamerTips({ activeCategory }: GamerTipsProps) {
             <p>{tip}</p>
             {showWhatsapp && (
               <a
-                href={`https://wa.me/5575981382799?text=${encodeURIComponent("Olá, Diego! Gostaria de saber mais sobre os itens disponíveis.")}`}
+                href={`https://wa.me/5575981382799?text=${encodeURIComponent("Olá, Diego. Gostaria de saber mais sobre os itens disponíveis.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-primary text-[11px] font-medium hover:underline"
