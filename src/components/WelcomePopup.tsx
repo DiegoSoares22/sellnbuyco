@@ -46,7 +46,7 @@ export default function WelcomePopup() {
           >
             <div className="h-40 sm:h-48 overflow-hidden">
               <img
-                src={POPUP_IMAGE}
+                src={popupImage}
                 alt="Welcome"
                 className="w-full h-full object-cover"
               />
