@@ -44,11 +44,12 @@ export default function WelcomePopup() {
             className="relative z-10 max-w-lg w-full rounded-2xl overflow-hidden bg-card border border-border shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="h-40 sm:h-48 overflow-hidden">
+            <div className="h-[300px] sm:h-[360px] overflow-hidden">
               <img
                 src={popupImage}
                 alt="Welcome"
                 className="w-full h-full object-cover"
+                style={{ objectPosition: "top center" }}
               />
             </div>
 
