@@ -9,6 +9,7 @@ import Rewards from "./pages/Rewards";
 import Accounts from "./pages/Accounts";
 import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
+import MusicPlayer from "./components/MusicPlayer";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/admin" element={<Admin />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <MusicPlayer />
         </div>
       </BrowserRouter>
     </TooltipProvider>

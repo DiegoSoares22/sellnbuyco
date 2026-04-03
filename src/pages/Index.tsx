@@ -6,7 +6,6 @@ import CategoryFilter from "@/components/CategoryFilter";
 import ItemGrid from "@/components/ItemGrid";
 import Chatbot from "@/components/Chatbot";
 import GamerTips from "@/components/GamerTips";
-import MusicPlayer from "@/components/MusicPlayer";
 import WelcomePopup from "@/components/WelcomePopup";
 
 export default function Index() {
@@ -53,7 +52,6 @@ export default function Index() {
 
       <GamerTips activeCategory={activeCategory} />
       <Chatbot onFilterSelect={handleFilterFromChat} onNavigateRewards={() => navigate("/recompensas")} />
-      <MusicPlayer />
     </div>
   );
 }
