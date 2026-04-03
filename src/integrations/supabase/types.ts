@@ -14,7 +14,111 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      accounts_marketplace: {
+        Row: {
+          created_at: string
+          descricao: string | null
+          destaque: boolean
+          id: string
+          imagem_url: string | null
+          preco_1: string | null
+          preco_2: string | null
+          titulo: string
+        }
+        Insert: {
+          created_at?: string
+          descricao?: string | null
+          destaque?: boolean
+          id?: string
+          imagem_url?: string | null
+          preco_1?: string | null
+          preco_2?: string | null
+          titulo: string
+        }
+        Update: {
+          created_at?: string
+          descricao?: string | null
+          destaque?: boolean
+          id?: string
+          imagem_url?: string | null
+          preco_1?: string | null
+          preco_2?: string | null
+          titulo?: string
+        }
+        Relationships: []
+      }
+      rewards: {
+        Row: {
+          account_id: string
+          created_at: string
+          id: string
+          reward_type: string
+          value: string
+        }
+        Insert: {
+          account_id: string
+          created_at?: string
+          id?: string
+          reward_type: string
+          value: string
+        }
+        Update: {
+          account_id?: string
+          created_at?: string
+          id?: string
+          reward_type?: string
+          value?: string
+        }
+        Relationships: []
+      }
+      transactions: {
+        Row: {
+          account_id: string
+          amount_cps: number
+          created_at: string
+          id: string
+          method: string
+          month: string
+        }
+        Insert: {
+          account_id: string
+          amount_cps: number
+          created_at?: string
+          id?: string
+          method?: string
+          month: string
+        }
+        Update: {
+          account_id?: string
+          amount_cps?: number
+          created_at?: string
+          id?: string
+          method?: string
+          month?: string
+        }
+        Relationships: []
+      }
+      users_rewards: {
+        Row: {
+          account_id: string
+          created_at: string
+          id: string
+          name: string
+        }
+        Insert: {
+          account_id: string
+          created_at?: string
+          id?: string
+          name: string
+        }
+        Update: {
+          account_id?: string
+          created_at?: string
+          id?: string
+          name?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
