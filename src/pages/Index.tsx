@@ -52,7 +52,6 @@ export default function Index() {
 
       <GamerTips activeCategory={activeCategory} />
       <Chatbot onFilterSelect={handleFilterFromChat} onNavigateRewards={() => navigate("/recompensas")} />
-      <MusicPlayer />
     </div>
   );
 }
