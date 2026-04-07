@@ -7,6 +7,9 @@ import antibreakImg from "@/assets/antibreakstrike.png";
 import ninja1Img from "@/assets/ninja1.png";
 import ninjalucasImg from "@/assets/ninjalucas.jpg";
 import archerwagnerImg from "@/assets/archerwagner.jpg";
+import waterImg from "@/assets/water.jpg";
+import ninjajoaoImg from "@/assets/ninjajoao.jpg";
+import ninjaleandroImg from "@/assets/ninjaleandro.jpg";
 
 interface AccountListing {
   id: string;
@@ -80,7 +83,7 @@ const ACCOUNTS: AccountListing[] = [
     badge: "TOP",
     badgeColor: "bg-amber-500",
     image: ninja1Img,
-    prices: [{ label: "Preco", value: "Consultar" }],
+    prices: [{ label: "Preço", value: "Consultar" }],
     sections: [
       {
         title: "Atributos",
@@ -138,7 +141,7 @@ const ACCOUNTS: AccountListing[] = [
     badge: "HOT",
     badgeColor: "bg-red-500",
     image: ninjalucasImg,
-    prices: [{ label: "Preco", value: "200K CPS" }],
+    prices: [{ label: "Preço", value: "200K CPS" }],
     sections: [
       {
         title: "Atributos",
@@ -199,7 +202,7 @@ const ACCOUNTS: AccountListing[] = [
     badge: "NEW",
     badgeColor: "bg-emerald-500",
     image: archerwagnerImg,
-    prices: [{ label: "Preco", value: "50K CPS" }],
+    prices: [{ label: "Preço", value: "50K CPS" }],
     sections: [
       {
         title: "Atributos",
@@ -222,12 +225,167 @@ const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
+  {
+    id: "acc-5",
+    title: "Spray Water Taoist Full Build",
+    badge: "TOP",
+    badgeColor: "bg-amber-500",
+    image: waterImg,
+    prices: [{ label: "Preço", value: "Consultar" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "70B Donation",
+          "Water Full",
+          "Astredge 95% Viodragon Club, 90% Love Forever, 5% Heart Lock",
+          "Arquivo Trojan 100K",
+          "Monk 30/27/27",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "5 Runas do Site",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "BS e Ring coroa unbound",
+          "Hossu 2 sock 2 Gem super Unbound -5",
+        ],
+      },
+      {
+        title: "Extras",
+        items: [
+          "Ressonance 3x Immunity full",
+          "Relic 3x Immunity full + Final P-DMG",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-6",
+    title: "Ninja 437K Rune Score Premium",
+    badge: "HOT",
+    badgeColor: "bg-red-500",
+    image: ninjajoaoImg,
+    prices: [{ label: "Preço", value: "650K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Sell Ninja 437k Rune Score",
+          "Price 650k CPS Without Mythsouls And Garment 2 P-Strike",
+          "or 820k With Garment and Mythsouls",
+          "210B Donation",
+          "Supreme VIP",
+          "HolyGrail",
+          "HavensWonder",
+          "Horse 60k Lineage",
+          "90k CPS Bound",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "7 Yellow Credit Runes",
+          "All Blue runes",
+          "8 Ideals",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "All Gears 9c Unbound Except Ring, Neck and Wings (300k Progress) Bound",
+          "Garment 2 P-Strike",
+        ],
+      },
+      {
+        title: "Archives",
+        items: [
+          "Trojan 100k",
+          "Archer Max/21/38",
+          "Warrior 40/max/35",
+          "DW 1.8M",
+          "Monk 26/26/30",
+        ],
+      },
+      {
+        title: "Astredge",
+        items: [
+          "Viodragon Club 95%",
+          "Love Forever 90%",
+          "Heart Lock 80%",
+        ],
+      },
+      {
+        title: "Extras",
+        items: [
+          "3 Ressonance Relic (Worth 60k-80k CPS)",
+          "101,200k CPS Worth Mythsoul Bag",
+          "49k CPS Worth Mythsoul Gears All L6/L6 Ring and Neck L6/L6/L4",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-7",
+    title: "Ninja Break Immunity (Chi Retreat P-Strike)",
+    badge: "TOP",
+    badgeColor: "bg-amber-500",
+    image: ninjaleandroImg,
+    prices: [{ label: "Preço", value: "Consultar" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "134B Donation",
+          "Astredge 95% - 90% - 70%",
+          "Eonspirit (Archer Lv9) (Water Lv8) (Warrior Lv8) (Monk Lv8) (Wanderer Lv7) all 100%",
+          "Ninpo 16k have HW and Stun",
+          "Archive Trojan 100K",
+          "Archive Monk 14 - 15 - 11",
+          "Inner power full",
+          "Chi full, retrat P-Strike with 15m chi!",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "Credit Runes Yellow (Soldiness, Conquerer's Blade, CircleOfLife, Front Break, Tempered, Perseverance, Area Occupier, Silent Blade, Unswerving, Whetted Blade)",
+          "SkyVeil, IronBone and BlazeGaze too",
+          "Blue rune All",
+          "Rank Rune 424.8K",
+          "6 Ideals",
+          "35 Hammers",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "Unbound itens: 2 Epic Ninja, 2x Armor Ninja, 2 Cap Ninja, Neck and Boots",
+        ],
+      },
+      {
+        title: "Extras",
+        items: [
+          "15M Chi Pts",
+          "0 Jail",
+        ],
+      },
+    ],
+  },
 ];
 
 export default function Accounts() {
   const [selected, setSelected] = useState<AccountListing | null>(null);
 
-  const whatsappUrl = `https://wa.me/5575981382799?text=${encodeURIComponent("Olá! Tenho interesse nesse account.")}`;
+  const getWhatsappUrl = (title: string) =>
+    `https://wa.me/5575981382799?text=${encodeURIComponent(
+      `Olá, Diego! Tudo bem? Fiquei interessado por ${title}. Gostaria de mais informações.`
+    )}`;
 
   return (
     <div className="min-h-screen bg-background">
@@ -238,7 +396,7 @@ export default function Accounts() {
 
         <h1 className="text-2xl font-bold text-foreground mb-2">Accounts à Venda</h1>
         <p className="text-sm text-muted-foreground mb-8">
-          Essa area e exclusiva para contas selecionadas. Normalmente disponiveis para clientes com historico de compras mais elevado.
+          Essa área é exclusiva para contas selecionadas. Normalmente disponíveis para clientes com histórico de compras mais elevado.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
@@ -329,7 +487,7 @@ export default function Accounts() {
                 ))}
 
                 <a
-                  href={whatsappUrl}
+                  href={getWhatsappUrl(selected.title)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center gap-2 py-3 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
