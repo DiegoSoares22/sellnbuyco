@@ -9,7 +9,7 @@ import ninjalucasImg from "@/assets/ninjalucas.jpg";
 import archerwagnerImg from "@/assets/archerwagner.jpg";
 import waterImg from "@/assets/water.jpg";
 import ninjajoaoImg from "@/assets/ninjajoao.jpg";
-import ninjaleandroImg from "@/assets/ninjaleandro.jpg";
+import ninjamichelImg from "@/assets/ninjamichel.jpg";
 
 interface AccountListing {
   id: string;
@@ -131,67 +131,6 @@ const ACCOUNTS: AccountListing[] = [
           "Garment 167",
           "Mount 96",
           "1 BJ",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-3",
-    title: "NINJA BREAK",
-    badge: "HOT",
-    badgeColor: "bg-red-500",
-    image: ninjalucasImg,
-    prices: [{ label: "Preço", value: "200K CPS" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Donation: 92B",
-          "Ninpo Score 44.864",
-          "NO HAVE Heaven's Wonder",
-          "9 Sigils lv Max",
-          "Astred: Love Forever - 65%, Viodragon - 90%",
-          "Eonspirit Advent: BUDDHA P4, LADY P7, ARTEMIS P7, XIANG YU P9",
-          "Inner full",
-          "CHI full - BREAK / STRIKE",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "RUNES - 343K - 10 CREDIT Runes",
-          "4 Ideal Rune",
-          "Tempered",
-          "Conqueros",
-          "Circle of life",
-          "Solidess",
-          "Front Break",
-          "Sky veil",
-          "Iron bone",
-          "SilentBlade",
-          "Whetted Blade",
-          "Soul Reap",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "Set +12 Windwalker, Trojan, Pirate",
-          "4 REFINERY PERMANENT: RING, NECK, CAP, BOOT",
-        ],
-      },
-      {
-        title: "Extras",
-        items: [
-          "Goldtrophy",
-          "VIP 6",
-          "Relics: Have Relics 3x P ATACK",
-          "Mythsoul bag: 4 L5 break, 1 L4 break, All L2",
-          "Mythsoul Equip: 3 L5, All L3/4",
-          "Garment: 182",
-          "Mount: 113",
-          "17 hammers",
-          "BJ: 0",
         ],
       },
     ],
@@ -331,48 +270,44 @@ const ACCOUNTS: AccountListing[] = [
     ],
   },
   {
-    id: "acc-7",
-    title: "Ninja Break Immunity (Chi Retreat P-Strike)",
-    badge: "TOP",
-    badgeColor: "bg-amber-500",
-    image: ninjaleandroImg,
+    id: "acc-8",
+    title: "Ninja com Sigil FlashBreak",
+    badge: "NEW",
+    badgeColor: "bg-emerald-500",
+    image: ninjamichelImg,
     prices: [{ label: "Preço", value: "Consultar" }],
     sections: [
       {
         title: "Atributos",
         items: [
-          "134B Donation",
-          "Astredge 95% - 90% - 70%",
-          "Eonspirit (Archer Lv9) (Water Lv8) (Warrior Lv8) (Monk Lv8) (Wanderer Lv7) all 100%",
-          "Ninpo 16k have HW and Stun",
-          "Archive Trojan 100K",
-          "Archive Monk 14 - 15 - 11",
-          "Inner power full",
-          "Chi full, retrat P-Strike with 15m chi!",
+          "300K Score de Runa",
+          "47K de Ninpo",
+          "100K de Trojan",
+          "Monk All Lvl 20+",
+          "33B Donation",
         ],
       },
       {
         title: "Runas",
         items: [
-          "Credit Runes Yellow (Soldiness, Conquerer's Blade, CircleOfLife, Front Break, Tempered, Perseverance, Area Occupier, Silent Blade, Unswerving, Whetted Blade)",
-          "SkyVeil, IronBone and BlazeGaze too",
-          "Blue rune All",
-          "Rank Rune 424.8K",
-          "6 Ideals",
-          "35 Hammers",
+          "1 Ideal",
+          "9 Runas Creditadas",
+          "SilentBlade, Solidiness, Conquero, Tempered",
+          "Iron Bone, NatureShield, Violet Shield",
+          "Sky Veil, Megaquake",
         ],
       },
       {
         title: "Equipamentos",
         items: [
-          "Unbound itens: 2 Epic Ninja, 2x Armor Ninja, 2 Cap Ninja, Neck and Boots",
+          "Set Tortoise",
         ],
       },
       {
         title: "Extras",
         items: [
-          "15M Chi Pts",
-          "0 Jail",
+          "3x Ressonâncias com 3x Relics",
+          "1 BJ",
         ],
       },
     ],
@@ -381,6 +316,7 @@ const ACCOUNTS: AccountListing[] = [
 
 export default function Accounts() {
   const [selected, setSelected] = useState<AccountListing | null>(null);
+  const [imageZoomed, setImageZoomed] = useState(false);
 
   const getWhatsappUrl = (title: string) =>
     `https://wa.me/5575981382799?text=${encodeURIComponent(
@@ -431,8 +367,31 @@ export default function Accounts() {
         </div>
       </div>
 
+      {/* Image zoom overlay */}
       <AnimatePresence>
-        {selected && (
+        {imageZoomed && selected && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[60] bg-black/80 flex items-center justify-center p-4 cursor-zoom-out"
+            onClick={() => setImageZoomed(false)}
+          >
+            <motion.img
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              src={selected.image}
+              alt={selected.title}
+              className="max-w-[90vw] max-h-[85vh] object-contain rounded-lg"
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Detail modal */}
+      <AnimatePresence>
+        {selected && !imageZoomed && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -448,7 +407,12 @@ export default function Accounts() {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="relative">
-                <img src={selected.image} alt={selected.title} className="w-full h-64 object-cover" />
+                <img
+                  src={selected.image}
+                  alt={selected.title}
+                  className="w-full h-64 object-cover cursor-zoom-in hover:brightness-110 transition-all"
+                  onClick={() => setImageZoomed(true)}
+                />
                 <button onClick={() => setSelected(null)} className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/70">
                   <X size={16} />
                 </button>
