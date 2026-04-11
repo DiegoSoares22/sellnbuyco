@@ -4,7 +4,7 @@ import archerwagnerImg from "@/assets/archerwagner.jpg";
 import waterImg from "@/assets/water.jpg";
 import ninjajoaoImg from "@/assets/ninjajoao.jpg";
 import ninjamichelImg from "@/assets/ninjamichel.jpg";
-import water1Img from "@/assets/water1.jpg";
+
 
 export interface AccountListing {
   id: string;
@@ -304,21 +304,6 @@ export const ACCOUNTS: AccountListing[] = [
           "3x Ressonâncias com 3x Relics",
           "1 BJ",
         ],
-      },
-    ],
-  },
-  {
-    id: "acc-9",
-    title: "Water Full Archives",
-    badge: "NEW",
-    badgeColor: "bg-emerald-500",
-    image: water1Img,
-    className: "Taoist",
-    prices: [{ label: "Preço", value: "12K CPS" }],
-    sections: [
-      {
-        title: "Extras",
-        items: ["0 Jail"],
       },
     ],
   },
