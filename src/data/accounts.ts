@@ -307,21 +307,6 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
-  {
-    id: "acc-9",
-    title: "Water Full Archives",
-    badge: "NEW",
-    badgeColor: "bg-emerald-500",
-    image: water1Img,
-    className: "Taoist",
-    prices: [{ label: "Preço", value: "12K CPS" }],
-    sections: [
-      {
-        title: "Extras",
-        items: ["0 Jail"],
-      },
-    ],
-  },
 ];
 
 export const CLASS_OPTIONS = [
