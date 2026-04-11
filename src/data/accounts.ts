@@ -81,7 +81,7 @@ export const ACCOUNTS: AccountListing[] = [
     badgeColor: "bg-amber-500",
     image: ninja1Img,
     className: "Ninja",
-    prices: [{ label: "Preço", value: "Consultar" }],
+    prices: [{ label: "Preço", value: "200K CPS" }],
     sections: [
       {
         title: "Atributos",
@@ -167,7 +167,7 @@ export const ACCOUNTS: AccountListing[] = [
     badgeColor: "bg-amber-500",
     image: waterImg,
     className: "Taoist",
-    prices: [{ label: "Preço", value: "Consultar" }],
+    prices: [{ label: "Preço", value: "230K CPS" }],
     sections: [
       {
         title: "Atributos",
