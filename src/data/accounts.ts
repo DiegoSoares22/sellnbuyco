@@ -4,7 +4,7 @@ import archerwagnerImg from "@/assets/archerwagner.jpg";
 import waterImg from "@/assets/water.jpg";
 import ninjajoaoImg from "@/assets/ninjajoao.jpg";
 import ninjamichelImg from "@/assets/ninjamichel.jpg";
-import water1Img from "@/assets/water1.jpg";
+
 
 export interface AccountListing {
   id: string;
