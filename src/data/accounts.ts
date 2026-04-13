@@ -1,7 +1,7 @@
 import antibreakImg from "@/assets/antibreakstrike.png";
 import ninja1Img from "@/assets/ninja1.png";
 import archerwagnerImg from "@/assets/archerwagner.jpg";
-import waterImg from "@/assets/water.jpg";
+
 import ninjajoaoImg from "@/assets/ninjajoao.jpg";
 import ninjamichelImg from "@/assets/ninjamichel.jpg";
 
@@ -157,45 +157,6 @@ export const ACCOUNTS: AccountListing[] = [
       {
         title: "Extras",
         items: ["0 jail"],
-      },
-    ],
-  },
-  {
-    id: "acc-5",
-    title: "Spray Water Taoist Full Build",
-    badge: "TOP",
-    badgeColor: "bg-amber-500",
-    image: waterImg,
-    className: "Taoist",
-    prices: [{ label: "Preço", value: "230K CPS" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "70B Donation",
-          "Water Full",
-          "Astredge 95% Viodragon Club, 90% Love Forever, 5% Heart Lock",
-          "Arquivo Trojan 100K",
-          "Monk 30/27/27",
-        ],
-      },
-      {
-        title: "Runas",
-        items: ["5 Runas do Site"],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "BS e Ring coroa unbound",
-          "Hossu 2 sock 2 Gem super Unbound -5",
-        ],
-      },
-      {
-        title: "Extras",
-        items: [
-          "Ressonance 3x Immunity full",
-          "Relic 3x Immunity full + Final P-DMG",
-        ],
       },
     ],
   },
