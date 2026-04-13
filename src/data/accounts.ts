@@ -1,5 +1,5 @@
 import antibreakImg from "@/assets/antibreakstrike.png";
-import ninja1Img from "@/assets/ninja1.png";
+
 import archerwagnerImg from "@/assets/archerwagner.jpg";
 
 import ninjajoaoImg from "@/assets/ninjajoao.jpg";
