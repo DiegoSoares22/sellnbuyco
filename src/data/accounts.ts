@@ -3,7 +3,7 @@ import antibreakImg from "@/assets/antibreakstrike.png";
 import archerwagnerImg from "@/assets/archerwagner.jpg";
 
 import ninjajoaoImg from "@/assets/ninjajoao.jpg";
-import ninjamichelImg from "@/assets/ninjamichel.jpg";
+
 
 
 export interface AccountListing {
@@ -163,48 +163,6 @@ export const ACCOUNTS: AccountListing[] = [
           "3 Ressonance Relic (Worth 60k-80k CPS)",
           "101,200k CPS Worth Mythsoul Bag",
           "49k CPS Worth Mythsoul Gears All L6/L6 Ring and Neck L6/L6/L4",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-8",
-    title: "Ninja com Sigil FlashBreak",
-    badge: "NEW",
-    badgeColor: "bg-emerald-500",
-    image: ninjamichelImg,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "Consultar" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "300K Score de Runa",
-          "47K de Ninpo",
-          "100K de Trojan",
-          "Monk All Lvl 20+",
-          "33B Donation",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "1 Ideal",
-          "9 Runas Creditadas",
-          "SilentBlade, Solidiness, Conquero, Tempered",
-          "Iron Bone, NatureShield, Violet Shield",
-          "Sky Veil, Megaquake",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: ["Set Tortoise"],
-      },
-      {
-        title: "Extras",
-        items: [
-          "3x Ressonâncias com 3x Relics",
-          "1 BJ",
         ],
       },
     ],
