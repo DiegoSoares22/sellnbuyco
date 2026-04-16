@@ -166,6 +166,25 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
+  {
+    id: "acc-9",
+    title: "Warrior 72B Donate",
+    badge: "NEW",
+    badgeColor: "bg-emerald-500",
+    image: warriorImg,
+    className: "Warrior",
+    prices: [{ label: "Preço", value: "30K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: ["72B Donation"],
+      },
+      {
+        title: "Extras",
+        items: ["0 Jail"],
+      },
+    ],
+  },
 ];
 
 export const CLASS_OPTIONS = [
