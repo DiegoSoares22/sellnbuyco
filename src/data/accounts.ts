@@ -1,8 +1,7 @@
 import antibreakImg from "@/assets/antibreakstrike.png";
-
 import archerwagnerImg from "@/assets/archerwagner.jpg";
-
 import ninjajoaoImg from "@/assets/ninjajoao.jpg";
+import warriorImg from "@/assets/warrior.jpg";
 
 
 
@@ -164,6 +163,25 @@ export const ACCOUNTS: AccountListing[] = [
           "101,200k CPS Worth Mythsoul Bag",
           "49k CPS Worth Mythsoul Gears All L6/L6 Ring and Neck L6/L6/L4",
         ],
+      },
+    ],
+  },
+  {
+    id: "acc-9",
+    title: "Warrior 72B Donate",
+    badge: "NEW",
+    badgeColor: "bg-emerald-500",
+    image: warriorImg,
+    className: "Warrior",
+    prices: [{ label: "Preço", value: "30K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: ["72B Donation"],
+      },
+      {
+        title: "Extras",
+        items: ["0 Jail"],
       },
     ],
   },
