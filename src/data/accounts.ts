@@ -1,7 +1,7 @@
 import antibreakImg from "@/assets/antibreakstrike.png";
 import archerwagnerImg from "@/assets/archerwagner.jpg";
 import ninjajoaoImg from "@/assets/ninjajoao.jpg";
-import warriorImg from "@/assets/warrior.jpg";
+import archerFullCrownImg from "@/assets/archer-full-crown.jpeg";
 
 
 
@@ -167,21 +167,17 @@ export const ACCOUNTS: AccountListing[] = [
     ],
   },
   {
-    id: "acc-9",
-    title: "Warrior 72B Donate",
+    id: "acc-10",
+    title: "Archer Full Crown",
     badge: "NEW",
     badgeColor: "bg-emerald-500",
-    image: warriorImg,
-    className: "Warrior",
+    image: archerFullCrownImg,
+    className: "Archer",
     prices: [{ label: "Preço", value: "30K CPS" }],
     sections: [
       {
         title: "Atributos",
-        items: ["72B Donation"],
-      },
-      {
-        title: "Extras",
-        items: ["0 Jail"],
+        items: ["Archer Full Crown", "31B Donation", "0 Jail"],
       },
     ],
   },
