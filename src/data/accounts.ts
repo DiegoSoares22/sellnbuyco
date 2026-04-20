@@ -2,6 +2,7 @@ import antibreakImg from "@/assets/antibreakstrike.png";
 import archerwagnerImg from "@/assets/archerwagner.jpg";
 import ninjajoaoImg from "@/assets/ninjajoao.jpg";
 import archerFullCrownImg from "@/assets/archer-full-crown.jpeg";
+import ninjaBreakImg from "@/assets/ninja-break.jpeg";
 
 
 
