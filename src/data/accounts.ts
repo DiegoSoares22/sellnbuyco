@@ -182,6 +182,81 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
+  {
+    id: "acc-11",
+    title: "🥷 Ninja Break Volcano",
+    badge: "NEW",
+    badgeColor: "bg-emerald-500",
+    image: ninjaBreakImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "35K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "0 Jail",
+          "Serve Volcano 💥",
+          "28B de Donation",
+          "Full Coroa P7 fixo -7",
+          "Relic 2x P-Attack",
+          "Inner Power Full 3500 score",
+          "Jhiang Grade 15",
+          "Chi Full (P-Attack, Break, M-HP, Immunity)",
+          "Ninpo Score 39040",
+          "Astrage 85% Nivel 4",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "Rune Points 195500",
+          "Runa Creditada",
+          "Sky Veil",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "Set Tortoise",
+          "Cap",
+          "Neck",
+          "Armor",
+          "Boots",
+        ],
+      },
+      {
+        title: "Archives",
+        items: [
+          "Arquivo Trojan 77675",
+          "Arquivo Monk lvl 20 all",
+        ],
+      },
+      {
+        title: "WarDrobe",
+        items: [
+          "146 Garments",
+          "82 Mounts",
+        ],
+      },
+      {
+        title: "HairStyles",
+        items: [
+          "FantasyBall",
+          "Rat",
+          "XmasSnow",
+          "FreshLotus",
+          "RedSnow",
+          "DelicateFox",
+          "MagicPoker",
+          "NightofFear",
+          "PumpKinHead",
+          "DragonFire",
+          "Nebula",
+          "Cloud",
+        ],
+      },
+    ],
+  },
 ];
 
 export const CLASS_OPTIONS = [
