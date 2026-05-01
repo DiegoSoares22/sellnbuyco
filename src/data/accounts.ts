@@ -3,6 +3,8 @@ import archerwagnerImg from "@/assets/archerwagner.jpg";
 import ninjajoaoImg from "@/assets/ninjajoao.jpg";
 import archerFullCrownImg from "@/assets/archer-full-crown.jpeg";
 import ninjaBreakImg from "@/assets/ninja-break.jpeg";
+import archer129Img from "@/assets/archer129.jpg";
+import water22Img from "@/assets/water22.jpg";
 
 
 
@@ -254,6 +256,42 @@ export const ACCOUNTS: AccountListing[] = [
           "Nebula",
           "Cloud",
         ],
+      },
+    ],
+  },
+  {
+    id: "acc-12",
+    title: "Archer/Ninja 129",
+    badge: "NEW",
+    badgeColor: "bg-emerald-500",
+    image: archer129Img,
+    className: "Archer",
+    prices: [
+      { label: "Preço", value: "12K CPS" },
+      { label: "Ou", value: "R$ 600,00" },
+    ],
+    sections: [
+      {
+        title: "Atributos",
+        items: ["Archer/Ninja 129", "0 Jail"],
+      },
+    ],
+  },
+  {
+    id: "acc-13",
+    title: "Water Taoist 127",
+    badge: "NEW",
+    badgeColor: "bg-emerald-500",
+    image: water22Img,
+    className: "Taoist",
+    prices: [
+      { label: "Preço", value: "5K CPS" },
+      { label: "Ou", value: "R$ 250,00" },
+    ],
+    sections: [
+      {
+        title: "Atributos",
+        items: ["0 Jail"],
       },
     ],
   },
