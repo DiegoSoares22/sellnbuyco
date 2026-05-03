@@ -5,6 +5,7 @@ import archerFullCrownImg from "@/assets/archer-full-crown.jpeg";
 import ninjaBreakImg from "@/assets/ninja-break.jpeg";
 import archer129Img from "@/assets/archer129.jpg";
 import water22Img from "@/assets/water22.jpg";
+import archerBreakImg from "@/assets/archer-break.jpg";
 
 
 
