@@ -5,6 +5,7 @@ import archerFullCrownImg from "@/assets/archer-full-crown.jpeg";
 import ninjaBreakImg from "@/assets/ninja-break.jpeg";
 import archer129Img from "@/assets/archer129.jpg";
 import water22Img from "@/assets/water22.jpg";
+import archerBreakImg from "@/assets/archer-break.jpg";
 
 
 
@@ -292,6 +293,21 @@ export const ACCOUNTS: AccountListing[] = [
       {
         title: "Atributos",
         items: ["0 Jail"],
+      },
+    ],
+  },
+  {
+    id: "acc-14",
+    title: "Archer (Break Build)",
+    badge: "NEW",
+    badgeColor: "bg-emerald-500",
+    image: archerBreakImg,
+    className: "Archer",
+    prices: [{ label: "Preço", value: "8K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: ["Archer (Break Build)", "0 Jail"],
       },
     ],
   },
