@@ -296,6 +296,21 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
+  {
+    id: "acc-14",
+    title: "Archer (Break Build)",
+    badge: "NEW",
+    badgeColor: "bg-emerald-500",
+    image: archerBreakImg,
+    className: "Archer",
+    prices: [{ label: "Preço", value: "8K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: ["Archer (Break Build)", "0 Jail"],
+      },
+    ],
+  },
 ];
 
 export const CLASS_OPTIONS = [
