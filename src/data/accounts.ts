@@ -312,6 +312,25 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
+  {
+    id: "acc-15",
+    title: "Pirata (Boa oportunidade de entrada)",
+    badge: "NEW",
+    badgeColor: "bg-emerald-500",
+    image: pirataImg,
+    className: "Pirata",
+    prices: [{ label: "Preço", value: "4K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Servidor: Sunshine",
+          "0 Jail",
+          "Pode ser: Warrior / Dune / Trojan",
+        ],
+      },
+    ],
+  },
 ];
 
 export const CLASS_OPTIONS = [
