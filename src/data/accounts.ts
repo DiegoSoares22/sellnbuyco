@@ -6,6 +6,7 @@ import ninjaBreakImg from "@/assets/ninja-break.jpeg";
 import archer129Img from "@/assets/archer129.jpg";
 import water22Img from "@/assets/water22.jpg";
 import archerBreakImg from "@/assets/archer-break.jpg";
+import pirataImg from "@/assets/pirata.jpg";
 
 
 
@@ -308,6 +309,25 @@ export const ACCOUNTS: AccountListing[] = [
       {
         title: "Atributos",
         items: ["Archer (Break Build)", "0 Jail"],
+      },
+    ],
+  },
+  {
+    id: "acc-15",
+    title: "Pirata (Boa oportunidade de entrada)",
+    badge: "NEW",
+    badgeColor: "bg-emerald-500",
+    image: pirataImg,
+    className: "Pirata",
+    prices: [{ label: "Preço", value: "4K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Servidor: Sunshine",
+          "0 Jail",
+          "Pode ser: Warrior / Dune / Trojan",
+        ],
       },
     ],
   },
