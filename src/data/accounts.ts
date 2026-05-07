@@ -8,6 +8,7 @@ import water22Img from "@/assets/water22.jpg";
 import archerBreakImg from "@/assets/archer-break.jpg";
 import pirataImg from "@/assets/pirata.jpg";
 import ninjaBreak2Img from "@/assets/ninja-break-2.jpg";
+import ninjaPirateRchifImg from "@/assets/ninja-pirate-rchif.jpg";
 
 
 
