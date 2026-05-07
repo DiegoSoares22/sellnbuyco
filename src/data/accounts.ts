@@ -7,6 +7,7 @@ import archer129Img from "@/assets/archer129.jpg";
 import water22Img from "@/assets/water22.jpg";
 import archerBreakImg from "@/assets/archer-break.jpg";
 import pirataImg from "@/assets/pirata.jpg";
+import ninjaBreak2Img from "@/assets/ninja-break-2.jpg";
 
 
 
@@ -309,6 +310,42 @@ export const ACCOUNTS: AccountListing[] = [
       {
         title: "Atributos",
         items: ["Archer (Break Build)", "0 Jail"],
+      },
+    ],
+  },
+  {
+    id: "acc-16",
+    title: "Ninja Break",
+    badge: "NEW",
+    badgeColor: "bg-emerald-500",
+    image: ninjaBreak2Img,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Chi full break (strike retrátil)",
+          "260k de runa",
+          "1 runa do site (Conqueror)",
+          "Slash break",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "1 relíquia break 3x full",
+          "1 relíquia P-Attack 3x full",
+          "5 Mythsoul L5 com mutação",
+          "2 Mythsoul L4",
+        ],
+      },
+      {
+        title: "Archives",
+        items: [
+          "Arquivo de Trojan 80k",
+          "Arquivo de Monk 15/15/15",
+        ],
       },
     ],
   },
