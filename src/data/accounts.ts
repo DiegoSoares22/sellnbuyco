@@ -8,6 +8,7 @@ import water22Img from "@/assets/water22.jpg";
 import archerBreakImg from "@/assets/archer-break.jpg";
 import pirataImg from "@/assets/pirata.jpg";
 import ninjaBreak2Img from "@/assets/ninja-break-2.jpg";
+import ninjaPirateRchifImg from "@/assets/ninja-pirate-rchif.jpg";
 
 
 
@@ -364,6 +365,42 @@ export const ACCOUNTS: AccountListing[] = [
           "Servidor: Sunshine",
           "0 Jail",
           "Pode ser: Warrior / Dune / Trojan",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-17",
+    title: "Ninja/Pirata RChif",
+    badge: "NEW",
+    badgeColor: "bg-emerald-500",
+    image: ninjaPirateRchifImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "125K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "40B Donate",
+          "1 Jail",
+          "Stun e Slash Sigil",
+          "Gold Trophy",
+          "Arquivo de Pirata Full",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "3 Runas do site",
+          "1 Azul Water",
+          "335K de Runa",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "4 Itens Unbound",
+          "3 Relic Ressonance",
         ],
       },
     ],
