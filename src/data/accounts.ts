@@ -9,6 +9,7 @@ import archerBreakImg from "@/assets/archer-break.jpg";
 import pirataImg from "@/assets/pirata.jpg";
 import ninjaBreak2Img from "@/assets/ninja-break-2.jpg";
 import ninjaPirateRchifImg from "@/assets/ninja-pirate-rchif.jpg";
+import waterSellImg from "@/assets/water-sell.jpg";
 
 
 
@@ -401,6 +402,27 @@ export const ACCOUNTS: AccountListing[] = [
         items: [
           "4 Itens Unbound",
           "3 Relic Ressonance",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-18",
+    title: "Sell Water",
+    badge: "NEW",
+    badgeColor: "bg-emerald-500",
+    image: waterSellImg,
+    className: "Taoist",
+    prices: [
+      { label: "Preço", value: "14K CPS" },
+      { label: "Com Relic 2x Immu", value: "15K CPS" },
+    ],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Slot runa atualizada",
+          "Faltando 1 slot de runa pra abrir",
         ],
       },
     ],
