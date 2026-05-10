@@ -406,6 +406,27 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
+  {
+    id: "acc-18",
+    title: "Sell Water",
+    badge: "NEW",
+    badgeColor: "bg-emerald-500",
+    image: waterSellImg,
+    className: "Taoist",
+    prices: [
+      { label: "Preço", value: "14K CPS" },
+      { label: "Com Relic 2x Immu", value: "15K CPS" },
+    ],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Slot runa atualizada",
+          "Faltando 1 slot de runa pra abrir",
+        ],
+      },
+    ],
+  },
 ];
 
 export const CLASS_OPTIONS = [
