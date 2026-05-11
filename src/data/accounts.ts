@@ -10,6 +10,11 @@ import pirataImg from "@/assets/pirata.jpg";
 import ninjaBreak2Img from "@/assets/ninja-break-2.jpg";
 import ninjaPirateRchifImg from "@/assets/ninja-pirate-rchif.jpg";
 import waterSellImg from "@/assets/water-sell.jpg";
+import archerEpicImg from "@/assets/archer-epic.png";
+import archerRuneImg from "@/assets/archer-rune.png";
+import decenteWaterImg from "@/assets/decente-water.png";
+import pirataIntermediarioImg from "@/assets/pirata-intermediario.png";
+import topPirateImg from "@/assets/top-pirate.png";
 
 
 
@@ -423,6 +428,124 @@ export const ACCOUNTS: AccountListing[] = [
         items: [
           "Slot runa atualizada",
           "Faltando 1 slot de runa pra abrir",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-19",
+    title: "Decente Archer Epic",
+    badge: "EPIC",
+    badgeColor: "bg-purple-500",
+    image: archerEpicImg,
+    className: "Archer",
+    prices: [{ label: "Preço", value: "38K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 140 Sacred Star Archer P1",
+          "P-Strike: 275.80%",
+          "Break: 86.5%",
+          "Rune Points: 181.200",
+          "Huntress Artemis P7 100%",
+          "Conqueror Xiang Yu P7 100%",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-20",
+    title: "Archer Intermediário",
+    badge: "INTERMEDIÁRIO",
+    badgeColor: "bg-blue-500",
+    image: archerRuneImg,
+    className: "Archer",
+    prices: [{ label: "Preço", value: "95K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 140 Sacred Star Archer P3",
+          "P-Strike: 284.90%",
+          "Break: 89.5%",
+          "Rune Points: 270.300",
+          "Gold Trophy",
+          "Relic Brilliant Force 3x P-Strike",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-21",
+    title: "Decente Water",
+    badge: "DECENTE",
+    badgeColor: "bg-cyan-500",
+    image: decenteWaterImg,
+    className: "Taoist",
+    prices: [{ label: "Preço", value: "105K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 140 Sacred Star Water Taoist P3",
+          "P-Strike: 49.70%",
+          "Break: 47.5%",
+          "Anti-break: 289.1%",
+          "Rune Points: 259.700",
+          "Warmaster Lady P8",
+          "StarChain (Water) Max",
+          "Relic Fierce Tenacity 3x Immunity",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-22",
+    title: "Pirata Intermediário",
+    badge: "INTERMEDIÁRIO",
+    badgeColor: "bg-blue-500",
+    image: pirataIntermediarioImg,
+    className: "Pirata",
+    prices: [{ label: "Preço", value: "125K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 140 Ghost Pirate",
+          "P-Strike: 257.90%",
+          "Break: 106.5%",
+          "Rune Points: 351.500",
+          "49.4B Donation",
+          "Huntress Artemis P9 100%",
+          "Gold Trophy + Relic Brilliant Force",
+          "Unbound Items + STG Gears",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-23",
+    title: "TOP Pirate",
+    badge: "TOP",
+    badgeColor: "bg-amber-500",
+    image: topPirateImg,
+    className: "Pirata",
+    prices: [{ label: "Preço", value: "$4550 USD" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 140 Death Pirate",
+          "P-Strike: 138.30%",
+          "Break: 288.9%",
+          "Rune Points: 409.200",
+          "90.1B Donation",
+          "Huntress Artemis P9",
+          "Pirate Rank Archive #1",
+          "Unbound Gears Full",
+          "New Relic +650 P-Attack / +2.05% Break",
+          "FrostyHeart Plume + CelestialWings + EmeraldGlowWing",
         ],
       },
     ],
