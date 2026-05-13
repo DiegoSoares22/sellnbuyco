@@ -17,6 +17,7 @@ import pirataIntermediarioImg from "@/assets/pirata-intermediario.png";
 import topPirateImg from "@/assets/top-pirate.png";
 import waterIdealImg from "@/assets/water-ideal.png";
 import ninja2BreakImg from "@/assets/ninja2-break.jpg";
+import ninjaHwStunImg from "@/assets/ninja-hw-stun.jpg";
 
 
 
@@ -634,6 +635,50 @@ export const ACCOUNTS: AccountListing[] = [
           "Gears STG",
           "Steed +12 Lineage Lv. 12",
           "Ninpo Score: 38034",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-26",
+    title: "Ninja HW e Stun",
+    badge: "TOP",
+    badgeColor: "bg-amber-500",
+    image: ninjaHwStunImg,
+    className: "Ninja",
+    prices: [
+      { label: "CPS", value: "45K CPS" },
+      { label: "PIX", value: "R$ 2.000" },
+    ],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "0 Jail",
+          "Serve Crystal",
+          "18B de Donation",
+          "Full Coroa P7 Fixo -7",
+          "Inner Powerpoint 2900 Score",
+          "Chi Full (P-Attack, Immunity, Break, Max-HP)",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "Rune Score: 172K",
+          "Arquivo Monk 20 - 20 - 20",
+          "Ninpo Score: 38.700",
+          "Sigil BloodLine HW",
+          "Infinite Mist",
+          "Stun",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "WardRobe: 162",
+          "Mount: 67",
+          "Astrage 70% Nível 3",
         ],
       },
     ],
