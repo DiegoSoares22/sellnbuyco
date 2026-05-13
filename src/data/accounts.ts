@@ -18,6 +18,8 @@ import topPirateImg from "@/assets/top-pirate.png";
 import waterIdealImg from "@/assets/water-ideal.png";
 import ninja2BreakImg from "@/assets/ninja2-break.jpg";
 import ninjaHwStunImg from "@/assets/ninja-hw-stun.jpg";
+import water29biImg from "@/assets/water-29bi.jpg";
+import archer26biImg from "@/assets/archer-26bi.jpg";
 
 
 
@@ -679,6 +681,85 @@ export const ACCOUNTS: AccountListing[] = [
           "WardRobe: 162",
           "Mount: 67",
           "Astrage 70% Nível 3",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-27",
+    title: "Water 29B Donation",
+    badge: "TOP",
+    badgeColor: "bg-amber-500",
+    image: water29biImg,
+    className: "Taoist",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "29B Donation",
+          "Water Taoist",
+          "0 Jail",
+          "Trojan Archive 100K",
+          "Astread 90% - 65%",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "Rune Score: 255K",
+          "1 Ideal",
+          "Archive Max",
+          "4 Credit Yellow (Silent Blade, Impregnability, Solidness, Circle of Life)",
+          "1 Credit Blue (Soulreap Lv. 27)",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "Hossu Unbound + 2 Gem Super",
+          "Steed Unbound",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-28",
+    title: "Archer/Pirate 26B Donation",
+    badge: "TOP",
+    badgeColor: "bg-amber-500",
+    image: archer26biImg,
+    className: "Archer",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "26B Donation",
+          "Archer / Pirate",
+          "Strike / Immunity (Break on Retreat)",
+          "0 Jail",
+          "1 Cup",
+          "Astread 90% - 80%",
+          "Have Action and Footprint",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "Rune Score: 312K",
+          "1 Ideal",
+          "5 Credit Yellow",
+          "1 Credit Blue",
+          "Archer Archive: Max - 42 - Max",
+          "Pirate Archive: 4M",
+          "Monk Archive: 20 - 20 - 20",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "1 Unbound Max Violet Shield",
         ],
       },
     ],
