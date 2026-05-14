@@ -264,7 +264,7 @@ export default function Antitedio() {
       const drawFlipper = (base: {x:number;y:number}, angle: number, dir: 1 | -1) => {
         ctx.save();
         ctx.translate(base.x, base.y);
-        ctx.rotate(angle * dir === 1 ? angle : angle); // already signed for left; right uses -angle
+        ctx.rotate(angle * dir);
         ctx.fillStyle = "hsl(33 100% 55%)";
         ctx.shadowColor = "hsl(33 100% 50%)";
         ctx.shadowBlur = 10;
