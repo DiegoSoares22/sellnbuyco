@@ -10,6 +10,20 @@ export default function HeroSection() {
     >
       <div className="absolute inset-0 bg-background/80 dark:bg-background/70 glass-panel" />
 
+      {/* Floating glows */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute -top-20 -left-20 w-[420px] h-[420px] rounded-full bg-primary/25 blur-3xl"
+        animate={{ x: [0, 40, 0], y: [0, 20, 0] }}
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-32 -right-20 w-[460px] h-[460px] rounded-full bg-accent/20 blur-3xl"
+        animate={{ x: [0, -30, 0], y: [0, -20, 0] }}
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+      />
+
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
