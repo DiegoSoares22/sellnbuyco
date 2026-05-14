@@ -185,21 +185,6 @@ export const ACCOUNTS: AccountListing[] = [
     ],
   },
   {
-    id: "acc-10",
-    title: "Archer Full Crown",
-    badge: "NEW",
-    badgeColor: "bg-emerald-500",
-    image: archerFullCrownImg,
-    className: "Archer",
-    prices: [{ label: "Preço", value: "30K CPS" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: ["Archer Full Crown", "31B Donation", "0 Jail"],
-      },
-    ],
-  },
-  {
     id: "acc-11",
     title: "🥷 Ninja Break Volcano",
     badge: "NEW",
