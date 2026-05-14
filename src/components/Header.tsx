@@ -22,6 +22,7 @@ export default function Header() {
     { to: "/", label: "Shopping Mall" },
     // { to: "/recompensas", label: "Minhas Recompensas" },
     { to: "/accounts", label: "Accounts à Venda" },
+    { to: "/antitedio", label: "Antitédio" },
   ];
 
   return (
