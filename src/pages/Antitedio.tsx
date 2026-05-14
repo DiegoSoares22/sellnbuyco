@@ -63,8 +63,9 @@ export default function Antitedio() {
     const flipperW = 18;
     const leftBase = { x: 130, y: H - 80 };
     const rightBase = { x: W - 130, y: H - 80 };
-    let leftAngle = 0.35; // resting
-    let rightAngle = -0.35;
+    // Both angles share semantics: +rest tilts tip downward; -active flips up.
+    let leftAngle = 0.35;
+    let rightAngle = 0.35;
     let leftActive = false;
     let rightActive = false;
 
@@ -192,7 +193,7 @@ export default function Antitedio() {
         leftActive = !!(keys["a"] || keys["arrowleft"]);
         rightActive = !!(keys["l"] || keys["arrowright"]);
         leftAngle += ((leftActive ? up : target) - leftAngle) * 0.4;
-        rightAngle += ((rightActive ? -up : -target) - rightAngle) * 0.4;
+        rightAngle += ((rightActive ? up : target) - rightAngle) * 0.4;
 
         // Flipper collision (segment)
         const flipperHit = (base: {x:number;y:number}, angle: number, dir: 1 | -1) => {
