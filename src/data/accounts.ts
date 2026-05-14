@@ -1,7 +1,6 @@
 import antibreakImg from "@/assets/antibreakstrike.png";
 import archerwagnerImg from "@/assets/archerwagner.jpg";
 import ninjajoaoImg from "@/assets/ninjajoao.jpg";
-import archerFullCrownImg from "@/assets/archer-full-crown.jpeg";
 import ninjaBreakImg from "@/assets/ninja-break.jpeg";
 import archer129Img from "@/assets/archer129.jpg";
 import water22Img from "@/assets/water22.jpg";
@@ -181,21 +180,6 @@ export const ACCOUNTS: AccountListing[] = [
           "101,200k CPS Worth Mythsoul Bag",
           "49k CPS Worth Mythsoul Gears All L6/L6 Ring and Neck L6/L6/L4",
         ],
-      },
-    ],
-  },
-  {
-    id: "acc-10",
-    title: "Archer Full Crown",
-    badge: "NEW",
-    badgeColor: "bg-emerald-500",
-    image: archerFullCrownImg,
-    className: "Archer",
-    prices: [{ label: "Preço", value: "30K CPS" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: ["Archer Full Crown", "31B Donation", "0 Jail"],
       },
     ],
   },
