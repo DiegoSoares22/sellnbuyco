@@ -19,6 +19,8 @@ import ninja2BreakImg from "@/assets/ninja2-break.jpg";
 import ninjaHwStunImg from "@/assets/ninja-hw-stun.jpg";
 import water29biImg from "@/assets/water-29bi.jpg";
 import archer26biImg from "@/assets/archer-26bi.jpg";
+import waterOpImg from "@/assets/water-op.jpg";
+import ninjaOpBreakImg from "@/assets/ninja-op-break.jpg";
 
 
 
@@ -341,61 +343,6 @@ export const ACCOUNTS: AccountListing[] = [
         items: [
           "Arquivo de Trojan 80k",
           "Arquivo de Monk 15/15/15",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-15",
-    title: "Pirata (Boa oportunidade de entrada)",
-    badge: "NEW",
-    badgeColor: "bg-emerald-500",
-    image: pirataImg,
-    className: "Pirata",
-    prices: [{ label: "Preço", value: "4K CPS" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Servidor: Sunshine",
-          "0 Jail",
-          "Pode ser: Warrior / Dune / Trojan",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-17",
-    title: "Ninja/Pirata RChif",
-    badge: "NEW",
-    badgeColor: "bg-emerald-500",
-    image: ninjaPirateRchifImg,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "125K CPS" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "40B Donate",
-          "1 Jail",
-          "Stun e Slash Sigil",
-          "Gold Trophy",
-          "Arquivo de Pirata Full",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "3 Runas do site",
-          "1 Azul Water",
-          "335K de Runa",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "4 Itens Unbound",
-          "3 Relic Ressonance",
         ],
       },
     ],
@@ -744,6 +691,95 @@ export const ACCOUNTS: AccountListing[] = [
         title: "Equipamentos",
         items: [
           "1 Unbound Max Violet Shield",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-29",
+    title: "Ótima oportunidade Water account",
+    badge: "PREMIUM",
+    badgeColor: "bg-cyan-500",
+    image: waterOpImg,
+    className: "Taoist",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 127 Sacred Sky Water Taoist P1",
+          "5.09B Donation",
+          "Warmaster Lady P8 · Victorious Buddha P6",
+          "Conqueror Xiang Yu P2 · Huntress Artemis P6",
+          "Anti-break: 319.5% · Immunity: 237.5%",
+          "P-Strike: 89.4% · Break: 36%",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "Rune Points: 140.200",
+          "Iron Bone (+9) Yellow",
+          "Circle of Life (+9) Yellow",
+          "SoaringSpirit DragonSoul P7 · Lvl 6",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "Full set +12 (LegendStarTower, KylinBoots, OxhideArmor)",
+          "LegendHeavenFan, LightNecklace, RidingCrop, CopperKing",
+          "Steed +12 Lineage 1619",
+          "Spotless Feather wings",
+        ],
+      },
+      {
+        title: "Inner Power",
+        items: [
+          "Superb Manual · Violet Glow · Divine North Skill",
+          "The Essence of Yin",
+          "Dragon Lv99 · Turtle Lv99 · Phoenix Lv65 · Tiger Lv97",
+          "Recognition: 90% / 40%",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-30",
+    title: "OP Break ninja",
+    badge: "OP",
+    badgeColor: "bg-red-500",
+    image: ninjaOpBreakImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 140 Dusk Ninja",
+          "Break: 302.1% (+10%)",
+          "Anti-break: 72.3% · M-Strike: 62.5%",
+          "Immunity: 256.14% · P-Strike: 134.10%",
+          "Final P-Attack: 13.664 · Final M-Attack: 9.554",
+          "HP: 93.417 · Defense: 32.813",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "Rune Points: 449.100",
+          "Full Ideal Rune (Max em todos os slots)",
+          "Ninpo Score: 35.653",
+          "Sigil Album",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "Mounting Lineage Lv. 12 (+100% speed)",
+          "Set +12 full sockets",
+          "Mythsoul: 648",
+          "8 Gates of Ninja Sprint Lv.9",
         ],
       },
     ],

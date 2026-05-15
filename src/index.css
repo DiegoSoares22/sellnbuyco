@@ -85,6 +85,12 @@
   * {
     @apply border-border;
   }
+  html, body {
+    cursor: url('/cursor.png') 8 4, auto;
+  }
+  a, button, [role="button"], input[type="submit"], input[type="button"], .cursor-pointer {
+    cursor: url('/cursor.png') 8 4, pointer;
+  }
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
