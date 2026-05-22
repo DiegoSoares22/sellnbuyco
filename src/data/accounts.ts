@@ -268,8 +268,8 @@ export const ACCOUNTS: AccountListing[] = [
     image: archer129Img,
     className: "Archer",
     prices: [
-      { label: "Preço", value: "12K CPS" },
-      { label: "Ou", value: "R$ 600,00" },
+      { label: "Preço", value: "9k CPS" },
+      { label: "Ou", value: "R$ 450.00" },
     ],
     sections: [
       {
@@ -286,8 +286,8 @@ export const ACCOUNTS: AccountListing[] = [
     image: water22Img,
     className: "Taoist",
     prices: [
-      { label: "Preço", value: "5K CPS" },
-      { label: "Ou", value: "R$ 250,00" },
+      { label: "Preço", value: "3K CPS" },
+      { label: "Ou", value: "R$ 150,00" },
     ],
     sections: [
       {
@@ -308,42 +308,6 @@ export const ACCOUNTS: AccountListing[] = [
       {
         title: "Atributos",
         items: ["Archer (Break Build)", "0 Jail"],
-      },
-    ],
-  },
-  {
-    id: "acc-16",
-    title: "Ninja Break",
-    badge: "NEW",
-    badgeColor: "bg-emerald-500",
-    image: ninjaBreak2Img,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "A combinar" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Chi full break (strike retrátil)",
-          "260k de runa",
-          "1 runa do site (Conqueror)",
-          "Slash break",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "1 relíquia break 3x full",
-          "1 relíquia P-Attack 3x full",
-          "5 Mythsoul L5 com mutação",
-          "2 Mythsoul L4",
-        ],
-      },
-      {
-        title: "Archives",
-        items: [
-          "Arquivo de Trojan 80k",
-          "Arquivo de Monk 15/15/15",
-        ],
       },
     ],
   },
@@ -524,50 +488,6 @@ export const ACCOUNTS: AccountListing[] = [
           "Relic 3x Immunity (+0.20% cada)",
           "Socket Gem: SuperInfinityGem x2",
           "44.4B Donation",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-25",
-    title: "Ninja Break",
-    badge: "BREAK",
-    badgeColor: "bg-red-500",
-    image: ninja2BreakImg,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "50K CPS" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Lv. 140 Sacred Star Ninja P4",
-          "P-Strike: 117.60%",
-          "Break: 305.5%",
-          "Anti-break: 61.0%",
-          "Immunity: 226.87%",
-          "0 Jail",
-          "VIP 7 Owner",
-          "Frost Phoenix Wings",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "Rune Points: 260.100",
-          "260K Runa",
-          "1 Runa Rara (Conqueror's Blade)",
-          "1 Ideal",
-          "Stun + Slash Sigil",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "40B Donation",
-          "Gold Trophy Lv. 15",
-          "Gears STG",
-          "Steed +12 Lineage Lv. 12",
-          "Ninpo Score: 38034",
         ],
       },
     ],
