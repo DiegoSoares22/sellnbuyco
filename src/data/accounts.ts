@@ -355,28 +355,6 @@ export const ACCOUNTS: AccountListing[] = [
     ],
   },
   {
-    id: "acc-20",
-    title: "Archer Intermediário",
-    badge: "INTERMEDIÁRIO",
-    badgeColor: "bg-blue-500",
-    image: archerRuneImg,
-    className: "Archer",
-    prices: [{ label: "Preço", value: "95K CPS" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Lv. 140 Sacred Star Archer P3",
-          "P-Strike: 284.90%",
-          "Break: 89.5%",
-          "Rune Points: 270.300",
-          "Gold Trophy",
-          "Relic Brilliant Force 3x P-Strike",
-        ],
-      },
-    ],
-  },
-  {
     id: "acc-21",
     title: "Decente Water",
     badge: "DECENTE",
