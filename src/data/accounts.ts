@@ -21,6 +21,7 @@ import water29biImg from "@/assets/water-29bi.jpg";
 import archer26biImg from "@/assets/archer-26bi.jpg";
 import waterOpImg from "@/assets/water-op.jpg";
 import ninjaOpBreakImg from "@/assets/ninja-op-break.jpg";
+import opNinjaHwStunImg from "@/assets/op-ninja-hw-stun.png";
 
 
 
@@ -678,6 +679,50 @@ export const ACCOUNTS: AccountListing[] = [
           "Set +12 full sockets",
           "Mythsoul: 648",
           "8 Gates of Ninja Sprint Lv.9",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-31",
+    title: "OP Ninja for sale",
+    badge: "OP",
+    badgeColor: "bg-red-500",
+    image: opNinjaHwStunImg,
+    className: "Ninja",
+    prices: [
+      { label: "Sem MythSoul/Bag", value: "200K CPS" },
+      { label: "Com tudo incluso", value: "250K CPS" },
+    ],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "HeavenWonders + Stun",
+          "63B Donate",
+          "Relic Ressonance done",
+          "301K Rune Score",
+          "Bound Gears",
+          "1 Jail",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "5 Credit Yellow Runes",
+          "Circle of Life",
+          "Solidness",
+          "Conqueror Blade",
+          "Tempered Glaive",
+          "Whetted Blade",
+          "1 Unbound Yellow Rune +8",
+        ],
+      },
+      {
+        title: "WardRobe",
+        items: [
+          "167 Garments",
+          "106 Mounts",
         ],
       },
     ],
