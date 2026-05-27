@@ -8,6 +8,7 @@ import archerBreakImg from "@/assets/archer-break.jpg";
 import pirataImg from "@/assets/pirata.jpg";
 import ninjaBreak2Img from "@/assets/ninja-break-2.jpg";
 import ninjaPirateRchifImg from "@/assets/ninja-pirate-rchif.jpg";
+import ninja453kImg from "@/assets/ninja-453k.jpg";
 import waterSellImg from "@/assets/water-sell.jpg";
 import archerEpicImg from "@/assets/archer-epic.png";
 import archerRuneImg from "@/assets/archer-rune.png";
@@ -122,40 +123,32 @@ export const ACCOUNTS: AccountListing[] = [
   },
   {
     id: "acc-6",
-    title: "Ninja 437K Rune Score Premium",
+    title: "Ninja 453K Rune Score with Strike Booster",
     badge: "HOT",
     badgeColor: "bg-red-500",
-    image: ninjajoaoImg,
+    image: ninja453kImg,
     className: "Ninja",
-    prices: [{ label: "Preço", value: "650K CPS" }],
+    prices: [{ label: "Preço", value: "A combinar" }],
     sections: [
       {
         title: "Atributos",
         items: [
-          "Sell Ninja 437k Rune Score",
-          "Price 650k CPS Without Mythsouls And Garment 2 P-Strike",
-          "or 820k With Garment and Mythsouls",
-          "210B Donation",
-          "Supreme VIP",
+          "Sell Ninja 453k Rune Score with Strike Booster",
+          "211B Donate",
           "HolyGrail",
           "HavensWonder",
+          "Supreme VIP",
+          "107k CPS Bound",
           "Horse 60k Lineage",
-          "90k CPS Bound",
         ],
       },
       {
         title: "Runas",
         items: [
-          "7 Yellow Credit Runes",
-          "All Blue runes",
+          "10 Yellow Credit Runes",
+          "All Blue Runes",
           "8 Ideals",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "All Gears 9c Unbound Except Ring, Neck and Wings (300k Progress) Bound",
-          "Garment 2 P-Strike",
+          "3 Ressonance Relic (Worth 60k-80k CPS)",
         ],
       },
       {
@@ -165,7 +158,7 @@ export const ACCOUNTS: AccountListing[] = [
           "Archer Max/21/38",
           "Warrior 40/max/35",
           "DW 1.8M",
-          "Monk 26/26/30",
+          "Monk 46/44/43",
         ],
       },
       {
@@ -173,15 +166,25 @@ export const ACCOUNTS: AccountListing[] = [
         items: [
           "Viodragon Club 95%",
           "Love Forever 90%",
-          "Heart Lock 80%",
+          "Heart Lock 85%",
         ],
       },
       {
-        title: "Extras",
+        title: "Equipamentos",
         items: [
-          "3 Ressonance Relic (Worth 60k-80k CPS)",
-          "101,200k CPS Worth Mythsoul Bag",
-          "49k CPS Worth Mythsoul Gears All L6/L6 Ring and Neck L6/L6/L4",
+          "All Gears 9c Unbound Except Ring, Neck and Wings (300k Progress) Bound",
+          "Armor and Boots L6 Refinery Permanent",
+        ],
+      },
+      {
+        title: "Rare Wings",
+        items: [
+          "Flame Papilo (Golden)",
+          "HolyWings",
+          "Wings of Slaughter",
+          "LoveWings",
+          "Love-Sound",
+          "Supreme (Holy Grail)",
         ],
       },
     ],
@@ -294,21 +297,6 @@ export const ACCOUNTS: AccountListing[] = [
       {
         title: "Atributos",
         items: ["0 Jail"],
-      },
-    ],
-  },
-  {
-    id: "acc-14",
-    title: "Archer (Break Build)",
-    badge: "NEW",
-    badgeColor: "bg-emerald-500",
-    image: archerBreakImg,
-    className: "Archer",
-    prices: [{ label: "Preço", value: "8K CPS" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: ["Archer (Break Build)", "0 Jail"],
       },
     ],
   },
