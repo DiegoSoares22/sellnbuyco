@@ -8,7 +8,7 @@ import archerBreakImg from "@/assets/archer-break.jpg";
 import pirataImg from "@/assets/pirata.jpg";
 import ninjaBreak2Img from "@/assets/ninja-break-2.jpg";
 import ninjaPirateRchifImg from "@/assets/ninja-pirate-rchif.jpg";
-import ninja453kImg from "@/assets/ninja-453k.jpg";
+import ninja450kImg from "@/assets/ninja-450k.jpg";
 import waterSellImg from "@/assets/water-sell.jpg";
 import archerEpicImg from "@/assets/archer-epic.png";
 import archerRuneImg from "@/assets/archer-rune.png";
@@ -123,32 +123,25 @@ export const ACCOUNTS: AccountListing[] = [
   },
   {
     id: "acc-6",
-    title: "Ninja 453K Rune Score with Strike Booster",
+    title: "Ninja 450k Rune Score",
     badge: "HOT",
     badgeColor: "bg-red-500",
-    image: ninja453kImg,
+    image: ninja450kImg,
     className: "Ninja",
-    prices: [{ label: "Preço", value: "A combinar" }],
+    prices: [{ label: "Preço", value: "650k CPs (Sem MythSouls & Garment de 2% Strike)" }],
     sections: [
       {
         title: "Atributos",
         items: [
-          "Sell Ninja 453k Rune Score with Strike Booster",
-          "211B Donate",
           "HolyGrail",
+          "211B Donate",
           "HavensWonder",
-          "Supreme VIP",
-          "107k CPS Bound",
-          "Horse 60k Lineage",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
           "10 Yellow Credit Runes",
-          "All Blue Runes",
+          "All Blue runes",
           "8 Ideals",
-          "3 Ressonance Relic (Worth 60k-80k CPS)",
+          "3 Ressonance Relic (Worth 60k-80k cps)",
+          "107kcps Bound",
+          "Supreme Vip",
         ],
       },
       {
@@ -172,19 +165,20 @@ export const ACCOUNTS: AccountListing[] = [
       {
         title: "Equipamentos",
         items: [
-          "All Gears 9c Unbound Except Ring, Neck and Wings (300k Progress) Bound",
+          "All Gears 9c Unbound Execept Ring,Neck and Wings(300k Progress) Bound",
           "Armor and Boots L6 Refinery Permanent",
+          "Horse 60k Lineage",
         ],
       },
       {
         title: "Rare Wings",
         items: [
-          "Flame Papilo (Golden)",
+          "Flame Papilo(Golden)",
           "HolyWings",
-          "Wings of Slaughter",
+          "WingsofSlaughter",
           "LoveWings",
           "Love-Sound",
-          "Supreme (Holy Grail)",
+          "Supreme(Holy Grail)",
         ],
       },
     ],
