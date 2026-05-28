@@ -9,7 +9,7 @@ import pirataImg from "@/assets/pirata.jpg";
 import ninjaBreak2Img from "@/assets/ninja-break-2.jpg";
 import ninjaPirateRchifImg from "@/assets/ninja-pirate-rchif.jpg";
 import ninja450kImg from "@/assets/ninja-450k.jpg";
-import waterSellImg from "@/assets/water-sell.jpg";
+
 import archerEpicImg from "@/assets/archer-epic.png";
 import archerRuneImg from "@/assets/archer-rune.png";
 import decenteWaterImg from "@/assets/decente-water.png";
@@ -294,27 +294,7 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
-  {
-    id: "acc-18",
-    title: "Sell Water",
-    badge: "NEW",
-    badgeColor: "bg-emerald-500",
-    image: waterSellImg,
-    className: "Taoist",
-    prices: [
-      { label: "Preço", value: "14K CPS" },
-      { label: "Com Relic 2x Immu", value: "15K CPS" },
-    ],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Slot runa atualizada",
-          "Faltando 1 slot de runa pra abrir",
-        ],
-      },
-    ],
-  },
+
   {
     id: "acc-19",
     title: "Decente Archer Epic",
