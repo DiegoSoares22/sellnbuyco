@@ -708,6 +708,7 @@ export const ACCOUNTS: AccountListing[] = [
         items: [
           "Ninja C/ HW Full Crown",
           "32B de Donation",
+          "0 Jail",
           "Chi full (Break / HP / Immunity / P-attack)",
           "36k de Ninpo",
           "Inner power full",
