@@ -23,6 +23,8 @@ import archer26biImg from "@/assets/archer-26bi.jpg";
 import waterOpImg from "@/assets/water-op.jpg";
 import ninjaOpBreakImg from "@/assets/ninja-op-break.jpg";
 import opNinjaHwStunImg from "@/assets/op-ninja-hw-stun.png";
+import ninjaHwFullCrownImg from "@/assets/ninja-hw-full-crown.jpg";
+import waterFullUnboundImg from "@/assets/water-full-unbound.jpg";
 
 
 
@@ -685,6 +687,93 @@ export const ACCOUNTS: AccountListing[] = [
         items: [
           "167 Garments",
           "106 Mounts",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-32",
+    title: "Ninja HW Full Crown",
+    badge: "TOP",
+    badgeColor: "bg-amber-500",
+    image: ninjaHwFullCrownImg,
+    className: "Ninja",
+    prices: [
+      { label: "CPS", value: "80K CPS" },
+      { label: "PIX", value: "R$ 4.000,00" },
+    ],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Ninja C/ HW Full Crown",
+          "32B de Donation",
+          "Chi full (Break / HP / Immunity / P-attack)",
+          "36k de Ninpo",
+          "Inner power full",
+          "Outlet 161/92",
+          "Acessório Clan Draco + Action",
+          "Astrege lvl 4 - lvl 3",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "249.500 Score de runa",
+          "Credit rune",
+          "SilentBlade",
+          "Tempered",
+          "IronBone",
+          "Main Sigils lvl Max",
+        ],
+      },
+      {
+        title: "Eon Spirit & Archives",
+        items: [
+          "Eon Spirit (Archer lvl 9 / Warrior lvl 8 / Taoist lvl 8)",
+          "Monk Archives all 20-20-20",
+        ],
+      },
+      {
+        title: "Observações",
+        items: [
+          "Não acompanha Relíquia",
+          "Não acompanha Set de Mythsoul",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-33",
+    title: "Water Full Unbound",
+    badge: "NEW",
+    badgeColor: "bg-emerald-500",
+    image: waterFullUnboundImg,
+    className: "Taoist",
+    prices: [{ label: "Preço", value: "80K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "35 Bi de Donate",
+          "Arquivos Water Full",
+          "Arquivos Monk 20-20-20",
+          "0 Jail",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "271.600 Ranking de Runa",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "Hossu 2 Socket Gem Super -3 Unbound",
+          "Relíquia Full 3 Immunity",
+          "Gold Trophy",
+          "2 Asas Raras",
         ],
       },
     ],
