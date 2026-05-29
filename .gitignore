@@ -20,6 +20,9 @@ build/
 .env.test.local
 .env.production.local
 .env*.local
+.env
+.env.*
+!.env.example
 
 # OS
 Thumbs.db
