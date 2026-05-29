@@ -26,3 +26,17 @@ build/
 
 # OS
 Thumbs.db
+
+# Lovable (configurações locais da plataforma)
+.lovable/
+
+# Supabase local (migrations e config local não devem subir)
+supabase/.temp/
+supabase/config.toml
+
+# Vercel
+.vercel/
+
+# Testes
+test-results/
+playwright-report/
