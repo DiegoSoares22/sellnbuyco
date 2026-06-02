@@ -780,6 +780,39 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
+  {
+    id: "acc-34",
+    title: "Ninja Perfeição 648 - Honor",
+    badge: "NEW",
+    badgeColor: "bg-emerald-500",
+    image: ninjaLucianoImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Perfeição 648",
+          "Chi full",
+          "Inner power faltando as últimas páginas",
+          "Servidor: Honor",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "160K de Rune Score",
+          "Faltando 1 slot de runa com 34 hammer",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "1 Epic Unbound P4 fixo",
+        ],
+      },
+    ],
+  },
 ];
 
 export const CLASS_OPTIONS = [
