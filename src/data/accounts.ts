@@ -1,6 +1,7 @@
 import antibreakImg from "@/assets/antibreakstrike.png";
 import archerwagnerImg from "@/assets/archerwagner.jpg";
 import ninjajoaoImg from "@/assets/ninjajoao.jpg";
+import ninjaBreakImg from "@/assets/ninja-break.jpeg";
 import archer129Img from "@/assets/archer129.jpg";
 import water22Img from "@/assets/water22.jpg";
 import archerBreakImg from "@/assets/archer-break.jpg";
