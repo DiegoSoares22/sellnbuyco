@@ -25,6 +25,7 @@ import ninjaOpBreakImg from "@/assets/ninja-op-break.jpg";
 import opNinjaHwStunImg from "@/assets/op-ninja-hw-stun.png";
 import ninjaHwFullCrownImg from "@/assets/ninja-hw-full-crown.jpg";
 import waterFullUnboundImg from "@/assets/water-full-unbound.jpg";
+import ninjaLucianoImg from "@/assets/ninja-luciano.jpg";
 
 
 
@@ -775,6 +776,39 @@ export const ACCOUNTS: AccountListing[] = [
           "Relíquia Full 3 Immunity",
           "Gold Trophy",
           "2 Asas Raras",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-34",
+    title: "Ninja Perfeição 648 - Honor",
+    badge: "NEW",
+    badgeColor: "bg-emerald-500",
+    image: ninjaLucianoImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Perfeição 648",
+          "Chi full",
+          "Inner power faltando as últimas páginas",
+          "Servidor: Honor",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "160K de Rune Score",
+          "Faltando 1 slot de runa com 34 hammer",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "1 Epic Unbound P4 fixo",
         ],
       },
     ],
