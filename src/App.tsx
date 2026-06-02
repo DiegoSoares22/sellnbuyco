@@ -8,7 +8,6 @@ import Index from "./pages/Index";
 import Rewards from "./pages/Rewards";
 import Accounts from "./pages/Accounts";
 import Admin from "./pages/Admin";
-import Antitedio from "./pages/Antitedio";
 import NotFound from "./pages/NotFound";
 import MusicPlayer from "./components/MusicPlayer";
 
@@ -28,7 +27,6 @@ const App = () => (
             <Route path="/accounts" element={<Accounts />} />
             <Route path="/accounts/:accountId" element={<Accounts />} />
             <Route path="/admin" element={<Admin />} />
-            <Route path="/antitedio" element={<Antitedio />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <MusicPlayer />
