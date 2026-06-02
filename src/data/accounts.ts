@@ -8,7 +8,6 @@ import archerBreakImg from "@/assets/archer-break.jpg";
 import pirataImg from "@/assets/pirata.jpg";
 import ninjaBreak2Img from "@/assets/ninja-break-2.jpg";
 import ninjaPirateRchifImg from "@/assets/ninja-pirate-rchif.jpg";
-import ninja450kImg from "@/assets/ninja-450k.jpg";
 
 import archerEpicImg from "@/assets/archer-epic.png";
 import archerRuneImg from "@/assets/archer-rune.png";
@@ -121,68 +120,6 @@ export const ACCOUNTS: AccountListing[] = [
       {
         title: "Extras",
         items: ["0 jail"],
-      },
-    ],
-  },
-  {
-    id: "acc-6",
-    title: "Ninja 450k Rune Score",
-    badge: "HOT",
-    badgeColor: "bg-red-500",
-    image: ninja450kImg,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "650k CPs (Sem MythSouls & Garment de 2% Strike)" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "HolyGrail",
-          "211B Donate",
-          "HavensWonder",
-          "10 Yellow Credit Runes",
-          "All Blue runes",
-          "8 Ideals",
-          "3 Ressonance Relic (Worth 60k-80k cps)",
-          "107kcps Bound",
-          "Supreme Vip",
-        ],
-      },
-      {
-        title: "Archives",
-        items: [
-          "Trojan 100k",
-          "Archer Max/21/38",
-          "Warrior 40/max/35",
-          "DW 1.8M",
-          "Monk 46/44/43",
-        ],
-      },
-      {
-        title: "Astredge",
-        items: [
-          "Viodragon Club 95%",
-          "Love Forever 90%",
-          "Heart Lock 85%",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "All Gears 9c Unbound Execept Ring,Neck and Wings(300k Progress) Bound",
-          "Armor and Boots L6 Refinery Permanent",
-          "Horse 60k Lineage",
-        ],
-      },
-      {
-        title: "Rare Wings",
-        items: [
-          "Flame Papilo(Golden)",
-          "HolyWings",
-          "WingsofSlaughter",
-          "LoveWings",
-          "Love-Sound",
-          "Supreme(Holy Grail)",
-        ],
       },
     ],
   },
