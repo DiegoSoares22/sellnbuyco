@@ -25,6 +25,9 @@ import opNinjaHwStunImg from "@/assets/op-ninja-hw-stun.png";
 import ninjaHwFullCrownImg from "@/assets/ninja-hw-full-crown.jpg";
 import waterFullUnboundImg from "@/assets/water-full-unbound.jpg";
 import ninjaLucianoImg from "@/assets/ninja-luciano.jpg";
+import monkEagleImg from "@/assets/monk-eagle.png";
+import ninjaMercuryImg from "@/assets/ninja-mercury.png";
+import archerFatalImg from "@/assets/archer-fatal.png";
 
 
 
