@@ -28,6 +28,7 @@ import ninjaLucianoImg from "@/assets/ninja-luciano.jpg";
 import monkEagleImg from "@/assets/monk-eagle.png";
 import ninjaMercuryImg from "@/assets/ninja-mercury.png";
 import archerFatalImg from "@/assets/archer-fatal.png";
+import ninjaHwSupermanImg from "@/assets/ninja-hw-superman.png";
 
 
 
