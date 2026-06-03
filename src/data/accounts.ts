@@ -753,6 +753,141 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
+  {
+    id: "acc-35",
+    title: "Monk Eagle Sacred Star P1",
+    badge: "NEW",
+    badgeColor: "bg-emerald-500",
+    image: monkEagleImg,
+    className: "Monk",
+    prices: [{ label: "Preço", value: "13K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 99 Sacred Star Monk P1",
+          "5.245B Donation",
+          "Total Rating: 101.500",
+          "P-Strike: 124.60% · Break: 229.5%",
+          "Anti-break: 91.1% · Immunity: 235.20%",
+          "+Final P-Attack: 10.399 · +Final M-Attack: 6.899",
+          "Mythsoul: 648",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "Rune Points: 172.900",
+          "Violet Shield (+9) Max",
+          "SoulChant (+6) · FineRain (+14) · Rampage (+8)",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "LegendDemonScythe (+12) - P7ScytheSoul",
+          "LegendNetherArmor (+12) - LightArmor",
+          "LegendMoonHeadgear (+12) - P7HeadgearSoul [Immunity]",
+          "Relic HeartlessSeal - 2x P-Attack +305/+303",
+        ],
+      },
+      {
+        title: "Inner Power",
+        items: [
+          "Dragon Lv99 · Tiger Lv99",
+          "Divine North Skill A:8 B:6 C:9",
+          "Violet Glow A:5 B:0 C:0",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-36",
+    title: "Ninja Mercury Sacred Sky P3",
+    badge: "NEW",
+    badgeColor: "bg-emerald-500",
+    image: ninjaMercuryImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "8K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 140 Sacred Sky Ninja P3",
+          "26.582B Donation",
+          "P-Strike: 107.70% · Break: 276.0%",
+          "Anti-break: 58.1% · Immunity: 217.20%",
+          "+Final P-Attack: 10.374 · +Final M-Attack: 6.864",
+          "Mythsoul: 506",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "Rune Points: 138.800",
+          "Ninpo Score: 26.667",
+          "Total Rating: 37.365",
+          "Ninja Sprint completo",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "LegendSkyHammer (+12) - P7 1-handedSoul",
+          "Relic HeartlessSeal - 2x P-Attack +278/+276 · Break +1.94%",
+          "Mount Mercury · Astredge 90%/25%",
+          "Eon Spirit P7/P8/P5/P6 100%",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-37",
+    title: "Archer FatalBlow Sacred Sea P9",
+    badge: "NEW",
+    badgeColor: "bg-emerald-500",
+    image: archerFatalImg,
+    className: "Archer",
+    prices: [{ label: "Preço", value: "14K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 129 Sacred Sea Archer P9",
+          "14.548B Donation",
+          "P-Strike: 252.10% · Break: 83.9%",
+          "Anti-break: 218.6% · Immunity: 150.15%",
+          "+Final P-Attack: 10.329 · +Final M-Attack: 6.829",
+          "Max-HP +3500 · P-Strike +20% · Anti-Break +20% · Immunity +20%",
+          "Mythsoul: 429",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "Rune Points: 127.500",
+          "Astredge 95% / 65%",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "LegendMulberryBow (+5) - Archer'sBow InternArcher",
+          "FatalBlow mount",
+          "Garments: Cloudbloom (Sweet) · Ashen Xmas (Miracle)",
+          "Phoenix Grace pet",
+        ],
+      },
+      {
+        title: "Inner Power",
+        items: [
+          "Tiger Lv99 · Turtle Lv28",
+          "Superb Manual · Violet Glow · Divine North Skill",
+          "Stone Cracker Lv54 · Cold Moon Lv6 · Thorn Cutter Lv48",
+        ],
+      },
+    ],
+  },
 ];
 
 export const CLASS_OPTIONS = [
@@ -760,6 +895,7 @@ export const CLASS_OPTIONS = [
   "Warrior",
   "Taoist",
   "Archer",
+  "Monk",
   "DragonWarrior",
   "Thunder Strike",
   "Trojan",
