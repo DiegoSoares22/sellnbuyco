@@ -889,6 +889,60 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
+  {
+    id: "acc-38",
+    title: "Ninja HW Superman Sacred Star P3",
+    badge: "TOP",
+    badgeColor: "bg-amber-500",
+    image: ninjaHwSupermanImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "65K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 99 Sacred Star Ninja P3",
+          "36.451B Donation · Noble Rank: Duke",
+          "Ranking: 28",
+          "Break: 329.8% (com bônus) / 294.8% base",
+          "Anti-break: 72.3% · Immunity: 231.50%",
+          "P-Strike: 107.70% · M-Strike: 48.50%",
+          "+Final P-Attack: 12.079 · +Final M-Attack: 8.649",
+          "Mythsoul: 648",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "Rune Points: 249.200",
+          "Ninpo Score: 45.158",
+          "Ideal Rune full Max",
+          "Ninja Sprint Gates lvl 9",
+          "Slash Sigil · FlashSlash Sigil (Prowess)",
+          "My Potency: 345.280",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "Relic HeartlessSeal (Star Shock) - 2x P-Attack +650/+650",
+          "Break +2.24% (x3)",
+          "Pets: Sandsong · Phoenix Grace",
+          "Astredge 95% / 70%",
+          "Inventory: 3.261.174 silver · 11.243 bound",
+        ],
+      },
+      {
+        title: "Inner Power",
+        items: [
+          "Tiger Lv99 · Turtle Lv92 · Phoenix Lv99 · Dragon Lv99 - todos 400",
+          "Superb Manual · Violet Glow · Divine North Skill (Perfect)",
+          "Inner Power Concepts: Perfect em todas as páginas principais",
+          "Eon Spirit P8/P7/P8 · P4/P7/P5 · P4/P3/P3 100%",
+        ],
+      },
+    ],
+  },
 ];
 
 export const CLASS_OPTIONS = [
