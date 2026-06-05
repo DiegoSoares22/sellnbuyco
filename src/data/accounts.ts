@@ -977,7 +977,7 @@ export const ACCOUNTS: AccountListing[] = [
     badge: "NOVO",
     badgeColor: "bg-emerald-500",
     image: waterLowImg,
-    className: "Water Taoist",
+    className: "Taoist",
     prices: [{ label: "Preço", value: "5K CPS" }],
     sections: [
       {
