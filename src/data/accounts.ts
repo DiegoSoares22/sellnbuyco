@@ -31,6 +31,7 @@ import archerFatalImg from "@/assets/archer-fatal.png";
 import ninjaHwSupermanImg from "@/assets/ninja-hw-superman.png";
 import ninjaBreakLowImg from "@/assets/ninja-break-low.png";
 import waterLowImg from "@/assets/water-low.png";
+import waterDellImg from "@/assets/water-dell.png";
 
 
 
@@ -985,6 +986,45 @@ export const ACCOUNTS: AccountListing[] = [
         items: [
           "Lv. 98 Sacred Sea Water Taoist P5",
           "Conta low level para evoluir",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-41",
+    title: "Decent Water Taoist 196k Rune Score",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: waterDellImg,
+    className: "Taoist",
+    prices: [{ label: "Preço", value: "25K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 140 Sacred Star Water Taoist P1",
+          "Rune Score: 196.000 (Iron Bone & Nature Shield)",
+          "0 Jail",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "1 slot de runa faltando",
+          "Só 51 hammers para completar",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "Hossu com 2 gens Super -3",
+        ],
+      },
+      {
+        title: "Archives",
+        items: [
+          "Max Taoist Archives",
+          "Monk Archives: 20-20-20",
         ],
       },
     ],
