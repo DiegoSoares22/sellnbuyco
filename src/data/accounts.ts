@@ -29,6 +29,8 @@ import monkEagleImg from "@/assets/monk-eagle.png";
 import ninjaMercuryImg from "@/assets/ninja-mercury.png";
 import archerFatalImg from "@/assets/archer-fatal.png";
 import ninjaHwSupermanImg from "@/assets/ninja-hw-superman.png";
+import ninjaBreakLowImg from "@/assets/ninja-break-low.png";
+import waterLowImg from "@/assets/water-low.png";
 
 
 
@@ -939,6 +941,50 @@ export const ACCOUNTS: AccountListing[] = [
           "Superb Manual · Violet Glow · Divine North Skill (Perfect)",
           "Inner Power Concepts: Perfect em todas as páginas principais",
           "Eon Spirit P8/P7/P8 · P4/P7/P5 · P4/P3/P3 100%",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-39",
+    title: "Ninja Break Low Lvl",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaBreakLowImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "14K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 109 Sacred Star Ninja P1",
+          "CHI Full",
+          "620 packs de Arena",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "Arma de 2 mãos 9 coroas 👑",
+          "Roupa e Cap de Archer +6 Dual",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-40",
+    title: "Water Low Lv",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: waterLowImg,
+    className: "Water Taoist",
+    prices: [{ label: "Preço", value: "5K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 98 Sacred Sea Water Taoist P5",
+          "Conta low level para evoluir",
         ],
       },
     ],
