@@ -1037,7 +1037,7 @@ export const ACCOUNTS: AccountListing[] = [
     badgeColor: "bg-emerald-500",
     image: ninjaHwBreakBuildImg,
     className: "Ninja",
-    prices: [{ label: "Preço", value: "A combinar" }],
+    prices: [{ label: "Preço", value: "42k CPs (Negociável)" }],
     sections: [
       {
         title: "Atributos",
