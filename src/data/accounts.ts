@@ -32,7 +32,7 @@ import ninjaHwSupermanImg from "@/assets/ninja-hw-superman.png";
 import ninjaBreakLowImg from "@/assets/ninja-break-low.png";
 import waterLowImg from "@/assets/water-low.png";
 import waterDellImg from "@/assets/water-dell.png";
-import ninjaHwBreakBuildImg from "@/assets/ninja-heavenwonders-break.png";
+
 
 
 
@@ -1026,23 +1026,6 @@ export const ACCOUNTS: AccountListing[] = [
         items: [
           "Max Taoist Archives",
           "Monk Archives: 20-20-20",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-42",
-    title: "Ninja Heavenwonders | Break Build",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: ninjaHwBreakBuildImg,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "42k CPs (Negociável)" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "1 botjail",
         ],
       },
     ],
