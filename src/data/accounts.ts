@@ -1,4 +1,3 @@
-import antibreakImg from "@/assets/antibreakstrike.png";
 import archerwagnerImg from "@/assets/archerwagner.jpg";
 import ninjajoaoImg from "@/assets/ninjajoao.jpg";
 import ninjaBreakImg from "@/assets/ninja-break.jpeg";
@@ -49,62 +48,6 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
-  {
-    id: "acc-1",
-    title: "Amazing Ninja Strike Anti Break",
-    badge: "HOT",
-    badgeColor: "bg-red-500",
-    image: antibreakImg,
-    className: "Ninja",
-    prices: [
-      { label: "Sem MythSoul", value: "315K CPS" },
-      { label: "Com MythSoul", value: "335K CPS" },
-    ],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "103,6 Bil Donation",
-          "Astredge 100% - 95% - 35%",
-          "Eonspirit (Archer Lv8) (Water Lv8) (Warrior Lv8) (Monk Lv6)",
-          "Ninpo 28K no have HW",
-          "Archive Trojan 100K",
-          "Archive Monk 20 - 21 - 20",
-          "Inner power full",
-          "Chi full, retrat immunity with 23m chi",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "Credit Runes Yellow (+9 todas)",
-          "Soldiness",
-          "Conquerer's Blade",
-          "Circle Of Life",
-          "Impregnability",
-          "Tempered",
-          "Perseverance",
-          "SkyVeil, IronBone, BlazeGaze",
-          "Blue rune missing only: SoulReap, WaveBreak",
-          "Rank Rune: 402,2K",
-          "Strike Buster",
-          "3 Ideals",
-          "139 Hammers",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: ["1 Epic Ninja Unbound", "Boots"],
-      },
-      {
-        title: "Extras",
-        items: [
-          "Relic full strike anti-break (perfect resonance)",
-          "1 Jail",
-        ],
-      },
-    ],
-  },
   {
     id: "acc-4",
     title: "Strike Archer com Epics",
