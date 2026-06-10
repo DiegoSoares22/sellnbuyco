@@ -32,6 +32,7 @@ import ninjaHwSupermanImg from "@/assets/ninja-hw-superman.png";
 import ninjaBreakLowImg from "@/assets/ninja-break-low.png";
 import waterLowImg from "@/assets/water-low.png";
 import waterDellImg from "@/assets/water-dell.png";
+import opBreakNinjaSlashImg from "@/assets/op-break-ninja-slash.png";
 
 
 
@@ -1026,6 +1027,25 @@ export const ACCOUNTS: AccountListing[] = [
         items: [
           "Max Taoist Archives",
           "Monk Archives: 20-20-20",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-43",
+    title: "OP Break ninja (slash sigil break)",
+    badge: "Ninja",
+    badgeColor: "bg-red-600",
+    image: opBreakNinjaSlashImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "55K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "0 jail",
+          "Slash Sigil Break",
+          "Relic de 3x Break & 3x P.Atk",
         ],
       },
     ],
