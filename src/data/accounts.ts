@@ -1031,6 +1031,25 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
+  {
+    id: "acc-43",
+    title: "OP Break ninja (slash sigil break)",
+    badge: "Ninja",
+    badgeColor: "bg-red-600",
+    image: opBreakNinjaSlashImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "55K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "0 jail",
+          "Slash Sigil Break",
+          "Relic de 3x Break & 3x P.Atk",
+        ],
+      },
+    ],
+  },
 ];
 
 export const CLASS_OPTIONS = [
