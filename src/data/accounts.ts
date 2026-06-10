@@ -32,6 +32,7 @@ import ninjaHwSupermanImg from "@/assets/ninja-hw-superman.png";
 import ninjaBreakLowImg from "@/assets/ninja-break-low.png";
 import waterLowImg from "@/assets/water-low.png";
 import waterDellImg from "@/assets/water-dell.png";
+import opBreakNinjaSlashImg from "@/assets/op-break-ninja-slash.png";
 
 
 
