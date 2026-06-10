@@ -3,7 +3,7 @@ import archerwagnerImg from "@/assets/archerwagner.jpg";
 import ninjajoaoImg from "@/assets/ninjajoao.jpg";
 import ninjaBreakImg from "@/assets/ninja-break.jpeg";
 import archer129Img from "@/assets/archer129.jpg";
-import water22Img from "@/assets/water22.jpg";
+
 import archerBreakImg from "@/assets/archer-break.jpg";
 import pirataImg from "@/assets/pirata.jpg";
 import ninjaBreak2Img from "@/assets/ninja-break-2.jpg";
@@ -222,24 +222,6 @@ export const ACCOUNTS: AccountListing[] = [
       {
         title: "Atributos",
         items: ["Archer/Ninja 129", "0 Jail"],
-      },
-    ],
-  },
-  {
-    id: "acc-13",
-    title: "Water Taoist 127",
-    badge: "NEW",
-    badgeColor: "bg-emerald-500",
-    image: water22Img,
-    className: "Taoist",
-    prices: [
-      { label: "Preço", value: "3K CPS" },
-      { label: "Ou", value: "R$ 150,00" },
-    ],
-    sections: [
-      {
-        title: "Atributos",
-        items: ["0 Jail"],
       },
     ],
   },
