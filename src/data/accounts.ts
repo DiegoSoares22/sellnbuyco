@@ -225,24 +225,6 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
-  {
-    id: "acc-13",
-    title: "Water Taoist 127",
-    badge: "NEW",
-    badgeColor: "bg-emerald-500",
-    image: water22Img,
-    className: "Taoist",
-    prices: [
-      { label: "Preço", value: "3K CPS" },
-      { label: "Ou", value: "R$ 150,00" },
-    ],
-    sections: [
-      {
-        title: "Atributos",
-        items: ["0 Jail"],
-      },
-    ],
-  },
 
   {
     id: "acc-19",
