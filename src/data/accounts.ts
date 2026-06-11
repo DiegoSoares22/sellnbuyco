@@ -32,6 +32,7 @@ import ninjaBreakLowImg from "@/assets/ninja-break-low.png";
 import waterLowImg from "@/assets/water-low.png";
 import waterDellImg from "@/assets/water-dell.png";
 import opBreakNinjaSlashImg from "@/assets/op-break-ninja-slash.png";
+import ninjaBreakImmunity430kImg from "@/assets/ninja-break-immunity-430k.png";
 
 
 
@@ -971,6 +972,49 @@ export const ACCOUNTS: AccountListing[] = [
           "0 jail",
           "Slash Sigil Break",
           "Relic de 3x Break & 3x P.Atk",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-44",
+    title: "Ninja Break - Immunity (Chi Retreat P-Strike) + 16M Chi Pts",
+    badge: "TOP",
+    badgeColor: "bg-red-600",
+    image: ninjaBreakImmunity430kImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "430K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "135 B Donation",
+          "Astredge 95% - 90% - 85%",
+          "Eonspirit (Archer Lv9) (Water Lv8) (Warrior Lv8) (Monk Lv8) (Wanderer Lv8) all 100%",
+          "Ninpo: HW e Stun",
+          "Archive Trojan 100K",
+          "Archive Monk 14 - 15 - 11",
+          "Inner power full",
+          "Chi full, Retreat P-Strike com 15M Chi",
+          "0 Jail",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "10 Credit Runes Yellow (Soldiness, Conquerer's Blade, Circle Of Life, Front Break, Tempered, Perceverance, Area Occupier, Silent Blade, Unswerving, Whetted Blade)",
+          "SkyVeil, IronBone e BlazeGaze",
+          "Blue Rune All",
+          "Rank Rune 431 - 6 Ideals e 35 Hammers",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "Unbound itens: 2 Epic Ninja",
+          "2x Armor Ninja",
+          "2 Cap Ninja",
+          "Neck e Boots",
         ],
       },
     ],
