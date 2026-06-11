@@ -72,7 +72,6 @@ export default function WelcomePopup() {
               <ul className="text-sm text-muted-foreground space-y-1.5">
                 <li>💰 Trabalhamos com as melhores oportunidades em CPs, Gold e itens estratégicos</li>
                 <li>🎯 Sugestões inteligentes para cada tipo de jogador</li>
-                <li>🎁 E um sistema de recompensas que vai te beneficiar a cada compra</li>
               </ul>
               <p className="text-sm text-muted-foreground">
                 Fique à vontade para explorar — e qualquer dúvida, estou por aqui 😉
