@@ -1020,6 +1020,38 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
+  {
+    id: "acc-45",
+    title: "Sell archer break",
+    badge: "NEW",
+    badgeColor: "bg-emerald-500",
+    image: sellArcherBreakImg,
+    className: "Archer",
+    prices: [{ label: "Preço", value: "26K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Full Coroa - 648 Perfection",
+          "Arquivos principais full",
+          "Chi full",
+          "32B de Donation",
+          "0 BJ",
+          "142 Garments",
+          "3 - 5 Stars",
+          "84 Mounts",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "Runas de Archer lvl max",
+          "Iron Bone lvl 6",
+          "Slot de runas all open",
+        ],
+      },
+    ],
+  },
 ];
 
 export const CLASS_OPTIONS = [
