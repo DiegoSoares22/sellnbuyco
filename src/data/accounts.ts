@@ -33,6 +33,7 @@ import waterLowImg from "@/assets/water-low.png";
 import waterDellImg from "@/assets/water-dell.png";
 import opBreakNinjaSlashImg from "@/assets/op-break-ninja-slash.png";
 import ninjaBreakImmunity430kImg from "@/assets/ninja-break-immunity-430k.png";
+import sellArcherBreakImg from "@/assets/sell-archer-break.png";
 
 
 
