@@ -23,6 +23,7 @@ import ninjaOpBreakImg from "@/assets/ninja-op-break.jpg";
 import opNinjaHwStunImg from "@/assets/op-ninja-hw-stun.png";
 import ninjaHwFullCrownImg from "@/assets/ninja-hw-full-crown.jpg";
 import waterFullUnboundImg from "@/assets/water-full-unbound.jpg";
+import turquoiseImg from "@/assets/turquoise.png";
 import ninjaLucianoImg from "@/assets/ninja-luciano.jpg";
 import monkEagleImg from "@/assets/monk-eagle.png";
 import ninjaMercuryImg from "@/assets/ninja-mercury.png";
@@ -309,50 +310,6 @@ export const ACCOUNTS: AccountListing[] = [
     ],
   },
   {
-    id: "acc-26",
-    title: "Ninja HW e Stun",
-    badge: "TOP",
-    badgeColor: "bg-amber-500",
-    image: ninjaHwStunImg,
-    className: "Ninja",
-    prices: [
-      { label: "CPS", value: "45K CPS" },
-      { label: "PIX", value: "R$ 2.000" },
-    ],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "0 Jail",
-          "Serve Crystal",
-          "18B de Donation",
-          "Full Coroa P7 Fixo -7",
-          "Inner Powerpoint 2900 Score",
-          "Chi Full (P-Attack, Immunity, Break, Max-HP)",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "Rune Score: 172K",
-          "Arquivo Monk 20 - 20 - 20",
-          "Ninpo Score: 38.700",
-          "Sigil BloodLine HW",
-          "Infinite Mist",
-          "Stun",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "WardRobe: 162",
-          "Mount: 67",
-          "Astrage 70% Nível 3",
-        ],
-      },
-    ],
-  },
-  {
     id: "acc-27",
     title: "Water 29B Donation",
     badge: "TOP",
@@ -565,66 +522,13 @@ export const ACCOUNTS: AccountListing[] = [
     ],
   },
   {
-    id: "acc-32",
-    title: "Ninja HW Full Crown",
-    badge: "TOP",
-    badgeColor: "bg-amber-500",
-    image: ninjaHwFullCrownImg,
-    className: "Ninja",
-    prices: [
-      { label: "CPS", value: "80K CPS" },
-      { label: "PIX", value: "R$ 4.000,00" },
-    ],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Ninja C/ HW Full Crown",
-          "32B de Donation",
-          "0 Jail",
-          "Chi full (Break / HP / Immunity / P-attack)",
-          "36k de Ninpo",
-          "Inner power full",
-          "Outlet 161/92",
-          "Acessório Clan Draco + Action",
-          "Astrege lvl 4 - lvl 3",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "249.500 Score de runa",
-          "Credit rune",
-          "SilentBlade",
-          "Tempered",
-          "IronBone",
-          "Main Sigils lvl Max",
-        ],
-      },
-      {
-        title: "Eon Spirit & Archives",
-        items: [
-          "Eon Spirit (Archer lvl 9 / Warrior lvl 8 / Taoist lvl 8)",
-          "Monk Archives all 20-20-20",
-        ],
-      },
-      {
-        title: "Observações",
-        items: [
-          "Não acompanha Relíquia",
-          "Não acompanha Set de Mythsoul",
-        ],
-      },
-    ],
-  },
-  {
     id: "acc-33",
     title: "Water Full Unbound",
     badge: "NEW",
     badgeColor: "bg-emerald-500",
     image: waterFullUnboundImg,
     className: "Taoist",
-    prices: [{ label: "Preço", value: "80K CPS" }],
+    prices: [{ label: "Preço", value: "75K CPS" }],
     sections: [
       {
         title: "Atributos",
@@ -1028,6 +932,40 @@ export const ACCOUNTS: AccountListing[] = [
           "Runas de Archer lvl max",
           "Iron Bone lvl 6",
           "Slot de runas all open",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-46",
+    title: "Vende-se - Turquoise",
+    badge: "NEW",
+    badgeColor: "bg-emerald-500",
+    image: turquoiseImg,
+    className: "Warrior",
+    prices: [{ label: "Preço", value: "R$ 230,00" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Warrior 140",
+          "JIANG: Alinhado",
+          "CHI: 75%",
+          "EPIC: Trojan",
+          "0 JAIL",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "GARMENT: 1 X 5 STAR",
+          "MOUNT: 1 X 5 STAR",
+        ],
+      },
+      {
+        title: "Observações",
+        items: [
+          "Não ACOMPANHA RELIC",
         ],
       },
     ],
