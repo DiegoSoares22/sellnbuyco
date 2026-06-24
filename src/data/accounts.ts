@@ -34,6 +34,7 @@ import waterLowImg from "@/assets/water-low.png";
 import waterDellImg from "@/assets/water-dell.png";
 import ninjaBreakImmunity430kImg from "@/assets/ninja-break-immunity-430k.png";
 import sellArcherBreakImg from "@/assets/sell-archer-break.png";
+import antibreakstrikeImg from "@/assets/antibreakstrike.png";
 
 
 
@@ -966,6 +967,49 @@ export const ACCOUNTS: AccountListing[] = [
         title: "Observações",
         items: [
           "Não ACOMPANHA RELIC",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-47",
+    title: "OP Ninja Strike & AntiBreak (Heavenwonders + Stun)",
+    badge: "OP",
+    badgeColor: "bg-red-500",
+    image: antibreakstrikeImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "410K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "105B Donation",
+          "1 Jail",
+          "Relic Resonance Done",
+          "Inner Power Fixed",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "3 Ideal Runes",
+          "6 Credit Runes",
+          "Missing 2 new rare blue runes",
+        ],
+      },
+      {
+        title: "Archives",
+        items: [
+          "Monk: 20-20-21",
+          "Trojan: 100K",
+          "Ninja: 30.805 (Ninpo Score)",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "2 Gold Trophy",
+          "Unbound Items: 2x weapons 9 crowns (ninja), cap ninja, boots, steed",
         ],
       },
     ],
