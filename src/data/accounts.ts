@@ -33,7 +33,7 @@ import ninjaBreakLowImg from "@/assets/ninja-break-low.png";
 import waterLowImg from "@/assets/water-low.png";
 import waterDellImg from "@/assets/water-dell.png";
 import sellArcherBreakImg from "@/assets/sell-archer-break.png";
-import antibreakstrikeImg from "@/assets/antibreakstrike.png";
+import opNinjaStrikeAntibreakImg from "@/assets/op-ninja-strike-antibreak.jpg";
 
 
 
@@ -929,27 +929,29 @@ export const ACCOUNTS: AccountListing[] = [
   },
   {
     id: "acc-47",
-    title: "OP Ninja Strike & AntiBreak (Heavenwonders + Stun)",
+    title: "OP Ninja for sale(Heavenwonders + Stun)",
     badge: "OP",
     badgeColor: "bg-red-500",
-    image: antibreakstrikeImg,
+    image: opNinjaStrikeAntibreakImg,
     className: "Ninja",
-    prices: [{ label: "Preço", value: "410K CPS" }],
+    prices: [{ label: "Preço", value: "410k CPs" }],
     sections: [
       {
         title: "Atributos",
         items: [
-          "105B Donation",
-          "1 Jail",
-          "Relic Resonance Done",
-          "Inner Power Fixed",
+          "build: Strike & AntiBreak",
+          "1 jail",
+          "105b donate",
+          "Relic ressonance done",
+          "inner power fixed",
+          "SVIP next quarter",
         ],
       },
       {
         title: "Runas",
         items: [
-          "3 Ideal Runes",
-          "6 Credit Runes",
+          "3 ideal runes",
+          "6 credit runes",
           "Missing 2 new rare blue runes",
         ],
       },
@@ -957,15 +959,17 @@ export const ACCOUNTS: AccountListing[] = [
         title: "Archives",
         items: [
           "Monk: 20-20-21",
-          "Trojan: 100K",
-          "Ninja: 30.805 (Ninpo Score)",
+          "Trojan: 100k",
+          "Ninja: 30.805",
         ],
       },
       {
-        title: "Equipamentos",
+        title: "Equipamentos & Extra",
         items: [
-          "2 Gold Trophy",
-          "Unbound Items: 2x weapons 9 crowns (ninja), cap ninja, boots, steed",
+          "2 Gold trophy",
+          "Unbound stuffs: 2x weapons 9 crowns(ninja), cap ninja, boot, steed",
+          "Astredge: 100% - 95% - 50%",
+          "EON Spirit: Celestial Archer lv9 - Warmaster lady lv8 - Conqueror xiang yu lv8 - Victorious Buddha lv6",
         ],
       },
     ],
