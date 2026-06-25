@@ -34,6 +34,7 @@ import waterLowImg from "@/assets/water-low.png";
 import waterDellImg from "@/assets/water-dell.png";
 import sellArcherBreakImg from "@/assets/sell-archer-break.png";
 import opNinjaStrikeAntibreakImg from "@/assets/op-ninja-strike-antibreak.jpg";
+import ninjaHwStun42kImg from "@/assets/ninja-hw-stun-42k.jpg";
 
 
 
@@ -970,6 +971,42 @@ export const ACCOUNTS: AccountListing[] = [
           "Unbound stuffs: 2x weapons 9 crowns(ninja), cap ninja, boot, steed",
           "Astredge: 100% - 95% - 50%",
           "EON Spirit: Celestial Archer lv9 - Warmaster lady lv8 - Conqueror xiang yu lv8 - Victorious Buddha lv6",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-48",
+    title: "Ninja HW Stun 42k Ninpo",
+    badge: "NEW",
+    badgeColor: "bg-emerald-500",
+    image: ninjaHwStun42kImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "255K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 140 Sacred Star Ninja P7",
+          "86B Donation",
+          "Astredge 100% - 90% - 20%",
+          "P-Strike: 131.60% · Break: 274.30%",
+          "Immunity: 252.80% · Anti-break: 59.1%",
+          "HW Stun (HeavenWonders + Stun)",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "Rune Points: 346.000",
+          "7 Runas amarelas do site",
+        ],
+      },
+      {
+        title: "Ninja Sprint",
+        items: [
+          "Ninpo Score: 42.662",
+          "Gates lvl 9",
         ],
       },
     ],
