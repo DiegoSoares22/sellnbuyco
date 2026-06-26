@@ -35,6 +35,9 @@ import waterDellImg from "@/assets/water-dell.png";
 import sellArcherBreakImg from "@/assets/sell-archer-break.png";
 import opNinjaStrikeAntibreakImg from "@/assets/op-ninja-strike-antibreak.jpg";
 import ninjaHwStun42kImg from "@/assets/ninja-hw-stun-42k.jpg";
+import topNinja129Img from "@/assets/top-ninja-129.jpg";
+import ninjaImg from "@/assets/ninja.png";
+import waterImg from "@/assets/water.png";
 
 
 
@@ -1007,6 +1010,151 @@ export const ACCOUNTS: AccountListing[] = [
         items: [
           "Ninpo Score: 42.662",
           "Gates lvl 9",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-51",
+    title: "Top Ninja lv129",
+    badge: "TOP",
+    badgeColor: "bg-red-500",
+    image: topNinja129Img,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "270k CPs" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Top ninja lv129",
+          "1 Jail",
+          "Lv. 129 Night Ninja",
+          "P-Strike: 280.10% · Break: 88.1%",
+          "Immunity: 130.70% · Anti-break: 304.1%",
+          "M-Strike: 58.20% · Block: 30.00%",
+          "Final P-Attack: 13.643 · Final M-Attack: 9.700",
+          "Final P-Damage: 14.647 · Final M-Damage: 9.086",
+        ],
+      },
+      {
+        title: "Ninja Sprint & Runas",
+        items: [
+          "Ninpo Score: 43.535",
+          "Gates Lv9 (Gate of Dawn, Gate of Rest, Gate of Life, Gate of Limit, Gate of Vow, Gate of Pain, Gate of Shock, Gate of Death)",
+          "Rune Points: 355.800",
+          "Sigil Album",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "Gold Trophy Lv. 15",
+          "Relic: LoyalFirmness ImperialTripodVessel (Anti-break +4.00% x2)",
+          "Steed +12 Lineage 12 (20.144 attack)",
+          "LegendMonsterSaber +12 · LegendStarTower +12",
+          "78B Donation · Noble Rank: Princess",
+        ],
+      },
+      {
+        title: "Astredge & Clubs",
+        items: [
+          "Viodragon Club Recognition 95% · Love Forever Recognition 45% · Heart Lock Recognition 45%",
+          "Sphere Astredge Auto-activated (Rating 130+)",
+          "Astredge Attack +15760 / +7875 · Astredge Defense +2625 / +250",
+          "Tiger Chi Score: 400 · Seal Retreater Study Score: 400",
+        ],
+      },
+      {
+        title: "Cosméticos",
+        items: [
+          "SpringFestivalWings · Radiant Return · Phoenix Grace",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-49",
+    title: "Decente Ninja",
+    badge: "OPORTUNIDADE",
+    badgeColor: "bg-emerald-500",
+    image: ninjaImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "15k CPs" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Decente ninja(Ótima oportunidade de entrada)",
+          "0 jail",
+          "Lv. 140 SacredSkyNinjaP3",
+          "P-Strike: 105.70% · Break: 30.00%",
+          "Immunity: 225.10% · Anti-break: 60.2%",
+          "Block: 275.9% · M-Strike: 47.30%",
+          "Final P-Attack: 10.934 · Final P-Damage: 11.424",
+        ],
+      },
+      {
+        title: "Chi & Inner Power",
+        items: [
+          "Chi Full (Tiger 400, Turtle 400, Dragon 400, Phoenix 400)",
+          "Superb Manual (Perfect) · Violet Glow (Perfect) · Divine North Skill (Perfect)",
+          "Jiang Hu Grade 15 (Talent A 4)",
+        ],
+      },
+      {
+        title: "Equipamentos & Runas",
+        items: [
+          "Rune Points: 174.000",
+          "Set Equipamentos +12",
+          "Viodragon Club Recognition 75% (Level 3)",
+          "Ninpo Score: 20.759",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-50",
+    title: "Decente Water",
+    badge: "OPORTUNIDADE",
+    badgeColor: "bg-emerald-500",
+    image: waterImg,
+    className: "Taoist",
+    prices: [{ label: "Preço", value: "9k CPs" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Decente water(Ótima oportunidade de entrada)",
+          "Lv. 140 SacredSkyWaterTaoistP3",
+          "M-Strike: 71.25% · Break: 55.2%",
+          "Immunity: 238.90% · Anti-break: 267.6%",
+          "P-Strike: 73.00% · Penetration: 29.00%",
+          "Final M-Attack: 8.889 · Final M-Damage: 7.659",
+        ],
+      },
+      {
+        title: "Chi & Inner Power",
+        items: [
+          "Chi Full (Tiger 400, Turtle 400, Dragon 400, Phoenix 400)",
+          "Superb Manual (Perfect) · Violet Glow (Perfect) · Divine North Skill (Perfect)",
+          "Jiang Hu Grade 15 (Talent A 4)",
+        ],
+      },
+      {
+        title: "Equipamentos & Runas",
+        items: [
+          "Rune Points: 163.500",
+          "LegendUniversalLotus (+12) - P7 DragonSoul",
+          "Taoist Tool Score 13.500 / 13.700 (Max)",
+          "Viodragon Club Recognition 60%",
+        ],
+      },
+      {
+        title: "Extras & Cosméticos",
+        items: [
+          "Asas: VioletLightning, StarlightWings, VioletCloudWing, NeonRhythm, MoonlightWings, AmberMelody",
+          "FrozenFantasy (Glaze) Garment",
+          "PK Titles: Legendary, Grandmaster, Master",
         ],
       },
     ],
