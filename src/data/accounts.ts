@@ -38,6 +38,7 @@ import ninjaHwStun42kImg from "@/assets/ninja-hw-stun-42k.jpg";
 import topNinja129Img from "@/assets/top-ninja-129.jpg";
 import ninjaImg from "@/assets/ninja.png";
 import waterImg from "@/assets/water.png";
+import archerSacredSkyEagleImg from "@/assets/archer-sacred-sky-eagle.png";
 
 
 
@@ -1077,6 +1078,51 @@ export const ACCOUNTS: AccountListing[] = [
           "Asas: VioletLightning, StarlightWings, VioletCloudWing, NeonRhythm, MoonlightWings, AmberMelody",
           "FrozenFantasy (Glaze) Garment",
           "PK Titles: Legendary, Grandmaster, Master",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-52",
+    title: "🏹 Archer SacredSky Eagle",
+    badge: "NEW",
+    badgeColor: "bg-emerald-500",
+    image: archerSacredSkyEagleImg,
+    className: "Archer",
+    prices: [{ label: "Preço", value: "8K CPs" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Level 140",
+          "Servidor Eagle 🦅",
+          "Donation: 8.924.000.000",
+          "HP: 75.214 | Magic: 800",
+          "Attack: 42.543 – 43.255",
+          "Defense: 21.726 | M-Defense: 8.963",
+          "Agility: 1100 | Accuracy: 200",
+          "Break: 245.5% | Anti-Break: 59.4%",
+          "P-Strike: 118.60% | Block: 30.00%",
+          "Immunity: 220.00% | M-Strength: 47.20%",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "Rune Points: 136.700",
+          "Runas Main e Minor completas (Max)",
+          "Metal/Wood/Water/Fire Resist: 80",
+        ],
+      },
+      {
+        title: "Extras",
+        items: [
+          "0 Jail ✅",
+          "Final P-Attack: 12.238",
+          "Final P-Damage: 13.112",
+          "Penetration: 15.00%",
+          "Detoxication: 72%",
+          "Lucky Strike: 7.00%",
         ],
       },
     ],
