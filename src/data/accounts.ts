@@ -567,7 +567,7 @@ export const ACCOUNTS: AccountListing[] = [
     badgeColor: "bg-emerald-500",
     image: ninjaLucianoImg,
     className: "Ninja",
-    prices: [{ label: "Preço", value: "A combinar" }],
+    prices: [{ label: "Preço a combinar", value: "14k CPs" }],
     sections: [
       {
         title: "Atributos",
@@ -641,46 +641,7 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
-  {
-    id: "acc-36",
-    title: "Ninja Mercury Sacred Sky P3",
-    badge: "NEW",
-    badgeColor: "bg-emerald-500",
-    image: ninjaMercuryImg,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "8K CPS" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Lv. 140 Sacred Sky Ninja P3",
-          "26.582B Donation",
-          "P-Strike: 107.70% · Break: 276.0%",
-          "Anti-break: 58.1% · Immunity: 217.20%",
-          "+Final P-Attack: 10.374 · +Final M-Attack: 6.864",
-          "Mythsoul: 506",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "Rune Points: 138.800",
-          "Ninpo Score: 26.667",
-          "Total Rating: 37.365",
-          "Ninja Sprint completo",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "LegendSkyHammer (+12) - P7 1-handedSoul",
-          "Relic HeartlessSeal - 2x P-Attack +278/+276 · Break +1.94%",
-          "Mount Mercury · Astredge 90%/25%",
-          "Eon Spirit P7/P8/P5/P6 100%",
-        ],
-      },
-    ],
-  },
+
   {
     id: "acc-37",
     title: "Archer FatalBlow Sacred Sea P9",
@@ -1072,46 +1033,7 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
-  {
-    id: "acc-49",
-    title: "Decente Ninja",
-    badge: "OPORTUNIDADE",
-    badgeColor: "bg-emerald-500",
-    image: ninjaImg,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "15k CPs" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Decente ninja(Ótima oportunidade de entrada)",
-          "0 jail",
-          "Lv. 140 SacredSkyNinjaP3",
-          "P-Strike: 105.70% · Break: 30.00%",
-          "Immunity: 225.10% · Anti-break: 60.2%",
-          "Block: 275.9% · M-Strike: 47.30%",
-          "Final P-Attack: 10.934 · Final P-Damage: 11.424",
-        ],
-      },
-      {
-        title: "Chi & Inner Power",
-        items: [
-          "Chi Full (Tiger 400, Turtle 400, Dragon 400, Phoenix 400)",
-          "Superb Manual (Perfect) · Violet Glow (Perfect) · Divine North Skill (Perfect)",
-          "Jiang Hu Grade 15 (Talent A 4)",
-        ],
-      },
-      {
-        title: "Equipamentos & Runas",
-        items: [
-          "Rune Points: 174.000",
-          "Set Equipamentos +12",
-          "Viodragon Club Recognition 75% (Level 3)",
-          "Ninpo Score: 20.759",
-        ],
-      },
-    ],
-  },
+
   {
     id: "acc-50",
     title: "Decente Water",
