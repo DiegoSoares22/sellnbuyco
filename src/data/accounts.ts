@@ -39,6 +39,7 @@ import topNinja129Img from "@/assets/top-ninja-129.jpg";
 import ninjaImg from "@/assets/ninja.png";
 import waterImg from "@/assets/water.png";
 import archerSacredSkyEagleImg from "@/assets/archer-sacred-sky-eagle.png";
+import sellWaterMaxArchiveImg from "@/assets/sell-water-max-archive.png";
 
 
 
@@ -315,44 +316,6 @@ export const ACCOUNTS: AccountListing[] = [
     ],
   },
   {
-    id: "acc-27",
-    title: "Water 29B Donation",
-    badge: "TOP",
-    badgeColor: "bg-amber-500",
-    image: water29biImg,
-    className: "Taoist",
-    prices: [{ label: "Preço", value: "A combinar" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "29B Donation",
-          "Water Taoist",
-          "0 Jail",
-          "Trojan Archive 100K",
-          "Astread 90% - 65%",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "Rune Score: 255K",
-          "1 Ideal",
-          "Archive Max",
-          "4 Credit Yellow (Silent Blade, Impregnability, Solidness, Circle of Life)",
-          "1 Credit Blue (Soulreap Lv. 27)",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "Hossu Unbound + 2 Gem Super",
-          "Steed Unbound",
-        ],
-      },
-    ],
-  },
-  {
     id: "acc-28",
     title: "Archer/Pirate 26B Donation",
     badge: "TOP",
@@ -438,46 +401,6 @@ export const ACCOUNTS: AccountListing[] = [
           "The Essence of Yin",
           "Dragon Lv99 · Turtle Lv99 · Phoenix Lv65 · Tiger Lv97",
           "Recognition: 90% / 40%",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-30",
-    title: "OP Break ninja",
-    badge: "OP",
-    badgeColor: "bg-red-500",
-    image: ninjaOpBreakImg,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "A combinar" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Lv. 140 Dusk Ninja",
-          "Break: 302.1% (+10%)",
-          "Anti-break: 72.3% · M-Strike: 62.5%",
-          "Immunity: 256.14% · P-Strike: 134.10%",
-          "Final P-Attack: 13.664 · Final M-Attack: 9.554",
-          "HP: 93.417 · Defense: 32.813",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "Rune Points: 449.100",
-          "Full Ideal Rune (Max em todos os slots)",
-          "Ninpo Score: 35.653",
-          "Sigil Album",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "Mounting Lineage Lv. 12 (+100% speed)",
-          "Set +12 full sockets",
-          "Mythsoul: 648",
-          "8 Gates of Ninja Sprint Lv.9",
         ],
       },
     ],
@@ -1083,46 +1006,43 @@ export const ACCOUNTS: AccountListing[] = [
     ],
   },
   {
-    id: "acc-52",
-    title: "🏹 Archer SacredSky Eagle",
+    id: "acc-53",
+    title: "Sell Water Max Archive 0 BJ",
     badge: "NEW",
     badgeColor: "bg-emerald-500",
-    image: archerSacredSkyEagleImg,
-    className: "Archer",
-    prices: [{ label: "Preço", value: "8K CPs" }],
+    image: sellWaterMaxArchiveImg,
+    className: "Taoist",
+    prices: [{ label: "Preço", value: "A combinar" }],
     sections: [
       {
         title: "Atributos",
         items: [
-          "Level 140",
-          "Servidor Eagle 🦅",
-          "Donation: 8.924.000.000",
-          "HP: 75.214 | Magic: 800",
-          "Attack: 42.543 – 43.255",
-          "Defense: 21.726 | M-Defense: 8.963",
-          "Agility: 1100 | Accuracy: 200",
-          "Break: 245.5% | Anti-Break: 59.4%",
-          "P-Strike: 118.60% | Block: 30.00%",
-          "Immunity: 220.00% | M-Strength: 47.20%",
+          "Lv. 140 Sacred Star Water Taoist P1",
+          "Archive Max",
+          "0 BJ",
+          "Rank Score Rune: 263k",
+          "Break: 30.00% · Immunity: 266.30%",
+          "P-Strike: 103.80% · Anti-break: 52.6%",
+          "Mythsoul: 648",
         ],
       },
       {
         title: "Runas",
         items: [
-          "Rune Points: 136.700",
-          "Runas Main e Minor completas (Max)",
-          "Metal/Wood/Water/Fire Resist: 80",
+          "3 Rare Runes",
+          "Adamant +9",
+          "Solidness +9",
+          "Circle of Life +9",
+          "Nature Shield +9 (Unbound)",
+          "Soul Reap +27",
         ],
       },
       {
-        title: "Extras",
+        title: "Equipamentos",
         items: [
-          "0 Jail ✅",
-          "Final P-Attack: 12.238",
-          "Final P-Damage: 13.112",
-          "Penetration: 15.00%",
-          "Detoxication: 72%",
-          "Lucky Strike: 7.00%",
+          "Rare Wings Premium",
+          "Gold Cup (Gold Trophy)",
+          "Relic 3x Immunity (in 3x Immunity)",
         ],
       },
     ],
