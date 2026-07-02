@@ -1049,6 +1049,67 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
+  {
+    id: "acc-54",
+    title: "Ninja com heavenwonders",
+    badge: "NEW",
+    badgeColor: "bg-emerald-500",
+    image: ninjaHeavenwonders42kImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "42k CPs" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: ["0 Jail"],
+      },
+    ],
+  },
+  {
+    id: "acc-55",
+    title: "Archer 140 - 16Bil Donation",
+    badge: "TOP",
+    badgeColor: "bg-amber-500",
+    image: archer140_16biImg,
+    className: "Archer",
+    prices: [{ label: "Preço", value: "30k CPs" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Archer 140 · 0 Jail",
+          "16 Bil Donation (+ 20k CPs Bound)",
+          "Lv 99 Gear · All gear P7, hat P6",
+          "Material Astredge 90 - 35",
+          "142 Ancient Flame",
+          "Rank Rune 175K (1 Ideal) + 58 Hammers",
+          "Pode reivindicar SVIP Platinum",
+          "Faltam 2 Strike in Chi · Has Break in Retreat (em todos)",
+          "Inner Power 2900 Score",
+          "Ninpo Score 14900",
+        ],
+      },
+      {
+        title: "Archives & Eon Spirit",
+        items: [
+          "Archer Archive Max 45",
+          "Monk Archive Max 20-20-21",
+          "Trojan Archive 70K",
+          "Eon Spirit: Archer 9 · Water 9 · Warrior 9 · Monk 8 · Dune 5",
+        ],
+      },
+      {
+        title: "Equipamentos & Extras",
+        items: [
+          "Variety of accessories",
+          "100 MoonCliffMap UNBOUND Items (Steed Full Perf)",
+          "Double Relic Strike",
+          "60 Small Perm Stones",
+          "Pode jogar Trojan · Ninja · Warrior",
+          "Vendendo a conta sem Mythsouls",
+        ],
+      },
+    ],
+  },
 ];
 
 export const CLASS_OPTIONS = [
