@@ -137,6 +137,7 @@ function AccountsList() {
   const [imageZoomed, setImageZoomed] = useState(false);
   const [classFilter, setClassFilter] = useState<string | null>(prefs.classFilter ?? null);
   const [budgetK, setBudgetK] = useState<number | null>(prefs.budgetK ?? null);
+  const [levelBucket, setLevelBucket] = useState<string | null>(null);
   const [assistantOpen, setAssistantOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -154,19 +155,22 @@ function AccountsList() {
   }, [classFilter, budgetK]);
 
   const classCounts = useMemo(() => getClassCounts(ACCOUNTS), []);
+  const cpsBuckets = useMemo(() => getCpsBuckets(ACCOUNTS), []);
+  const levelBuckets = useMemo(() => getAvailableLevelBuckets(ACCOUNTS), []);
 
   const { filtered, fallbackUsed } = useMemo(() => {
     let list = ACCOUNTS;
     if (classFilter) list = list.filter((a) => a.className === classFilter);
     list = filterByBudget(list, budgetK);
+    list = filterByLevelBucket(list, levelBucket);
 
     // Friendly fallback if class is empty
-    if (classFilter && list.length === 0) {
+    if (classFilter && list.length === 0 && !levelBucket) {
       const fallback = filterByBudget(ACCOUNTS, budgetK).filter((a) => a.className !== classFilter).slice(0, 8);
       return { filtered: fallback, fallbackUsed: true };
     }
     return { filtered: list, fallbackUsed: false };
-  }, [classFilter, budgetK]);
+  }, [classFilter, budgetK, levelBucket]);
 
   const handleAssistantApply = (b: number | null, c: string | null) => {
     setBudgetK(b);
