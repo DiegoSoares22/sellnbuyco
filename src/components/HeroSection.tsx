@@ -1,96 +1,477 @@
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { Sparkles } from "lucide-react";
-import fundo from "@/assets/fundo.png";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight, MessageCircle, Sparkles, ArrowRight, LayoutGrid } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { ACCOUNTS } from "@/data/accounts";
+import { getAccountLevel } from "@/lib/accountFilters";
+import { useTypewriter } from "@/hooks/useTypewriter";
 
-export default function HeroSection() {
-  const mx = useMotionValue(0);
-  const my = useMotionValue(0);
-  const sx = useSpring(mx, { stiffness: 60, damping: 20 });
-  const sy = useSpring(my, { stiffness: 60, damping: 20 });
-  const bgX = useTransform(sx, (v) => v * -20);
-  const bgY = useTransform(sy, (v) => v * -20);
-  const fgX = useTransform(sx, (v) => v * 14);
-  const fgY = useTransform(sy, (v) => v * 14);
+// ─── Constants ────────────────────────────────────────────────────────────────
 
-  const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const r = e.currentTarget.getBoundingClientRect();
-    mx.set((e.clientX - r.left) / r.width - 0.5);
-    my.set((e.clientY - r.top) / r.height - 0.5);
-  };
+const WHATSAPP = "5575981382799";
+
+const HERO_HEADLINES = [
+  "Garanta sua próxima Account com segurança.",
+  "Accounts Premium com entrega rápida.",
+  "As melhores oportunidades do Conquer Online.",
+];
+
+const HERO_DESCRIPTION =
+  "Todas as accounts são cuidadosamente verificadas e negociadas com atendimento personalizado via WhatsApp.";
+
+// Use only the first N accounts for the hero to keep it focused
+const HERO_ACCOUNTS = ACCOUNTS.slice(0, 8);
+
+// ─── Helpers ──────────────────────────────────────────────────────────────────
+
+function getInterestUrl(title: string) {
+  return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
+    `Olá, Diego! Tudo bem? Fiquei interessado pela account ${title}. Gostaria de mais informações.`
+  )}`;
+}
+
+function parseCpsPrice(prices: { label: string; value: string }[]): string | null {
+  for (const p of prices) {
+    if (/CPS|CPs/i.test(p.value)) return p.value;
+  }
+  return null;
+}
+
+function parseBrlPrice(prices: { label: string; value: string }[]): string | null {
+  for (const p of prices) {
+    if (/R\$/.test(p.value)) return p.value;
+  }
+  return null;
+}
+
+// ─── Sub-components ───────────────────────────────────────────────────────────
+
+function BadgePill({ badge, badgeColor }: { badge: string; badgeColor: string }) {
+  return (
+    <span
+      className={`inline-block ${badgeColor} text-white text-[10px] font-bold px-2.5 py-0.5 rounded-md uppercase tracking-wider shadow-md`}
+    >
+      {badge}
+    </span>
+  );
+}
+
+// Rotating headline powered by the existing useTypewriter hook
+function RotatingHeadline() {
+  const [index, setIndex] = useState(0);
+  const text = HERO_HEADLINES[index];
+  const { text: typed, done } = useTypewriter(text, 30, 100);
+
+  useEffect(() => {
+    if (!done) return;
+    const t = setTimeout(() => {
+      setIndex((i) => (i + 1) % HERO_HEADLINES.length);
+    }, 3200);
+    return () => clearTimeout(t);
+  }, [done]);
 
   return (
-    <div
-      onMouseMove={onMove}
-      className="relative min-h-[70vh] md:min-h-[85vh] lg:min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#04060f]"
+    <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-[1.08] tracking-tight min-h-[3.5em] sm:min-h-[2.6em]">
+      {typed}
+      <span className="animate-pulse text-primary">|</span>
+    </h1>
+  );
+}
+
+// Dot indicator
+function Dot({ active, onClick }: { active: boolean; onClick: () => void }) {
+  return (
+    <button
+      onClick={onClick}
+      aria-label="Ir para slide"
+      className={`transition-all duration-300 rounded-full ${
+        active
+          ? "w-6 h-2 bg-primary shadow-[0_0_8px_2px_hsla(33,100%,50%,0.6)]"
+          : "w-2 h-2 bg-white/30 hover:bg-white/50"
+      }`}
+    />
+  );
+}
+
+// Individual slide content
+function SlideContent({
+  account,
+  isActive,
+}: {
+  account: (typeof ACCOUNTS)[0];
+  isActive: boolean;
+}) {
+  const navigate = useNavigate();
+  const level = useMemo(() => getAccountLevel(account), [account]);
+  const cpsPrice = useMemo(() => parseCpsPrice(account.prices), [account]);
+  const brlPrice = useMemo(() => parseBrlPrice(account.prices), [account]);
+
+  return (
+    <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 w-full">
+      {/* ── Left: Text content ── */}
+      <div className="flex-1 flex flex-col gap-5 text-center lg:text-left order-2 lg:order-1">
+        {/* Top badge */}
+        <AnimatePresence mode="wait">
+          {isActive && (
+            <motion.div
+              key="top-badge"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              className="inline-flex items-center justify-center lg:justify-start gap-2"
+            >
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-primary/40 bg-primary/10 backdrop-blur-sm text-primary text-[11px] uppercase tracking-[0.22em] font-semibold">
+                <Sparkles size={11} />
+                Marketplace Premium
+              </span>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Rotating headline */}
+        <AnimatePresence mode="wait">
+          {isActive && (
+            <motion.div
+              key={`headline-${account.id}`}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.5, delay: 0.05 }}
+            >
+              <RotatingHeadline />
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Description */}
+        <AnimatePresence mode="wait">
+          {isActive && (
+            <motion.p
+              key={`desc-${account.id}`}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5, delay: 0.12 }}
+              className="text-white/65 text-sm sm:text-base leading-relaxed max-w-lg mx-auto lg:mx-0"
+            >
+              {HERO_DESCRIPTION}
+            </motion.p>
+          )}
+        </AnimatePresence>
+
+        {/* Account info card */}
+        <AnimatePresence mode="wait">
+          {isActive && (
+            <motion.div
+              key={`info-${account.id}`}
+              initial={{ opacity: 0, y: 14, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.97 }}
+              transition={{ duration: 0.45, delay: 0.18 }}
+              className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-md p-4 flex flex-col gap-3 mx-auto lg:mx-0 w-full max-w-sm lg:max-w-none"
+            >
+              <div className="flex items-start justify-between gap-3 flex-wrap">
+                <div className="flex flex-col gap-1 text-left">
+                  <h2 className="text-white font-bold text-base sm:text-lg leading-tight line-clamp-2">
+                    {account.title}
+                  </h2>
+                  <div className="flex flex-wrap items-center gap-2 text-white/60 text-xs">
+                    <span className="font-medium text-white/80">{account.className}</span>
+                    {level && (
+                      <>
+                        <span>·</span>
+                        <span>Level {level}</span>
+                      </>
+                    )}
+                  </div>
+                </div>
+                <BadgePill badge={account.badge} badgeColor={account.badgeColor} />
+              </div>
+
+              {/* Prices */}
+              <div className="flex flex-wrap gap-2">
+                {cpsPrice && (
+                  <span className="text-sm font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 px-3 py-1 rounded-lg">
+                    {cpsPrice}
+                  </span>
+                )}
+                {brlPrice && (
+                  <span className="text-sm font-bold text-sky-300 bg-sky-500/10 border border-sky-500/25 px-3 py-1 rounded-lg">
+                    {brlPrice}
+                  </span>
+                )}
+                {!cpsPrice && !brlPrice && account.prices[0] && (
+                  <span className="text-sm font-bold text-amber-300 bg-amber-500/10 border border-amber-500/25 px-3 py-1 rounded-lg">
+                    {account.prices[0].value}
+                  </span>
+                )}
+              </div>
+
+              {/* CTA buttons */}
+              <div className="flex flex-col sm:flex-row gap-2 pt-1">
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => navigate(`/accounts/${account.id}`)}
+                  className="group relative flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-semibold overflow-hidden shadow-[0_0_20px_hsla(33,100%,50%,0.35)] hover:shadow-[0_0_28px_hsla(33,100%,50%,0.55)] transition-shadow"
+                >
+                  <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                  <ArrowRight size={14} />
+                  Ver detalhes
+                </motion.button>
+
+                <motion.a
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  href={getInterestUrl(account.title)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg border border-emerald-500/40 bg-emerald-500/10 text-emerald-400 text-sm font-semibold hover:bg-emerald-500/20 hover:border-emerald-500/60 transition-all"
+                >
+                  <MessageCircle size={14} />
+                  Tenho interesse
+                </motion.a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* See all accounts */}
+        <AnimatePresence mode="wait">
+          {isActive && (
+            <motion.div
+              key={`all-${account.id}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4, delay: 0.28 }}
+              className="flex justify-center lg:justify-start"
+            >
+              <Link
+                to="/accounts"
+                className="inline-flex items-center gap-2 text-white/50 text-xs hover:text-white/80 transition-colors group"
+              >
+                <LayoutGrid size={13} />
+                Ver todas as Accounts
+                <ArrowRight size={11} className="group-hover:translate-x-0.5 transition-transform" />
+              </Link>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
+      {/* ── Right: Account image ── */}
+      <div className="flex-shrink-0 order-1 lg:order-2 w-full lg:w-auto flex justify-center lg:justify-end">
+        <AnimatePresence mode="wait">
+          {isActive && (
+            <motion.div
+              key={`img-${account.id}`}
+              initial={{ opacity: 0, scale: 0.94, x: 20 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              exit={{ opacity: 0, scale: 0.96, x: -10 }}
+              transition={{ duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="relative group"
+            >
+              {/* Outer glow ring */}
+              <motion.div
+                animate={{ opacity: [0.5, 0.9, 0.5] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -inset-3 rounded-2xl bg-gradient-to-br from-primary/30 via-violet-500/20 to-cyan-500/20 blur-xl pointer-events-none"
+              />
+
+              {/* Image container with glassmorphism border */}
+              <motion.div
+                whileHover={{ scale: 1.03, y: -4 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="relative w-[260px] sm:w-[300px] lg:w-[340px] xl:w-[380px] aspect-[4/3] rounded-2xl overflow-hidden border border-white/15 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.7)] bg-black/30"
+              >
+                <img
+                  src={account.image}
+                  alt={account.title}
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority={isActive ? "high" : "low"}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+
+                {/* Glass overlay at bottom */}
+                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+                {/* Badge overlay */}
+                <div className="absolute top-3 left-3">
+                  <BadgePill badge={account.badge} badgeColor={account.badgeColor} />
+                </div>
+
+                {/* Price badge overlay */}
+                {cpsPrice && (
+                  <div className="absolute bottom-3 right-3">
+                    <span className="text-xs font-bold text-white bg-black/60 backdrop-blur-sm border border-white/20 px-2.5 py-1 rounded-lg">
+                      {cpsPrice}
+                    </span>
+                  </div>
+                )}
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+}
+
+// ─── Main Hero Slider ─────────────────────────────────────────────────────────
+
+export default function HeroSection() {
+  const autoplayRef = useRef(
+    Autoplay({ delay: 5000, stopOnMouseEnter: true, stopOnInteraction: false })
+  );
+
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, align: "center", dragFree: false },
+    [autoplayRef.current]
+  );
+
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    setScrollSnaps(emblaApi.scrollSnapList());
+    emblaApi.on("select", onSelect);
+    onSelect();
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi, onSelect]);
+
+  const scrollTo = useCallback(
+    (index: number) => emblaApi?.scrollTo(index),
+    [emblaApi]
+  );
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
+  return (
+    <section
+      aria-label="Hero — Accounts em destaque"
+      className="relative min-h-[85vh] md:min-h-[90vh] overflow-hidden bg-[#04060f] flex flex-col"
     >
-      {/* Parallax bg layer — position varies by breakpoint so the character's head is never cut */}
-      <motion.div
-        aria-hidden
-        style={{ x: bgX, y: bgY, backgroundImage: `url(${fundo})` }}
-        className="absolute -inset-10 bg-cover bg-[position:center_top] md:bg-[position:center_15%] lg:bg-[position:center_20%]"
-      />
-      {/* Gradient + scrim */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#04060f]/40 via-[#04060f]/70 to-[#04060f]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(4,6,15,0.85)_75%)]" />
+      {/* ── Background gradient layers ── */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#04060f] via-[#080c1a] to-[#04060f]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(124,58,237,0.18),transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_80%_60%,rgba(6,182,212,0.10),transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_20%_70%,rgba(251,146,60,0.08),transparent)]" />
 
-      {/* Animated glows */}
+      {/* ── Animated glow orbs ── */}
       <motion.div
         aria-hidden
-        style={{ x: fgX, y: fgY }}
-        className="pointer-events-none absolute -top-20 -left-20 w-[460px] h-[460px] rounded-full bg-cyan-500/25 blur-3xl"
+        animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        className="pointer-events-none absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-violet-600/15 blur-3xl"
       />
       <motion.div
         aria-hidden
-        style={{ x: useTransform(sx, (v) => v * -14), y: useTransform(sy, (v) => v * -14) }}
-        className="pointer-events-none absolute -bottom-32 -right-20 w-[520px] h-[520px] rounded-full bg-fuchsia-500/20 blur-3xl"
+        animate={{ x: [0, -25, 0], y: [0, 15, 0] }}
+        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+        className="pointer-events-none absolute -bottom-40 -right-40 w-[600px] h-[600px] rounded-full bg-cyan-500/10 blur-3xl"
       />
       <motion.div
         aria-hidden
-        animate={{ opacity: [0.35, 0.7, 0.35] }}
+        animate={{ opacity: [0.3, 0.7, 0.3] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="pointer-events-none absolute inset-x-0 top-1/3 h-px bg-gradient-to-r from-transparent via-amber-300/50 to-transparent"
+        className="pointer-events-none absolute inset-x-0 top-1/3 h-px bg-gradient-to-r from-transparent via-amber-300/40 to-transparent"
       />
 
-      {/* Particles */}
-      <div aria-hidden className="absolute inset-0 pointer-events-none">
-        {Array.from({ length: 22 }).map((_, i) => (
+      {/* ── Particles ── */}
+      <div aria-hidden className="absolute inset-0 pointer-events-none overflow-hidden">
+        {Array.from({ length: 18 }).map((_, i) => (
           <motion.span
             key={i}
-            className="absolute block w-1 h-1 rounded-full bg-white/40"
-            style={{ left: `${(i * 53) % 100}%`, top: `${(i * 31) % 100}%` }}
-            animate={{ y: [0, -18, 0], opacity: [0.2, 0.8, 0.2] }}
-            transition={{ duration: 4 + (i % 5), repeat: Infinity, delay: i * 0.2, ease: "easeInOut" }}
+            className="absolute block rounded-full bg-white/30"
+            style={{
+              width: i % 3 === 0 ? 2 : 1,
+              height: i % 3 === 0 ? 2 : 1,
+              left: `${(i * 57 + 5) % 100}%`,
+              top: `${(i * 37 + 10) % 100}%`,
+            }}
+            animate={{ y: [0, -22, 0], opacity: [0.15, 0.7, 0.15] }}
+            transition={{
+              duration: 4 + (i % 6),
+              repeat: Infinity,
+              delay: i * 0.25,
+              ease: "easeInOut",
+            }}
           />
         ))}
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="relative z-10 text-center px-4 max-w-3xl"
-      >
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber-300/30 bg-white/5 backdrop-blur-md text-amber-200/90 text-[11px] uppercase tracking-[0.25em] mb-6"
-        >
-          <Sparkles size={12} /> Marketplace Premium
-        </motion.div>
-        <h1 className="text-4xl sm:text-6xl font-extrabold text-white leading-[1.05] tracking-tight">
-          Sua nova era em
-          <span className="block mt-2 bg-gradient-to-r from-cyan-300 via-violet-300 to-amber-300 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(124,58,237,0.45)]">
-            Conquer Online
-          </span>
-        </h1>
-        <p className="mt-5 text-white/70 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-          Itens, runas, accounts e recursos premium — selecionados a mão e entregues com atendimento direto via WhatsApp.
-        </p>
-      </motion.div>
+      {/* ── Carousel ── */}
+      <div className="relative z-10 flex-1 flex flex-col">
+        <div className="overflow-hidden flex-1" ref={emblaRef}>
+          <div className="flex h-full">
+            {HERO_ACCOUNTS.map((account, index) => (
+              <div
+                key={account.id}
+                className="flex-[0_0_100%] min-w-0 flex items-center"
+              >
+                <div className="container max-w-6xl mx-auto px-4 sm:px-6 py-12 lg:py-16 w-full">
+                  <SlideContent
+                    account={account}
+                    isActive={selectedIndex === index}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
-      {/* Bottom fade into page */}
-      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-background" />
-    </div>
+        {/* ── Navigation row ── */}
+        <div className="relative z-10 container max-w-6xl mx-auto px-4 sm:px-6 pb-10 flex items-center justify-between gap-4">
+          {/* Prev arrow — desktop only */}
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={scrollPrev}
+            aria-label="Slide anterior"
+            className="hidden md:flex w-10 h-10 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm text-white/70 hover:text-white hover:border-primary/50 hover:bg-primary/10 transition-all items-center justify-center flex-shrink-0"
+          >
+            <ChevronLeft size={18} />
+          </motion.button>
+
+          {/* Dots */}
+          <div className="flex items-center justify-center gap-1.5 flex-1">
+            {scrollSnaps.map((_, index) => (
+              <Dot
+                key={index}
+                active={index === selectedIndex}
+                onClick={() => scrollTo(index)}
+              />
+            ))}
+          </div>
+
+          {/* Next arrow — desktop only */}
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={scrollNext}
+            aria-label="Próximo slide"
+            className="hidden md:flex w-10 h-10 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm text-white/70 hover:text-white hover:border-primary/50 hover:bg-primary/10 transition-all items-center justify-center flex-shrink-0"
+          >
+            <ChevronRight size={18} />
+          </motion.button>
+        </div>
+      </div>
+
+      {/* ── Bottom fade into page ── */}
+      <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-b from-transparent to-background pointer-events-none" />
+    </section>
   );
 }
