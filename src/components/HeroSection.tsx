@@ -21,13 +21,13 @@ export default function HeroSection() {
   return (
     <div
       onMouseMove={onMove}
-      className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-[#04060f]"
+      className="relative min-h-[70vh] md:min-h-[85vh] lg:min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#04060f]"
     >
-      {/* Parallax bg layer */}
+      {/* Parallax bg layer — position varies by breakpoint so the character's head is never cut */}
       <motion.div
         aria-hidden
         style={{ x: bgX, y: bgY, backgroundImage: `url(${fundo})` }}
-        className="absolute -inset-10 bg-cover bg-center"
+        className="absolute -inset-10 bg-cover bg-[position:center_top] md:bg-[position:center_15%] lg:bg-[position:center_20%]"
       />
       {/* Gradient + scrim */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#04060f]/40 via-[#04060f]/70 to-[#04060f]" />
