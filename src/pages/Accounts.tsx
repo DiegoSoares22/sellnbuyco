@@ -181,7 +181,9 @@ function AccountsList() {
   const clearAll = () => {
     setBudgetK(null);
     setClassFilter(null);
+    setLevelBucket(null);
   };
+  const hasAny = classFilter || budgetK || levelBucket;
 
   return (
     <div className="min-h-screen bg-background">
