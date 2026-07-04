@@ -208,7 +208,7 @@ function AccountsList() {
         </div>
 
         {/* Active filter pills */}
-        {(classFilter || budgetK) && (
+        {hasAny && (
           <div className="mt-4 mb-2 flex flex-wrap items-center gap-2 text-xs">
             <span className="text-muted-foreground">Filtros:</span>
             {budgetK && (
@@ -221,14 +221,19 @@ function AccountsList() {
                 {classFilter}
               </span>
             )}
+            {levelBucket && (
+              <span className="px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/30 font-medium">
+                {levelBuckets.find((b) => b.key === levelBucket)?.label ?? `Level ${levelBucket}`}
+              </span>
+            )}
             <button onClick={clearAll} className="text-muted-foreground hover:text-foreground underline underline-offset-2">
-              limpar
+              limpar filtros
             </button>
           </div>
         )}
 
         {/* Class filter */}
-        <div className="flex flex-wrap gap-2 mt-6 mb-6">
+        <div className="flex flex-wrap gap-2 mt-6 mb-3">
           <button
             onClick={() => setClassFilter(null)}
             className={`inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border transition-colors ${
@@ -258,6 +263,82 @@ function AccountsList() {
           })}
         </div>
 
+        {/* CPS budget filter (dynamic buckets) */}
+        {cpsBuckets.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-3">
+            <span className="text-[11px] uppercase tracking-wider text-muted-foreground self-center mr-1">Preço:</span>
+            <button
+              onClick={() => setBudgetK(null)}
+              className={`text-xs font-medium px-3 py-1.5 rounded-full border transition-colors ${
+                !budgetK
+                  ? "bg-primary text-primary-foreground border-primary"
+                  : "bg-card text-muted-foreground border-border hover:border-primary/40"
+              }`}
+            >
+              Qualquer
+            </button>
+            {cpsBuckets.map((b) => (
+              <button
+                key={b}
+                onClick={() => setBudgetK(budgetK === b ? null : b)}
+                className={`text-xs font-medium px-3 py-1.5 rounded-full border transition-colors ${
+                  budgetK === b
+                    ? "bg-primary text-primary-foreground border-primary"
+                    : "bg-card text-muted-foreground border-border hover:border-primary/40"
+                }`}
+              >
+                Até {b}k CPs
+              </button>
+            ))}
+          </div>
+        )}
+
+        {/* Level filter (dynamic) */}
+        {levelBuckets.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-6">
+            <span className="text-[11px] uppercase tracking-wider text-muted-foreground self-center mr-1">Level:</span>
+            <button
+              onClick={() => setLevelBucket(null)}
+              className={`text-xs font-medium px-3 py-1.5 rounded-full border transition-colors ${
+                !levelBucket
+                  ? "bg-primary text-primary-foreground border-primary"
+                  : "bg-card text-muted-foreground border-border hover:border-primary/40"
+              }`}
+            >
+              Todos
+            </button>
+            {levelBuckets.map((b) => (
+              <button
+                key={b.key}
+                onClick={() => setLevelBucket(levelBucket === b.key ? null : b.key)}
+                className={`text-xs font-medium px-3 py-1.5 rounded-full border transition-colors ${
+                  levelBucket === b.key
+                    ? "bg-primary text-primary-foreground border-primary"
+                    : "bg-card text-muted-foreground border-border hover:border-primary/40"
+                }`}
+              >
+                {b.label} ({b.count})
+              </button>
+            ))}
+          </div>
+        )}
+
+        {/* Results count */}
+        <div className="mb-4 flex items-center justify-between gap-3 flex-wrap">
+          <p className="text-sm text-muted-foreground">
+            <span className="font-semibold text-foreground">{filtered.length}</span>{" "}
+            {filtered.length === 1 ? "account encontrada" : "accounts encontradas"}
+          </p>
+          {hasAny && (
+            <button
+              onClick={clearAll}
+              className="text-xs font-medium text-primary hover:underline underline-offset-2"
+            >
+              Limpar filtros
+            </button>
+          )}
+        </div>
+
         {fallbackUsed && (
           <div className="mb-6 p-4 rounded-xl border border-primary/30 bg-primary/5 text-sm text-card-foreground">
             Ooops... parece que todas as accounts dessa classe já foram vendidas 😢
@@ -265,6 +346,23 @@ function AccountsList() {
             <span className="text-muted-foreground">Mas encontramos outras opções interessantes para você:</span>
           </div>
         )}
+
+        {filtered.length === 0 && !fallbackUsed && (
+          <div className="my-10 p-10 rounded-2xl border border-dashed border-border bg-card/40 text-center">
+            <div className="mx-auto w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-4">
+              <Filter size={20} />
+            </div>
+            <h3 className="text-base font-semibold text-foreground mb-1">Nenhuma account com esses filtros</h3>
+            <p className="text-sm text-muted-foreground mb-5">Tente relaxar um dos filtros abaixo.</p>
+            <button
+              onClick={clearAll}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition"
+            >
+              Limpar filtros
+            </button>
+          </div>
+        )}
+
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {filtered.map((acc, i) => (
