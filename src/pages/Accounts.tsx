@@ -5,7 +5,12 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import { ACCOUNTS, CLASS_OPTIONS, getClassCounts } from "@/data/accounts";
 import type { AccountListing } from "@/data/accounts";
 import AccountAssistantModal from "@/components/AccountAssistantModal";
-import { filterByBudget } from "@/lib/accountFilters";
+import {
+  filterByBudget,
+  getCpsBuckets,
+  getAvailableLevelBuckets,
+  filterByLevelBucket,
+} from "@/lib/accountFilters";
 import { loadPrefs, savePrefs } from "@/lib/userPrefs";
 
 const WHATSAPP = "5575981382799";
