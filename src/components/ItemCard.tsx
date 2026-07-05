@@ -2,6 +2,7 @@ import { useState } from "react";
 import { GameItem } from "@/data/items";
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
+import { useI18n } from "@/i18n";
 
 interface ItemCardProps {
   item: GameItem;
@@ -11,10 +12,9 @@ interface ItemCardProps {
 export default function ItemCard({ item, index }: ItemCardProps) {
   const [showTooltip, setShowTooltip] = useState(false);
   const [imgError, setImgError] = useState(false);
+  const { t } = useI18n();
 
-  const whatsappMsg = encodeURIComponent(
-    `Olá, Diego. Fiquei interessado por ${item.name}. Você poderia me informar o valor e como funciona?`
-  );
+  const whatsappMsg = encodeURIComponent(t("wa.itemInterest", { name: item.name }));
   const whatsappUrl = `https://wa.me/5575981382799?text=${whatsappMsg}`;
 
   return (
@@ -28,12 +28,12 @@ export default function ItemCard({ item, index }: ItemCardProps) {
       onClick={() => setShowTooltip((p) => !p)}
     >
       <div className="absolute top-2 right-2 z-10 px-2 py-0.5 rounded-md bg-primary/90 text-primary-foreground text-[10px] font-semibold tracking-wide">
-        5% a 15% OFF
+        5% - 15% OFF
       </div>
 
       {item.is_temporary && (
         <div className="absolute top-2 left-2 z-10 px-2 py-0.5 rounded-md bg-destructive/90 text-destructive-foreground text-[10px] font-semibold">
-          14 dias
+          {t("item.days14")}
         </div>
       )}
 
@@ -64,7 +64,7 @@ export default function ItemCard({ item, index }: ItemCardProps) {
       </h3>
 
       <p className="text-xs text-muted-foreground">
-        {item.price !== null ? `R$ ${item.price.toFixed(2)}` : "Consultar preço"}
+        {item.price !== null ? `R$ ${item.price.toFixed(2)}` : t("item.priceAsk")}
       </p>
 
       <a
