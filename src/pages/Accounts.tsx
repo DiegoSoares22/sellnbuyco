@@ -263,7 +263,7 @@ function AccountsList() {
         {/* CPS budget filter (dynamic buckets) */}
         {cpsBuckets.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-3">
-            <span className="text-[11px] uppercase tracking-wider text-muted-foreground self-center mr-1">Preço:</span>
+            <span className="text-[11px] uppercase tracking-wider text-muted-foreground self-center mr-1">{t("acc.priceLabel")}</span>
             <button
               onClick={() => setBudgetK(null)}
               className={`text-xs font-medium px-3 py-1.5 rounded-full border transition-colors ${
@@ -272,7 +272,7 @@ function AccountsList() {
                   : "bg-card text-muted-foreground border-border hover:border-primary/40"
               }`}
             >
-              Qualquer
+              {t("acc.priceAny")}
             </button>
             {cpsBuckets.map((b) => (
               <button
@@ -284,7 +284,7 @@ function AccountsList() {
                     : "bg-card text-muted-foreground border-border hover:border-primary/40"
                 }`}
               >
-                Até {b}k CPs
+                {t("acc.upToK", { n: b })}
               </button>
             ))}
           </div>
@@ -293,7 +293,7 @@ function AccountsList() {
         {/* Level filter (dynamic) */}
         {levelBuckets.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-6">
-            <span className="text-[11px] uppercase tracking-wider text-muted-foreground self-center mr-1">Level:</span>
+            <span className="text-[11px] uppercase tracking-wider text-muted-foreground self-center mr-1">{t("acc.levelLabel")}</span>
             <button
               onClick={() => setLevelBucket(null)}
               className={`text-xs font-medium px-3 py-1.5 rounded-full border transition-colors ${
@@ -302,7 +302,7 @@ function AccountsList() {
                   : "bg-card text-muted-foreground border-border hover:border-primary/40"
               }`}
             >
-              Todos
+              {t("acc.levelAll")}
             </button>
             {levelBuckets.map((b) => (
               <button
@@ -324,23 +324,23 @@ function AccountsList() {
         <div className="mb-4 flex items-center justify-between gap-3 flex-wrap">
           <p className="text-sm text-muted-foreground">
             <span className="font-semibold text-foreground">{filtered.length}</span>{" "}
-            {filtered.length === 1 ? "account encontrada" : "accounts encontradas"}
+            {filtered.length === 1 ? t("acc.foundOne") : t("acc.foundMany")}
           </p>
           {hasAny && (
             <button
               onClick={clearAll}
               className="text-xs font-medium text-primary hover:underline underline-offset-2"
             >
-              Limpar filtros
+              {t("acc.clearFilters")}
             </button>
           )}
         </div>
 
         {fallbackUsed && (
           <div className="mb-6 p-4 rounded-xl border border-primary/30 bg-primary/5 text-sm text-card-foreground">
-            Ooops... parece que todas as accounts dessa classe já foram vendidas 😢
+            {t("acc.classSoldOut")}
             <br />
-            <span className="text-muted-foreground">Mas encontramos outras opções interessantes para você:</span>
+            <span className="text-muted-foreground">{t("acc.classSoldOutHint")}</span>
           </div>
         )}
 
@@ -349,13 +349,13 @@ function AccountsList() {
             <div className="mx-auto w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-4">
               <Filter size={20} />
             </div>
-            <h3 className="text-base font-semibold text-foreground mb-1">Nenhuma account com esses filtros</h3>
-            <p className="text-sm text-muted-foreground mb-5">Tente relaxar um dos filtros abaixo.</p>
+            <h3 className="text-base font-semibold text-foreground mb-1">{t("acc.emptyTitle")}</h3>
+            <p className="text-sm text-muted-foreground mb-5">{t("acc.emptyHint")}</p>
             <button
               onClick={clearAll}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition"
             >
-              Limpar filtros
+              {t("acc.clearFilters")}
             </button>
           </div>
         )}
