@@ -99,9 +99,14 @@ function SlideContent({
   isActive: boolean;
 }) {
   const navigate = useNavigate();
+  const { t, withLang } = useI18n();
   const level = useMemo(() => getAccountLevel(account), [account]);
   const cpsPrice = useMemo(() => parseCpsPrice(account.prices), [account]);
   const brlPrice = useMemo(() => parseBrlPrice(account.prices), [account]);
+  const interestUrl = useMemo(
+    () => buildInterestUrl(t("wa.interestAccount", { title: account.title })),
+    [t, account.title]
+  );
 
   return (
     <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 w-full">
