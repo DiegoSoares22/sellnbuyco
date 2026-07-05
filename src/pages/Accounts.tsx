@@ -37,12 +37,13 @@ function OfferButton({ title, className = "" }: { title: string; className?: str
 
 function AccountDetail({ account }: { account: AccountListing }) {
   const [imageZoomed, setImageZoomed] = useState(false);
+  const { t, withLang } = useI18n();
 
   return (
     <div className="min-h-screen bg-background">
       <div className="container max-w-2xl py-8 px-4">
-        <Link to="/accounts" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6">
-          <ArrowLeft size={16} /> Voltar aos Accounts
+        <Link to={withLang("/accounts")} className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6">
+          <ArrowLeft size={16} /> {t("acc.backToAccounts")}
         </Link>
 
         <div className="bg-card border border-border rounded-xl overflow-hidden">
@@ -89,12 +90,12 @@ function AccountDetail({ account }: { account: AccountListing }) {
 
             <div className="space-y-2">
               <a
-                href={getInterestUrl(account.title)}
+                href={buildWa(t("wa.interest", { title: account.title }))}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center gap-2 py-3 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
               >
-                <MessageCircle size={16} /> Fiquei interessado, entrar em contato
+                <MessageCircle size={16} /> {t("acc.interestedContact")}
               </a>
               <OfferButton title={account.title} className="w-full" />
             </div>
