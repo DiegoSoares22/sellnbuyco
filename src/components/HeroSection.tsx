@@ -7,29 +7,19 @@ import { Link, useNavigate } from "react-router-dom";
 import { ACCOUNTS } from "@/data/accounts";
 import { getAccountLevel } from "@/lib/accountFilters";
 import { useTypewriter } from "@/hooks/useTypewriter";
+import { useI18n } from "@/i18n";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
 const WHATSAPP = "5575981382799";
-
-const HERO_HEADLINES = [
-  "Garanta sua próxima Account com segurança.",
-  "Accounts Premium com entrega rápida.",
-  "As melhores oportunidades do Conquer Online.",
-];
-
-const HERO_DESCRIPTION =
-  "Todas as accounts são cuidadosamente verificadas e negociadas com atendimento personalizado via WhatsApp.";
 
 // Use only the first N accounts for the hero to keep it focused
 const HERO_ACCOUNTS = ACCOUNTS.slice(0, 8);
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-function getInterestUrl(title: string) {
-  return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
-    `Olá, Diego! Tudo bem? Fiquei interessado pela account ${title}. Gostaria de mais informações.`
-  )}`;
+function buildInterestUrl(msg: string) {
+  return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
 }
 
 function parseCpsPrice(prices: { label: string; value: string }[]): string | null {
