@@ -215,7 +215,7 @@ function SlideContent({
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => navigate(`/accounts/${account.id}`)}
+                  onClick={() => navigate(withLang(`/accounts/${account.id}`))}
                   className="group relative flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-semibold overflow-hidden shadow-[0_0_20px_hsla(33,100%,50%,0.35)] hover:shadow-[0_0_28px_hsla(33,100%,50%,0.55)] transition-shadow"
                 >
                   <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
