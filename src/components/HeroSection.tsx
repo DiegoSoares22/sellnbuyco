@@ -125,7 +125,7 @@ function SlideContent({
             >
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-primary/40 bg-primary/10 backdrop-blur-sm text-primary text-[11px] uppercase tracking-[0.22em] font-semibold">
                 <Sparkles size={11} />
-                Marketplace Premium
+                {t("hero.badge")}
               </span>
             </motion.div>
           )}
@@ -157,7 +157,7 @@ function SlideContent({
               transition={{ duration: 0.5, delay: 0.12 }}
               className="text-white/65 text-sm sm:text-base leading-relaxed max-w-lg mx-auto lg:mx-0"
             >
-              {HERO_DESCRIPTION}
+              {t("hero.description")}
             </motion.p>
           )}
         </AnimatePresence>
@@ -183,7 +183,7 @@ function SlideContent({
                     {level && (
                       <>
                         <span>·</span>
-                        <span>Level {level}</span>
+                        <span>{t("hero.level")} {level}</span>
                       </>
                     )}
                   </div>
@@ -220,19 +220,19 @@ function SlideContent({
                 >
                   <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
                   <ArrowRight size={14} />
-                  Ver detalhes
+                  {t("hero.viewDetails")}
                 </motion.button>
 
                 <motion.a
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  href={getInterestUrl(account.title)}
+                  href={interestUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg border border-emerald-500/40 bg-emerald-500/10 text-emerald-400 text-sm font-semibold hover:bg-emerald-500/20 hover:border-emerald-500/60 transition-all"
                 >
                   <MessageCircle size={14} />
-                  Tenho interesse
+                  {t("hero.interested")}
                 </motion.a>
               </div>
             </motion.div>
@@ -251,11 +251,11 @@ function SlideContent({
               className="flex justify-center lg:justify-start"
             >
               <Link
-                to="/accounts"
+                to={withLang("/accounts")}
                 className="inline-flex items-center gap-2 text-white/50 text-xs hover:text-white/80 transition-colors group"
               >
                 <LayoutGrid size={13} />
-                Ver todas as Accounts
+                {t("hero.viewAll")}
                 <ArrowRight size={11} className="group-hover:translate-x-0.5 transition-transform" />
               </Link>
             </motion.div>
