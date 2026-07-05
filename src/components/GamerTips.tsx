@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronUp, MessageCircle } from "lucide-react";
 import { ItemCategory, GAMER_TIPS } from "@/data/items";
 import taoistImg from "@/assets/taoist.png";
+import { useI18n } from "@/i18n";
 
 interface GamerTipsProps {
   activeCategory: ItemCategory | "all" | null;
@@ -14,6 +15,7 @@ export default function GamerTips({ activeCategory }: GamerTipsProps) {
   const [expanded, setExpanded] = useState(false);
   const category = activeCategory || "all";
   const tip = GAMER_TIPS[category];
+  const { t } = useI18n();
 
   if (!tip) return null;
 
@@ -32,10 +34,10 @@ export default function GamerTips({ activeCategory }: GamerTipsProps) {
       >
         <img
           src={taoistImg}
-          alt="Dicas"
+          alt={t("tips.button")}
           className="w-7 h-7 rounded-full object-cover"
         />
-        <span className="hidden sm:inline">Dicas / Sugestões</span>
+        <span className="hidden sm:inline">{t("tips.button")}</span>
         {expanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
       </button>
 
@@ -50,12 +52,12 @@ export default function GamerTips({ activeCategory }: GamerTipsProps) {
             <p>{tip}</p>
             {showWhatsapp && (
               <a
-                href={`https://wa.me/5575981382799?text=${encodeURIComponent("Olá, Diego. Gostaria de saber mais sobre os itens disponíveis.")}`}
+                href={`https://wa.me/5575981382799?text=${encodeURIComponent(t("wa.itemsInfo"))}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-primary text-[11px] font-medium hover:underline"
               >
-                <MessageCircle size={12} /> Falar comigo no WhatsApp
+                <MessageCircle size={12} /> {t("tips.whatsapp")}
               </a>
             )}
           </motion.div>

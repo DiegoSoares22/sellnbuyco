@@ -12,42 +12,38 @@ import {
   filterByLevelBucket,
 } from "@/lib/accountFilters";
 import { loadPrefs, savePrefs } from "@/lib/userPrefs";
+import { useI18n } from "@/i18n";
 
 const WHATSAPP = "5575981382799";
 
-const getInterestUrl = (title: string) =>
-  `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
-    `Olá, Diego! Tudo bem? Fiquei interessado por ${title}. Gostaria de mais informações.`
-  )}`;
-
-const getOfferUrl = (title: string) =>
-  `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
-    `Olá, Diego. Fiquei interessado no account do ${title} e gostaria de fazer uma oferta.`
-  )}`;
+const buildWa = (msg: string) =>
+  `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
 
 function OfferButton({ title, className = "" }: { title: string; className?: string }) {
+  const { t } = useI18n();
   return (
     <a
-      href={getOfferUrl(title)}
+      href={buildWa(t("wa.offer", { title }))}
       target="_blank"
       rel="noopener noreferrer"
       onClick={(e) => e.stopPropagation()}
       className={`group relative inline-flex items-center justify-center gap-2 py-2.5 rounded-lg border border-primary/40 bg-primary/5 text-primary text-xs font-semibold backdrop-blur-sm hover:bg-primary/10 hover:border-primary hover:shadow-[0_0_20px_hsla(33,100%,50%,0.35)] transition-all overflow-hidden ${className}`}
     >
       <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-      <HandCoins size={14} /> Fazer uma oferta
+      <HandCoins size={14} /> {t("acc.makeOffer")}
     </a>
   );
 }
 
 function AccountDetail({ account }: { account: AccountListing }) {
   const [imageZoomed, setImageZoomed] = useState(false);
+  const { t, withLang } = useI18n();
 
   return (
     <div className="min-h-screen bg-background">
       <div className="container max-w-2xl py-8 px-4">
-        <Link to="/accounts" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6">
-          <ArrowLeft size={16} /> Voltar aos Accounts
+        <Link to={withLang("/accounts")} className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6">
+          <ArrowLeft size={16} /> {t("acc.backToAccounts")}
         </Link>
 
         <div className="bg-card border border-border rounded-xl overflow-hidden">
@@ -94,12 +90,12 @@ function AccountDetail({ account }: { account: AccountListing }) {
 
             <div className="space-y-2">
               <a
-                href={getInterestUrl(account.title)}
+                href={buildWa(t("wa.interest", { title: account.title }))}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center gap-2 py-3 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
               >
-                <MessageCircle size={16} /> Fiquei interessado, entrar em contato
+                <MessageCircle size={16} /> {t("acc.interestedContact")}
               </a>
               <OfferButton title={account.title} className="w-full" />
             </div>
@@ -140,6 +136,7 @@ function AccountsList() {
   const [levelBucket, setLevelBucket] = useState<string | null>(null);
   const [assistantOpen, setAssistantOpen] = useState(false);
   const navigate = useNavigate();
+  const { t, withLang } = useI18n();
 
   // Auto-open assistant on first visit
   useEffect(() => {
@@ -188,32 +185,32 @@ function AccountsList() {
   return (
     <div className="min-h-screen bg-background">
       <div className="container max-w-6xl py-8 px-4">
-        <Link to="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6">
-          <ArrowLeft size={16} /> Voltar à Loja
+        <Link to={withLang("/")} className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6">
+          <ArrowLeft size={16} /> {t("acc.backToShop")}
         </Link>
 
         <div className="flex items-start justify-between gap-4 flex-wrap mb-2">
           <div>
-            <h1 className="text-2xl font-bold text-foreground">Accounts à Venda</h1>
+            <h1 className="text-2xl font-bold text-foreground">{t("acc.title")}</h1>
             <p className="text-sm text-muted-foreground mt-1 max-w-xl">
-              Essa área é exclusiva para contas selecionadas. Normalmente disponíveis para clientes com histórico de compras mais elevado.
+              {t("acc.subtitle")}
             </p>
           </div>
           <button
             onClick={() => setAssistantOpen(true)}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-accent text-primary-foreground text-sm font-semibold shadow-lg shadow-primary/30 hover:opacity-95 transition"
           >
-            <Sparkles size={14} /> Assistente
+            <Sparkles size={14} /> {t("acc.assistant")}
           </button>
         </div>
 
         {/* Active filter pills */}
         {hasAny && (
           <div className="mt-4 mb-2 flex flex-wrap items-center gap-2 text-xs">
-            <span className="text-muted-foreground">Filtros:</span>
+            <span className="text-muted-foreground">{t("acc.filters")}</span>
             {budgetK && (
               <span className="px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/30 font-medium">
-                até {budgetK}k CPs
+                {t("acc.upToKShort", { n: budgetK })}
               </span>
             )}
             {classFilter && (
@@ -223,11 +220,11 @@ function AccountsList() {
             )}
             {levelBucket && (
               <span className="px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/30 font-medium">
-                {levelBuckets.find((b) => b.key === levelBucket)?.label ?? `Level ${levelBucket}`}
+                {levelBuckets.find((b) => b.key === levelBucket)?.label ?? `${t("hero.level")} ${levelBucket}`}
               </span>
             )}
             <button onClick={clearAll} className="text-muted-foreground hover:text-foreground underline underline-offset-2">
-              limpar filtros
+              {t("acc.clearFiltersLower")}
             </button>
           </div>
         )}
@@ -242,7 +239,7 @@ function AccountsList() {
                 : "bg-card text-muted-foreground border-border hover:border-primary/40"
             }`}
           >
-            <Filter size={12} /> Todos ({ACCOUNTS.length})
+            <Filter size={12} /> {t("acc.all")} ({ACCOUNTS.length})
           </button>
           {CLASS_OPTIONS.map((cls) => {
             const count = classCounts[cls];
@@ -266,7 +263,7 @@ function AccountsList() {
         {/* CPS budget filter (dynamic buckets) */}
         {cpsBuckets.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-3">
-            <span className="text-[11px] uppercase tracking-wider text-muted-foreground self-center mr-1">Preço:</span>
+            <span className="text-[11px] uppercase tracking-wider text-muted-foreground self-center mr-1">{t("acc.priceLabel")}</span>
             <button
               onClick={() => setBudgetK(null)}
               className={`text-xs font-medium px-3 py-1.5 rounded-full border transition-colors ${
@@ -275,7 +272,7 @@ function AccountsList() {
                   : "bg-card text-muted-foreground border-border hover:border-primary/40"
               }`}
             >
-              Qualquer
+              {t("acc.priceAny")}
             </button>
             {cpsBuckets.map((b) => (
               <button
@@ -287,7 +284,7 @@ function AccountsList() {
                     : "bg-card text-muted-foreground border-border hover:border-primary/40"
                 }`}
               >
-                Até {b}k CPs
+                {t("acc.upToK", { n: b })}
               </button>
             ))}
           </div>
@@ -296,7 +293,7 @@ function AccountsList() {
         {/* Level filter (dynamic) */}
         {levelBuckets.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-6">
-            <span className="text-[11px] uppercase tracking-wider text-muted-foreground self-center mr-1">Level:</span>
+            <span className="text-[11px] uppercase tracking-wider text-muted-foreground self-center mr-1">{t("acc.levelLabel")}</span>
             <button
               onClick={() => setLevelBucket(null)}
               className={`text-xs font-medium px-3 py-1.5 rounded-full border transition-colors ${
@@ -305,7 +302,7 @@ function AccountsList() {
                   : "bg-card text-muted-foreground border-border hover:border-primary/40"
               }`}
             >
-              Todos
+              {t("acc.levelAll")}
             </button>
             {levelBuckets.map((b) => (
               <button
@@ -327,23 +324,23 @@ function AccountsList() {
         <div className="mb-4 flex items-center justify-between gap-3 flex-wrap">
           <p className="text-sm text-muted-foreground">
             <span className="font-semibold text-foreground">{filtered.length}</span>{" "}
-            {filtered.length === 1 ? "account encontrada" : "accounts encontradas"}
+            {filtered.length === 1 ? t("acc.foundOne") : t("acc.foundMany")}
           </p>
           {hasAny && (
             <button
               onClick={clearAll}
               className="text-xs font-medium text-primary hover:underline underline-offset-2"
             >
-              Limpar filtros
+              {t("acc.clearFilters")}
             </button>
           )}
         </div>
 
         {fallbackUsed && (
           <div className="mb-6 p-4 rounded-xl border border-primary/30 bg-primary/5 text-sm text-card-foreground">
-            Ooops... parece que todas as accounts dessa classe já foram vendidas 😢
+            {t("acc.classSoldOut")}
             <br />
-            <span className="text-muted-foreground">Mas encontramos outras opções interessantes para você:</span>
+            <span className="text-muted-foreground">{t("acc.classSoldOutHint")}</span>
           </div>
         )}
 
@@ -352,13 +349,13 @@ function AccountsList() {
             <div className="mx-auto w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-4">
               <Filter size={20} />
             </div>
-            <h3 className="text-base font-semibold text-foreground mb-1">Nenhuma account com esses filtros</h3>
-            <p className="text-sm text-muted-foreground mb-5">Tente relaxar um dos filtros abaixo.</p>
+            <h3 className="text-base font-semibold text-foreground mb-1">{t("acc.emptyTitle")}</h3>
+            <p className="text-sm text-muted-foreground mb-5">{t("acc.emptyHint")}</p>
             <button
               onClick={clearAll}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition"
             >
-              Limpar filtros
+              {t("acc.clearFilters")}
             </button>
           </div>
         )}
@@ -391,19 +388,19 @@ function AccountsList() {
                   className="mt-3 w-full py-2 rounded-lg bg-primary text-primary-foreground text-xs font-medium hover:opacity-90 transition-opacity"
                   onClick={(e) => {
                     e.stopPropagation();
-                    navigate(`/accounts/${acc.id}`);
+                    navigate(withLang(`/accounts/${acc.id}`));
                   }}
                 >
-                  Ver detalhes
+                  {t("acc.viewDetails")}
                 </button>
                 <a
-                  href={getInterestUrl(acc.title)}
+                  href={buildWa(t("wa.interest", { title: acc.title }))}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
                   className="mt-2 w-full inline-flex items-center justify-center gap-1.5 py-2 rounded-lg bg-emerald-500/10 text-emerald-500 border border-emerald-500/30 text-xs font-medium hover:bg-emerald-500/20 transition"
                 >
-                  <MessageCircle size={12} /> Fiquei interessado
+                  <MessageCircle size={12} /> {t("acc.interested")}
                 </a>
                 <OfferButton title={acc.title} className="mt-2 w-full" />
               </div>
@@ -509,21 +506,21 @@ function AccountsList() {
                 <div className="space-y-2">
                   <div className="flex gap-3">
                     <a
-                      href={getInterestUrl(selected.title)}
+                      href={buildWa(t("wa.interest", { title: selected.title }))}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 flex items-center justify-center gap-2 py-3 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
                     >
-                      <MessageCircle size={16} /> Fiquei interessado
+                      <MessageCircle size={16} /> {t("acc.interested")}
                     </a>
                     <button
                       onClick={() => {
-                        navigate(`/accounts/${selected.id}`);
+                        navigate(withLang(`/accounts/${selected.id}`));
                         setSelected(null);
                       }}
                       className="px-4 py-3 rounded-lg border border-border text-card-foreground text-sm font-medium hover:bg-muted transition-colors"
                     >
-                      Link direto
+                      {t("acc.directLink")}
                     </button>
                   </div>
                   <OfferButton title={selected.title} className="w-full py-3" />
@@ -543,17 +540,22 @@ export default function Accounts() {
   if (accountId) {
     const account = ACCOUNTS.find((a) => a.id === accountId);
     if (!account) {
-      return (
-        <div className="min-h-screen bg-background flex items-center justify-center">
-          <div className="text-center">
-            <h1 className="text-2xl font-bold text-foreground mb-2">Account não encontrado</h1>
-            <Link to="/accounts" className="text-primary hover:underline text-sm">Voltar aos Accounts</Link>
-          </div>
-        </div>
-      );
+      return <AccountNotFound />;
     }
     return <AccountDetail account={account} />;
   }
 
   return <AccountsList />;
+}
+
+function AccountNotFound() {
+  const { t, withLang } = useI18n();
+  return (
+    <div className="min-h-screen bg-background flex items-center justify-center">
+      <div className="text-center">
+        <h1 className="text-2xl font-bold text-foreground mb-2">{t("acc.notFound")}</h1>
+        <Link to={withLang("/accounts")} className="text-primary hover:underline text-sm">{t("acc.backToAccounts")}</Link>
+      </div>
+    </div>
+  );
 }

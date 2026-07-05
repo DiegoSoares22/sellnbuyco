@@ -2,17 +2,19 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import popupImage from "@/assets/popup-2.jpg";
+import { useI18n } from "@/i18n";
 
 const STORAGE_KEY = "sb_welcome_shown";
 
 export default function WelcomePopup() {
   const [show, setShow] = useState(false);
+  const { t } = useI18n();
 
   useEffect(() => {
     try {
       if (!localStorage.getItem(STORAGE_KEY)) {
-        const t = setTimeout(() => setShow(true), 800);
-        return () => clearTimeout(t);
+        const to = setTimeout(() => setShow(true), 800);
+        return () => clearTimeout(to);
       }
     } catch {
       // localStorage unavailable
@@ -61,26 +63,26 @@ export default function WelcomePopup() {
 
             <div className="p-5 sm:p-6 space-y-3">
               <h2 className="text-lg font-bold text-card-foreground">
-                Olá, Conquistador! 👋
+                {t("welcome.hello")}
               </h2>
               <p className="text-sm text-card-foreground leading-relaxed">
-                Seja muito bem-vindo!
+                {t("welcome.subtitle")}
               </p>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Aqui você encontra itens selecionados com descontos exclusivos e uma forma muito mais inteligente de evoluir no jogo sem gastar além do necessário.
+                {t("welcome.p1")}
               </p>
               <ul className="text-sm text-muted-foreground space-y-1.5">
-                <li>💰 Trabalhamos com as melhores oportunidades em CPs, Gold e itens estratégicos</li>
-                <li>🎯 Sugestões inteligentes para cada tipo de jogador</li>
+                <li>{t("welcome.b1")}</li>
+                <li>{t("welcome.b2")}</li>
               </ul>
               <p className="text-sm text-muted-foreground">
-                Fique à vontade para explorar — e qualquer dúvida, estou por aqui 😉
+                {t("welcome.p2")}
               </p>
               <button
                 onClick={handleClose}
                 className="w-full mt-2 py-2.5 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
               >
-                Explorar a Loja
+                {t("welcome.cta")}
               </button>
             </div>
           </motion.div>

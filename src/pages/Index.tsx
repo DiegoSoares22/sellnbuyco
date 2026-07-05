@@ -7,9 +7,11 @@ import ItemGrid from "@/components/ItemGrid";
 import Chatbot from "@/components/Chatbot";
 import GamerTips from "@/components/GamerTips";
 import WelcomePopup from "@/components/WelcomePopup";
+import { useI18n } from "@/i18n";
 
 export default function Index() {
   const navigate = useNavigate();
+  const { withLang } = useI18n();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const initialCat = useMemo(() => {
@@ -51,7 +53,7 @@ export default function Index() {
       </div>
 
       <GamerTips activeCategory={activeCategory} />
-      <Chatbot onFilterSelect={handleFilterFromChat} onNavigateRewards={() => navigate("/recompensas")} />
+      <Chatbot onFilterSelect={handleFilterFromChat} onNavigateRewards={() => navigate(withLang("/recompensas"))} />
     </div>
   );
 }

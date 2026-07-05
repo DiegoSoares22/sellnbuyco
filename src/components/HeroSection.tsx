@@ -7,29 +7,19 @@ import { Link, useNavigate } from "react-router-dom";
 import { ACCOUNTS } from "@/data/accounts";
 import { getAccountLevel } from "@/lib/accountFilters";
 import { useTypewriter } from "@/hooks/useTypewriter";
+import { useI18n } from "@/i18n";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
 const WHATSAPP = "5575981382799";
-
-const HERO_HEADLINES = [
-  "Garanta sua próxima Account com segurança.",
-  "Accounts Premium com entrega rápida.",
-  "As melhores oportunidades do Conquer Online.",
-];
-
-const HERO_DESCRIPTION =
-  "Todas as accounts são cuidadosamente verificadas e negociadas com atendimento personalizado via WhatsApp.";
 
 // Use only the first N accounts for the hero to keep it focused
 const HERO_ACCOUNTS = ACCOUNTS.slice(0, 8);
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-function getInterestUrl(title: string) {
-  return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
-    `Olá, Diego! Tudo bem? Fiquei interessado pela account ${title}. Gostaria de mais informações.`
-  )}`;
+function buildInterestUrl(msg: string) {
+  return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
 }
 
 function parseCpsPrice(prices: { label: string; value: string }[]): string | null {
@@ -60,17 +50,22 @@ function BadgePill({ badge, badgeColor }: { badge: string; badgeColor: string })
 
 // Rotating headline powered by the existing useTypewriter hook
 function RotatingHeadline() {
+  const { t } = useI18n();
+  const headlines = useMemo(
+    () => [t("hero.headline1"), t("hero.headline2"), t("hero.headline3")],
+    [t]
+  );
   const [index, setIndex] = useState(0);
-  const text = HERO_HEADLINES[index];
+  const text = headlines[index];
   const { text: typed, done } = useTypewriter(text, 30, 100);
 
   useEffect(() => {
     if (!done) return;
-    const t = setTimeout(() => {
-      setIndex((i) => (i + 1) % HERO_HEADLINES.length);
+    const to = setTimeout(() => {
+      setIndex((i) => (i + 1) % headlines.length);
     }, 3200);
-    return () => clearTimeout(t);
-  }, [done]);
+    return () => clearTimeout(to);
+  }, [done, headlines.length]);
 
   return (
     <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-[1.08] tracking-tight min-h-[3.5em] sm:min-h-[2.6em]">
@@ -81,11 +76,11 @@ function RotatingHeadline() {
 }
 
 // Dot indicator
-function Dot({ active, onClick }: { active: boolean; onClick: () => void }) {
+function Dot({ active, onClick, label }: { active: boolean; onClick: () => void; label: string }) {
   return (
     <button
       onClick={onClick}
-      aria-label="Ir para slide"
+      aria-label={label}
       className={`transition-all duration-300 rounded-full ${
         active
           ? "w-6 h-2 bg-primary shadow-[0_0_8px_2px_hsla(33,100%,50%,0.6)]"
@@ -104,9 +99,14 @@ function SlideContent({
   isActive: boolean;
 }) {
   const navigate = useNavigate();
+  const { t, withLang } = useI18n();
   const level = useMemo(() => getAccountLevel(account), [account]);
   const cpsPrice = useMemo(() => parseCpsPrice(account.prices), [account]);
   const brlPrice = useMemo(() => parseBrlPrice(account.prices), [account]);
+  const interestUrl = useMemo(
+    () => buildInterestUrl(t("wa.interestAccount", { title: account.title })),
+    [t, account.title]
+  );
 
   return (
     <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 w-full">
@@ -125,7 +125,7 @@ function SlideContent({
             >
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-primary/40 bg-primary/10 backdrop-blur-sm text-primary text-[11px] uppercase tracking-[0.22em] font-semibold">
                 <Sparkles size={11} />
-                Marketplace Premium
+                {t("hero.badge")}
               </span>
             </motion.div>
           )}
@@ -157,7 +157,7 @@ function SlideContent({
               transition={{ duration: 0.5, delay: 0.12 }}
               className="text-white/65 text-sm sm:text-base leading-relaxed max-w-lg mx-auto lg:mx-0"
             >
-              {HERO_DESCRIPTION}
+              {t("hero.description")}
             </motion.p>
           )}
         </AnimatePresence>
@@ -183,7 +183,7 @@ function SlideContent({
                     {level && (
                       <>
                         <span>·</span>
-                        <span>Level {level}</span>
+                        <span>{t("hero.level")} {level}</span>
                       </>
                     )}
                   </div>
@@ -215,24 +215,24 @@ function SlideContent({
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => navigate(`/accounts/${account.id}`)}
+                  onClick={() => navigate(withLang(`/accounts/${account.id}`))}
                   className="group relative flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-semibold overflow-hidden shadow-[0_0_20px_hsla(33,100%,50%,0.35)] hover:shadow-[0_0_28px_hsla(33,100%,50%,0.55)] transition-shadow"
                 >
                   <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
                   <ArrowRight size={14} />
-                  Ver detalhes
+                  {t("hero.viewDetails")}
                 </motion.button>
 
                 <motion.a
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  href={getInterestUrl(account.title)}
+                  href={interestUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg border border-emerald-500/40 bg-emerald-500/10 text-emerald-400 text-sm font-semibold hover:bg-emerald-500/20 hover:border-emerald-500/60 transition-all"
                 >
                   <MessageCircle size={14} />
-                  Tenho interesse
+                  {t("hero.interested")}
                 </motion.a>
               </div>
             </motion.div>
@@ -251,11 +251,11 @@ function SlideContent({
               className="flex justify-center lg:justify-start"
             >
               <Link
-                to="/accounts"
+                to={withLang("/accounts")}
                 className="inline-flex items-center gap-2 text-white/50 text-xs hover:text-white/80 transition-colors group"
               >
                 <LayoutGrid size={13} />
-                Ver todas as Accounts
+                {t("hero.viewAll")}
                 <ArrowRight size={11} className="group-hover:translate-x-0.5 transition-transform" />
               </Link>
             </motion.div>
@@ -325,6 +325,7 @@ function SlideContent({
 // ─── Main Hero Slider ─────────────────────────────────────────────────────────
 
 export default function HeroSection() {
+  const { t } = useI18n();
   const autoplayRef = useRef(
     Autoplay({ delay: 5000, stopOnMouseEnter: true, stopOnInteraction: false })
   );
@@ -361,7 +362,7 @@ export default function HeroSection() {
 
   return (
     <section
-      aria-label="Hero — Accounts em destaque"
+      aria-label={t("hero.ariaLabel")}
       className="relative min-h-[85vh] md:min-h-[90vh] overflow-hidden bg-[#04060f] flex flex-col"
     >
       {/* ── Background gradient layers ── */}
@@ -440,7 +441,7 @@ export default function HeroSection() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={scrollPrev}
-            aria-label="Slide anterior"
+            aria-label={t("hero.prev")}
             className="hidden md:flex w-10 h-10 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm text-white/70 hover:text-white hover:border-primary/50 hover:bg-primary/10 transition-all items-center justify-center flex-shrink-0"
           >
             <ChevronLeft size={18} />
@@ -453,6 +454,7 @@ export default function HeroSection() {
                 key={index}
                 active={index === selectedIndex}
                 onClick={() => scrollTo(index)}
+                label={`${t("hero.goToSlide")} ${index + 1}`}
               />
             ))}
           </div>
@@ -462,7 +464,7 @@ export default function HeroSection() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={scrollNext}
-            aria-label="Próximo slide"
+            aria-label={t("hero.next")}
             className="hidden md:flex w-10 h-10 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm text-white/70 hover:text-white hover:border-primary/50 hover:bg-primary/10 transition-all items-center justify-center flex-shrink-0"
           >
             <ChevronRight size={18} />
