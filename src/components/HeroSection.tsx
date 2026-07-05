@@ -50,17 +50,22 @@ function BadgePill({ badge, badgeColor }: { badge: string; badgeColor: string })
 
 // Rotating headline powered by the existing useTypewriter hook
 function RotatingHeadline() {
+  const { t } = useI18n();
+  const headlines = useMemo(
+    () => [t("hero.headline1"), t("hero.headline2"), t("hero.headline3")],
+    [t]
+  );
   const [index, setIndex] = useState(0);
-  const text = HERO_HEADLINES[index];
+  const text = headlines[index];
   const { text: typed, done } = useTypewriter(text, 30, 100);
 
   useEffect(() => {
     if (!done) return;
-    const t = setTimeout(() => {
-      setIndex((i) => (i + 1) % HERO_HEADLINES.length);
+    const to = setTimeout(() => {
+      setIndex((i) => (i + 1) % headlines.length);
     }, 3200);
-    return () => clearTimeout(t);
-  }, [done]);
+    return () => clearTimeout(to);
+  }, [done, headlines.length]);
 
   return (
     <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-[1.08] tracking-tight min-h-[3.5em] sm:min-h-[2.6em]">
