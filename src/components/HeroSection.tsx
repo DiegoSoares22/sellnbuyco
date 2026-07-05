@@ -441,7 +441,7 @@ export default function HeroSection() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={scrollPrev}
-            aria-label="Slide anterior"
+            aria-label={t("hero.prev")}
             className="hidden md:flex w-10 h-10 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm text-white/70 hover:text-white hover:border-primary/50 hover:bg-primary/10 transition-all items-center justify-center flex-shrink-0"
           >
             <ChevronLeft size={18} />
@@ -454,6 +454,7 @@ export default function HeroSection() {
                 key={index}
                 active={index === selectedIndex}
                 onClick={() => scrollTo(index)}
+                label={`${t("hero.goToSlide")} ${index + 1}`}
               />
             ))}
           </div>
@@ -463,7 +464,7 @@ export default function HeroSection() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={scrollNext}
-            aria-label="Próximo slide"
+            aria-label={t("hero.next")}
             className="hidden md:flex w-10 h-10 rounded-full border border-white/15 bg-white/5 backdrop-blur-sm text-white/70 hover:text-white hover:border-primary/50 hover:bg-primary/10 transition-all items-center justify-center flex-shrink-0"
           >
             <ChevronRight size={18} />
