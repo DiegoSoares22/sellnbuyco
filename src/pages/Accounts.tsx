@@ -12,30 +12,25 @@ import {
   filterByLevelBucket,
 } from "@/lib/accountFilters";
 import { loadPrefs, savePrefs } from "@/lib/userPrefs";
+import { useI18n } from "@/i18n";
 
 const WHATSAPP = "5575981382799";
 
-const getInterestUrl = (title: string) =>
-  `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
-    `Olá, Diego! Tudo bem? Fiquei interessado por ${title}. Gostaria de mais informações.`
-  )}`;
-
-const getOfferUrl = (title: string) =>
-  `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
-    `Olá, Diego. Fiquei interessado no account do ${title} e gostaria de fazer uma oferta.`
-  )}`;
+const buildWa = (msg: string) =>
+  `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
 
 function OfferButton({ title, className = "" }: { title: string; className?: string }) {
+  const { t } = useI18n();
   return (
     <a
-      href={getOfferUrl(title)}
+      href={buildWa(t("wa.offer", { title }))}
       target="_blank"
       rel="noopener noreferrer"
       onClick={(e) => e.stopPropagation()}
       className={`group relative inline-flex items-center justify-center gap-2 py-2.5 rounded-lg border border-primary/40 bg-primary/5 text-primary text-xs font-semibold backdrop-blur-sm hover:bg-primary/10 hover:border-primary hover:shadow-[0_0_20px_hsla(33,100%,50%,0.35)] transition-all overflow-hidden ${className}`}
     >
       <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-      <HandCoins size={14} /> Fazer uma oferta
+      <HandCoins size={14} /> {t("acc.makeOffer")}
     </a>
   );
 }
