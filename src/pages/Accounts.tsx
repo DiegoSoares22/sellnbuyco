@@ -136,6 +136,7 @@ function AccountsList() {
   const [levelBucket, setLevelBucket] = useState<string | null>(null);
   const [assistantOpen, setAssistantOpen] = useState(false);
   const navigate = useNavigate();
+  const { t, withLang } = useI18n();
 
   // Auto-open assistant on first visit
   useEffect(() => {
@@ -184,32 +185,32 @@ function AccountsList() {
   return (
     <div className="min-h-screen bg-background">
       <div className="container max-w-6xl py-8 px-4">
-        <Link to="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6">
-          <ArrowLeft size={16} /> Voltar à Loja
+        <Link to={withLang("/")} className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6">
+          <ArrowLeft size={16} /> {t("acc.backToShop")}
         </Link>
 
         <div className="flex items-start justify-between gap-4 flex-wrap mb-2">
           <div>
-            <h1 className="text-2xl font-bold text-foreground">Accounts à Venda</h1>
+            <h1 className="text-2xl font-bold text-foreground">{t("acc.title")}</h1>
             <p className="text-sm text-muted-foreground mt-1 max-w-xl">
-              Essa área é exclusiva para contas selecionadas. Normalmente disponíveis para clientes com histórico de compras mais elevado.
+              {t("acc.subtitle")}
             </p>
           </div>
           <button
             onClick={() => setAssistantOpen(true)}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-accent text-primary-foreground text-sm font-semibold shadow-lg shadow-primary/30 hover:opacity-95 transition"
           >
-            <Sparkles size={14} /> Assistente
+            <Sparkles size={14} /> {t("acc.assistant")}
           </button>
         </div>
 
         {/* Active filter pills */}
         {hasAny && (
           <div className="mt-4 mb-2 flex flex-wrap items-center gap-2 text-xs">
-            <span className="text-muted-foreground">Filtros:</span>
+            <span className="text-muted-foreground">{t("acc.filters")}</span>
             {budgetK && (
               <span className="px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/30 font-medium">
-                até {budgetK}k CPs
+                {t("acc.upToKShort", { n: budgetK })}
               </span>
             )}
             {classFilter && (
@@ -219,11 +220,11 @@ function AccountsList() {
             )}
             {levelBucket && (
               <span className="px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/30 font-medium">
-                {levelBuckets.find((b) => b.key === levelBucket)?.label ?? `Level ${levelBucket}`}
+                {levelBuckets.find((b) => b.key === levelBucket)?.label ?? `${t("hero.level")} ${levelBucket}`}
               </span>
             )}
             <button onClick={clearAll} className="text-muted-foreground hover:text-foreground underline underline-offset-2">
-              limpar filtros
+              {t("acc.clearFiltersLower")}
             </button>
           </div>
         )}
@@ -238,7 +239,7 @@ function AccountsList() {
                 : "bg-card text-muted-foreground border-border hover:border-primary/40"
             }`}
           >
-            <Filter size={12} /> Todos ({ACCOUNTS.length})
+            <Filter size={12} /> {t("acc.all")} ({ACCOUNTS.length})
           </button>
           {CLASS_OPTIONS.map((cls) => {
             const count = classCounts[cls];
