@@ -76,11 +76,11 @@ function RotatingHeadline() {
 }
 
 // Dot indicator
-function Dot({ active, onClick }: { active: boolean; onClick: () => void }) {
+function Dot({ active, onClick, label }: { active: boolean; onClick: () => void; label: string }) {
   return (
     <button
       onClick={onClick}
-      aria-label="Ir para slide"
+      aria-label={label}
       className={`transition-all duration-300 rounded-full ${
         active
           ? "w-6 h-2 bg-primary shadow-[0_0_8px_2px_hsla(33,100%,50%,0.6)]"
@@ -325,6 +325,7 @@ function SlideContent({
 // ─── Main Hero Slider ─────────────────────────────────────────────────────────
 
 export default function HeroSection() {
+  const { t } = useI18n();
   const autoplayRef = useRef(
     Autoplay({ delay: 5000, stopOnMouseEnter: true, stopOnInteraction: false })
   );
