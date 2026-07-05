@@ -362,7 +362,7 @@ export default function HeroSection() {
 
   return (
     <section
-      aria-label="Hero — Accounts em destaque"
+      aria-label={t("hero.ariaLabel")}
       className="relative min-h-[85vh] md:min-h-[90vh] overflow-hidden bg-[#04060f] flex flex-col"
     >
       {/* ── Background gradient layers ── */}
