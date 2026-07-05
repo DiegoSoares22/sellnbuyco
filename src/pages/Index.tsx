@@ -7,6 +7,7 @@ import ItemGrid from "@/components/ItemGrid";
 import Chatbot from "@/components/Chatbot";
 import GamerTips from "@/components/GamerTips";
 import WelcomePopup from "@/components/WelcomePopup";
+import { useI18n } from "@/i18n";
 
 export default function Index() {
   const navigate = useNavigate();
