@@ -388,19 +388,19 @@ function AccountsList() {
                   className="mt-3 w-full py-2 rounded-lg bg-primary text-primary-foreground text-xs font-medium hover:opacity-90 transition-opacity"
                   onClick={(e) => {
                     e.stopPropagation();
-                    navigate(`/accounts/${acc.id}`);
+                    navigate(withLang(`/accounts/${acc.id}`));
                   }}
                 >
-                  Ver detalhes
+                  {t("acc.viewDetails")}
                 </button>
                 <a
-                  href={getInterestUrl(acc.title)}
+                  href={buildWa(t("wa.interest", { title: acc.title }))}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
                   className="mt-2 w-full inline-flex items-center justify-center gap-1.5 py-2 rounded-lg bg-emerald-500/10 text-emerald-500 border border-emerald-500/30 text-xs font-medium hover:bg-emerald-500/20 transition"
                 >
-                  <MessageCircle size={12} /> Fiquei interessado
+                  <MessageCircle size={12} /> {t("acc.interested")}
                 </a>
                 <OfferButton title={acc.title} className="mt-2 w-full" />
               </div>
@@ -506,21 +506,21 @@ function AccountsList() {
                 <div className="space-y-2">
                   <div className="flex gap-3">
                     <a
-                      href={getInterestUrl(selected.title)}
+                      href={buildWa(t("wa.interest", { title: selected.title }))}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 flex items-center justify-center gap-2 py-3 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
                     >
-                      <MessageCircle size={16} /> Fiquei interessado
+                      <MessageCircle size={16} /> {t("acc.interested")}
                     </a>
                     <button
                       onClick={() => {
-                        navigate(`/accounts/${selected.id}`);
+                        navigate(withLang(`/accounts/${selected.id}`));
                         setSelected(null);
                       }}
                       className="px-4 py-3 rounded-lg border border-border text-card-foreground text-sm font-medium hover:bg-muted transition-colors"
                     >
-                      Link direto
+                      {t("acc.directLink")}
                     </button>
                   </div>
                   <OfferButton title={selected.title} className="w-full py-3" />
@@ -540,17 +540,22 @@ export default function Accounts() {
   if (accountId) {
     const account = ACCOUNTS.find((a) => a.id === accountId);
     if (!account) {
-      return (
-        <div className="min-h-screen bg-background flex items-center justify-center">
-          <div className="text-center">
-            <h1 className="text-2xl font-bold text-foreground mb-2">Account não encontrado</h1>
-            <Link to="/accounts" className="text-primary hover:underline text-sm">Voltar aos Accounts</Link>
-          </div>
-        </div>
-      );
+      return <AccountNotFound />;
     }
     return <AccountDetail account={account} />;
   }
 
   return <AccountsList />;
+}
+
+function AccountNotFound() {
+  const { t, withLang } = useI18n();
+  return (
+    <div className="min-h-screen bg-background flex items-center justify-center">
+      <div className="text-center">
+        <h1 className="text-2xl font-bold text-foreground mb-2">{t("acc.notFound")}</h1>
+        <Link to={withLang("/accounts")} className="text-primary hover:underline text-sm">{t("acc.backToAccounts")}</Link>
+      </div>
+    </div>
+  );
 }
