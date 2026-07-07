@@ -42,6 +42,7 @@ import archerSacredSkyEagleImg from "@/assets/archer-sacred-sky-eagle.png";
 import sellWaterMaxArchiveImg from "@/assets/sell-water-max-archive.png";
 import ninjaHeavenwonders42kImg from "@/assets/ninja-heavenwonders-42k.png";
 import archer140_16biImg from "@/assets/archer-140-16bi.png";
+import ninjaLowLvEventsImg from "@/assets/ninja-low-lv-events.png.asset.json";
 
 
 
@@ -1106,6 +1107,57 @@ export const ACCOUNTS: AccountListing[] = [
           "60 Small Perm Stones",
           "Pode jogar Trojan · Ninja · Warrior",
           "Vendendo a conta sem Mythsouls",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-56",
+    title: "Ótima oportunidade para eventos Low Lv",
+    badge: "OPORTUNIDADE",
+    badgeColor: "bg-emerald-500",
+    image: ninjaLowLvEventsImg.url,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "125K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 119 Ninja Master P7",
+          "0 Jail",
+          "P-Strike: 261.90% · Break: 30.00%",
+          "Anti-break: 312.6% · Immunity: 132.68%",
+          "M-Strike: 47.80% · Block: 88.1%",
+          "Final P-Attack: 12.659 · Final M-Attack: 9.089",
+          "Ninpo Score: 31.780",
+          "Rune Points: 87.800",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "Violet Shield (+9) Max",
+          "Iron Bone (+9) Max",
+          "Universal Shield (+3)",
+          "Strike Booster · Enormous Crusher · Conqueror's Blade",
+          "Might (+1) · Whetted Blade (+1) · Fearless (+1)",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "Legend Monster Saber (+12)",
+          "Original Nobunaga's Cracking Claw",
+          "Original Myth Katana",
+          "Super Crying Heavy Ring (+8)",
+        ],
+      },
+      {
+        title: "Inner Power",
+        items: [
+          "The Essence of Yang (A/B/C)",
+          "Viodragon Club · Love Forever · Heart Lock",
+          "Recognition: 95% / 90% / 50%",
         ],
       },
     ],
