@@ -123,3 +123,14 @@ export function filterByLevelBucket(accounts: AccountListing[], bucketKey: strin
     return l !== null && b.test(l);
   });
 }
+
+export function filterByLevelBuckets(accounts: AccountListing[], bucketKeys: string[]) {
+  if (!bucketKeys.length) return accounts;
+  const buckets = LEVEL_BUCKETS.filter((x) => bucketKeys.includes(x.key));
+  if (!buckets.length) return accounts;
+  return accounts.filter((a) => {
+    const l = getAccountLevel(a);
+    return l !== null && buckets.some((b) => b.test(l));
+  });
+}
+
