@@ -5,11 +5,13 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import { ACCOUNTS, CLASS_OPTIONS, getClassCounts } from "@/data/accounts";
 import type { AccountListing } from "@/data/accounts";
 import AccountAssistantModal from "@/components/AccountAssistantModal";
+import HeroSection from "@/components/HeroSection";
+import FiltersPanel from "@/components/FiltersPanel";
 import {
-  filterByBudget,
-  getCpsBuckets,
+  filterByPriceRange,
+  getPriceRange,
   getAvailableLevelBuckets,
-  filterByLevelBucket,
+  filterByLevelBuckets,
 } from "@/lib/accountFilters";
 import { loadPrefs, savePrefs } from "@/lib/userPrefs";
 import { useI18n } from "@/i18n";
