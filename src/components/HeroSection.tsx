@@ -13,8 +13,13 @@ import { useI18n } from "@/i18n";
 
 const WHATSAPP = "5575981382799";
 
-// Use only the first N accounts for the hero to keep it focused
-const HERO_ACCOUNTS = ACCOUNTS.slice(0, 8);
+// Últimas contas adicionadas (mais recentes primeiro). Sem hardcode: sempre pega
+// as 5 mais novas do array ACCOUNTS (novos são anexados no final).
+const HERO_ACCOUNTS = [...ACCOUNTS].slice(-5).reverse();
+
+// Mensagem persistente exibida em todos os slides (fixa, não rotaciona)
+const HERO_FIXED_MESSAGE =
+  "Acelere sua evolução no Conquer investindo em uma conta preparada para diversão!";
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -131,20 +136,10 @@ function SlideContent({
           )}
         </AnimatePresence>
 
-        {/* Rotating headline */}
-        <AnimatePresence mode="wait">
-          {isActive && (
-            <motion.div
-              key={`headline-${account.id}`}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.5, delay: 0.05 }}
-            >
-              <RotatingHeadline />
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {/* Fixed persistent headline (does not rotate between slides) */}
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold leading-[1.12] tracking-tight bg-gradient-to-br from-amber-200 via-amber-400 to-primary bg-clip-text text-transparent drop-shadow-[0_2px_20px_rgba(251,146,60,0.35)]">
+          {HERO_FIXED_MESSAGE}
+        </h1>
 
         {/* Description */}
         <AnimatePresence mode="wait">
