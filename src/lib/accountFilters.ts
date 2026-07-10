@@ -25,6 +25,37 @@ export function filterByBudget(accounts: AccountListing[], budgetK: number | nul
   });
 }
 
+/** Filters by a price range in K CPS (inclusive). Accounts without CPS price kept. */
+export function filterByPriceRange(
+  accounts: AccountListing[],
+  minK: number | null,
+  maxK: number | null
+) {
+  if (minK == null && maxK == null) return accounts;
+  return accounts.filter((a) => {
+    const price = getMinCpsK(a);
+    if (price === null) return true;
+    if (minK != null && price < minK) return false;
+    if (maxK != null && price > maxK) return false;
+    return true;
+  });
+}
+
+/** Returns [minK, maxK] across all accounts that have CPS pricing. */
+export function getPriceRange(accounts: AccountListing[]): [number, number] {
+  let min = Infinity;
+  let max = 0;
+  for (const a of accounts) {
+    const p = getMinCpsK(a);
+    if (p !== null) {
+      if (p < min) min = p;
+      if (p > max) max = p;
+    }
+  }
+  if (!isFinite(min)) return [0, 100];
+  return [Math.floor(min), Math.ceil(max)];
+}
+
 /**
  * Builds "up to X k CPs" buckets dynamically from the actual accounts, so we
  * never show a bucket that has zero matches.
