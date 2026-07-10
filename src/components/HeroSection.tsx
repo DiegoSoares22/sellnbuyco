@@ -13,8 +13,13 @@ import { useI18n } from "@/i18n";
 
 const WHATSAPP = "5575981382799";
 
-// Use only the first N accounts for the hero to keep it focused
-const HERO_ACCOUNTS = ACCOUNTS.slice(0, 8);
+// Últimas contas adicionadas (mais recentes primeiro). Sem hardcode: sempre pega
+// as 5 mais novas do array ACCOUNTS (novos são anexados no final).
+const HERO_ACCOUNTS = [...ACCOUNTS].slice(-5).reverse();
+
+// Mensagem persistente exibida em todos os slides (fixa, não rotaciona)
+const HERO_FIXED_MESSAGE =
+  "Acelere sua evolução no Conquer investindo em uma conta preparada para diversão!";
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
