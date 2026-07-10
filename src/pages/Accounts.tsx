@@ -134,8 +134,10 @@ function AccountsList() {
   const [selected, setSelected] = useState<AccountListing | null>(null);
   const [imageZoomed, setImageZoomed] = useState(false);
   const [classFilter, setClassFilter] = useState<string | null>(prefs.classFilter ?? null);
-  const [budgetK, setBudgetK] = useState<number | null>(prefs.budgetK ?? null);
-  const [levelBucket, setLevelBucket] = useState<string | null>(null);
+  const priceRange = useMemo(() => getPriceRange(ACCOUNTS), []);
+  const [priceMin, setPriceMin] = useState<number>(priceRange[0]);
+  const [priceMax, setPriceMax] = useState<number>(priceRange[1]);
+  const [levelKeys, setLevelKeys] = useState<string[]>([]);
   const [assistantOpen, setAssistantOpen] = useState(false);
   const navigate = useNavigate();
   const { t, withLang } = useI18n();
@@ -143,55 +145,61 @@ function AccountsList() {
   // Auto-open assistant on first visit
   useEffect(() => {
     if (!prefs.assistantSeen) {
-      const t = setTimeout(() => setAssistantOpen(true), 500);
-      return () => clearTimeout(t);
+      const to = setTimeout(() => setAssistantOpen(true), 500);
+      return () => clearTimeout(to);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    savePrefs({ classFilter, budgetK, lastVisited: "/accounts" });
-  }, [classFilter, budgetK]);
+    savePrefs({ classFilter, budgetK: priceMax === priceRange[1] ? null : priceMax, lastVisited: "/" });
+  }, [classFilter, priceMax, priceRange]);
 
   const classCounts = useMemo(() => getClassCounts(ACCOUNTS), []);
-  const cpsBuckets = useMemo(() => getCpsBuckets(ACCOUNTS), []);
   const levelBuckets = useMemo(() => getAvailableLevelBuckets(ACCOUNTS), []);
+
+  const priceIsDefault = priceMin === priceRange[0] && priceMax === priceRange[1];
 
   const { filtered, fallbackUsed } = useMemo(() => {
     let list = ACCOUNTS;
     if (classFilter) list = list.filter((a) => a.className === classFilter);
-    list = filterByBudget(list, budgetK);
-    list = filterByLevelBucket(list, levelBucket);
+    list = filterByPriceRange(list, priceIsDefault ? null : priceMin, priceIsDefault ? null : priceMax);
+    list = filterByLevelBuckets(list, levelKeys);
 
-    // Friendly fallback if class is empty
-    if (classFilter && list.length === 0 && !levelBucket) {
-      const fallback = filterByBudget(ACCOUNTS, budgetK).filter((a) => a.className !== classFilter).slice(0, 8);
+    if (classFilter && list.length === 0 && levelKeys.length === 0) {
+      const fallback = filterByPriceRange(
+        ACCOUNTS,
+        priceIsDefault ? null : priceMin,
+        priceIsDefault ? null : priceMax
+      ).filter((a) => a.className !== classFilter).slice(0, 8);
       return { filtered: fallback, fallbackUsed: true };
     }
     return { filtered: list, fallbackUsed: false };
-  }, [classFilter, budgetK, levelBucket]);
+  }, [classFilter, priceMin, priceMax, priceIsDefault, levelKeys]);
 
   const handleAssistantApply = (b: number | null, c: string | null) => {
-    setBudgetK(b);
+    if (b != null) setPriceMax(b);
     setClassFilter(c);
     savePrefs({ assistantSeen: true });
   };
 
   const clearAll = () => {
-    setBudgetK(null);
+    setPriceMin(priceRange[0]);
+    setPriceMax(priceRange[1]);
     setClassFilter(null);
-    setLevelBucket(null);
+    setLevelKeys([]);
   };
-  const hasAny = classFilter || budgetK || levelBucket;
+
+  const activeCount =
+    (classFilter ? 1 : 0) + (priceIsDefault ? 0 : 1) + levelKeys.length;
+  const hasAny = activeCount > 0;
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container max-w-6xl py-8 px-4">
-        <Link to={withLang("/")} className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6">
-          <ArrowLeft size={16} /> {t("acc.backToShop")}
-        </Link>
+      <HeroSection />
 
-        <div className="flex items-start justify-between gap-4 flex-wrap mb-2">
+      <div className="container max-w-6xl py-8 px-4">
+        <div className="flex items-start justify-between gap-4 flex-wrap mb-4">
           <div>
             <h1 className="text-2xl font-bold text-foreground">{t("acc.title")}</h1>
             <p className="text-sm text-muted-foreground mt-1 max-w-xl">
@@ -206,13 +214,61 @@ function AccountsList() {
           </button>
         </div>
 
-        {/* Active filter pills */}
+        {/* Single-row filter bar: class pills + Filtros button */}
+        <div className="flex items-center gap-2 flex-wrap mb-4">
+          <FiltersPanel
+            priceMin={priceMin}
+            priceMax={priceMax}
+            priceRange={priceRange}
+            onPriceChange={([a, b]) => {
+              setPriceMin(a);
+              setPriceMax(b);
+            }}
+            levelBuckets={levelBuckets}
+            selectedLevels={levelKeys}
+            onLevelsChange={setLevelKeys}
+            activeCount={activeCount}
+            onClear={clearAll}
+          />
+
+          <div className="flex flex-wrap gap-2">
+            <button
+              onClick={() => setClassFilter(null)}
+              className={`inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border transition-colors ${
+                !classFilter
+                  ? "bg-primary text-primary-foreground border-primary"
+                  : "bg-card text-muted-foreground border-border hover:border-primary/40"
+              }`}
+            >
+              <Filter size={12} /> {t("acc.all")} ({ACCOUNTS.length})
+            </button>
+            {CLASS_OPTIONS.map((cls) => {
+              const count = classCounts[cls];
+              if (!count) return null;
+              return (
+                <button
+                  key={cls}
+                  onClick={() => setClassFilter(classFilter === cls ? null : cls)}
+                  className={`text-xs font-medium px-3 py-1.5 rounded-full border transition-colors ${
+                    classFilter === cls
+                      ? "bg-primary text-primary-foreground border-primary"
+                      : "bg-card text-muted-foreground border-border hover:border-primary/40"
+                  }`}
+                >
+                  {cls} ({count})
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Active filter pills summary */}
         {hasAny && (
-          <div className="mt-4 mb-2 flex flex-wrap items-center gap-2 text-xs">
+          <div className="mb-4 flex flex-wrap items-center gap-2 text-xs">
             <span className="text-muted-foreground">{t("acc.filters")}</span>
-            {budgetK && (
+            {!priceIsDefault && (
               <span className="px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/30 font-medium">
-                {t("acc.upToKShort", { n: budgetK })}
+                {priceMin}k – {priceMax}k CPs
               </span>
             )}
             {classFilter && (
@@ -220,107 +276,18 @@ function AccountsList() {
                 {classFilter}
               </span>
             )}
-            {levelBucket && (
-              <span className="px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/30 font-medium">
-                {levelBuckets.find((b) => b.key === levelBucket)?.label ?? `${t("hero.level")} ${levelBucket}`}
+            {levelKeys.map((k) => (
+              <span key={k} className="px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/30 font-medium">
+                {levelBuckets.find((b) => b.key === k)?.label ?? k}
               </span>
-            )}
+            ))}
             <button onClick={clearAll} className="text-muted-foreground hover:text-foreground underline underline-offset-2">
               {t("acc.clearFiltersLower")}
             </button>
           </div>
         )}
 
-        {/* Class filter */}
-        <div className="flex flex-wrap gap-2 mt-6 mb-3">
-          <button
-            onClick={() => setClassFilter(null)}
-            className={`inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border transition-colors ${
-              !classFilter
-                ? "bg-primary text-primary-foreground border-primary"
-                : "bg-card text-muted-foreground border-border hover:border-primary/40"
-            }`}
-          >
-            <Filter size={12} /> {t("acc.all")} ({ACCOUNTS.length})
-          </button>
-          {CLASS_OPTIONS.map((cls) => {
-            const count = classCounts[cls];
-            if (!count) return null;
-            return (
-              <button
-                key={cls}
-                onClick={() => setClassFilter(classFilter === cls ? null : cls)}
-                className={`text-xs font-medium px-3 py-1.5 rounded-full border transition-colors ${
-                  classFilter === cls
-                    ? "bg-primary text-primary-foreground border-primary"
-                    : "bg-card text-muted-foreground border-border hover:border-primary/40"
-                }`}
-              >
-                {cls} ({count})
-              </button>
-            );
-          })}
-        </div>
 
-        {/* CPS budget filter (dynamic buckets) */}
-        {cpsBuckets.length > 0 && (
-          <div className="flex flex-wrap gap-2 mb-3">
-            <span className="text-[11px] uppercase tracking-wider text-muted-foreground self-center mr-1">{t("acc.priceLabel")}</span>
-            <button
-              onClick={() => setBudgetK(null)}
-              className={`text-xs font-medium px-3 py-1.5 rounded-full border transition-colors ${
-                !budgetK
-                  ? "bg-primary text-primary-foreground border-primary"
-                  : "bg-card text-muted-foreground border-border hover:border-primary/40"
-              }`}
-            >
-              {t("acc.priceAny")}
-            </button>
-            {cpsBuckets.map((b) => (
-              <button
-                key={b}
-                onClick={() => setBudgetK(budgetK === b ? null : b)}
-                className={`text-xs font-medium px-3 py-1.5 rounded-full border transition-colors ${
-                  budgetK === b
-                    ? "bg-primary text-primary-foreground border-primary"
-                    : "bg-card text-muted-foreground border-border hover:border-primary/40"
-                }`}
-              >
-                {t("acc.upToK", { n: b })}
-              </button>
-            ))}
-          </div>
-        )}
-
-        {/* Level filter (dynamic) */}
-        {levelBuckets.length > 0 && (
-          <div className="flex flex-wrap gap-2 mb-6">
-            <span className="text-[11px] uppercase tracking-wider text-muted-foreground self-center mr-1">{t("acc.levelLabel")}</span>
-            <button
-              onClick={() => setLevelBucket(null)}
-              className={`text-xs font-medium px-3 py-1.5 rounded-full border transition-colors ${
-                !levelBucket
-                  ? "bg-primary text-primary-foreground border-primary"
-                  : "bg-card text-muted-foreground border-border hover:border-primary/40"
-              }`}
-            >
-              {t("acc.levelAll")}
-            </button>
-            {levelBuckets.map((b) => (
-              <button
-                key={b.key}
-                onClick={() => setLevelBucket(levelBucket === b.key ? null : b.key)}
-                className={`text-xs font-medium px-3 py-1.5 rounded-full border transition-colors ${
-                  levelBucket === b.key
-                    ? "bg-primary text-primary-foreground border-primary"
-                    : "bg-card text-muted-foreground border-border hover:border-primary/40"
-                }`}
-              >
-                {b.label} ({b.count})
-              </button>
-            ))}
-          </div>
-        )}
 
         {/* Results count */}
         <div className="mb-4 flex items-center justify-between gap-3 flex-wrap">
