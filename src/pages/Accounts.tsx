@@ -385,7 +385,7 @@ function AccountsList() {
           savePrefs({ assistantSeen: true });
         }}
         onApply={handleAssistantApply}
-        initialBudget={budgetK}
+        initialBudget={priceIsDefault ? null : priceMax}
         initialClass={classFilter}
       />
 
