@@ -136,20 +136,10 @@ function SlideContent({
           )}
         </AnimatePresence>
 
-        {/* Rotating headline */}
-        <AnimatePresence mode="wait">
-          {isActive && (
-            <motion.div
-              key={`headline-${account.id}`}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.5, delay: 0.05 }}
-            >
-              <RotatingHeadline />
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {/* Fixed persistent headline (does not rotate between slides) */}
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold leading-[1.12] tracking-tight bg-gradient-to-br from-amber-200 via-amber-400 to-primary bg-clip-text text-transparent drop-shadow-[0_2px_20px_rgba(251,146,60,0.35)]">
+          {HERO_FIXED_MESSAGE}
+        </h1>
 
         {/* Description */}
         <AnimatePresence mode="wait">
