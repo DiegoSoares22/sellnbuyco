@@ -1219,6 +1219,124 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
+  {
+    id: "acc-58",
+    title: "Ótima oportunidade de ninja lv140",
+    badge: "OPORTUNIDADE",
+    badgeColor: "bg-emerald-500",
+    image: ninjaLv140Img.url,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "25K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 140 Sacred Star Ninja P2",
+          "0 Jail",
+          "HP: 75.280 · Magic: 800",
+          "Attack: 53.337 – 56.683",
+          "Defense: 30.885 · M-Defense: 8.051",
+          "M-Attack: 24.284",
+          "P-Strike: 118.60% · Break: 241.1%",
+          "Anti-break: 59.6% · M-Strike: 47.20%",
+          "Immunity: 212.30% · Penetration: 15.00%",
+          "Detoxication: 72% · Parry: 7.00%",
+          "Lucky Strike: 7.00% · Dash Rate: 1.50%",
+          "+Final P-Attack: 11.172 · +Final M-Attack: 7.308",
+          "-Final P-Damage: 10.775 · -Final M-Damage: 6.425",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "Rune Points: 252.600",
+          "LifeDrain, DivineShield, Deterrence",
+          "NatureShield, JusticeGuard, SurgingForce+5",
+          "CurseBlade+9, SkyVeil+7, StrikeBooster",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "Set +12 completo (armaduras +9/+12)",
+          "Original Nobunaga's Swift Claw",
+          "Sacred Sky Hammer +12",
+        ],
+      },
+      {
+        title: "Inner Power",
+        items: [
+          "The Essence of Yin (A) · Perfect",
+          "The Essence of Yin (B) · P5/7",
+          "The Essence of Yin (C) · P6/7",
+          "Superb Manual · Violet Glow · Divine North Skill",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-59",
+    title: "Water 648 perfection",
+    badge: "NEW",
+    badgeColor: "bg-primary",
+    image: water648Img.url,
+    className: "Taoist",
+    prices: [{ label: "Preço", value: "45K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 140 Sacred Star Water Taoist P3",
+          "2 Jail",
+          "Mythsoul 648 Perfection",
+          "BP: 388",
+          "HP: 82.819 · Magic: 2.550",
+          "Attack: 18.811 – 19.133 · M-Attack: 35.937",
+          "Defense: 31.908 · M-Defense: 10.396",
+          "P-Strike: 99.60% · Break: 60.5%",
+          "Anti-break: 290.2% · M-Strike: 71.20%",
+          "Immunity: 253.00% · Penetration: 29.00%",
+          "Detoxication: 72% · Parry: 7.00%",
+          "+Final P-Attack: 10.284 · +Final M-Attack: 10.134",
+          "-Final P-Damage: 17.229 · -Final M-Damage: 8.914",
+        ],
+      },
+      {
+        title: "Chi (Study Chi)",
+        items: [
+          "Tiger Lv.99 · 400",
+          "Turtle Lv.99 · 400",
+          "Dragon Lv.99 · 400",
+          "Phoenix Lv.99 · 399",
+          "Max Chi Recovery: 24.000 (36.299 restantes)",
+          "Heavenly 20 · Mighty 20 · Cosmic 20",
+        ],
+      },
+      {
+        title: "Runas",
+        items: ["Rune Points: 212.100 (Main completo Max)"],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "Legend Nether Armor +12 · Original Eternal Robe",
+          "Legend Time Backsword +12 · Original Imperial Backsword",
+          "Legend Peach Backsword +12",
+          "Legend Star Tower +12 · Damage -1.700 · Final Magic Dmg +600",
+          "Sockets: Glory Gem / Tortoise Gem (Dmg/Magic Dmg -500 / -6%)",
+        ],
+      },
+      {
+        title: "Inner Power",
+        items: [
+          "The Essence of Yang (A/B/C) · Perfect",
+          "Inner Power Score: 3.400 (My Potency 1.601.760)",
+          "Taoist Tool Heaven Max",
+          "Superb Manual · Violet Glow · Divine North Skill",
+        ],
+      },
+    ],
+  },
 ];
 
 export const CLASS_OPTIONS = [
