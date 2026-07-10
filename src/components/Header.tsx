@@ -18,8 +18,7 @@ export default function Header() {
   }, [dark]);
 
   const links = [
-    { to: withLang("/"), label: t("nav.shop") },
-    { to: withLang("/accounts"), label: t("nav.accounts") },
+    { to: withLang("/"), label: t("nav.accounts") },
   ];
 
   const isActive = (to: string) => location.pathname === to;
