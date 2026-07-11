@@ -1053,17 +1053,6 @@ export const ACCOUNTS: AccountListing[] = [
     ],
   },
   {
-    id: "acc-55-placeholder",
-    // removed acc-54 "Ninja com heavenwonders"
-    title: "",
-    badge: "",
-    badgeColor: "",
-    image: "",
-    className: "",
-    prices: [],
-    sections: [],
-  },
-  {
     id: "acc-55",
     title: "Archer 140 - 16Bil Donation",
     badge: "TOP",
