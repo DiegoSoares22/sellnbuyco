@@ -1053,19 +1053,15 @@ export const ACCOUNTS: AccountListing[] = [
     ],
   },
   {
-    id: "acc-54",
-    title: "Ninja com heavenwonders",
-    badge: "NEW",
-    badgeColor: "bg-emerald-500",
-    image: ninjaHeavenwonders42kImg,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "42k CPs" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: ["0 Jail"],
-      },
-    ],
+    id: "acc-55-placeholder",
+    // removed acc-54 "Ninja com heavenwonders"
+    title: "",
+    badge: "",
+    badgeColor: "",
+    image: "",
+    className: "",
+    prices: [],
+    sections: [],
   },
   {
     id: "acc-55",
