@@ -1258,69 +1258,6 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
-  {
-    id: "acc-59",
-    title: "Water 648 perfection",
-    badge: "NEW",
-    badgeColor: "bg-primary",
-    image: water648Img.url,
-    className: "Taoist",
-    prices: [{ label: "Preço", value: "45K CPS" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Lv. 140 Sacred Star Water Taoist P3",
-          "2 Jail",
-          "Mythsoul 648 Perfection",
-          "BP: 388",
-          "HP: 82.819 · Magic: 2.550",
-          "Attack: 18.811 – 19.133 · M-Attack: 35.937",
-          "Defense: 31.908 · M-Defense: 10.396",
-          "P-Strike: 99.60% · Break: 60.5%",
-          "Anti-break: 290.2% · M-Strike: 71.20%",
-          "Immunity: 253.00% · Penetration: 29.00%",
-          "Detoxication: 72% · Parry: 7.00%",
-          "+Final P-Attack: 10.284 · +Final M-Attack: 10.134",
-          "-Final P-Damage: 17.229 · -Final M-Damage: 8.914",
-        ],
-      },
-      {
-        title: "Chi (Study Chi)",
-        items: [
-          "Tiger Lv.99 · 400",
-          "Turtle Lv.99 · 400",
-          "Dragon Lv.99 · 400",
-          "Phoenix Lv.99 · 399",
-          "Max Chi Recovery: 24.000 (36.299 restantes)",
-          "Heavenly 20 · Mighty 20 · Cosmic 20",
-        ],
-      },
-      {
-        title: "Runas",
-        items: ["Rune Points: 212.100 (Main completo Max)"],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "Legend Nether Armor +12 · Original Eternal Robe",
-          "Legend Time Backsword +12 · Original Imperial Backsword",
-          "Legend Peach Backsword +12",
-          "Legend Star Tower +12 · Damage -1.700 · Final Magic Dmg +600",
-          "Sockets: Glory Gem / Tortoise Gem (Dmg/Magic Dmg -500 / -6%)",
-        ],
-      },
-      {
-        title: "Inner Power",
-        items: [
-          "The Essence of Yang (A/B/C) · Perfect",
-          "Inner Power Score: 3.400 (My Potency 1.601.760)",
-          "Taoist Tool Heaven Max",
-          "Superb Manual · Violet Glow · Divine North Skill",
-        ],
-      },
-    ],
-  },
 ];
 
 export const CLASS_OPTIONS = [
