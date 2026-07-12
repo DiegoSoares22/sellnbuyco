@@ -29,7 +29,7 @@ import monkEagleImg from "@/assets/monk-eagle.png";
 import ninjaMercuryImg from "@/assets/ninja-mercury.png";
 import archerFatalImg from "@/assets/archer-fatal.png";
 import ninjaHwSupermanImg from "@/assets/ninja-hw-superman.png";
-import ninjaBreakLowImg from "@/assets/ninja-break-low.png";
+
 import waterLowImg from "@/assets/water-low.png";
 import waterDellImg from "@/assets/water-dell.png";
 import sellArcherBreakImg from "@/assets/sell-archer-break.png";
