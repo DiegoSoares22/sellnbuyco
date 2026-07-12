@@ -673,32 +673,6 @@ export const ACCOUNTS: AccountListing[] = [
     ],
   },
   {
-    id: "acc-39",
-    title: "Ninja Break Low Lvl",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: ninjaBreakLowImg,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "14K CPS" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Lv. 109 Sacred Star Ninja P1",
-          "CHI Full",
-          "620 packs de Arena",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "Arma de 2 mãos 9 coroas 👑",
-          "Roupa e Cap de Archer +6 Dual",
-        ],
-      },
-    ],
-  },
-  {
     id: "acc-40",
     title: "Water Low Lv",
     badge: "NOVO",
