@@ -1077,7 +1077,7 @@ export const ACCOUNTS: AccountListing[] = [
     title: "Ótima oportunidade para eventos Low Lv",
     badge: "OPORTUNIDADE",
     badgeColor: "bg-emerald-500",
-    image: ninjaLowLvEventsImg.url,
+    image: ninjaLowLvEventsImg,
     className: "Ninja",
     prices: [{ label: "Preço", value: "125K CPS" }],
     sections: [
@@ -1182,7 +1182,7 @@ export const ACCOUNTS: AccountListing[] = [
     title: "Ótima oportunidade de ninja lv140",
     badge: "OPORTUNIDADE",
     badgeColor: "bg-emerald-500",
-    image: ninjaLv140Img.url,
+    image: ninjaLv140Img,
     className: "Ninja",
     prices: [{ label: "Preço", value: "25K CPS" }],
     sections: [
