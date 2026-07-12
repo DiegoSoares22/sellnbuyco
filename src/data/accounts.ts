@@ -42,9 +42,9 @@ import archerSacredSkyEagleImg from "@/assets/archer-sacred-sky-eagle.png";
 import sellWaterMaxArchiveImg from "@/assets/sell-water-max-archive.png";
 
 import archer140_16biImg from "@/assets/archer-140-16bi.png";
-import ninjaLowLvEventsImg from "@/assets/ninja-events-low-lv.jpg.asset.json";
+import ninjaLowLvEventsImg from "@/assets/ninja-events-low-lv.jpg";
 import sellWaterFullCrownImg from "@/assets/sell-water-full-crown.png.asset.json";
-import ninjaLv140Img from "@/assets/ninja-lv140-v2.png.asset.json";
+import ninjaLv140Img from "@/assets/ninja-lv140.png";
 
 
 
