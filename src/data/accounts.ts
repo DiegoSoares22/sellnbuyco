@@ -42,9 +42,9 @@ import archerSacredSkyEagleImg from "@/assets/archer-sacred-sky-eagle.png";
 import sellWaterMaxArchiveImg from "@/assets/sell-water-max-archive.png";
 
 import archer140_16biImg from "@/assets/archer-140-16bi.png";
-import ninjaLowLvEventsImg from "@/assets/ninja-events-low-lv.jpg.asset.json";
+import ninjaLowLvEventsImg from "@/assets/ninja-events-low-lv.jpg";
 import sellWaterFullCrownImg from "@/assets/sell-water-full-crown.png.asset.json";
-import ninjaLv140Img from "@/assets/ninja-lv140-v2.png.asset.json";
+import ninjaLv140Img from "@/assets/ninja-lv140.png";
 
 
 
@@ -1077,7 +1077,7 @@ export const ACCOUNTS: AccountListing[] = [
     title: "Ótima oportunidade para eventos Low Lv",
     badge: "OPORTUNIDADE",
     badgeColor: "bg-emerald-500",
-    image: ninjaLowLvEventsImg.url,
+    image: ninjaLowLvEventsImg,
     className: "Ninja",
     prices: [{ label: "Preço", value: "125K CPS" }],
     sections: [
@@ -1182,7 +1182,7 @@ export const ACCOUNTS: AccountListing[] = [
     title: "Ótima oportunidade de ninja lv140",
     badge: "OPORTUNIDADE",
     badgeColor: "bg-emerald-500",
-    image: ninjaLv140Img.url,
+    image: ninjaLv140Img,
     className: "Ninja",
     prices: [{ label: "Preço", value: "25K CPS" }],
     sections: [
