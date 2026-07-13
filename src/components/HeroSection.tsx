@@ -425,19 +425,19 @@ export default function HeroSection() {
         <img
           src={conquerHeroesArt.url}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover object-right"
+          className="absolute inset-0 w-full h-full object-cover object-right opacity-90"
           style={{
             WebkitMaskImage:
-              "linear-gradient(to left, rgba(0,0,0,1) 40%, rgba(0,0,0,0.7) 65%, rgba(0,0,0,0) 100%), linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 12%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.9) 88%, rgba(0,0,0,0) 100%)",
+              "linear-gradient(to left, rgba(0,0,0,1) 35%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0) 100%)",
             maskImage:
-              "linear-gradient(to left, rgba(0,0,0,1) 40%, rgba(0,0,0,0.7) 65%, rgba(0,0,0,0) 100%), linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 12%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.9) 88%, rgba(0,0,0,0) 100%)",
-            WebkitMaskComposite: "source-in" as any,
-            maskComposite: "intersect" as any,
+              "linear-gradient(to left, rgba(0,0,0,1) 35%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0) 100%)",
             filter: "saturate(1.05) contrast(1.05)",
           }}
         />
-        {/* Additional bottom-to-top fade blending into the section bg */}
-        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#04060f]/0 to-[#04060f]" />
+        {/* vertical soft fades top+bottom to blend into section */}
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#04060f] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#04060f] to-transparent" />
+
       </div>
 
       {/* Mobile character art — smaller, dim, behind content */}
