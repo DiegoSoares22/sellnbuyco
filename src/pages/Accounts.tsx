@@ -1,11 +1,26 @@
 import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, MessageCircle, X, Filter, HandCoins, Sparkles } from "lucide-react";
+import {
+  ArrowLeft,
+  MessageCircle,
+  X,
+  Filter,
+  HandCoins,
+  Sparkles,
+  Crosshair,
+  Swords,
+  Droplet,
+  Anchor,
+  Circle,
+  Shield,
+  Users,
+} from "lucide-react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { ACCOUNTS, CLASS_OPTIONS, getClassCounts } from "@/data/accounts";
 import type { AccountListing } from "@/data/accounts";
 import AccountAssistantModal from "@/components/AccountAssistantModal";
 import HeroSection from "@/components/HeroSection";
+import TrustStrip from "@/components/TrustStrip";
 import FiltersPanel from "@/components/FiltersPanel";
 import {
   filterByPriceRange,
@@ -15,6 +30,32 @@ import {
 } from "@/lib/accountFilters";
 import { loadPrefs, savePrefs } from "@/lib/userPrefs";
 import { useI18n } from "@/i18n";
+
+// Class → icon mapping (visual reinforcement of class filters)
+const CLASS_ICON: Record<string, typeof Crosshair> = {
+  Archer: Crosshair,
+  Ninja: Swords,
+  Taoist: Droplet,
+  Pirata: Anchor,
+  Monk: Circle,
+  Warrior: Shield,
+};
+
+// Badges with elevated hierarchy (gold glow) vs discreet informative ones
+const HERO_BADGES = new Set(["EPIC", "TOP", "OPORTUNIDADE"]);
+const SUBTLE_BADGES = new Set(["DECENTE", "IDEAL", "INTERMEDIÁRIO", "INTERMEDIARIO"]);
+
+function badgeClasses(badge: string, fallback: string) {
+  const b = badge.toUpperCase();
+  if (HERO_BADGES.has(b)) {
+    return "bg-gradient-to-r from-amber-400 to-primary text-white border border-amber-300/60 shadow-[0_0_14px_hsla(38,100%,55%,0.55)] font-black uppercase tracking-wider";
+  }
+  if (SUBTLE_BADGES.has(b)) {
+    return "bg-background/70 text-foreground/80 border border-border backdrop-blur-sm font-semibold uppercase tracking-wide";
+  }
+  return `${fallback} text-white font-bold uppercase tracking-wide`;
+}
+
 
 const WHATSAPP = "5575981382799";
 
@@ -197,6 +238,7 @@ function AccountsList() {
   return (
     <div className="min-h-screen bg-background">
       <HeroSection />
+      <TrustStrip />
 
       <div className="container max-w-6xl py-8 px-4">
         <div className="flex items-start justify-between gap-4 flex-wrap mb-4">
@@ -234,33 +276,39 @@ function AccountsList() {
           <div className="flex flex-wrap gap-2">
             <button
               onClick={() => setClassFilter(null)}
-              className={`inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border transition-colors ${
+              className={`inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full border transition-all ${
                 !classFilter
-                  ? "bg-primary text-primary-foreground border-primary"
-                  : "bg-card text-muted-foreground border-border hover:border-primary/40"
+                  ? "bg-primary text-primary-foreground border-primary shadow-[0_0_12px_hsla(33,100%,50%,0.4)]"
+                  : "bg-card text-muted-foreground border-border hover:border-primary/40 hover:text-foreground"
               }`}
             >
-              <Filter size={12} /> {t("acc.all")} ({ACCOUNTS.length})
+              <Users size={12} /> {t("acc.all")}
+              <span className="opacity-70">({ACCOUNTS.length})</span>
             </button>
             {CLASS_OPTIONS.map((cls) => {
               const count = classCounts[cls];
               if (!count) return null;
+              const Icon = CLASS_ICON[cls] ?? Circle;
+              const active = classFilter === cls;
               return (
                 <button
                   key={cls}
-                  onClick={() => setClassFilter(classFilter === cls ? null : cls)}
-                  className={`text-xs font-medium px-3 py-1.5 rounded-full border transition-colors ${
-                    classFilter === cls
-                      ? "bg-primary text-primary-foreground border-primary"
-                      : "bg-card text-muted-foreground border-border hover:border-primary/40"
+                  onClick={() => setClassFilter(active ? null : cls)}
+                  className={`inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full border transition-all ${
+                    active
+                      ? "bg-primary text-primary-foreground border-primary shadow-[0_0_12px_hsla(33,100%,50%,0.4)]"
+                      : "bg-card text-muted-foreground border-border hover:border-primary/40 hover:text-foreground"
                   }`}
                 >
-                  {cls} ({count})
+                  <Icon size={12} className={active ? "" : "text-primary/80"} />
+                  {cls}
+                  <span className="opacity-70">({count})</span>
                 </button>
               );
             })}
           </div>
         </div>
+
 
         {/* Active filter pills summary */}
         {hasAny && (
@@ -330,22 +378,42 @@ function AccountsList() {
         )}
 
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-          {filtered.map((acc, i) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {filtered.map((acc, i) => {
+            const ClassIcon = CLASS_ICON[acc.className] ?? Circle;
+            return (
             <motion.div
               key={acc.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: Math.min(i, 8) * 0.05 }}
-              className="bg-card border border-border rounded-xl overflow-hidden flex flex-col hover:border-primary/30 hover:shadow-[0_10px_30px_-10px_hsla(33,100%,50%,0.35)] transition-all cursor-pointer group"
+              whileHover={{ y: -4 }}
+              className="bg-card border border-border rounded-xl overflow-hidden flex flex-col hover:border-primary/50 shadow-sm hover:shadow-[0_18px_40px_-15px_hsla(33,100%,50%,0.45)] transition-all cursor-pointer group"
               onClick={() => setSelected(acc)}
             >
-              <div className="relative h-48 overflow-hidden">
-                <img src={acc.image} alt={acc.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
-                <span className={`absolute top-3 left-3 ${acc.badgeColor} text-white text-[10px] font-bold px-2 py-0.5 rounded-md`}>
+              <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+                <img
+                  src={acc.image}
+                  alt={acc.title}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-500 ease-out"
+                  loading="lazy"
+                />
+                {/* subtle top gradient for badge readability */}
+                <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/45 to-transparent pointer-events-none" />
+                <span
+                  className={`absolute top-2.5 left-2.5 text-[10px] px-2 py-0.5 rounded-md ${badgeClasses(
+                    acc.badge,
+                    acc.badgeColor
+                  )}`}
+                >
                   {acc.badge}
                 </span>
+                <span className="absolute top-2.5 right-2.5 inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded-md bg-black/55 text-white/90 backdrop-blur-sm border border-white/10">
+                  <ClassIcon size={10} className="text-primary" />
+                  {acc.className}
+                </span>
               </div>
+
               <div className="p-4 flex flex-col flex-1">
                 <h3 className="text-sm font-semibold text-card-foreground line-clamp-2 mb-2">{acc.title}</h3>
                 <div className="mt-auto space-y-1.5">
@@ -374,7 +442,8 @@ function AccountsList() {
                 <OfferButton title={acc.title} className="mt-2 w-full" />
               </div>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
       </div>
 

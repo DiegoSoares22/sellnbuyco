@@ -8,6 +8,7 @@ import { ACCOUNTS } from "@/data/accounts";
 import { getAccountLevel } from "@/lib/accountFilters";
 import { useTypewriter } from "@/hooks/useTypewriter";
 import { useI18n } from "@/i18n";
+import conquerHeroesArt from "@/assets/conquer-heroes.png";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -330,6 +331,23 @@ export default function HeroSection() {
     [autoplayRef.current]
   );
 
+  // Parallax scroll — subtle vertical translate for the character art
+  const [scrollY, setScrollY] = useState(0);
+  useEffect(() => {
+    let raf = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => setScrollY(window.scrollY));
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
+  const artOffset = Math.min(scrollY * 0.12, 40); // 0-40px parallax
+
+
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
@@ -385,6 +403,68 @@ export default function HeroSection() {
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         className="pointer-events-none absolute inset-x-0 top-1/3 h-px bg-gradient-to-r from-transparent via-amber-300/40 to-transparent"
       />
+
+      {/* ── Character art (Conquer Online heroes) ── */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-y-0 right-0 z-[1] hidden md:block"
+        style={{
+          width: "min(62%, 900px)",
+          transform: `translateY(${-artOffset}px)`,
+          transition: "transform 120ms linear",
+        }}
+      >
+        {/* Warm glow behind the central helmet/weapon */}
+        <div
+          className="absolute top-1/2 left-[42%] -translate-x-1/2 -translate-y-1/2 w-[380px] h-[380px] rounded-full blur-3xl opacity-70"
+          style={{
+            background:
+              "radial-gradient(circle, hsla(38,100%,58%,0.55) 0%, hsla(28,100%,50%,0.25) 40%, transparent 70%)",
+          }}
+        />
+        <img
+          src={conquerHeroesArt}
+          alt=""
+          className="absolute inset-0 w-full h-full object-contain object-right opacity-90"
+          style={{
+            WebkitMaskImage:
+              "linear-gradient(to left, rgba(0,0,0,1) 30%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0) 100%)",
+            maskImage:
+              "linear-gradient(to left, rgba(0,0,0,1) 30%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0) 100%)",
+            filter: "saturate(1.05) contrast(1.05)",
+          }}
+        />
+        {/* vertical soft fades top+bottom to blend into section */}
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#04060f] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#04060f] to-transparent" />
+
+      </div>
+
+      {/* Mobile character art — smaller, dim, behind content */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-[1] md:hidden overflow-hidden"
+      >
+        <div
+          className="absolute top-4 right-0 w-[85%] aspect-[4/3] opacity-[0.18]"
+          style={{
+            transform: `translateY(${-artOffset * 0.5}px)`,
+          }}
+        >
+          <img
+            src={conquerHeroesArt}
+            alt=""
+            className="w-full h-full object-cover object-right"
+            style={{
+              WebkitMaskImage:
+                "radial-gradient(ellipse at 65% 45%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.75) 45%, rgba(0,0,0,0) 75%)",
+              maskImage:
+                "radial-gradient(ellipse at 65% 45%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.75) 45%, rgba(0,0,0,0) 75%)",
+            }}
+          />
+        </div>
+      </div>
+
 
       {/* ── Particles ── */}
       <div aria-hidden className="absolute inset-0 pointer-events-none overflow-hidden">
