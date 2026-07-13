@@ -8,6 +8,7 @@ import { ACCOUNTS } from "@/data/accounts";
 import { getAccountLevel } from "@/lib/accountFilters";
 import { useTypewriter } from "@/hooks/useTypewriter";
 import { useI18n } from "@/i18n";
+import conquerHeroesArt from "@/assets/conquer-heroes.png.asset.json";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
