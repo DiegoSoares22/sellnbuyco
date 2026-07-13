@@ -404,6 +404,68 @@ export default function HeroSection() {
         className="pointer-events-none absolute inset-x-0 top-1/3 h-px bg-gradient-to-r from-transparent via-amber-300/40 to-transparent"
       />
 
+      {/* ── Character art (Conquer Online heroes) ── */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-y-0 right-0 z-[1] hidden md:block"
+        style={{
+          width: "min(62%, 900px)",
+          transform: `translateY(${-artOffset}px)`,
+          transition: "transform 120ms linear",
+        }}
+      >
+        {/* Warm glow behind the central helmet/weapon */}
+        <div
+          className="absolute top-1/2 left-[42%] -translate-x-1/2 -translate-y-1/2 w-[380px] h-[380px] rounded-full blur-3xl opacity-70"
+          style={{
+            background:
+              "radial-gradient(circle, hsla(38,100%,58%,0.55) 0%, hsla(28,100%,50%,0.25) 40%, transparent 70%)",
+          }}
+        />
+        <img
+          src={conquerHeroesArt.url}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover object-right"
+          style={{
+            WebkitMaskImage:
+              "linear-gradient(to left, rgba(0,0,0,1) 40%, rgba(0,0,0,0.7) 65%, rgba(0,0,0,0) 100%), linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 12%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.9) 88%, rgba(0,0,0,0) 100%)",
+            maskImage:
+              "linear-gradient(to left, rgba(0,0,0,1) 40%, rgba(0,0,0,0.7) 65%, rgba(0,0,0,0) 100%), linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 12%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.9) 88%, rgba(0,0,0,0) 100%)",
+            WebkitMaskComposite: "source-in" as any,
+            maskComposite: "intersect" as any,
+            filter: "saturate(1.05) contrast(1.05)",
+          }}
+        />
+        {/* Additional bottom-to-top fade blending into the section bg */}
+        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#04060f]/0 to-[#04060f]" />
+      </div>
+
+      {/* Mobile character art — smaller, dim, behind content */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-[1] md:hidden overflow-hidden"
+      >
+        <div
+          className="absolute top-4 right-0 w-[85%] aspect-[4/3] opacity-[0.18]"
+          style={{
+            transform: `translateY(${-artOffset * 0.5}px)`,
+          }}
+        >
+          <img
+            src={conquerHeroesArt.url}
+            alt=""
+            className="w-full h-full object-cover object-right"
+            style={{
+              WebkitMaskImage:
+                "radial-gradient(ellipse at 65% 45%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.75) 45%, rgba(0,0,0,0) 75%)",
+              maskImage:
+                "radial-gradient(ellipse at 65% 45%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.75) 45%, rgba(0,0,0,0) 75%)",
+            }}
+          />
+        </div>
+      </div>
+
+
       {/* ── Particles ── */}
       <div aria-hidden className="absolute inset-0 pointer-events-none overflow-hidden">
         {Array.from({ length: 18 }).map((_, i) => (
