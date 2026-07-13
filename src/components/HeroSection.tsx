@@ -425,12 +425,12 @@ export default function HeroSection() {
         <img
           src={conquerHeroesArt}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover object-right opacity-90"
+          className="absolute inset-0 w-full h-full object-contain object-right opacity-90"
           style={{
             WebkitMaskImage:
-              "linear-gradient(to left, rgba(0,0,0,1) 35%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0) 100%)",
+              "linear-gradient(to left, rgba(0,0,0,1) 30%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0) 100%)",
             maskImage:
-              "linear-gradient(to left, rgba(0,0,0,1) 35%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0) 100%)",
+              "linear-gradient(to left, rgba(0,0,0,1) 30%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0) 100%)",
             filter: "saturate(1.05) contrast(1.05)",
           }}
         />
