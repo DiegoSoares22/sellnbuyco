@@ -442,7 +442,8 @@ function AccountsList() {
                 <OfferButton title={acc.title} className="mt-2 w-full" />
               </div>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
