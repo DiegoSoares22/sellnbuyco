@@ -1,11 +1,26 @@
 import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, MessageCircle, X, Filter, HandCoins, Sparkles } from "lucide-react";
+import {
+  ArrowLeft,
+  MessageCircle,
+  X,
+  Filter,
+  HandCoins,
+  Sparkles,
+  Crosshair,
+  Swords,
+  Droplet,
+  Anchor,
+  Circle,
+  Shield,
+  Users,
+} from "lucide-react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { ACCOUNTS, CLASS_OPTIONS, getClassCounts } from "@/data/accounts";
 import type { AccountListing } from "@/data/accounts";
 import AccountAssistantModal from "@/components/AccountAssistantModal";
 import HeroSection from "@/components/HeroSection";
+import TrustStrip from "@/components/TrustStrip";
 import FiltersPanel from "@/components/FiltersPanel";
 import {
   filterByPriceRange,
@@ -15,6 +30,32 @@ import {
 } from "@/lib/accountFilters";
 import { loadPrefs, savePrefs } from "@/lib/userPrefs";
 import { useI18n } from "@/i18n";
+
+// Class → icon mapping (visual reinforcement of class filters)
+const CLASS_ICON: Record<string, typeof Crosshair> = {
+  Archer: Crosshair,
+  Ninja: Swords,
+  Taoist: Droplet,
+  Pirata: Anchor,
+  Monk: Circle,
+  Warrior: Shield,
+};
+
+// Badges with elevated hierarchy (gold glow) vs discreet informative ones
+const HERO_BADGES = new Set(["EPIC", "TOP", "OPORTUNIDADE"]);
+const SUBTLE_BADGES = new Set(["DECENTE", "IDEAL", "INTERMEDIÁRIO", "INTERMEDIARIO"]);
+
+function badgeClasses(badge: string, fallback: string) {
+  const b = badge.toUpperCase();
+  if (HERO_BADGES.has(b)) {
+    return "bg-gradient-to-r from-amber-400 to-primary text-white border border-amber-300/60 shadow-[0_0_14px_hsla(38,100%,55%,0.55)] font-black uppercase tracking-wider";
+  }
+  if (SUBTLE_BADGES.has(b)) {
+    return "bg-background/70 text-foreground/80 border border-border backdrop-blur-sm font-semibold uppercase tracking-wide";
+  }
+  return `${fallback} text-white font-bold uppercase tracking-wide`;
+}
+
 
 const WHATSAPP = "5575981382799";
 
