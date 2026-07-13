@@ -423,7 +423,7 @@ export default function HeroSection() {
           }}
         />
         <img
-          src={conquerHeroesArt.url}
+          src={conquerHeroesArt}
           alt=""
           className="absolute inset-0 w-full h-full object-cover object-right opacity-90"
           style={{
@@ -452,7 +452,7 @@ export default function HeroSection() {
           }}
         >
           <img
-            src={conquerHeroesArt.url}
+            src={conquerHeroesArt}
             alt=""
             className="w-full h-full object-cover object-right"
             style={{
