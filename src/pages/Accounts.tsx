@@ -238,6 +238,7 @@ function AccountsList() {
   return (
     <div className="min-h-screen bg-background">
       <HeroSection />
+      <TrustStrip />
 
       <div className="container max-w-6xl py-8 px-4">
         <div className="flex items-start justify-between gap-4 flex-wrap mb-4">
