@@ -276,33 +276,39 @@ function AccountsList() {
           <div className="flex flex-wrap gap-2">
             <button
               onClick={() => setClassFilter(null)}
-              className={`inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border transition-colors ${
+              className={`inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full border transition-all ${
                 !classFilter
-                  ? "bg-primary text-primary-foreground border-primary"
-                  : "bg-card text-muted-foreground border-border hover:border-primary/40"
+                  ? "bg-primary text-primary-foreground border-primary shadow-[0_0_12px_hsla(33,100%,50%,0.4)]"
+                  : "bg-card text-muted-foreground border-border hover:border-primary/40 hover:text-foreground"
               }`}
             >
-              <Filter size={12} /> {t("acc.all")} ({ACCOUNTS.length})
+              <Users size={12} /> {t("acc.all")}
+              <span className="opacity-70">({ACCOUNTS.length})</span>
             </button>
             {CLASS_OPTIONS.map((cls) => {
               const count = classCounts[cls];
               if (!count) return null;
+              const Icon = CLASS_ICON[cls] ?? Circle;
+              const active = classFilter === cls;
               return (
                 <button
                   key={cls}
-                  onClick={() => setClassFilter(classFilter === cls ? null : cls)}
-                  className={`text-xs font-medium px-3 py-1.5 rounded-full border transition-colors ${
-                    classFilter === cls
-                      ? "bg-primary text-primary-foreground border-primary"
-                      : "bg-card text-muted-foreground border-border hover:border-primary/40"
+                  onClick={() => setClassFilter(active ? null : cls)}
+                  className={`inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full border transition-all ${
+                    active
+                      ? "bg-primary text-primary-foreground border-primary shadow-[0_0_12px_hsla(33,100%,50%,0.4)]"
+                      : "bg-card text-muted-foreground border-border hover:border-primary/40 hover:text-foreground"
                   }`}
                 >
-                  {cls} ({count})
+                  <Icon size={12} className={active ? "" : "text-primary/80"} />
+                  {cls}
+                  <span className="opacity-70">({count})</span>
                 </button>
               );
             })}
           </div>
         </div>
+
 
         {/* Active filter pills summary */}
         {hasAny && (
