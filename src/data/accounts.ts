@@ -24,11 +24,8 @@ import opNinjaHwStunImg from "@/assets/op-ninja-hw-stun.png";
 import ninjaHwFullCrownImg from "@/assets/ninja-hw-full-crown.jpg";
 import waterFullUnboundImg from "@/assets/water-full-unbound.jpg";
 import turquoiseImg from "@/assets/turquoise.png";
-import ninjaLucianoImg from "@/assets/ninja-luciano.jpg";
-import monkEagleImg from "@/assets/monk-eagle.png";
 import ninjaMercuryImg from "@/assets/ninja-mercury.png";
 import archerFatalImg from "@/assets/archer-fatal.png";
-import ninjaHwSupermanImg from "@/assets/ninja-hw-superman.png";
 
 import waterLowImg from "@/assets/water-low.png";
 import waterDellImg from "@/assets/water-dell.png";
@@ -43,7 +40,7 @@ import sellWaterMaxArchiveImg from "@/assets/sell-water-max-archive.png";
 
 import archer140_16biImg from "@/assets/archer-140-16bi.png";
 import ninjaLowLvEventsImg from "@/assets/ninja-events-low-lv.jpg";
-import sellWaterFullCrownImg from "@/assets/sell-water-full-crown.png.asset.json";
+import sellWaterFullCrownImg from "@/assets/sell-water-full-crown.jpg";
 import ninjaLv140Img from "@/assets/ninja-lv140.png";
 
 
@@ -489,87 +486,7 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
-  {
-    id: "acc-34",
-    title: "Ninja Perfeição 648 - Honor",
-    badge: "NEW",
-    badgeColor: "bg-emerald-500",
-    image: ninjaLucianoImg,
-    className: "Ninja",
-    prices: [{ label: "Preço a combinar", value: "14k CPs" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Perfeição 648",
-          "Chi full",
-          "Inner power faltando as últimas páginas",
-          "Servidor: Honor",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "160K de Rune Score",
-          "Faltando 1 slot de runa com 34 hammer",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "1 Epic Unbound P4 fixo",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-35",
-    title: "Monk Eagle Sacred Star P1",
-    badge: "NEW",
-    badgeColor: "bg-emerald-500",
-    image: monkEagleImg,
-    className: "Monk",
-    prices: [{ label: "Preço", value: "13K CPS" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Lv. 99 Sacred Star Monk P1",
-          "5.245B Donation",
-          "Total Rating: 101.500",
-          "P-Strike: 124.60% · Break: 229.5%",
-          "Anti-break: 91.1% · Immunity: 235.20%",
-          "+Final P-Attack: 10.399 · +Final M-Attack: 6.899",
-          "Mythsoul: 648",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "Rune Points: 172.900",
-          "Violet Shield (+9) Max",
-          "SoulChant (+6) · FineRain (+14) · Rampage (+8)",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "LegendDemonScythe (+12) - P7ScytheSoul",
-          "LegendNetherArmor (+12) - LightArmor",
-          "LegendMoonHeadgear (+12) - P7HeadgearSoul [Immunity]",
-          "Relic HeartlessSeal - 2x P-Attack +305/+303",
-        ],
-      },
-      {
-        title: "Inner Power",
-        items: [
-          "Dragon Lv99 · Tiger Lv99",
-          "Divine North Skill A:8 B:6 C:9",
-          "Violet Glow A:5 B:0 C:0",
-        ],
-      },
-    ],
-  },
+
 
   {
     id: "acc-37",
@@ -618,60 +535,7 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
-  {
-    id: "acc-38",
-    title: "Ninja HW Superman Sacred Star P3",
-    badge: "TOP",
-    badgeColor: "bg-amber-500",
-    image: ninjaHwSupermanImg,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "65K CPS" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Lv. 99 Sacred Star Ninja P3",
-          "36.451B Donation · Noble Rank: Duke",
-          "Ranking: 28",
-          "Break: 329.8% (com bônus) / 294.8% base",
-          "Anti-break: 72.3% · Immunity: 231.50%",
-          "P-Strike: 107.70% · M-Strike: 48.50%",
-          "+Final P-Attack: 12.079 · +Final M-Attack: 8.649",
-          "Mythsoul: 648",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "Rune Points: 249.200",
-          "Ninpo Score: 45.158",
-          "Ideal Rune full Max",
-          "Ninja Sprint Gates lvl 9",
-          "Slash Sigil · FlashSlash Sigil (Prowess)",
-          "My Potency: 345.280",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "Relic HeartlessSeal (Star Shock) - 2x P-Attack +650/+650",
-          "Break +2.24% (x3)",
-          "Pets: Sandsong · Phoenix Grace",
-          "Astredge 95% / 70%",
-          "Inventory: 3.261.174 silver · 11.243 bound",
-        ],
-      },
-      {
-        title: "Inner Power",
-        items: [
-          "Tiger Lv99 · Turtle Lv92 · Phoenix Lv99 · Dragon Lv99 - todos 400",
-          "Superb Manual · Violet Glow · Divine North Skill (Perfect)",
-          "Inner Power Concepts: Perfect em todas as páginas principais",
-          "Eon Spirit P8/P7/P8 · P4/P7/P5 · P4/P3/P3 100%",
-        ],
-      },
-    ],
-  },
+
   {
     id: "acc-40",
     title: "Water Low Lv",
@@ -1128,7 +992,7 @@ export const ACCOUNTS: AccountListing[] = [
     title: "Sell Water Full Crouwn",
     badge: "NEW",
     badgeColor: "bg-emerald-500",
-    image: sellWaterFullCrownImg.url,
+    image: sellWaterFullCrownImg,
     className: "Taoist",
     prices: [{ label: "Preço", value: "70K CPS" }],
     sections: [
