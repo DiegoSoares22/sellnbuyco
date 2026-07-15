@@ -22,19 +22,16 @@ import waterOpImg from "@/assets/water-op.jpg";
 import ninjaOpBreakImg from "@/assets/ninja-op-break.jpg";
 import opNinjaHwStunImg from "@/assets/op-ninja-hw-stun.png";
 import ninjaHwFullCrownImg from "@/assets/ninja-hw-full-crown.jpg";
-import waterFullUnboundImg from "@/assets/water-full-unbound.jpg";
 import turquoiseImg from "@/assets/turquoise.png";
 import ninjaMercuryImg from "@/assets/ninja-mercury.png";
-import archerFatalImg from "@/assets/archer-fatal.png";
 
 import waterLowImg from "@/assets/water-low.png";
 import waterDellImg from "@/assets/water-dell.png";
-import sellArcherBreakImg from "@/assets/sell-archer-break.png";
 import opNinjaStrikeAntibreakImg from "@/assets/op-ninja-strike-antibreak.jpg";
 import ninjaHwStun42kImg from "@/assets/ninja-hw-stun-42k.jpg";
 import topNinja129Img from "@/assets/top-ninja-129.jpg";
 import ninjaImg from "@/assets/ninja.png";
-import waterImg from "@/assets/water.png";
+import water2JailsImg from "@/assets/water-2jails.jpg";
 import archerSacredSkyEagleImg from "@/assets/archer-sacred-sky-eagle.png";
 import sellWaterMaxArchiveImg from "@/assets/sell-water-max-archive.png";
 
@@ -451,90 +448,7 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
-  {
-    id: "acc-33",
-    title: "Water Full Unbound",
-    badge: "NEW",
-    badgeColor: "bg-emerald-500",
-    image: waterFullUnboundImg,
-    className: "Taoist",
-    prices: [{ label: "Preço", value: "75K CPS" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "35 Bi de Donate",
-          "Arquivos Water Full",
-          "Arquivos Monk 20-20-20",
-          "0 Jail",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "271.600 Ranking de Runa",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "Hossu 2 Socket Gem Super -3 Unbound",
-          "Relíquia Full 3 Immunity",
-          "Gold Trophy",
-          "2 Asas Raras",
-        ],
-      },
-    ],
-  },
 
-
-  {
-    id: "acc-37",
-    title: "Archer FatalBlow Sacred Sea P9",
-    badge: "NEW",
-    badgeColor: "bg-emerald-500",
-    image: archerFatalImg,
-    className: "Archer",
-    prices: [{ label: "Preço", value: "14K CPS" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Lv. 129 Sacred Sea Archer P9",
-          "14.548B Donation",
-          "P-Strike: 252.10% · Break: 83.9%",
-          "Anti-break: 218.6% · Immunity: 150.15%",
-          "+Final P-Attack: 10.329 · +Final M-Attack: 6.829",
-          "Max-HP +3500 · P-Strike +20% · Anti-Break +20% · Immunity +20%",
-          "Mythsoul: 429",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "Rune Points: 127.500",
-          "Astredge 95% / 65%",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "LegendMulberryBow (+5) - Archer'sBow InternArcher",
-          "FatalBlow mount",
-          "Garments: Cloudbloom (Sweet) · Ashen Xmas (Miracle)",
-          "Phoenix Grace pet",
-        ],
-      },
-      {
-        title: "Inner Power",
-        items: [
-          "Tiger Lv99 · Turtle Lv28",
-          "Superb Manual · Violet Glow · Divine North Skill",
-          "Stone Cracker Lv54 · Cold Moon Lv6 · Thorn Cutter Lv48",
-        ],
-      },
-    ],
-  },
 
   {
     id: "acc-40",
@@ -593,38 +507,7 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
-  {
-    id: "acc-45",
-    title: "Sell archer break",
-    badge: "NEW",
-    badgeColor: "bg-emerald-500",
-    image: sellArcherBreakImg,
-    className: "Archer",
-    prices: [{ label: "Preço", value: "26K CPS" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Full Coroa - 648 Perfection",
-          "Arquivos principais full",
-          "Chi full",
-          "32B de Donation",
-          "0 BJ",
-          "142 Garments",
-          "3 - 5 Stars",
-          "84 Mounts",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "Runas de Archer lvl max",
-          "Iron Bone lvl 6",
-          "Slot de runas all open",
-        ],
-      },
-    ],
-  },
+
   {
     id: "acc-46",
     title: "Vende-se - Turquoise",
@@ -802,48 +685,41 @@ export const ACCOUNTS: AccountListing[] = [
   },
 
   {
-    id: "acc-50",
-    title: "Decente Water",
-    badge: "OPORTUNIDADE",
+    id: "acc-59",
+    title: "Water com 2 jails",
+    badge: "NOVO",
     badgeColor: "bg-emerald-500",
-    image: waterImg,
+    image: water2JailsImg,
     className: "Taoist",
-    prices: [{ label: "Preço", value: "9k CPs" }],
+    prices: [{ label: "Preço", value: "40k CPs" }],
     sections: [
       {
         title: "Atributos",
         items: [
-          "Decente water(Ótima oportunidade de entrada)",
-          "Lv. 140 SacredSkyWaterTaoistP3",
-          "M-Strike: 71.25% · Break: 55.2%",
-          "Immunity: 238.90% · Anti-break: 267.6%",
-          "P-Strike: 73.00% · Penetration: 29.00%",
-          "Final M-Attack: 8.889 · Final M-Damage: 7.659",
+          "Lv. 140 Sacred Star Water Taoist P3",
+          "2 Jails · 388 BP",
+          "HP: 82.819 · Defense: 31.908",
+          "P-Strike: 99.60% · Break: 60.5%",
+          "Anti-break: 290.2% · Immunity: 253.00%",
+          "M-Strike: 71.20% · Penetration: 29.00%",
+          "Rune Points: 212.100",
+          "Taoist Tool Max",
         ],
       },
       {
         title: "Chi & Inner Power",
         items: [
-          "Chi Full (Tiger 400, Turtle 400, Dragon 400, Phoenix 400)",
-          "Superb Manual (Perfect) · Violet Glow (Perfect) · Divine North Skill (Perfect)",
-          "Jiang Hu Grade 15 (Talent A 4)",
+          "Chi: Tiger 400, Turtle 400, Dragon 400, Phoenix 399",
+          "Inner Power Total Score: 3400",
+          "Superb Manual · Violet Glow · Divine North Skill · Essence of Yin",
         ],
       },
       {
-        title: "Equipamentos & Runas",
+        title: "Equipamentos",
         items: [
-          "Rune Points: 163.500",
-          "LegendUniversalLotus (+12) - P7 DragonSoul",
-          "Taoist Tool Score 13.500 / 13.700 (Max)",
-          "Viodragon Club Recognition 60%",
-        ],
-      },
-      {
-        title: "Extras & Cosméticos",
-        items: [
-          "Asas: VioletLightning, StarlightWings, VioletCloudWing, NeonRhythm, MoonlightWings, AmberMelody",
-          "FrozenFantasy (Glaze) Garment",
-          "PK Titles: Legendary, Grandmaster, Master",
+          "LegendTornadoSword (+12) 2x TortoiseGem",
+          "LegendNetherArmor (+12)",
+          "LegendStarTower (+12)",
         ],
       },
     ],
