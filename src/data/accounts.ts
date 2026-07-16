@@ -39,6 +39,7 @@ import archer140_16biImg from "@/assets/archer-140-16bi.png";
 import ninjaLowLvEventsImg from "@/assets/ninja-events-low-lv.jpg";
 import sellWaterFullCrownImg from "@/assets/sell-water-full-crown.jpg";
 import ninjaLv140Img from "@/assets/ninja-lv140.png";
+import sellArcherBreakImg from "@/assets/sell-archer-break.png";
 
 
 
@@ -55,6 +56,48 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-60",
+    title: "Sell Archer Break",
+    badge: "NEW",
+    badgeColor: "bg-emerald-500",
+    image: sellArcherBreakImg,
+    className: "Archer",
+    prices: [{ label: "Preço", value: "15K CPS" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Full coroa - 648 Perfection",
+          "32B de Donation",
+          "0 BJ (Jail)",
+          "Chi full",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "Runas de archer lvl max",
+          "Iron Bone lvl 6",
+          "Slot de runas all open (Todos abertos)",
+        ],
+      },
+      {
+        title: "Arquivos",
+        items: [
+          "Arquivos principais full",
+        ],
+      },
+      {
+        title: "WarDrobe",
+        items: [
+          "142 Garments",
+          "84 Mounts",
+          "3x 5-Stars",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-4",
     title: "Strike Archer com Epics",
