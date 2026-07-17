@@ -40,6 +40,7 @@ import ninjaLowLvEventsImg from "@/assets/ninja-events-low-lv.jpg";
 import sellWaterFullCrownImg from "@/assets/sell-water-full-crown.jpg";
 import ninjaLv140Img from "@/assets/ninja-lv140.png";
 import sellArcherBreakImg from "@/assets/sell-archer-break.png";
+import jojomonkImg from "@/assets/jojomonk.jpg";
 
 
 
@@ -56,6 +57,35 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-61",
+    title: "Decente monk defensivo",
+    badge: "DECENTE",
+    badgeColor: "bg-cyan-500",
+    image: jojomonkImg,
+    className: "Monk",
+    prices: [{ label: "Preço", value: "18k CPs" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 140 Sacred Star Monk P2",
+          "1 Jail",
+          "HP: 76.349 · Rune Points: 191.300",
+          "Anti-break: 304.8% · Immunity: 237.83%",
+          "Break: 68.5% · P-Strike: 93.34%",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "Steed +12 (Lineage 12) Unbound",
+          "9 coroas unbound",
+          "World Cup Trophy Lv. 15",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-60",
     title: "Sell Archer Break",
