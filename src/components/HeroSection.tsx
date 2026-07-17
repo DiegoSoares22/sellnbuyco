@@ -8,6 +8,7 @@ import { ACCOUNTS } from "@/data/accounts";
 import { getAccountLevel } from "@/lib/accountFilters";
 import { useTypewriter } from "@/hooks/useTypewriter";
 import { useI18n } from "@/i18n";
+import { getRarityClasses, isTemporalBadge } from "@/lib/rarityBadge";
 import conquerHeroesArt from "@/assets/conquer-heroes.png";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
@@ -44,11 +45,12 @@ function parseBrlPrice(prices: { label: string; value: string }[]): string | nul
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
-function BadgePill({ badge, badgeColor }: { badge: string; badgeColor: string }) {
+function BadgePill({ badge }: { badge: string; badgeColor?: string }) {
   return (
     <span
-      className={`inline-block ${badgeColor} text-white text-[10px] font-bold px-2.5 py-0.5 rounded-md uppercase tracking-wider shadow-md`}
+      className={`inline-flex items-center gap-1 text-[10px] px-2.5 py-0.5 rounded-md uppercase tracking-wider shadow-md ${getRarityClasses(badge)}`}
     >
+      {isTemporalBadge(badge) && <Sparkles size={9} />}
       {badge}
     </span>
   );

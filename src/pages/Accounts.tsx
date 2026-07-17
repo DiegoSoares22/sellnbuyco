@@ -15,6 +15,7 @@ import {
   Shield,
   Users,
 } from "lucide-react";
+import { getRarityClasses, isTemporalBadge } from "@/lib/rarityBadge";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { ACCOUNTS, CLASS_OPTIONS, getClassCounts } from "@/data/accounts";
 import type { AccountListing } from "@/data/accounts";
@@ -41,19 +42,9 @@ const CLASS_ICON: Record<string, typeof Crosshair> = {
   Warrior: Shield,
 };
 
-// Badges with elevated hierarchy (gold glow) vs discreet informative ones
-const HERO_BADGES = new Set(["EPIC", "TOP", "OPORTUNIDADE"]);
-const SUBTLE_BADGES = new Set(["DECENTE", "IDEAL", "INTERMEDIÁRIO", "INTERMEDIARIO"]);
-
-function badgeClasses(badge: string, fallback: string) {
-  const b = badge.toUpperCase();
-  if (HERO_BADGES.has(b)) {
-    return "bg-gradient-to-r from-amber-400 to-primary text-white border border-amber-300/60 shadow-[0_0_14px_hsla(38,100%,55%,0.55)] font-black uppercase tracking-wider";
-  }
-  if (SUBTLE_BADGES.has(b)) {
-    return "bg-background/70 text-foreground/80 border border-border backdrop-blur-sm font-semibold uppercase tracking-wide";
-  }
-  return `${fallback} text-white font-bold uppercase tracking-wide`;
+// Rarity badge classes — centralized in lib/rarityBadge.ts
+function badgeClasses(badge: string, _fallback: string) {
+  return getRarityClasses(badge, _fallback);
 }
 
 
@@ -97,7 +88,8 @@ function AccountDetail({ account }: { account: AccountListing }) {
               className="w-full h-64 object-cover cursor-zoom-in hover:brightness-110 transition-all"
               onClick={() => setImageZoomed(true)}
             />
-            <span className={`absolute top-3 left-3 ${account.badgeColor} text-white text-xs font-bold px-3 py-1 rounded-md`}>
+            <span className={`absolute top-3 left-3 ${getRarityClasses(account.badge)} text-xs px-3 py-1 rounded-md inline-flex items-center gap-1`}>
+              {isTemporalBadge(account.badge) && <Sparkles size={10} />}
               {account.badge}
             </span>
           </div>
@@ -401,11 +393,12 @@ function AccountsList() {
                 {/* subtle top gradient for badge readability */}
                 <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/45 to-transparent pointer-events-none" />
                 <span
-                  className={`absolute top-2.5 left-2.5 text-[10px] px-2 py-0.5 rounded-md ${badgeClasses(
+                  className={`absolute top-2.5 left-2.5 text-[10px] px-2 py-0.5 rounded-md inline-flex items-center gap-1 ${badgeClasses(
                     acc.badge,
                     acc.badgeColor
                   )}`}
                 >
+                  {isTemporalBadge(acc.badge) && <Sparkles size={9} />}
                   {acc.badge}
                 </span>
                 <span className="absolute top-2.5 right-2.5 inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded-md bg-black/55 text-white/90 backdrop-blur-sm border border-white/10">
@@ -507,7 +500,8 @@ function AccountsList() {
                 <button onClick={() => setSelected(null)} className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/70">
                   <X size={16} />
                 </button>
-                <span className={`absolute top-3 left-3 ${selected.badgeColor} text-white text-xs font-bold px-3 py-1 rounded-md`}>
+                <span className={`absolute top-3 left-3 ${getRarityClasses(selected.badge)} text-xs px-3 py-1 rounded-md inline-flex items-center gap-1`}>
+                  {isTemporalBadge(selected.badge) && <Sparkles size={10} />}
                   {selected.badge}
                 </span>
               </div>

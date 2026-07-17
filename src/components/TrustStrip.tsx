@@ -1,7 +1,7 @@
 import { ShieldCheck, MessageCircle, Zap, Trophy } from "lucide-react";
 
 const ITEMS = [
-  { icon: Trophy, label: "+200 contas vendidas" },
+  { icon: Trophy, label: "+15 accounts vendidas através do site" },
   { icon: MessageCircle, label: "Atendimento via WhatsApp" },
   { icon: ShieldCheck, label: "Verificação garantida" },
   { icon: Zap, label: "Entrega imediata" },

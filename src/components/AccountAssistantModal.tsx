@@ -1,6 +1,21 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, X, Wallet, Swords, ArrowRight } from "lucide-react";
+import {
+  Sparkles,
+  X,
+  Wallet,
+  ArrowRight,
+  Crosshair,
+  Swords,
+  Droplet,
+  Anchor,
+  Circle,
+  Shield,
+  Flame,
+  Wind,
+  Zap,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { CLASS_OPTIONS, getClassCounts, ACCOUNTS } from "@/data/accounts";
 import { useTypewriter } from "@/hooks/useTypewriter";
 
@@ -15,6 +30,23 @@ interface Props {
 const INTRO =
   "Posso te ajudar a encontrar sua nova account!\nPreciso apenas de algumas informações:";
 
+// Class → icon mapping for thematic buttons
+const CLASS_ICONS: Record<string, LucideIcon> = {
+  Ninja: Swords,
+  Warrior: Shield,
+  Taoist: Droplet,
+  Archer: Crosshair,
+  Monk: Circle,
+  Pirata: Anchor,
+  DragonWarrior: Flame,
+  "Thunder Strike": Zap,
+  Trojan: Flame,
+  "Dune Wanderer": Wind,
+};
+
+// Rotating class icons for the header — cycle through these
+const HEADER_ICONS: LucideIcon[] = [Swords, Crosshair, Droplet, Shield, Anchor, Flame];
+
 export default function AccountAssistantModal({
   open,
   onClose,
@@ -25,6 +57,7 @@ export default function AccountAssistantModal({
   const [budget, setBudget] = useState<string>(initialBudget ? String(initialBudget) : "");
   const [klass, setKlass] = useState<string | null>(initialClass ?? null);
   const { text, done } = useTypewriter(INTRO, 26, 350);
+  const [headerIconIdx, setHeaderIconIdx] = useState(0);
 
   useEffect(() => {
     if (open) {
@@ -33,7 +66,22 @@ export default function AccountAssistantModal({
     }
   }, [open, initialBudget, initialClass]);
 
+  // Rotate header icon when no class is selected
+  useEffect(() => {
+    if (!open) return;
+    if (klass) return; // When a class is selected, show its icon instead
+    const iv = setInterval(() => {
+      setHeaderIconIdx((i) => (i + 1) % HEADER_ICONS.length);
+    }, 2000);
+    return () => clearInterval(iv);
+  }, [open, klass]);
+
   const counts = getClassCounts(ACCOUNTS);
+
+  // Determine which icon to show in header
+  const HeaderIcon: LucideIcon = klass
+    ? (CLASS_ICONS[klass] ?? Circle)
+    : HEADER_ICONS[headerIconIdx];
 
   const apply = () => {
     const b = budget.trim() ? parseInt(budget.replace(/\D/g, ""), 10) : null;
@@ -65,7 +113,37 @@ export default function AccountAssistantModal({
             onClick={(e) => e.stopPropagation()}
             className="relative z-10 w-full max-w-lg rounded-2xl bg-card border border-border shadow-[0_30px_80px_-20px_hsla(33,100%,50%,0.35)] overflow-hidden"
           >
-            {/* glow */}
+            {/* ── Oriental parchment texture overlay ── */}
+            <div
+              className="absolute inset-0 pointer-events-none opacity-[0.06] mix-blend-overlay"
+              style={{
+                backgroundImage: `
+                  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cdefs%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")
+                `,
+                backgroundSize: "200px 200px",
+              }}
+            />
+            {/* ── Decorative oriental border pattern (top) ── */}
+            <div
+              className="absolute inset-x-0 top-0 h-1 pointer-events-none"
+              style={{
+                background:
+                  "repeating-linear-gradient(90deg, hsl(33 100% 50%) 0px, hsl(33 100% 50%) 12px, transparent 12px, transparent 16px, hsl(270 60% 50%) 16px, hsl(270 60% 50%) 28px, transparent 28px, transparent 32px)",
+              }}
+            />
+            {/* ── Cloud/mist swirl pattern overlay ── */}
+            <div
+              className="absolute inset-0 pointer-events-none opacity-[0.04]"
+              style={{
+                backgroundImage: `
+                  radial-gradient(ellipse at 20% 50%, hsla(33,100%,50%,0.8) 0%, transparent 50%),
+                  radial-gradient(ellipse at 80% 30%, hsla(270,60%,50%,0.6) 0%, transparent 50%),
+                  radial-gradient(ellipse at 50% 80%, hsla(200,80%,50%,0.5) 0%, transparent 50%)
+                `,
+              }}
+            />
+
+            {/* glow orbs */}
             <div className="pointer-events-none absolute -top-24 -right-24 w-64 h-64 rounded-full bg-primary/30 blur-3xl" />
             <div className="pointer-events-none absolute -bottom-24 -left-24 w-64 h-64 rounded-full bg-accent/20 blur-3xl" />
 
@@ -78,9 +156,28 @@ export default function AccountAssistantModal({
             </button>
 
             <div className="relative p-6 sm:p-7 space-y-5">
+              {/* ── Header with rotating class icon ── */}
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/30">
-                  <Sparkles size={18} className="text-primary-foreground" />
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/30 relative overflow-hidden">
+                  {/* Subtle inner pattern */}
+                  <div
+                    className="absolute inset-0 opacity-20"
+                    style={{
+                      backgroundImage:
+                        "radial-gradient(circle at 30% 30%, white 0%, transparent 60%)",
+                    }}
+                  />
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={klass ?? `rotate-${headerIconIdx}`}
+                      initial={{ rotateY: 90, opacity: 0 }}
+                      animate={{ rotateY: 0, opacity: 1 }}
+                      exit={{ rotateY: -90, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <HeaderIcon size={18} className="text-primary-foreground relative z-10" />
+                    </motion.div>
+                  </AnimatePresence>
                 </div>
                 <div>
                   <p className="text-[11px] uppercase tracking-widest text-muted-foreground">Assistente</p>
@@ -118,7 +215,7 @@ export default function AccountAssistantModal({
                 </p>
               </div>
 
-              {/* Class */}
+              {/* Class — with icons */}
               <div className="space-y-2">
                 <label className="flex items-center gap-2 text-xs font-semibold text-card-foreground">
                   <Swords size={14} className="text-primary" />
@@ -128,16 +225,18 @@ export default function AccountAssistantModal({
                   {CLASS_OPTIONS.map((cls) => {
                     const c = counts[cls] ?? 0;
                     const active = klass === cls;
+                    const ClsIcon = CLASS_ICONS[cls] ?? Circle;
                     return (
                       <button
                         key={cls}
                         onClick={() => setKlass(active ? null : cls)}
-                        className={`text-[11px] font-medium px-2.5 py-1.5 rounded-full border transition-all ${
+                        className={`inline-flex items-center gap-1.5 text-[11px] font-medium px-2.5 py-1.5 rounded-full border transition-all ${
                           active
                             ? "bg-primary text-primary-foreground border-primary shadow-md shadow-primary/30"
                             : "bg-background text-muted-foreground border-border hover:border-primary/50 hover:text-foreground"
                         }`}
                       >
+                        <ClsIcon size={11} className={active ? "" : "text-primary/70"} />
                         {cls} {c > 0 && <span className="opacity-70">({c})</span>}
                       </button>
                     );
@@ -146,9 +245,10 @@ export default function AccountAssistantModal({
               </div>
 
               <div className="flex flex-col sm:flex-row gap-2 pt-2">
+                {/* ── Primary CTA with pulsing glow ── */}
                 <button
                   onClick={apply}
-                  className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 rounded-lg bg-gradient-to-r from-primary to-accent text-primary-foreground font-medium text-sm hover:opacity-95 transition shadow-lg shadow-primary/30"
+                  className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 rounded-lg bg-gradient-to-r from-primary to-accent text-primary-foreground font-medium text-sm hover:opacity-95 transition shadow-lg shadow-primary/30 animate-pulse-glow"
                 >
                   Buscar accounts <ArrowRight size={14} />
                 </button>
