@@ -25,7 +25,7 @@ import archer140_16biImg from "@/assets/archer-140-16bi.png";
 import sellWaterFullCrownImg from "@/assets/sell-water-full-crown.jpg";
 import sellArcherBreakImg from "@/assets/sell-archer-break.png";
 import jojomonkImg from "@/assets/jojomonk.jpg";
-import rnspirata from "@/assets/rnspirata.png";
+import rnspirata from "@/assets/rnspirata.jpg";
 
 
 
