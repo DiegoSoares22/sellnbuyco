@@ -20,7 +20,7 @@ import water29biImg from "@/assets/water-29bi.jpg";
 import archer26biImg from "@/assets/archer-26bi.jpg";
 import waterOpImg from "@/assets/water-op.jpg";
 import ninjaOpBreakImg from "@/assets/ninja-op-break.jpg";
-import opNinjaHwStunImg from "@/assets/op-ninja-hw-stun.png";
+import opNinjaHwStunImg from "@/assets/opNinjaHwStunImg.jpg";
 import ninjaHwFullCrownImg from "@/assets/ninja-hw-full-crown.jpg";
 import turquoiseImg from "@/assets/turquoise.png";
 import ninjaMercuryImg from "@/assets/ninja-mercury.png";
@@ -886,57 +886,6 @@ export const ACCOUNTS: AccountListing[] = [
     ],
   },
   {
-    id: "acc-56",
-    title: "Ótima oportunidade para eventos Low Lv",
-    badge: "OPORTUNIDADE",
-    badgeColor: "bg-emerald-500",
-    image: ninjaLowLvEventsImg,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "125K CPS" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Lv. 119 Ninja Master P7",
-          "0 Jail",
-          "P-Strike: 261.90% · Break: 30.00%",
-          "Anti-break: 312.6% · Immunity: 132.68%",
-          "M-Strike: 47.80% · Block: 88.1%",
-          "Final P-Attack: 12.659 · Final M-Attack: 9.089",
-          "Ninpo Score: 31.780",
-          "Rune Points: 87.800",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "Violet Shield (+9) Max",
-          "Iron Bone (+9) Max",
-          "Universal Shield (+3)",
-          "Strike Booster · Enormous Crusher · Conqueror's Blade",
-          "Might (+1) · Whetted Blade (+1) · Fearless (+1)",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "Legend Monster Saber (+12)",
-          "Original Nobunaga's Cracking Claw",
-          "Original Myth Katana",
-          "Super Crying Heavy Ring (+8)",
-        ],
-      },
-      {
-        title: "Inner Power",
-        items: [
-          "The Essence of Yang (A/B/C)",
-          "Viodragon Club · Love Forever · Heart Lock",
-          "Recognition: 95% / 90% / 50%",
-        ],
-      },
-    ],
-  },
-  {
     id: "acc-57",
     title: "Sell Water Full Crouwn",
     badge: "NEW",
@@ -986,61 +935,6 @@ export const ACCOUNTS: AccountListing[] = [
           "Astredge ativo",
           "Dragon Club Level 4",
           "Love Forever Level 2",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-58",
-    title: "Ótima oportunidade de ninja lv140",
-    badge: "OPORTUNIDADE",
-    badgeColor: "bg-emerald-500",
-    image: ninjaLv140Img,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "25K CPS" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Lv. 140 Sacred Star Ninja P2",
-          "0 Jail",
-          "HP: 75.280 · Magic: 800",
-          "Attack: 53.337 – 56.683",
-          "Defense: 30.885 · M-Defense: 8.051",
-          "M-Attack: 24.284",
-          "P-Strike: 118.60% · Break: 241.1%",
-          "Anti-break: 59.6% · M-Strike: 47.20%",
-          "Immunity: 212.30% · Penetration: 15.00%",
-          "Detoxication: 72% · Parry: 7.00%",
-          "Lucky Strike: 7.00% · Dash Rate: 1.50%",
-          "+Final P-Attack: 11.172 · +Final M-Attack: 7.308",
-          "-Final P-Damage: 10.775 · -Final M-Damage: 6.425",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "Rune Points: 252.600",
-          "LifeDrain, DivineShield, Deterrence",
-          "NatureShield, JusticeGuard, SurgingForce+5",
-          "CurseBlade+9, SkyVeil+7, StrikeBooster",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "Set +12 completo (armaduras +9/+12)",
-          "Original Nobunaga's Swift Claw",
-          "Sacred Sky Hammer +12",
-        ],
-      },
-      {
-        title: "Inner Power",
-        items: [
-          "The Essence of Yin (A) · Perfect",
-          "The Essence of Yin (B) · P5/7",
-          "The Essence of Yin (C) · P6/7",
-          "Superb Manual · Violet Glow · Divine North Skill",
         ],
       },
     ],
