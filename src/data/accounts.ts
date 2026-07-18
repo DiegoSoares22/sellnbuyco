@@ -24,7 +24,7 @@ import sellWaterFullCrownImg from "@/assets/sell-water-full-crown.jpg";
 import sellArcherBreakImg from "@/assets/sell-archer-break.png";
 import jojomonkImg from "@/assets/jojomonk.jpg";
 import rnspirata from "@/assets/rnspirata.jpg";
-import ninjahw from "@/assets/ninja-hw.jpg";
+import ninjahw from "@/assets/ninjahw.jpg";
 
 
 export interface AccountListing {
@@ -113,7 +113,7 @@ export const ACCOUNTS: AccountListing[] = [
   },
   {
     id: "acc-63",
-    title: "Ninja P2 Break",
+    title: "Ótima oportunidade de Ninja c/ HeavenWonders",
     badge: "DESTAQUE",
     badgeColor: "bg-orange-500",
     image: ninjahw,
