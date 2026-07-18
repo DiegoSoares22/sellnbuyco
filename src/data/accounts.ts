@@ -583,8 +583,7 @@ export const ACCOUNTS: AccountListing[] = [
     image: opNinjaHwStunImg,
     className: "Ninja",
     prices: [
-      { label: "Sem MythSoul/Bag", value: "200K CPS" },
-      { label: "Com tudo incluso", value: "250K CPS" },
+      { label: "Sem MythSoul/Bag", value: "170k CPS" },
     ],
     sections: [
       {
