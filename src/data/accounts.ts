@@ -76,7 +76,7 @@ export const ACCOUNTS: AccountListing[] = [
     badge: "DESTAQUE",
     badgeColor: "bg-red-500",
     image: rnspirata,
-    className: "Pirate",
+    className: "Pirata",
     prices: [{ label: "Preço", value: "65k CPs" }],
     sections: [
       {
