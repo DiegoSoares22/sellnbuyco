@@ -15,8 +15,6 @@ import turquoiseImg from "@/assets/turquoise.png";
 
 import waterLowImg from "@/assets/water-low.png";
 import waterDellImg from "@/assets/water-dell.png";
-import opNinjaStrikeAntibreakImg from "@/assets/op-ninja-strike-antibreak.jpg";
-import ninjaHwStun42kImg from "@/assets/ninja-hw-stun-42k.jpg";
 import topNinja129Img from "@/assets/top-ninja-129.jpg";
 import water2JailsImg from "@/assets/water-2jails.jpg";
 import sellWaterMaxArchiveImg from "@/assets/sell-water-max-archive.png";
@@ -26,7 +24,7 @@ import sellWaterFullCrownImg from "@/assets/sell-water-full-crown.jpg";
 import sellArcherBreakImg from "@/assets/sell-archer-break.png";
 import jojomonkImg from "@/assets/jojomonk.jpg";
 import rnspirata from "@/assets/rnspirata.jpg";
-
+import ninjahw from "@/assets/ninja-hw.jpg";
 
 
 export interface AccountListing {
@@ -109,6 +107,79 @@ export const ACCOUNTS: AccountListing[] = [
           "Water: Todos Lv. 30",
           "Warrior: 41, 35, 12",
           "Pirate: Todos Full",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-63",
+    title: "Ninja P2 Break",
+    badge: "DESTAQUE",
+    badgeColor: "bg-orange-500",
+    image: ninjahw,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "55k CPs" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 109 Sacred Star Ninja P2",
+          "HP: 75.267",
+          "Attack: 43.829 ~ 46.320",
+          "Defense: 21.902",
+          "M-Defense: 7.079",
+          "Final P-Attack: 10.404",
+          "Final M-Damage: 6.129",
+          "P-Strike: 245.50%",
+          "Break: 96.6%",
+          "Anti-Break: 58.1%",
+          "Immunity: 224.86%",
+          "Penetration: 15%",
+        ],
+      },
+      {
+        title: "Progressão",
+        items: [
+          "Rune Points: 264.400",
+          "Ninpo Score: 36.882",
+          "Inner Power: 648",
+          "Weapon Archives: 100.270",
+          "Sacred Star P2",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "Set Full +12",
+          "Superb Manual",
+          "Violet Glow",
+          "Divine North",
+          "The Essence of Yin",
+          "Myth Soul",
+          "Wings of Slaughter",
+        ],
+      },
+      {
+        title: "Runas e Relíquias",
+        items: [
+          "P-Strike +4.00%",
+          "P-Strike +4.00%",
+          "Immunity +1.66%",
+          "2 atributos de P-Strike",
+          "Durability: 87/90",
+        ],
+      },
+      {
+        title: "Eon Spirit",
+        items: [
+          "Gate of Rest: Lv. 9",
+          "Gate of Pain: Lv. 9",
+          "Gate of View: Lv. 5",
+          "Gate of Death: Lv. 8",
+          "Gate of Dawn: Lv. 8",
+          "Gate of Life: Lv. 5",
+          "Gate of Limit: Lv. 9",
+          "Gate of Shock: Lv. 9",
         ],
       },
     ],
@@ -638,53 +709,6 @@ export const ACCOUNTS: AccountListing[] = [
         title: "Observações",
         items: [
           "Não ACOMPANHA RELIC",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-47",
-    title: "OP Ninja for sale(Heavenwonders + Stun)",
-    badge: "OP",
-    badgeColor: "bg-red-500",
-    image: opNinjaStrikeAntibreakImg,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "410k CPs" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "build: Strike & AntiBreak",
-          "1 jail",
-          "105b donate",
-          "Relic ressonance done",
-          "inner power fixed",
-          "SVIP next quarter",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "3 ideal runes",
-          "6 credit runes",
-          "Missing 2 new rare blue runes",
-        ],
-      },
-      {
-        title: "Archives",
-        items: [
-          "Monk: 20-20-21",
-          "Trojan: 100k",
-          "Ninja: 30.805",
-        ],
-      },
-      {
-        title: "Equipamentos & Extra",
-        items: [
-          "2 Gold trophy",
-          "Unbound stuffs: 2x weapons 9 crowns(ninja), cap ninja, boot, steed",
-          "Astredge: 100% - 95% - 50%",
-          "EON Spirit: Celestial Archer lv9 - Warmaster lady lv8 - Conqueror xiang yu lv8 - Victorious Buddha lv6",
         ],
       },
     ],
