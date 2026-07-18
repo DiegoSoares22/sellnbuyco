@@ -1,47 +1,31 @@
 import archerwagnerImg from "@/assets/archerwagner.jpg";
-import ninjajoaoImg from "@/assets/ninjajoao.jpg";
 import ninjaBreakImg from "@/assets/ninja-break.jpeg";
 import archer129Img from "@/assets/archer129.jpg";
 
-import archerBreakImg from "@/assets/archer-break.jpg";
-import pirataImg from "@/assets/pirata.jpg";
-import ninjaBreak2Img from "@/assets/ninja-break-2.jpg";
-import ninjaPirateRchifImg from "@/assets/ninja-pirate-rchif.jpg";
 
 import archerEpicImg from "@/assets/archer-epic.png";
-import archerRuneImg from "@/assets/archer-rune.png";
 import decenteWaterImg from "@/assets/decente-water.png";
 import pirataIntermediarioImg from "@/assets/pirata-intermediario.png";
 import topPirateImg from "@/assets/top-pirate.png";
 import waterIdealImg from "@/assets/water-ideal.png";
-import ninja2BreakImg from "@/assets/ninja2-break.jpg";
-import ninjaHwStunImg from "@/assets/ninja-hw-stun.jpg";
-import water29biImg from "@/assets/water-29bi.jpg";
 import archer26biImg from "@/assets/archer-26bi.jpg";
 import waterOpImg from "@/assets/water-op.jpg";
-import ninjaOpBreakImg from "@/assets/ninja-op-break.jpg";
 import opNinjaHwStunImg from "@/assets/opNinjaHwStunImg.jpg";
-import ninjaHwFullCrownImg from "@/assets/ninja-hw-full-crown.jpg";
 import turquoiseImg from "@/assets/turquoise.png";
-import ninjaMercuryImg from "@/assets/ninja-mercury.png";
 
 import waterLowImg from "@/assets/water-low.png";
 import waterDellImg from "@/assets/water-dell.png";
 import opNinjaStrikeAntibreakImg from "@/assets/op-ninja-strike-antibreak.jpg";
 import ninjaHwStun42kImg from "@/assets/ninja-hw-stun-42k.jpg";
 import topNinja129Img from "@/assets/top-ninja-129.jpg";
-import ninjaImg from "@/assets/ninja.png";
 import water2JailsImg from "@/assets/water-2jails.jpg";
-import archerSacredSkyEagleImg from "@/assets/archer-sacred-sky-eagle.png";
 import sellWaterMaxArchiveImg from "@/assets/sell-water-max-archive.png";
 
 import archer140_16biImg from "@/assets/archer-140-16bi.png";
-import ninjaLowLvEventsImg from "@/assets/ninja-events-low-lv.jpg";
 import sellWaterFullCrownImg from "@/assets/sell-water-full-crown.jpg";
-import ninjaLv140Img from "@/assets/ninja-lv140.png";
 import sellArcherBreakImg from "@/assets/sell-archer-break.png";
 import jojomonkImg from "@/assets/jojomonk.jpg";
-
+import rnspirata from "@/assets/rnspirata.png";
 
 
 
@@ -82,6 +66,49 @@ export const ACCOUNTS: AccountListing[] = [
           "Steed +12 (Lineage 12) Unbound",
           "9 coroas unbound",
           "World Cup Trophy Lv. 15",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-62",
+    title: "Pirata Break",
+    badge: "DESTAQUE",
+    badgeColor: "bg-red-500",
+    image: rnspirata,
+    className: "Pirate",
+    prices: [{ label: "Preço", value: "65k CPs" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Build Break",
+          "Chi Full: Break, Immunity, HP, P-Attack",
+          "Jiang Hu: Full",
+          "Inner Power: 3200",
+          "Rune Score: 30.330",
+          "Rare Runes: Iron Bone, Sky Veil",
+          "Rune Ideal: 3",
+        ],
+      },
+      {
+        title: "Progressão",
+        items: [
+          "Gold Trophy",
+          "Relic Resonance: Break / P-Attack",
+          "Astral Edge: 95, 75",
+          "Eon Spirit: Lv. 9, Lv. 8, Lv. 8, Lv. 8, Lv. 6",
+          "Donation: 19B",
+        ],
+      },
+      {
+        title: "Archives",
+        items: [
+          "Trojan: 100k",
+          "Archer: 31, 21, 23",
+          "Water: Todos Lv. 30",
+          "Warrior: 41, 35, 12",
+          "Pirate: Todos Full",
         ],
       },
     ],
