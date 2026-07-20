@@ -1,4 +1,3 @@
-import archerwagnerImg from "@/assets/archerwagner.jpg";
 import ninjaBreakImg from "@/assets/ninja-break.jpeg";
 import archer129Img from "@/assets/archer129.jpg";
 
@@ -223,33 +222,6 @@ export const ACCOUNTS: AccountListing[] = [
           "84 Mounts",
           "3x 5-Stars",
         ],
-      },
-    ],
-  },
-  {
-    id: "acc-4",
-    title: "Strike Archer com Epics",
-    badge: "NEW",
-    badgeColor: "bg-emerald-500",
-    image: archerwagnerImg,
-    className: "Archer",
-    prices: [{ label: "Preço", value: "50K CPS" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: ["Arquivos 50 - max - Max", "26k donate"],
-      },
-      {
-        title: "Runas",
-        items: ["2 runas creditada"],
-      },
-      {
-        title: "Equipamentos",
-        items: ["Relíquia 3 crítico"],
-      },
-      {
-        title: "Extras",
-        items: ["0 jail"],
       },
     ],
   },
@@ -778,7 +750,7 @@ export const ACCOUNTS: AccountListing[] = [
     badgeColor: "bg-emerald-500",
     image: water2JailsImg,
     className: "Taoist",
-    prices: [{ label: "Preço", value: "40k CPs" }],
+    prices: [{ label: "Preço", value: "20k CPs" }],
     sections: [
       {
         title: "Atributos",
