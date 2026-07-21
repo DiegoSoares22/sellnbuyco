@@ -119,7 +119,7 @@ export const ACCOUNTS: AccountListing[] = [
     badge: "END GAME",
     badgeColor: "bg-purple-600",
     image: nicholas,
-    className: "Pirate",
+    className: "Pirata",
     prices: [{ label: "Preço", value: "260k CPs" }],
     sections: [
       {
