@@ -15,7 +15,7 @@ import turquoiseImg from "@/assets/turquoise.png";
 import waterLowImg from "@/assets/water-low.png";
 import waterDellImg from "@/assets/water-dell.png";
 import topNinja129Img from "@/assets/top-ninja-129.jpg";
-import water2JailsImg from "@/assets/water-2jails.jpg";
+import water2JailsImg from "@/assets/water2jail.jpg";
 import sellWaterMaxArchiveImg from "@/assets/sell-water-max-archive.png";
 
 import archer140_16biImg from "@/assets/archer-140-16bi.png";
