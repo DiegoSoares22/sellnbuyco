@@ -23,7 +23,7 @@ import sellWaterFullCrownImg from "@/assets/sell-water-full-crown.jpg";
 import sellArcherBreakImg from "@/assets/sell-archer-break.png";
 import rnspirata from "@/assets/rnspirata.jpg";
 import ninjahw from "@/assets/ninjahw.jpg";
-import warriorcoutinho from "@/assets/warriorcoutinho.jpg";
+import warriorcoutinho from "@/assets/warriorcoutinho.png";
 import nicholas from "@/assets/nicholas.jpg";
 
 export interface AccountListing {
