@@ -24,7 +24,7 @@ import sellArcherBreakImg from "@/assets/sell-archer-break.png";
 import rnspirata from "@/assets/rnspirata.jpg";
 import ninjahw from "@/assets/ninjahw.jpg";
 import warriorcoutinho from "@/assets/warriorcoutinho.jpg";
-
+import nicholas from "@/assets/nicholas.jpg";
 
 export interface AccountListing {
   id: string;
@@ -109,6 +109,77 @@ export const ACCOUNTS: AccountListing[] = [
           "P5 Spirit (2x)",
           "P4 Spirit (3x)",
           "P1 Spirit",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-65",
+    title: "Beast Pirate P2",
+    badge: "END GAME",
+    badgeColor: "bg-purple-600",
+    image: nicholas,
+    className: "Pirate",
+    prices: [{ label: "Preço", value: "260k CPs" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "1 Bot Jail",
+          "Chi: HP, P-Attack, Strike e Immunity",
+          "Chi Alternativo: Break",
+          "7M Chi Score",
+          "Inner Power: 3500 (Máximo)",
+          "Gold Trophy",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "Rune Score: 372.500 (40 Hammers)",
+          "5 Ideals prontos + material para criar mais 4",
+          "9 Yellow Rune Credits",
+          "Adamant, Solidness, Tempered Glaive",
+          "Conqueror's Blade, Circle, Silent Blade",
+          "Front Break, Fearless, Whetted Blade",
+          "Iron Bone e Sky Veil",
+          "Violet Shield e Nature Shield",
+          "Todas as Blue Runes (4 Credits)",
+          "Runas Unbound: Evocation, Soul Chant e Sharpness",
+        ],
+      },
+      {
+        title: "Archives",
+        items: [
+          "Pirate: Full Max (2.8M Score)",
+          "Main Sigils Maxados",
+          "Warrior: 42 / Max / 12 (12.9M Score)",
+          "Monk: 28 / 23 / 27",
+          "Trojan: 100k",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "2 Weapons Unbound",
+          "Armor Unbound",
+          "Hat Unbound",
+          "Steed Unbound",
+          "Todos Full Perfection +12 P7",
+          "4 Relic Resonance desbloqueadas",
+          "1.800 Prism Stones investidas",
+          "Diversos acessórios extras",
+        ],
+      },
+      {
+        title: "Extras",
+        items: [
+          "30 Bilhões de Donation",
+          "Acompanha 2.000 CPs (Bound)",
+          "Supreme ativo neste trimestre e no próximo",
+          "175 Free Training Pills",
+          "100 Knowledge Pills para Jiang Hu",
+          "Conta vendida sem os Myth Souls",
         ],
       },
     ],
