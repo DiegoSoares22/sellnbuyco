@@ -25,6 +25,7 @@ import rnspirata from "@/assets/rnspirata.jpg";
 import ninjahw from "@/assets/ninjahw.jpg";
 import warriorcoutinho from "@/assets/warriorcoutinho.png";
 import nicholas from "@/assets/nicholas.jpg";
+import decenteArcherImg from "@/assets/decente-archer.jpg";
 
 export interface AccountListing {
   id: string;
@@ -38,6 +39,60 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-66",
+    title: "Decente archer p/ quem está voltando a jogar",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: decenteArcherImg,
+    className: "Archer",
+    prices: [{ label: "Preço", value: "12k CPs" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 140 SacredSkyArcherP3",
+          "388 BP (Myth Soul 504)",
+          "HP: 84.202",
+          "Attack: 49.840 ~ 51.149",
+          "Defense: 28.727",
+          "M-Attack: 21.790 | M-Defense: 11.920",
+          "P-Strike: 104.60% | M-Strike: 47.20%",
+          "Break: 259.5% | Anti-Break: 59.4%",
+          "Immunity: 220.00% | Penetration: 15.00%",
+          "Final P-Attack: +10.688 | Final P-Damage: -10.872",
+          "Final M-Attack: +6.829 | Final M-Damage: -6.149",
+        ],
+      },
+      {
+        title: "Chi",
+        items: [
+          "Dragon (Lv.99 - 400 Chi): P-Attack +2000, Immunity +20%, Max HP +3500, Break +20%",
+          "Phoenix (Lv.99 - 400 Chi): P-Attack +2000, Break +20%, Immunity +20%, Max HP +3500",
+          "Turtle (Lv.99 - 400 Chi): Immunity +20%, Max HP +3500, Break +20%, P-Attack +2000",
+          "Tiger (Lv.99 - 400 Chi): Immunity +20%, Max HP +3500, Break +20%, P-Attack +2000",
+        ],
+      },
+      {
+        title: "Runas & Eon Spirit",
+        items: [
+          "Rune Points: 138.900",
+          "Runas de Archer Maxadas",
+          "Eon Spirit: P8 100%, P7 100% (2x), P5 100%, P3 100%, P2 100% (2x), P1 100%",
+          "Recognition: 55%",
+        ],
+      },
+      {
+        title: "Sub-Classes & Equipamentos",
+        items: [
+          "Set Full +12 (2 Socs)",
+          "Stone Cracker Lv 43",
+          "Thorn Cutter Lv 45",
+          "Cold Moon Lv 12",
+        ],
+      },
+    ],
+  },
 
   {
     id: "acc-64",
