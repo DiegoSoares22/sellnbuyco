@@ -1,51 +1,34 @@
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import {
-  Sparkles,
-  X,
-  Wallet,
-  ArrowRight,
-  Crosshair,
-  Swords,
-  Droplet,
-  Anchor,
-  Circle,
-  Shield,
-  Flame,
-  Wind,
-  Zap,
-} from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
+import { Progress } from "@/components/ui/progress";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Sparkles, Swords, Shield, Droplet, Crosshair, Anchor, Circle, Flame, Zap, Star, Compass, HelpCircle } from "lucide-react";
 import { CLASS_OPTIONS, getClassCounts, ACCOUNTS } from "@/data/accounts";
-import { useTypewriter } from "@/hooks/useTypewriter";
+import { useI18n } from "@/i18n";
 
-interface Props {
+interface AccountAssistantModalProps {
   open: boolean;
   onClose: () => void;
-  onApply: (budgetK: number | null, className: string | null) => void;
+  onApply: (budgetK: number | null, className: string | null, minLevel: number | null) => void;
   initialBudget?: number | null;
   initialClass?: string | null;
 }
 
-const INTRO =
-  "Posso te ajudar a encontrar sua nova account!\nPreciso apenas de algumas informações:";
-
-// Class → icon mapping for thematic buttons
-const CLASS_ICONS: Record<string, LucideIcon> = {
+const CLASS_ICONS: Record<string, any> = {
   Ninja: Swords,
   Warrior: Shield,
   Taoist: Droplet,
   Archer: Crosshair,
-  Monk: Circle,
   Pirata: Anchor,
+  Monk: Circle,
   DragonWarrior: Flame,
   "Thunder Strike": Zap,
-  Trojan: Flame,
-  "Dune Wanderer": Wind,
+  Trojan: Star,
+  "Dune Wanderer": Compass,
 };
-
-// Rotating class icons for the header — cycle through these
-const HEADER_ICONS: LucideIcon[] = [Swords, Crosshair, Droplet, Shield, Anchor, Flame];
 
 export default function AccountAssistantModal({
   open,
@@ -53,216 +36,197 @@ export default function AccountAssistantModal({
   onApply,
   initialBudget,
   initialClass,
-}: Props) {
+}: AccountAssistantModalProps) {
+  const { lang } = useI18n();
+  const [step, setStep] = useState(1);
   const [budget, setBudget] = useState<string>(initialBudget ? String(initialBudget) : "");
-  const [klass, setKlass] = useState<string | null>(initialClass ?? null);
-  const { text, done } = useTypewriter(INTRO, 26, 350);
-  const [headerIconIdx, setHeaderIconIdx] = useState(0);
-
-  useEffect(() => {
-    if (open) {
-      setBudget(initialBudget ? String(initialBudget) : "");
-      setKlass(initialClass ?? null);
-    }
-  }, [open, initialBudget, initialClass]);
-
-  // Rotate header icon when no class is selected
-  useEffect(() => {
-    if (!open) return;
-    if (klass) return; // When a class is selected, show its icon instead
-    const iv = setInterval(() => {
-      setHeaderIconIdx((i) => (i + 1) % HEADER_ICONS.length);
-    }, 2000);
-    return () => clearInterval(iv);
-  }, [open, klass]);
+  const [selectedClass, setSelectedClass] = useState<string | null>(initialClass ?? null);
+  const [minLevel, setMinLevel] = useState<string>("any");
 
   const counts = getClassCounts(ACCOUNTS);
 
-  // Determine which icon to show in header
-  const HeaderIcon: LucideIcon = klass
-    ? (CLASS_ICONS[klass] ?? Circle)
-    : HEADER_ICONS[headerIconIdx];
+  useEffect(() => {
+    if (open) {
+      setStep(1);
+      setBudget(initialBudget ? String(initialBudget) : "");
+      setSelectedClass(initialClass ?? null);
+      setMinLevel("any");
+    }
+  }, [open, initialBudget, initialClass]);
 
-  const apply = () => {
-    const b = budget.trim() ? parseInt(budget.replace(/\D/g, ""), 10) : null;
-    onApply(Number.isFinite(b) ? b : null, klass);
+  const handleNext = () => {
+    setStep((prev) => Math.min(prev + 1, 3));
+  };
+
+  const handlePrev = () => {
+    setStep((prev) => Math.max(prev - 1, 1));
+  };
+
+  const handleSearch = () => {
+    const budgetNum = budget.trim() ? parseInt(budget, 10) : null;
+    const lvlNum = minLevel === "130" ? 130 : minLevel === "140" ? 140 : null;
+
+    onApply(
+      Number.isFinite(budgetNum) ? budgetNum : null,
+      selectedClass,
+      lvlNum
+    );
     onClose();
   };
 
-  const skip = () => {
-    onApply(null, null);
+  const handleSkip = () => {
+    onApply(null, null, null);
     onClose();
   };
 
   return (
-    <AnimatePresence>
-      {open && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[110] flex items-center justify-center p-4"
-          onClick={onClose}
-        >
-          <div className="absolute inset-0 bg-background/70 glass-panel" />
-          <motion.div
-            initial={{ scale: 0.95, opacity: 0, y: 20 }}
-            animate={{ scale: 1, opacity: 1, y: 0 }}
-            exit={{ scale: 0.95, opacity: 0, y: 20 }}
-            transition={{ type: "spring", damping: 24 }}
-            onClick={(e) => e.stopPropagation()}
-            className="relative z-10 w-full max-w-lg rounded-2xl bg-card border border-border shadow-[0_30px_80px_-20px_hsla(33,100%,50%,0.35)] overflow-hidden"
-          >
-            {/* ── Oriental parchment texture overlay ── */}
-            <div
-              className="absolute inset-0 pointer-events-none opacity-[0.06] mix-blend-overlay"
-              style={{
-                backgroundImage: `
-                  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cdefs%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")
-                `,
-                backgroundSize: "200px 200px",
-              }}
-            />
-            {/* ── Decorative oriental border pattern (top) ── */}
-            <div
-              className="absolute inset-x-0 top-0 h-1 pointer-events-none"
-              style={{
-                background:
-                  "repeating-linear-gradient(90deg, hsl(33 100% 50%) 0px, hsl(33 100% 50%) 12px, transparent 12px, transparent 16px, hsl(270 60% 50%) 16px, hsl(270 60% 50%) 28px, transparent 28px, transparent 32px)",
-              }}
-            />
-            {/* ── Cloud/mist swirl pattern overlay ── */}
-            <div
-              className="absolute inset-0 pointer-events-none opacity-[0.04]"
-              style={{
-                backgroundImage: `
-                  radial-gradient(ellipse at 20% 50%, hsla(33,100%,50%,0.8) 0%, transparent 50%),
-                  radial-gradient(ellipse at 80% 30%, hsla(270,60%,50%,0.6) 0%, transparent 50%),
-                  radial-gradient(ellipse at 50% 80%, hsla(200,80%,50%,0.5) 0%, transparent 50%)
-                `,
-              }}
-            />
-
-            {/* glow orbs */}
-            <div className="pointer-events-none absolute -top-24 -right-24 w-64 h-64 rounded-full bg-primary/30 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-24 -left-24 w-64 h-64 rounded-full bg-accent/20 blur-3xl" />
-
-            <button
-              onClick={onClose}
-              className="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-background/80 flex items-center justify-center text-foreground hover:bg-background transition-colors"
-              aria-label="Fechar"
-            >
-              <X size={16} />
-            </button>
-
-            <div className="relative p-6 sm:p-7 space-y-5">
-              {/* ── Header with rotating class icon ── */}
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/30 relative overflow-hidden">
-                  {/* Subtle inner pattern */}
-                  <div
-                    className="absolute inset-0 opacity-20"
-                    style={{
-                      backgroundImage:
-                        "radial-gradient(circle at 30% 30%, white 0%, transparent 60%)",
-                    }}
-                  />
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={klass ?? `rotate-${headerIconIdx}`}
-                      initial={{ rotateY: 90, opacity: 0 }}
-                      animate={{ rotateY: 0, opacity: 1 }}
-                      exit={{ rotateY: -90, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <HeaderIcon size={18} className="text-primary-foreground relative z-10" />
-                    </motion.div>
-                  </AnimatePresence>
-                </div>
-                <div>
-                  <p className="text-[11px] uppercase tracking-widest text-muted-foreground">Assistente</p>
-                  <h2 className="text-base font-semibold text-card-foreground">Encontre sua account ideal</h2>
-                </div>
-              </div>
-
-              <p className="text-sm text-card-foreground leading-relaxed whitespace-pre-line min-h-[44px]">
-                {text}
-                {!done && <span className="inline-block w-[2px] h-4 align-middle bg-primary ml-0.5 animate-pulse" />}
-              </p>
-
-              {/* Budget */}
-              <div className="space-y-2">
-                <label className="flex items-center gap-2 text-xs font-semibold text-card-foreground">
-                  <Wallet size={14} className="text-primary" />
-                  Seu orçamento (em CPs)
-                </label>
-                <div className="relative">
-                  <input
-                    inputMode="numeric"
-                    type="number"
-                    min={0}
-                    placeholder="Ex: 120"
-                    value={budget}
-                    onChange={(e) => setBudget(e.target.value)}
-                    className="w-full bg-background border border-border rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition"
-                  />
-                  <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[11px] font-bold text-muted-foreground">
-                    K CPs
-                  </span>
-                </div>
-                <p className="text-[11px] text-muted-foreground">
-                  Digitar <strong className="text-card-foreground">120</strong> equivale a <strong className="text-primary">120k CPs</strong>. Deixe vazio para ignorar.
-                </p>
-              </div>
-
-              {/* Class — with icons */}
-              <div className="space-y-2">
-                <label className="flex items-center gap-2 text-xs font-semibold text-card-foreground">
-                  <Swords size={14} className="text-primary" />
-                  Classe preferida
-                </label>
-                <div className="flex flex-wrap gap-1.5">
-                  {CLASS_OPTIONS.map((cls) => {
-                    const c = counts[cls] ?? 0;
-                    const active = klass === cls;
-                    const ClsIcon = CLASS_ICONS[cls] ?? Circle;
-                    return (
-                      <button
-                        key={cls}
-                        onClick={() => setKlass(active ? null : cls)}
-                        className={`inline-flex items-center gap-1.5 text-[11px] font-medium px-2.5 py-1.5 rounded-full border transition-all ${
-                          active
-                            ? "bg-primary text-primary-foreground border-primary shadow-md shadow-primary/30"
-                            : "bg-background text-muted-foreground border-border hover:border-primary/50 hover:text-foreground"
-                        }`}
-                      >
-                        <ClsIcon size={11} className={active ? "" : "text-primary/70"} />
-                        {cls} {c > 0 && <span className="opacity-70">({c})</span>}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-2 pt-2">
-                {/* ── Primary CTA with pulsing glow ── */}
-                <button
-                  onClick={apply}
-                  className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 rounded-lg bg-gradient-to-r from-primary to-accent text-primary-foreground font-medium text-sm hover:opacity-95 transition shadow-lg shadow-primary/30 animate-pulse-glow"
-                >
-                  Buscar accounts <ArrowRight size={14} />
-                </button>
-                <button
-                  onClick={skip}
-                  className="flex-1 sm:flex-none px-4 py-2.5 rounded-lg border border-border text-card-foreground text-sm font-medium hover:bg-muted transition"
-                >
-                  Seguir para ver as accounts
-                </button>
-              </div>
+    <Dialog open={open} onOpenChange={(isOpen) => !isOpen && onClose()}>
+      <DialogContent className="w-full sm:max-w-md bg-[#12121a] border-zinc-800 text-slate-100 rounded-2xl shadow-xl shadow-black/50 p-6">
+        <DialogHeader className="space-y-4">
+          <div className="flex items-center gap-3">
+            <div className="p-2.5 rounded-xl bg-amber-500/10 text-amber-500 border border-amber-500/20">
+              <Sparkles className="h-5 w-5 text-amber-500 animate-pulse" />
             </div>
-          </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+            <div>
+              <DialogTitle className="text-slate-100 text-base font-bold">
+                {lang === "pt" ? "Encontre sua account ideal" : "Find your ideal account"}
+              </DialogTitle>
+              <DialogDescription className="text-slate-400 text-xs mt-0.5">
+                {lang === "pt" ? `Passo ${step} de 3` : `Step ${step} of 3`}
+              </DialogDescription>
+            </div>
+          </div>
+          <Progress value={(step / 3) * 100} className="h-1 bg-zinc-800" />
+        </DialogHeader>
+
+        {/* Passo 1: Orçamento */}
+        {step === 1 && (
+          <div className="space-y-4 py-4">
+            <Label className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+              {lang === "pt" ? "Qual seu orçamento? (em mil CPs)" : "What is your budget? (in thousand CPs)"}
+            </Label>
+            <div className="relative">
+              <Input
+                type="number"
+                placeholder="Ex: 120"
+                value={budget}
+                onChange={(e) => setBudget(e.target.value)}
+                className="bg-zinc-900 border-zinc-800 text-slate-100 text-sm h-11 rounded-xl pl-4 pr-16 focus:ring-amber-500"
+              />
+              <span className="absolute right-4 top-3 text-xs text-slate-500 font-bold">k CPs</span>
+            </div>
+            <p className="text-[11px] text-slate-500 leading-relaxed">
+              {lang === "pt"
+                ? "Digitar 120 equivale a 120k CPs. Deixe vazio para ignorar e ver qualquer valor."
+                : "Typing 120 is equal to 120k CPs. Leave it empty to ignore and see any value."}
+            </p>
+          </div>
+        )}
+
+        {/* Passo 2: Classe Preferida */}
+        {step === 2 && (
+          <div className="space-y-4 py-4">
+            <Label className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+              {lang === "pt" ? "Classe preferida" : "Preferred class"}
+            </Label>
+            <div className="grid grid-cols-2 gap-2.5">
+              {CLASS_OPTIONS.map((c) => {
+                const count = counts[c] || 0;
+                const Icon = CLASS_ICONS[c] || HelpCircle;
+                const active = selectedClass === c;
+
+                return (
+                  <button
+                    key={c}
+                    onClick={() => setSelectedClass(active ? null : c)}
+                    className={`flex items-center justify-between px-3 py-2.5 rounded-xl border text-xs font-semibold transition-all duration-200 ${
+                      active
+                        ? "bg-amber-500/10 border-amber-500/50 text-amber-400"
+                        : "bg-zinc-900/50 border-zinc-800 text-slate-300 hover:border-zinc-700 hover:text-slate-100"
+                    }`}
+                  >
+                    <div className="flex items-center gap-2">
+                      <Icon size={13} className={active ? "text-amber-400" : "text-slate-400"} />
+                      <span>{c}</span>
+                    </div>
+                    <span className="text-[10px] text-slate-500">({count})</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* Passo 3: Level Desejado */}
+        {step === 3 && (
+          <div className="space-y-4 py-4">
+            <Label className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+              {lang === "pt" ? "Level mínimo desejado" : "Minimum level desired"}
+            </Label>
+            <RadioGroup value={minLevel} onValueChange={setMinLevel} className="grid grid-cols-3 gap-2.5">
+              <div className="flex flex-col items-center justify-center p-3 rounded-xl border border-zinc-800 bg-zinc-900/30 hover:bg-zinc-900/50 transition-colors">
+                <RadioGroupItem value="any" id="level-any" className="mb-2" />
+                <Label htmlFor="level-any" className="text-xs font-semibold text-slate-300 cursor-pointer">
+                  {lang === "pt" ? "Qualquer" : "Any"}
+                </Label>
+              </div>
+
+              <div className="flex flex-col items-center justify-center p-3 rounded-xl border border-zinc-800 bg-zinc-900/30 hover:bg-zinc-900/50 transition-colors">
+                <RadioGroupItem value="130" id="level-130" className="mb-2" />
+                <Label htmlFor="level-130" className="text-xs font-semibold text-slate-300 cursor-pointer">
+                  130+
+                </Label>
+              </div>
+
+              <div className="flex flex-col items-center justify-center p-3 rounded-xl border border-zinc-800 bg-zinc-900/30 hover:bg-zinc-900/50 transition-colors">
+                <RadioGroupItem value="140" id="level-140" className="mb-2" />
+                <Label htmlFor="level-140" className="text-xs font-semibold text-slate-300 cursor-pointer">
+                  140+
+                </Label>
+              </div>
+            </RadioGroup>
+          </div>
+        )}
+
+        {/* Footer do Dialog */}
+        <DialogFooter className="flex flex-col sm:flex-row gap-2.5 pt-2 border-t border-zinc-800/80">
+          <div className="flex items-center gap-2 w-full">
+            {step > 1 && (
+              <Button
+                variant="outline"
+                onClick={handlePrev}
+                className="flex-1 rounded-xl border-zinc-800 hover:bg-zinc-900 text-slate-300 text-xs"
+              >
+                {lang === "pt" ? "Voltar" : "Back"}
+              </Button>
+            )}
+
+            {step < 3 ? (
+              <Button
+                onClick={handleNext}
+                className="flex-1 rounded-xl bg-amber-500 hover:bg-amber-600 text-black font-bold text-xs"
+              >
+                {lang === "pt" ? "Continuar" : "Continue"}
+              </Button>
+            ) : (
+              <Button
+                onClick={handleSearch}
+                className="flex-1 rounded-xl bg-amber-500 hover:bg-amber-600 text-black font-bold text-xs"
+              >
+                {lang === "pt" ? "Buscar accounts" : "Search accounts"}
+              </Button>
+            )}
+          </div>
+
+          <Button
+            variant="ghost"
+            onClick={handleSkip}
+            className="w-full text-slate-500 hover:text-slate-300 text-xs mt-2 sm:mt-0"
+          >
+            {lang === "pt" ? "Seguir para ver as accounts" : "Continue to see all accounts"}
+          </Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   );
 }

@@ -4,49 +4,28 @@ import {
   ArrowLeft,
   MessageCircle,
   X,
-  Filter,
   HandCoins,
   Sparkles,
-  Crosshair,
-  Swords,
-  Droplet,
-  Anchor,
-  Circle,
-  Shield,
-  Users,
+  ExternalLink,
+  ChevronRight,
+  ShieldAlert,
 } from "lucide-react";
 import { getRarityClasses, isTemporalBadge } from "@/lib/rarityBadge";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import { ACCOUNTS, CLASS_OPTIONS, getClassCounts } from "@/data/accounts";
+import { ACCOUNTS } from "@/data/accounts";
 import type { AccountListing } from "@/data/accounts";
 import AccountAssistantModal from "@/components/AccountAssistantModal";
 import HeroSection from "@/components/HeroSection";
 import TrustStrip from "@/components/TrustStrip";
-import FiltersPanel from "@/components/FiltersPanel";
-import {
-  filterByPriceRange,
-  getPriceRange,
-  getAvailableLevelBuckets,
-  filterByLevelBuckets,
-} from "@/lib/accountFilters";
-import { loadPrefs, savePrefs } from "@/lib/userPrefs";
+import { StickyFilterBar } from "@/components/StickyFilterBar";
+import { FilterDrawer } from "@/components/FilterDrawer";
+import { AccountCard } from "@/components/AccountCard";
+import { AccountCardSkeleton } from "@/components/AccountCardSkeleton";
+import { EmptyState } from "@/components/EmptyState";
+import { getMinCpsK, getAccountLevel } from "@/lib/accountFilters";
+import { useAccountStore } from "@/hooks/useAccountStore";
 import { useI18n } from "@/i18n";
-
-// Class → icon mapping (visual reinforcement of class filters)
-const CLASS_ICON: Record<string, typeof Crosshair> = {
-  Archer: Crosshair,
-  Ninja: Swords,
-  Taoist: Droplet,
-  Pirata: Anchor,
-  Monk: Circle,
-  Warrior: Shield,
-};
-
-// Rarity badge classes — centralized in lib/rarityBadge.ts
-function badgeClasses(badge: string, _fallback: string) {
-  return getRarityClasses(badge, _fallback);
-}
-
+import { toast } from "sonner";
 
 const WHATSAPP = "5575981382799";
 
@@ -54,16 +33,24 @@ const buildWa = (msg: string) =>
   `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
 
 function OfferButton({ title, className = "" }: { title: string; className?: string }) {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
+
+  const handleClick = () => {
+    toast.success(lang === "pt" ? "Redirecionando para o WhatsApp... 📲" : "Redirecting to WhatsApp... 📲");
+  };
+
   return (
     <a
       href={buildWa(t("wa.offer", { title }))}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={(e) => e.stopPropagation()}
-      className={`group relative inline-flex items-center justify-center gap-2 py-2.5 rounded-lg border border-primary/40 bg-primary/5 text-primary text-xs font-semibold backdrop-blur-sm hover:bg-primary/10 hover:border-primary hover:shadow-[0_0_20px_hsla(33,100%,50%,0.35)] transition-all overflow-hidden ${className}`}
+      onClick={(e) => {
+        e.stopPropagation();
+        handleClick();
+      }}
+      className={`group relative inline-flex items-center justify-center gap-2 py-2.5 rounded-xl border border-amber-500/25 bg-amber-500/5 text-amber-400 text-xs font-bold hover:bg-amber-500/15 hover:border-amber-500/40 hover:shadow-lg hover:shadow-amber-500/5 transition-all overflow-hidden ${className}`}
     >
-      <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+      <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
       <HandCoins size={14} /> {t("acc.makeOffer")}
     </a>
   );
@@ -71,68 +58,88 @@ function OfferButton({ title, className = "" }: { title: string; className?: str
 
 function AccountDetail({ account }: { account: AccountListing }) {
   const [imageZoomed, setImageZoomed] = useState(false);
-  const { t, withLang } = useI18n();
+  const { t, lang, withLang } = useI18n();
+
+  const handleInterestClick = () => {
+    toast.success(lang === "pt" ? "Redirecionando para o WhatsApp... 📲" : "Redirecting to WhatsApp... 📲");
+  };
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container max-w-2xl py-8 px-4">
-        <Link to={withLang("/accounts")} className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6">
-          <ArrowLeft size={16} /> {t("acc.backToAccounts")}
+    <div className="min-h-screen bg-[#0a0a0f] py-8 px-4 sm:px-6 lg:px-8">
+      <div className="container max-w-4xl mx-auto">
+        <Link
+          to={withLang("/")}
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-slate-200 transition-colors mb-6 group"
+        >
+          <ArrowLeft size={14} className="group-hover:-translate-x-0.5 transition-transform" />
+          <span>{t("acc.backToAccounts")}</span>
         </Link>
 
-        <div className="bg-card border border-border rounded-xl overflow-hidden">
-          <div className="relative">
-            <img
-              src={account.image}
-              alt={account.title}
-              className="w-full h-64 object-cover cursor-zoom-in hover:brightness-110 transition-all"
-              onClick={() => setImageZoomed(true)}
-            />
-            <span className={`absolute top-3 left-3 ${getRarityClasses(account.badge)} text-xs px-3 py-1 rounded-md inline-flex items-center gap-1`}>
-              {isTemporalBadge(account.badge) && <Sparkles size={10} />}
-              {account.badge}
-            </span>
-          </div>
-
-          <div className="p-6 space-y-5">
-            <div>
-              <h1 className="text-xl font-bold text-card-foreground">{account.title}</h1>
-              <div className="flex gap-3 mt-2 flex-wrap">
-                {account.prices.map((p, pi) => (
-                  <span key={pi} className="text-sm font-bold text-emerald-500 bg-emerald-500/10 px-3 py-1 rounded-lg">
-                    {p.label}: {p.value}
-                  </span>
-                ))}
-              </div>
+        <div className="bg-[#12121a] border border-zinc-800 rounded-3xl overflow-hidden shadow-2xl shadow-black/50">
+          <div className="grid grid-cols-1 md:grid-cols-12">
+            {/* Lado Esquerdo: Imagem da conta */}
+            <div className="md:col-span-5 relative bg-zinc-950 min-h-[300px] md:min-h-full">
+              <img
+                src={account.image}
+                alt={account.title}
+                className="absolute inset-0 w-full h-full object-cover cursor-zoom-in hover:brightness-110 transition-all duration-300"
+                onClick={() => setImageZoomed(true)}
+              />
+              <span className={`absolute top-4 left-4 ${getRarityClasses(account.badge)} text-[10px] font-bold px-2.5 py-1 rounded-md inline-flex items-center gap-1 border`}>
+                {isTemporalBadge(account.badge) && <Sparkles size={10} />}
+                {account.badge}
+              </span>
             </div>
 
-            {account.sections.map((sec, si) => (
-              <div key={si}>
-                <h3 className={`text-sm font-semibold mb-2 ${
-                  si === 0 ? "text-amber-500" : si === 1 ? "text-purple-500" : si === 2 ? "text-blue-500" : "text-muted-foreground"
-                }`}>
-                  {sec.title}
-                </h3>
-                <ul className="space-y-1">
-                  {sec.items.map((item, ii) => (
-                    <li key={ii} className="text-sm text-card-foreground/80 pl-3 border-l-2 border-border">
-                      {item}
-                    </li>
+            {/* Lado Direito: Informações detalhadas */}
+            <div className="md:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-6">
+              <div>
+                <h1 className="text-xl sm:text-2xl font-bold text-slate-100 leading-tight">{account.title}</h1>
+                <div className="flex flex-wrap gap-2 mt-3">
+                  {account.prices.map((p, pi) => (
+                    <span key={pi} className="text-xs font-bold text-amber-500 bg-amber-500/10 border border-amber-500/20 px-3 py-1 rounded-lg">
+                      {p.label}: {p.value}
+                    </span>
                   ))}
-                </ul>
+                  <span className="text-xs font-bold text-slate-400 bg-zinc-900 border border-zinc-800 px-3 py-1 rounded-lg">
+                    {account.className}
+                  </span>
+                </div>
               </div>
-            ))}
 
-            <div className="space-y-2">
-              <a
-                href={buildWa(t("wa.interest", { title: account.title }))}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 py-3 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
-              >
-                <MessageCircle size={16} /> {t("acc.interestedContact")}
-              </a>
-              <OfferButton title={account.title} className="w-full" />
+              {/* Seções de Atributos */}
+              <div className="space-y-4 max-h-[320px] overflow-y-auto no-scrollbar pr-1 border-y border-zinc-850 py-4">
+                {account.sections.map((sec, si) => (
+                  <div key={si} className="space-y-1.5">
+                    <h3 className={`text-xs font-bold uppercase tracking-wider ${
+                      si === 0 ? "text-amber-500" : si === 1 ? "text-violet-500" : si === 2 ? "text-cyan-500" : "text-slate-400"
+                    }`}>
+                      {sec.title}
+                    </h3>
+                    <ul className="space-y-1">
+                      {sec.items.map((item, ii) => (
+                        <li key={ii} className="text-xs text-slate-300 pl-3 border-l-2 border-zinc-800 leading-relaxed">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+
+              <div className="space-y-3 pt-2">
+                <a
+                  href={buildWa(t("wa.interestAccount", { title: account.title }))}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={handleInterestClick}
+                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-black font-bold text-sm shadow-md shadow-emerald-500/10 transition-colors"
+                >
+                  <MessageCircle size={16} />
+                  <span>{t("acc.interestedContact")}</span>
+                </a>
+                <OfferButton title={account.title} className="w-full py-3" />
+              </div>
             </div>
           </div>
         </div>
@@ -144,7 +151,7 @@ function AccountDetail({ account }: { account: AccountListing }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-black/80 flex items-center justify-center p-4 cursor-zoom-out"
+            className="fixed inset-0 z-[60] bg-black/90 flex items-center justify-center p-4 cursor-zoom-out"
             onClick={() => setImageZoomed(false)}
           >
             <motion.img
@@ -153,7 +160,7 @@ function AccountDetail({ account }: { account: AccountListing }) {
               exit={{ scale: 0.8, opacity: 0 }}
               src={account.image}
               alt={account.title}
-              className="max-w-[90vw] max-h-[85vh] object-contain rounded-lg"
+              className="max-w-[90vw] max-h-[85vh] object-contain rounded-2xl"
             />
           </motion.div>
         )}
@@ -163,396 +170,334 @@ function AccountDetail({ account }: { account: AccountListing }) {
 }
 
 function AccountsList() {
-  const prefs = loadPrefs();
+  const { lang, t, withLang } = useI18n();
+  const navigate = useNavigate();
+
+  // Estados locais para dialogs
   const [selected, setSelected] = useState<AccountListing | null>(null);
   const [imageZoomed, setImageZoomed] = useState(false);
-  const [classFilter, setClassFilter] = useState<string | null>(prefs.classFilter ?? null);
-  const priceRange = useMemo(() => getPriceRange(ACCOUNTS), []);
-  const [priceMin, setPriceMin] = useState<number>(priceRange[0]);
-  const [priceMax, setPriceMax] = useState<number>(priceRange[1]);
-  const [levelKeys, setLevelKeys] = useState<string[]>([]);
+  const [filtersOpen, setFiltersOpen] = useState(false);
   const [assistantOpen, setAssistantOpen] = useState(false);
-  const navigate = useNavigate();
-  const { t, withLang } = useI18n();
+  const [loading, setLoading] = useState(false);
 
-  // Auto-open assistant on first visit
+  const {
+    searchQuery,
+    selectedClasses,
+    minPrice,
+    maxPrice,
+    levelFilter,
+    sortBy,
+    clearFilters,
+    setPriceRange,
+    setSelectedClasses,
+    setLevelFilter,
+  } = useAccountStore();
+
+  // Ativar shimmer loading temporário ao alterar filtros
   useEffect(() => {
-    if (!prefs.assistantSeen) {
-      const to = setTimeout(() => setAssistantOpen(true), 500);
+    setLoading(true);
+    const to = setTimeout(() => setLoading(false), 450);
+    return () => clearTimeout(to);
+  }, [searchQuery, selectedClasses, minPrice, maxPrice, levelFilter, sortBy]);
+
+  // Assistente de contas automático na primeira visita
+  useEffect(() => {
+    const seen = localStorage.getItem("sellnbuy_assistant_seen");
+    if (!seen) {
+      const to = setTimeout(() => setAssistantOpen(true), 1000);
       return () => clearTimeout(to);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    savePrefs({ classFilter, budgetK: priceMax === priceRange[1] ? null : priceMax, lastVisited: "/" });
-  }, [classFilter, priceMax, priceRange]);
-
-  const classCounts = useMemo(() => getClassCounts(ACCOUNTS), []);
-  const levelBuckets = useMemo(() => getAvailableLevelBuckets(ACCOUNTS), []);
-
-  const priceIsDefault = priceMin === priceRange[0] && priceMax === priceRange[1];
-
+  // Lógica de Filtragem e Ordenação das contas
   const { filtered, fallbackUsed } = useMemo(() => {
-    let list = ACCOUNTS;
-    if (classFilter) list = list.filter((a) => a.className === classFilter);
-    list = filterByPriceRange(list, priceIsDefault ? null : priceMin, priceIsDefault ? null : priceMax);
-    list = filterByLevelBuckets(list, levelKeys);
+    let list = [...ACCOUNTS];
 
-    if (classFilter && list.length === 0 && levelKeys.length === 0) {
-      const fallback = filterByPriceRange(
-        ACCOUNTS,
-        priceIsDefault ? null : priceMin,
-        priceIsDefault ? null : priceMax
-      ).filter((a) => a.className !== classFilter).slice(0, 8);
+    // 1. Busca por Texto (redução de atrito)
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase();
+      list = list.filter((a) => {
+        const matchTitle = a.title.toLowerCase().includes(q);
+        const matchClass = a.className.toLowerCase().includes(q);
+        const matchSections = a.sections.some((sec) =>
+          sec.items.some((item) => item.toLowerCase().includes(q))
+        );
+        return matchTitle || matchClass || matchSections;
+      });
+    }
+
+    // 2. Filtro de Classes
+    if (selectedClasses.length > 0) {
+      list = list.filter((a) => selectedClasses.includes(a.className));
+    }
+
+    // 3. Filtro de Preço
+    list = list.filter((a) => {
+      const p = getMinCpsK(a);
+      if (p === null) return true; // Negociáveis são sempre mantidas
+      return p >= minPrice && p <= maxPrice;
+    });
+
+    // 4. Filtro de Level
+    if (levelFilter.length > 0) {
+      list = list.filter((a) => {
+        const lvl = getAccountLevel(a);
+        if (lvl === null) return false;
+        return levelFilter.some((f) => {
+          if (f === "99") return lvl >= 99 && lvl < 110;
+          if (f === "119") return lvl >= 110 && lvl < 125;
+          if (f === "129") return lvl >= 125 && lvl < 130;
+          if (f === "130+") return lvl >= 130;
+          if (f === "140+") return lvl >= 140;
+          return false;
+        });
+      });
+    }
+
+    // Fallback: se o filtro por classe resultou em 0 contas, traz sugestões alternativas
+    if (selectedClasses.length > 0 && list.length === 0 && levelFilter.length === 0) {
+      const fallback = ACCOUNTS.filter((a) => !selectedClasses.includes(a.className)).slice(0, 4);
       return { filtered: fallback, fallbackUsed: true };
     }
+
+    // 5. Ordenação Dinâmica
+    list.sort((a, b) => {
+      if (sortBy === "price-asc") {
+        const pA = getMinCpsK(a) ?? Infinity;
+        const pB = getMinCpsK(b) ?? Infinity;
+        return pA - pB;
+      }
+      if (sortBy === "price-desc") {
+        const pA = getMinCpsK(a) ?? -Infinity;
+        const pB = getMinCpsK(b) ?? -Infinity;
+        return pB - pA;
+      }
+      if (sortBy === "level-desc") {
+        const lA = getAccountLevel(a) ?? 0;
+        const lB = getAccountLevel(b) ?? 0;
+        return lB - lA;
+      }
+      // "newest" - Ordem original invertida (mais recentes primeiro)
+      const idxA = ACCOUNTS.indexOf(a);
+      const idxB = ACCOUNTS.indexOf(b);
+      return idxB - idxA;
+    });
+
     return { filtered: list, fallbackUsed: false };
-  }, [classFilter, priceMin, priceMax, priceIsDefault, levelKeys]);
+  }, [searchQuery, selectedClasses, minPrice, maxPrice, levelFilter, sortBy]);
 
-  const handleAssistantApply = (b: number | null, c: string | null) => {
-    if (b != null) setPriceMax(b);
-    setClassFilter(c);
-    savePrefs({ assistantSeen: true });
+  const handleAssistantApply = (
+    budgetK: number | null,
+    className: string | null,
+    minLvl: number | null
+  ) => {
+    localStorage.setItem("sellnbuy_assistant_seen", "true");
+    if (budgetK !== null) {
+      setPriceRange(5000, budgetK);
+    }
+    if (className) {
+      setSelectedClasses([className]);
+    }
+    if (minLvl !== null) {
+      if (minLvl >= 140) setLevelFilter(["140+"]);
+      else if (minLvl >= 130) setLevelFilter(["130+"]);
+    }
+    toast.success(lang === "pt" ? "Filtros aplicados pelo Assistente! 🧙‍♂️" : "Filters applied by Assistant! 🧙‍♂️");
   };
 
-  const clearAll = () => {
-    setPriceMin(priceRange[0]);
-    setPriceMax(priceRange[1]);
-    setClassFilter(null);
-    setLevelKeys([]);
+  const handleClearFilters = () => {
+    clearFilters();
+    toast.info(lang === "pt" ? "Filtros limpos!" : "Filters cleared!");
   };
 
-  const activeCount =
-    (classFilter ? 1 : 0) + (priceIsDefault ? 0 : 1) + levelKeys.length;
-  const hasAny = activeCount > 0;
+  const handleWhatsAppRedirect = () => {
+    toast.success(lang === "pt" ? "Redirecionando para o WhatsApp... 📲" : "Redirecting to WhatsApp... 📲");
+  };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#0a0a0f]">
+      {/* Hero Section e TrustStrip */}
       <HeroSection />
       <TrustStrip />
 
-      <div className="container max-w-6xl py-8 px-4">
-        <div className="flex items-start justify-between gap-4 flex-wrap mb-4">
+      {/* Título da Seção e Botão Assistente */}
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <h1 className="text-2xl font-bold text-foreground">{t("acc.title")}</h1>
-            <p className="text-sm text-muted-foreground mt-1 max-w-xl">
+            <h2 className="text-xl sm:text-2xl font-extrabold text-slate-50 tracking-tight flex items-center gap-2">
+              <span>{t("acc.title")}</span>
+              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-400 mt-1 max-w-xl">
               {t("acc.subtitle")}
             </p>
           </div>
           <button
             onClick={() => setAssistantOpen(true)}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-accent text-primary-foreground text-sm font-semibold shadow-lg shadow-primary/30 hover:opacity-95 transition"
+            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 text-black text-xs font-bold shadow-lg shadow-amber-500/10 hover:opacity-95 transition-opacity self-start sm:self-auto hover:scale-105 duration-200"
           >
-            <Sparkles size={14} /> {t("acc.assistant")}
+            <Sparkles size={13} />
+            <span>{t("acc.assistant")}</span>
           </button>
-        </div>
-
-        {/* Single-row filter bar: class pills + Filtros button */}
-        <div className="flex items-center gap-2 flex-wrap mb-4">
-          <FiltersPanel
-            priceMin={priceMin}
-            priceMax={priceMax}
-            priceRange={priceRange}
-            onPriceChange={([a, b]) => {
-              setPriceMin(a);
-              setPriceMax(b);
-            }}
-            levelBuckets={levelBuckets}
-            selectedLevels={levelKeys}
-            onLevelsChange={setLevelKeys}
-            activeCount={activeCount}
-            onClear={clearAll}
-          />
-
-          <div className="flex flex-wrap gap-2">
-            <button
-              onClick={() => setClassFilter(null)}
-              className={`inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full border transition-all ${
-                !classFilter
-                  ? "bg-primary text-primary-foreground border-primary shadow-[0_0_12px_hsla(33,100%,50%,0.4)]"
-                  : "bg-card text-muted-foreground border-border hover:border-primary/40 hover:text-foreground"
-              }`}
-            >
-              <Users size={12} /> {t("acc.all")}
-              <span className="opacity-70">({ACCOUNTS.length})</span>
-            </button>
-            {CLASS_OPTIONS.map((cls) => {
-              const count = classCounts[cls];
-              if (!count) return null;
-              const Icon = CLASS_ICON[cls] ?? Circle;
-              const active = classFilter === cls;
-              return (
-                <button
-                  key={cls}
-                  onClick={() => setClassFilter(active ? null : cls)}
-                  className={`inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full border transition-all ${
-                    active
-                      ? "bg-primary text-primary-foreground border-primary shadow-[0_0_12px_hsla(33,100%,50%,0.4)]"
-                      : "bg-card text-muted-foreground border-border hover:border-primary/40 hover:text-foreground"
-                  }`}
-                >
-                  <Icon size={12} className={active ? "" : "text-primary/80"} />
-                  {cls}
-                  <span className="opacity-70">({count})</span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-
-        {/* Active filter pills summary */}
-        {hasAny && (
-          <div className="mb-4 flex flex-wrap items-center gap-2 text-xs">
-            <span className="text-muted-foreground">{t("acc.filters")}</span>
-            {!priceIsDefault && (
-              <span className="px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/30 font-medium">
-                {priceMin}k – {priceMax}k CPs
-              </span>
-            )}
-            {classFilter && (
-              <span className="px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/30 font-medium">
-                {classFilter}
-              </span>
-            )}
-            {levelKeys.map((k) => (
-              <span key={k} className="px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/30 font-medium">
-                {levelBuckets.find((b) => b.key === k)?.label ?? k}
-              </span>
-            ))}
-            <button onClick={clearAll} className="text-muted-foreground hover:text-foreground underline underline-offset-2">
-              {t("acc.clearFiltersLower")}
-            </button>
-          </div>
-        )}
-
-
-
-        {/* Results count */}
-        <div className="mb-4 flex items-center justify-between gap-3 flex-wrap">
-          <p className="text-sm text-muted-foreground">
-            <span className="font-semibold text-foreground">{filtered.length}</span>{" "}
-            {filtered.length === 1 ? t("acc.foundOne") : t("acc.foundMany")}
-          </p>
-          {hasAny && (
-            <button
-              onClick={clearAll}
-              className="text-xs font-medium text-primary hover:underline underline-offset-2"
-            >
-              {t("acc.clearFilters")}
-            </button>
-          )}
-        </div>
-
-        {fallbackUsed && (
-          <div className="mb-6 p-4 rounded-xl border border-primary/30 bg-primary/5 text-sm text-card-foreground">
-            {t("acc.classSoldOut")}
-            <br />
-            <span className="text-muted-foreground">{t("acc.classSoldOutHint")}</span>
-          </div>
-        )}
-
-        {filtered.length === 0 && !fallbackUsed && (
-          <div className="my-10 p-10 rounded-2xl border border-dashed border-border bg-card/40 text-center">
-            <div className="mx-auto w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-4">
-              <Filter size={20} />
-            </div>
-            <h3 className="text-base font-semibold text-foreground mb-1">{t("acc.emptyTitle")}</h3>
-            <p className="text-sm text-muted-foreground mb-5">{t("acc.emptyHint")}</p>
-            <button
-              onClick={clearAll}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition"
-            >
-              {t("acc.clearFilters")}
-            </button>
-          </div>
-        )}
-
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filtered.map((acc, i) => {
-            const ClassIcon = CLASS_ICON[acc.className] ?? Circle;
-            return (
-            <motion.div
-              key={acc.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: Math.min(i, 8) * 0.05 }}
-              whileHover={{ y: -4 }}
-              className="bg-card border border-border rounded-xl overflow-hidden flex flex-col hover:border-primary/50 shadow-sm hover:shadow-[0_18px_40px_-15px_hsla(33,100%,50%,0.45)] transition-all cursor-pointer group"
-              onClick={() => setSelected(acc)}
-            >
-              <div className="relative aspect-[4/3] overflow-hidden bg-muted">
-                <img
-                  src={acc.image}
-                  alt={acc.title}
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-500 ease-out"
-                  loading="lazy"
-                />
-                {/* subtle top gradient for badge readability */}
-                <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/45 to-transparent pointer-events-none" />
-                <span
-                  className={`absolute top-2.5 left-2.5 text-[10px] px-2 py-0.5 rounded-md inline-flex items-center gap-1 ${badgeClasses(
-                    acc.badge,
-                    acc.badgeColor
-                  )}`}
-                >
-                  {isTemporalBadge(acc.badge) && <Sparkles size={9} />}
-                  {acc.badge}
-                </span>
-                <span className="absolute top-2.5 right-2.5 inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded-md bg-black/55 text-white/90 backdrop-blur-sm border border-white/10">
-                  <ClassIcon size={10} className="text-primary" />
-                  {acc.className}
-                </span>
-              </div>
-
-              <div className="p-4 flex flex-col flex-1">
-                <h3 className="text-sm font-semibold text-card-foreground line-clamp-2 mb-2">{acc.title}</h3>
-                <div className="mt-auto space-y-1.5">
-                  {acc.prices.map((p, pi) => (
-                    <p key={pi} className="text-xs font-bold text-emerald-500">{p.label}: {p.value}</p>
-                  ))}
-                </div>
-                <button
-                  className="mt-3 w-full py-2 rounded-lg bg-primary text-primary-foreground text-xs font-medium hover:opacity-90 transition-opacity"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    navigate(withLang(`/accounts/${acc.id}`));
-                  }}
-                >
-                  {t("acc.viewDetails")}
-                </button>
-                <a
-                  href={buildWa(t("wa.interest", { title: acc.title }))}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="mt-2 w-full inline-flex items-center justify-center gap-1.5 py-2 rounded-lg bg-emerald-500/10 text-emerald-500 border border-emerald-500/30 text-xs font-medium hover:bg-emerald-500/20 transition"
-                >
-                  <MessageCircle size={12} /> {t("acc.interested")}
-                </a>
-                <OfferButton title={acc.title} className="mt-2 w-full" />
-              </div>
-            </motion.div>
-            );
-          })}
         </div>
       </div>
 
-      <AccountAssistantModal
-        open={assistantOpen}
-        onClose={() => {
-          setAssistantOpen(false);
-          savePrefs({ assistantSeen: true });
-        }}
-        onApply={handleAssistantApply}
-        initialBudget={priceIsDefault ? null : priceMax}
-        initialClass={classFilter}
+      {/* Sticky Filter Bar */}
+      <StickyFilterBar
+        onOpenFilters={() => setFiltersOpen(true)}
+        filteredCount={filtered.length}
       />
 
-      {/* Image zoom overlay */}
-      <AnimatePresence>
-        {imageZoomed && selected && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-black/80 flex items-center justify-center p-4 cursor-zoom-out"
-            onClick={() => setImageZoomed(false)}
-          >
-            <motion.img
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              src={selected.image}
-              alt={selected.title}
-              className="max-w-[90vw] max-h-[85vh] object-contain rounded-lg"
-            />
-          </motion.div>
+      {/* Corpo principal das Contas */}
+      <div id="accounts-listing" className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {fallbackUsed && (
+          <div className="mb-8 p-4 rounded-2xl border border-amber-500/20 bg-amber-500/5 text-xs sm:text-sm text-slate-200 flex items-start gap-3">
+            <ShieldAlert size={16} className="text-amber-500 shrink-0 mt-0.5" />
+            <div>
+              <p className="font-bold">{t("acc.classSoldOut")}</p>
+              <p className="text-slate-400 mt-1">{t("acc.classSoldOutHint")}</p>
+            </div>
+          </div>
         )}
-      </AnimatePresence>
 
-      {/* Detail modal */}
+        {/* Grid de Cards com Skeleton Loading ou Empty State */}
+        {loading ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <AccountCardSkeleton key={i} />
+            ))}
+          </div>
+        ) : filtered.length === 0 ? (
+          <EmptyState onClear={handleClearFilters} />
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {filtered.map((acc, i) => (
+              <motion.div
+                key={acc.id}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: Math.min(i, 8) * 0.05 }}
+              >
+                <AccountCard
+                  account={acc}
+                  onSelect={() => setSelected(acc)}
+                  onViewDetails={() => navigate(withLang(`/accounts/${acc.id}`))}
+                />
+              </motion.div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Assistente Modal */}
+      <AccountAssistantModal
+        open={assistantOpen}
+        onClose={() => setAssistantOpen(false)}
+        onApply={handleAssistantApply}
+        initialBudget={minPrice !== 5000 ? maxPrice : null}
+        initialClass={selectedClasses.length > 0 ? selectedClasses[0] : null}
+      />
+
+      {/* Drawer Lateral Filtros */}
+      <FilterDrawer
+        open={filtersOpen}
+        onOpenChange={setFiltersOpen}
+        filteredCount={filtered.length}
+      />
+
+      {/* Modal Detalhes do Produto */}
       <AnimatePresence>
         {selected && !imageZoomed && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/60 flex items-start justify-center overflow-y-auto p-4 pt-12"
+            className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-start justify-center overflow-y-auto p-4 pt-12"
             onClick={() => setSelected(null)}
           >
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 40 }}
-              className="bg-card border border-border rounded-xl w-full max-w-2xl overflow-hidden mb-12"
+              className="bg-[#12121a] border border-zinc-800 rounded-3xl w-full max-w-2xl overflow-hidden mb-12 shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="relative">
+              <div className="relative aspect-[16/9] bg-zinc-950">
                 <img
                   src={selected.image}
                   alt={selected.title}
-                  className="w-full h-64 object-cover cursor-zoom-in hover:brightness-110 transition-all"
+                  className="w-full h-full object-cover cursor-zoom-in hover:brightness-110 transition-all duration-300"
                   onClick={() => setImageZoomed(true)}
                 />
-                <button onClick={() => setSelected(null)} className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/70">
-                  <X size={16} />
+                <button
+                  onClick={() => setSelected(null)}
+                  className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/50 hover:bg-black/85 text-white flex items-center justify-center backdrop-blur-sm transition-all"
+                >
+                  <X size={15} />
                 </button>
-                <span className={`absolute top-3 left-3 ${getRarityClasses(selected.badge)} text-xs px-3 py-1 rounded-md inline-flex items-center gap-1`}>
-                  {isTemporalBadge(selected.badge) && <Sparkles size={10} />}
+                <span className={`absolute top-4 left-4 ${getRarityClasses(selected.badge)} text-[10px] font-bold px-2.5 py-1 rounded-md inline-flex items-center gap-1 border`}>
+                  {isTemporalBadge(selected.badge) && <Sparkles size={9} />}
                   {selected.badge}
                 </span>
               </div>
 
-              <div className="p-6 space-y-5">
+              <div className="p-6 sm:p-8 space-y-6">
                 <div>
-                  <h2 className="text-xl font-bold text-card-foreground">{selected.title}</h2>
-                  <div className="flex gap-3 mt-2 flex-wrap">
+                  <h2 className="text-lg sm:text-xl font-bold text-slate-100 leading-tight">{selected.title}</h2>
+                  <div className="flex flex-wrap gap-2 mt-3">
                     {selected.prices.map((p, pi) => (
-                      <span key={pi} className="text-sm font-bold text-emerald-500 bg-emerald-500/10 px-3 py-1 rounded-lg">
+                      <span key={pi} className="text-xs font-bold text-amber-500 bg-amber-500/10 border border-amber-500/20 px-3 py-1.5 rounded-lg">
                         {p.label}: {p.value}
                       </span>
                     ))}
+                    <span className="text-xs font-bold text-slate-400 bg-zinc-900 border border-zinc-800 px-3 py-1.5 rounded-lg">
+                      {selected.className}
+                    </span>
                   </div>
                 </div>
 
-                {selected.sections.map((sec, si) => (
-                  <div key={si}>
-                    <h3 className={`text-sm font-semibold mb-2 ${
-                      si === 0 ? "text-amber-500" : si === 1 ? "text-purple-500" : si === 2 ? "text-blue-500" : "text-muted-foreground"
-                    }`}>
-                      {sec.title}
-                    </h3>
-                    <ul className="space-y-1">
-                      {sec.items.map((item, ii) => (
-                        <li key={ii} className="text-sm text-card-foreground/80 pl-3 border-l-2 border-border">
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
+                {/* Detalhes de atributos das abas/seções */}
+                <div className="space-y-4 max-h-[250px] overflow-y-auto no-scrollbar border-y border-zinc-850 py-4">
+                  {selected.sections.map((sec, si) => (
+                    <div key={si} className="space-y-1.5">
+                      <h3 className={`text-[11px] font-bold uppercase tracking-wider ${
+                        si === 0 ? "text-amber-500" : si === 1 ? "text-violet-500" : si === 2 ? "text-cyan-500" : "text-slate-400"
+                      }`}>
+                        {sec.title}
+                      </h3>
+                      <ul className="space-y-1">
+                        {sec.items.map((item, ii) => (
+                          <li key={ii} className="text-xs text-slate-300 pl-3 border-l-2 border-zinc-800 leading-relaxed">
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
 
-                <div className="space-y-2">
-                  <div className="flex gap-3">
+                <div className="space-y-3 pt-2">
+                  <div className="flex flex-col sm:flex-row gap-3">
                     <a
                       href={buildWa(t("wa.interest", { title: selected.title }))}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 py-3 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
+                      onClick={handleWhatsAppRedirect}
+                      className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-black font-bold text-xs sm:text-sm shadow-md shadow-emerald-500/10 transition-colors"
                     >
-                      <MessageCircle size={16} /> {t("acc.interested")}
+                      <MessageCircle size={15} />
+                      <span>{t("acc.interested")}</span>
                     </a>
                     <button
                       onClick={() => {
                         navigate(withLang(`/accounts/${selected.id}`));
                         setSelected(null);
+                        toast.success(lang === "pt" ? "Link direto aberto!" : "Direct link opened!");
                       }}
-                      className="px-4 py-3 rounded-lg border border-border text-card-foreground text-sm font-medium hover:bg-muted transition-colors"
+                      className="px-4 py-3 rounded-xl border border-zinc-800 hover:bg-zinc-800/80 text-slate-300 text-xs font-bold flex items-center justify-center gap-1.5 transition-colors"
                     >
-                      {t("acc.directLink")}
+                      <span>{t("acc.directLink")}</span>
+                      <ExternalLink size={13} />
                     </button>
                   </div>
                   <OfferButton title={selected.title} className="w-full py-3" />
@@ -583,10 +528,16 @@ export default function Accounts() {
 function AccountNotFound() {
   const { t, withLang } = useI18n();
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-2xl font-bold text-foreground mb-2">{t("acc.notFound")}</h1>
-        <Link to={withLang("/accounts")} className="text-primary hover:underline text-sm">{t("acc.backToAccounts")}</Link>
+    <div className="min-h-screen bg-[#0a0a0f] flex items-center justify-center px-4">
+      <div className="text-center max-w-sm">
+        <h1 className="text-xl font-bold text-slate-100 mb-2">{t("acc.notFound")}</h1>
+        <Link
+          to={withLang("/accounts")}
+          className="text-amber-500 hover:underline text-xs font-semibold flex items-center justify-center gap-1.5"
+        >
+          <span>{t("acc.backToAccounts")}</span>
+          <ChevronRight size={14} />
+        </Link>
       </div>
     </div>
   );

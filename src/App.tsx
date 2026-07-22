@@ -10,6 +10,7 @@ import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 import MusicPlayer from "./components/MusicPlayer";
 import { LanguageProvider } from "./i18n";
+import { AccountStoreProvider } from "./hooks/useAccountStore";
 
 const queryClient = new QueryClient();
 
@@ -19,32 +20,34 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <LanguageProvider>
-          <div className="dark app-root">
-            <Header />
-            <Routes>
-              {/* PT — /accounts é agora a raiz */}
-              <Route path="/" element={<Accounts />} />
-              <Route path="/accounts" element={<Navigate to="/" replace />} />
-              <Route path="/accounts/:accountId" element={<Accounts />} />
-              <Route path="/recompensas" element={<Rewards />} />
-              <Route path="/admin" element={<Admin />} />
-              {/* Legacy redirects */}
-              <Route path="/shopping-mall" element={<Navigate to="/" replace />} />
-              <Route path="/home" element={<Navigate to="/" replace />} />
-              <Route path="/index" element={<Navigate to="/" replace />} />
-              {/* EN mirror */}
-              <Route path="/en" element={<Accounts />} />
-              <Route path="/en/accounts" element={<Navigate to="/en" replace />} />
-              <Route path="/en/accounts/:accountId" element={<Accounts />} />
-              <Route path="/en/recompensas" element={<Rewards />} />
-              <Route path="/en/admin" element={<Admin />} />
-              <Route path="/en/shopping-mall" element={<Navigate to="/en" replace />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-            <MusicPlayer />
-          </div>
-        </LanguageProvider>
+        <AccountStoreProvider>
+          <LanguageProvider>
+            <div className="dark app-root bg-background text-foreground min-h-screen">
+              <Header />
+              <Routes>
+                {/* PT — /accounts é agora a raiz */}
+                <Route path="/" element={<Accounts />} />
+                <Route path="/accounts" element={<Navigate to="/" replace />} />
+                <Route path="/accounts/:accountId" element={<Accounts />} />
+                <Route path="/recompensas" element={<Rewards />} />
+                <Route path="/admin" element={<Admin />} />
+                {/* Legacy redirects */}
+                <Route path="/shopping-mall" element={<Navigate to="/" replace />} />
+                <Route path="/home" element={<Navigate to="/" replace />} />
+                <Route path="/index" element={<Navigate to="/" replace />} />
+                {/* EN mirror */}
+                <Route path="/en" element={<Accounts />} />
+                <Route path="/en/accounts" element={<Navigate to="/en" replace />} />
+                <Route path="/en/accounts/:accountId" element={<Accounts />} />
+                <Route path="/en/recompensas" element={<Rewards />} />
+                <Route path="/en/admin" element={<Admin />} />
+                <Route path="/en/shopping-mall" element={<Navigate to="/en" replace />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+              <MusicPlayer />
+            </div>
+          </LanguageProvider>
+        </AccountStoreProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
