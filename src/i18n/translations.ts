@@ -29,7 +29,6 @@ export const translations = {
     "acc.title": "Accounts à Venda",
     "acc.subtitle":
       "Essa área é exclusiva para contas selecionadas. Normalmente disponíveis para clientes com histórico de compras mais elevado.",
-    "acc.assistant": "Assistente",
     "acc.filters": "Filtros:",
     "acc.clearFilters": "Limpar filtros",
     "acc.clearFiltersLower": "limpar filtros",
@@ -75,28 +74,6 @@ export const translations = {
     "welcome.p2": "Fique à vontade para explorar — e qualquer dúvida, estou por aqui 😉",
     "welcome.cta": "Explorar a Loja",
 
-    // Chatbot
-    "chat.title": "Assistente S&B",
-    "chat.greeting": "Olá, Conquistador!\nComo posso te ajudar hoje?",
-    "chat.bestsellers": "Ver produtos mais vendidos",
-    "chat.howto": "Como comprar?",
-    "chat.payment": "Formas de pagamento",
-    "chat.delivery": "Prazo de entrega",
-    "chat.whatsapp": "Falar no WhatsApp",
-    "chat.rewards": "Ver minhas recompensas",
-    "chat.group": "Entrar no grupo da comunidade",
-    "chat.enterGroup": "Entrar no grupo",
-    "chat.ans.bestsellers":
-      "Nossos itens mais vendidos são: Runas Amarelas, CPs e itens de Awakening. Use os filtros acima para encontrá-los!",
-    "chat.ans.howto":
-      "1. Escolha o item desejado\n2. Clique no botão WhatsApp\n3. Confirme com nosso atendente\n4. Efetue o pagamento\n5. Receba seu item no jogo!",
-    "chat.ans.payment":
-      "Aceitamos: PIX, transferência bancária e cartão de crédito. Consulte via WhatsApp para mais detalhes.",
-    "chat.ans.delivery":
-      "Entrega imediata após confirmação do pagamento! Itens são enviados diretamente para sua conta no jogo.",
-    "chat.ans.group":
-      "Quer acompanhar novidades, promoções e trocar ideia com outros jogadores? Nosso grupo é o melhor lugar para isso.",
-
     // Tips
     "tips.button": "Dicas / Sugestões",
     "tips.whatsapp": "Falar comigo no WhatsApp",
@@ -131,7 +108,6 @@ export const translations = {
     "acc.title": "Accounts for Sale",
     "acc.subtitle":
       "This area is reserved for hand-picked accounts. Usually available to clients with a higher purchase history.",
-    "acc.assistant": "Assistant",
     "acc.filters": "Filters:",
     "acc.clearFilters": "Clear filters",
     "acc.clearFiltersLower": "clear filters",
@@ -176,28 +152,6 @@ export const translations = {
     "welcome.b2": "🎯 Smart suggestions for every type of player",
     "welcome.p2": "Feel free to explore — and if you have any questions, I'm right here 😉",
     "welcome.cta": "Explore the Shop",
-
-    // Chatbot
-    "chat.title": "S&B Assistant",
-    "chat.greeting": "Hello, Conqueror!\nHow can I help you today?",
-    "chat.bestsellers": "See best-selling products",
-    "chat.howto": "How to buy?",
-    "chat.payment": "Payment methods",
-    "chat.delivery": "Delivery time",
-    "chat.whatsapp": "Chat on WhatsApp",
-    "chat.rewards": "See my rewards",
-    "chat.group": "Join the community group",
-    "chat.enterGroup": "Join the group",
-    "chat.ans.bestsellers":
-      "Our best-sellers are: Yellow Runes, CPs and Awakening items. Use the filters above to find them!",
-    "chat.ans.howto":
-      "1. Choose the item you want\n2. Click the WhatsApp button\n3. Confirm with our attendant\n4. Make the payment\n5. Receive your item in-game!",
-    "chat.ans.payment":
-      "We accept: PIX, bank transfer and credit card. Ask via WhatsApp for more details.",
-    "chat.ans.delivery":
-      "Instant delivery after payment confirmation! Items are sent straight to your in-game account.",
-    "chat.ans.group":
-      "Want to follow news, promotions and chat with other players? Our group is the best place for that.",
 
     // Tips
     "tips.button": "Tips / Suggestions",

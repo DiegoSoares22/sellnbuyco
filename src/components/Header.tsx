@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Moon, Sun, Menu, X, Globe, Search, Heart, RefreshCw, Trash2, MessageCircle } from "lucide-react";
+import { Menu, X, Globe, Search, Heart, RefreshCw, Trash2, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/i18n";
 import { useAccountStore } from "@/hooks/useAccountStore";
@@ -9,13 +9,13 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const WHATSAPP = "5575981382799";
 const buildWa = (msg: string) =>
   `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
 
 export default function Header() {
-  const [dark, setDark] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchFocused, setSearchFocused] = useState(false);
   const location = useLocation();
@@ -28,15 +28,7 @@ export default function Header() {
     toggleFavorite,
   } = useAccountStore();
 
-  useEffect(() => {
-    const root = document.querySelector(".app-root");
-    if (!root) return;
-    if (dark) {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
-    }
-  }, [dark]);
+
 
   const links = [
     { to: withLang("/"), label: t("nav.accounts") },
@@ -58,12 +50,12 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-[#0a0a0f]/80 dark:bg-[#0a0a0f]/80 backdrop-blur-md border-b border-zinc-800 py-2.5">
+    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border py-2.5">
       <div className="container max-w-7xl mx-auto px-4 flex items-center justify-between h-14">
         {/* Logo "SellNBuyCO" */}
         <Link
           to={withLang("/")}
-          className="flex items-center gap-2 font-bold text-lg text-slate-50 tracking-tight group"
+          className="flex items-center gap-2 font-bold text-lg text-foreground tracking-tight group"
         >
           <motion.div
             whileHover={{ rotate: 180 }}
@@ -94,7 +86,7 @@ export default function Header() {
             onFocus={() => setSearchFocused(true)}
             onBlur={() => setSearchFocused(false)}
             className={cn(
-              "pl-9 pr-8 py-1.5 rounded-full text-xs bg-zinc-900 border border-zinc-800 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 text-slate-100 placeholder-slate-500 transition-all duration-300",
+              "pl-9 pr-8 py-1.5 rounded-full text-xs bg-secondary border border-border focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 text-foreground placeholder-muted-foreground transition-all duration-300",
               searchFocused ? "w-72 shadow-lg shadow-amber-500/5" : "w-48"
             )}
           />
@@ -111,7 +103,7 @@ export default function Header() {
         {/* Ações Navbar */}
         <div className="flex items-center gap-3">
           {/* Seletor de Idioma PT/EN com Bandeirinhas */}
-          <div className="hidden sm:flex items-center gap-1 bg-zinc-900/80 border border-zinc-800 p-0.5 rounded-full">
+          <div className="hidden sm:flex items-center gap-1 bg-secondary/80 border border-border p-0.5 rounded-full">
             <button
               onClick={() => switchLang("pt")}
               className={cn(
@@ -138,7 +130,7 @@ export default function Header() {
 
           <button
             onClick={() => switchLang(lang === "pt" ? "en" : "pt")}
-            className="sm:hidden w-9 h-9 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-slate-300 hover:bg-zinc-800 transition-colors text-xs font-bold"
+            className="sm:hidden w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center text-foreground hover:bg-muted transition-colors text-xs font-bold"
             title={t("nav.language")}
           >
             {lang === "pt" ? "EN" : "PT"}
@@ -245,13 +237,7 @@ export default function Header() {
           </Popover>
 
           {/* Toggle Dark/Light */}
-          <button
-            onClick={() => setDark((p) => !p)}
-            className="w-9 h-9 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-slate-300 hover:bg-zinc-800 transition-colors shadow-sm"
-            title={dark ? t("nav.themeLight") : t("nav.themeDark")}
-          >
-            {dark ? <Sun size={15} /> : <Moon size={15} />}
-          </button>
+          <ThemeToggle />
 
           {/* Menu Hambúrguer (Mobile) */}
           <button

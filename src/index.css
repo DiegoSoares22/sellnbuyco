@@ -44,6 +44,7 @@
   }
 
   .dark {
+    color-scheme: dark;
     --background: 240 33% 5%;
     --foreground: 210 40% 98%;
     --card: 240 27% 9%;
@@ -79,12 +80,75 @@
     --gradient-card: linear-gradient(180deg, #12121a 0%, #0a0a0f 100%);
     --overlay-dark: rgba(0, 0, 0, 0.65);
   }
+
+  .light {
+    color-scheme: light;
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 38 92% 50%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 38 92% 50%;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 215 16% 47%;
+    --sidebar-primary: 38 92% 50%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 38 92% 50%;
+
+    --glow-orange: 0 0 15px hsla(38, 92%, 50%, 0.15);
+    --glow-gold: 0 0 20px hsla(45, 100%, 50%, 0.1);
+    --gradient-hero: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 50%, #f8fafc 100%);
+    --gradient-card: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    --overlay-light: rgba(0, 0, 0, 0.03);
+  }
+}
+
+/* Prevent FOUC — immediate background/text before CSS loads */
+html.dark body {
+  background-color: #0a0a0f;
+  color: #f8fafc;
+}
+
+html.light body {
+  background-color: #f8fafc;
+  color: #0f172a;
 }
 
 @layer base {
   * {
     @apply border-border;
   }
+
+  /* Smooth color transitions for theme switching */
+  *,
+  *::before,
+  *::after {
+    @apply transition-colors duration-200;
+  }
+
+  /* Exclude elements that should NOT animate */
+  .no-transition,
+  .no-transition * {
+    transition: none !important;
+  }
+
   html, body {
     cursor: url('/cursor.png') 8 4, auto;
   }

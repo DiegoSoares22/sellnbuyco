@@ -22,7 +22,7 @@ const App = () => (
       <BrowserRouter>
         <AccountStoreProvider>
           <LanguageProvider>
-            <div className="dark app-root bg-background text-foreground min-h-screen">
+            <div className="app-root bg-background text-foreground min-h-screen">
               <Header />
               <Routes>
                 {/* PT — /accounts é agora a raiz */}

@@ -1,4 +1,4 @@
-import { Trophy, MessageCircle, ShieldCheck, Zap } from "lucide-react";
+import { Trophy, MessageCircle, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import { useI18n } from "@/i18n";
 
@@ -8,13 +8,13 @@ export default function TrustStrip() {
   const items = [
     {
       icon: Trophy,
-      label: lang === "pt" ? "+15 accounts vendidas" : "+15 accounts sold",
+      label: lang === "pt" ? "+15 accounts vendidas através do site" : "+15 accounts sold through the site",
       desc: lang === "pt" ? "Histórico comprovado" : "Proven history",
       color: "text-amber-500 bg-amber-500/10 border-amber-500/20"
     },
     {
       icon: MessageCircle,
-      label: lang === "pt" ? "Atendimento WhatsApp" : "WhatsApp Support",
+      label: lang === "pt" ? "Atendimento via WhatsApp" : "WhatsApp Support",
       desc: lang === "pt" ? "Suporte direto" : "Direct support",
       color: "text-emerald-500 bg-emerald-500/10 border-emerald-500/20"
     },
@@ -24,18 +24,12 @@ export default function TrustStrip() {
       desc: lang === "pt" ? "Segurança 100%" : "100% secure",
       color: "text-violet-500 bg-violet-500/10 border-violet-500/20"
     },
-    {
-      icon: Zap,
-      label: lang === "pt" ? "Entrega imediata" : "Instant delivery",
-      desc: lang === "pt" ? "Processo automático" : "Automated process",
-      color: "text-cyan-500 bg-cyan-500/10 border-cyan-500/20"
-    }
   ];
 
   return (
     <div className="border-y border-zinc-800 bg-[#12121a] py-6 relative overflow-hidden">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {items.map((item, index) => {
             const Icon = item.icon;
             return (

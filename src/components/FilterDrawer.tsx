@@ -47,8 +47,8 @@ const CLASS_OPTIONS = [
 export const FilterDrawer: React.FC<FilterDrawerProps> = ({ open, onOpenChange, filteredCount }) => {
   const { lang } = useI18n();
   const {
-    selectedClasses,
-    setSelectedClasses,
+    selectedClass,
+    setSelectedClass,
     minPrice,
     maxPrice,
     setPriceRange,
@@ -61,7 +61,7 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({ open, onOpenChange, 
   const levelBuckets = getAvailableLevelBuckets(ACCOUNTS);
 
   // Estados locais para controlar a edição antes de aplicar
-  const [localClasses, setLocalClasses] = useState<string[]>(selectedClasses);
+  const [localClass, setLocalClass] = useState<string | null>(selectedClass);
   const [localMinPrice, setLocalMinPrice] = useState<number>(minPrice);
   const [localMaxPrice, setLocalMaxPrice] = useState<number>(maxPrice);
   const [localLevels, setLocalLevels] = useState<string[]>(levelFilter);
@@ -69,15 +69,15 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({ open, onOpenChange, 
   // Resetar estados locais com base no store quando abrir
   React.useEffect(() => {
     if (open) {
-      setLocalClasses(selectedClasses);
+      setLocalClass(selectedClass);
       setLocalMinPrice(minPrice);
       setLocalMaxPrice(maxPrice);
       setLocalLevels(levelFilter);
     }
-  }, [open, selectedClasses, minPrice, maxPrice, levelFilter]);
+  }, [open, selectedClass, minPrice, maxPrice, levelFilter]);
 
   const handleApply = () => {
-    setSelectedClasses(localClasses);
+    setSelectedClass(localClass);
     setPriceRange(localMinPrice, localMaxPrice);
     setLevelFilter(localLevels);
     onOpenChange(false);
@@ -85,7 +85,7 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({ open, onOpenChange, 
 
   const handleClear = () => {
     clearFilters();
-    setLocalClasses([]);
+    setLocalClass(null);
     setLocalMinPrice(5000);
     setLocalMaxPrice(270000);
     setLocalLevels([]);
@@ -93,11 +93,7 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({ open, onOpenChange, 
   };
 
   const toggleLocalClass = (cls: string) => {
-    if (localClasses.includes(cls)) {
-      setLocalClasses(localClasses.filter((c) => c !== cls));
-    } else {
-      setLocalClasses([...localClasses, cls]);
-    }
+    setLocalClass((prev) => (prev === cls ? null : cls));
   };
 
   const handleLevelRadioChange = (val: string) => {
@@ -216,7 +212,7 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({ open, onOpenChange, 
               {CLASS_OPTIONS.map((cls) => {
                 const count = classCounts[cls] || 0;
                 const Icon = CLASS_ICONS[cls] || HelpCircle;
-                const isSelected = localClasses.includes(cls);
+                const isSelected = localClass === cls;
 
                 return (
                   <button

@@ -38,7 +38,8 @@ const CLASS_OPTIONS = [
 export const StickyFilterBar: React.FC<StickyFilterBarProps> = ({ onOpenFilters, filteredCount }) => {
   const { lang } = useI18n();
   const {
-    selectedClasses,
+    selectedClass,
+    setSelectedClass,
     toggleClass,
     sortBy,
     setSortBy,
@@ -71,11 +72,10 @@ export const StickyFilterBar: React.FC<StickyFilterBarProps> = ({ onOpenFilters,
           <div className="flex gap-2 overflow-x-auto no-scrollbar scroll-smooth flex-1 py-1">
             <button
               onClick={() => {
-                // Limpar classes
-                selectedClasses.forEach(c => toggleClass(c));
+                setSelectedClass(null);
               }}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs font-semibold whitespace-nowrap transition-all duration-200 shrink-0 ${
-                selectedClasses.length === 0
+                selectedClass === null
                   ? "bg-amber-500 text-black border-amber-500 shadow-md shadow-amber-500/10"
                   : "bg-zinc-900/50 border-zinc-800 text-slate-400 hover:border-zinc-700 hover:text-slate-200"
               }`}
@@ -87,7 +87,7 @@ export const StickyFilterBar: React.FC<StickyFilterBarProps> = ({ onOpenFilters,
             {CLASS_OPTIONS.map((cls) => {
               const count = classCounts[cls] || 0;
               const Icon = CLASS_ICONS[cls] || HelpCircle;
-              const active = selectedClasses.includes(cls);
+              const active = selectedClass === cls;
 
               return (
                 <button

@@ -4,8 +4,8 @@ import { useSearchParams } from "react-router-dom";
 interface AccountStoreContextType {
   searchQuery: string;
   setSearchQuery: (q: string) => void;
-  selectedClasses: string[];
-  setSelectedClasses: (classes: string[]) => void;
+  selectedClass: string | null;
+  setSelectedClass: (cls: string | null) => void;
   toggleClass: (cls: string) => void;
   minPrice: number;
   maxPrice: number;
@@ -30,9 +30,9 @@ export const AccountStoreProvider: React.FC<{ children: React.ReactNode }> = ({ 
   // Search query
   const [searchQuery, setSearchQuery] = useState(searchParams.get("search") || "");
 
-  // Selected classes (comma-separated in URL)
-  const [selectedClasses, setSelectedClasses] = useState<string[]>(
-    searchParams.get("class") ? searchParams.get("class")!.split(",").filter(Boolean) : []
+  // Selected class (single value in URL)
+  const [selectedClass, setSelectedClass] = useState<string | null>(
+    searchParams.get("class") || null
   );
 
   // Price range (minPrice, maxPrice)
@@ -90,21 +90,17 @@ export const AccountStoreProvider: React.FC<{ children: React.ReactNode }> = ({ 
   useEffect(() => {
     const params: Record<string, string> = {};
     if (searchQuery) params.search = searchQuery;
-    if (selectedClasses.length > 0) params.class = selectedClasses.join(",");
+    if (selectedClass) params.class = selectedClass;
     if (minPrice !== 5000) params.minPrice = minPrice.toString();
     if (maxPrice !== 270000) params.maxPrice = maxPrice.toString();
     if (levelFilter.length > 0) params.level = levelFilter.join(",");
     if (sortBy !== "newest") params.sort = sortBy;
 
     setSearchParams(params, { replace: true });
-  }, [searchQuery, selectedClasses, minPrice, maxPrice, levelFilter, sortBy, setSearchParams]);
+  }, [searchQuery, selectedClass, minPrice, maxPrice, levelFilter, sortBy, setSearchParams]);
 
   const toggleClass = (cls: string) => {
-    if (selectedClasses.includes(cls)) {
-      setSelectedClasses(selectedClasses.filter((c) => c !== cls));
-    } else {
-      setSelectedClasses([...selectedClasses, cls]);
-    }
+    setSelectedClass((prev) => (prev === cls ? null : cls));
   };
 
   const toggleLevel = (lvl: string) => {
@@ -122,7 +118,7 @@ export const AccountStoreProvider: React.FC<{ children: React.ReactNode }> = ({ 
 
   const clearFilters = () => {
     setSearchQuery("");
-    setSelectedClasses([]);
+    setSelectedClass(null);
     setMinPrice(5000);
     setMaxPrice(270000);
     setLevelFilter([]);
@@ -130,7 +126,7 @@ export const AccountStoreProvider: React.FC<{ children: React.ReactNode }> = ({ 
   };
 
   const activeFiltersCount =
-    (selectedClasses.length > 0 ? 1 : 0) +
+    (selectedClass ? 1 : 0) +
     (minPrice !== 5000 || maxPrice !== 270000 ? 1 : 0) +
     (levelFilter.length > 0 ? levelFilter.length : 0);
 
@@ -139,8 +135,8 @@ export const AccountStoreProvider: React.FC<{ children: React.ReactNode }> = ({ 
       value={{
         searchQuery,
         setSearchQuery,
-        selectedClasses,
-        setSelectedClasses,
+        selectedClass,
+        setSelectedClass,
         toggleClass,
         minPrice,
         maxPrice,

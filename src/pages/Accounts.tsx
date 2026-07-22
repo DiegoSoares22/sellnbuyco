@@ -14,7 +14,6 @@ import { getRarityClasses, isTemporalBadge } from "@/lib/rarityBadge";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { ACCOUNTS } from "@/data/accounts";
 import type { AccountListing } from "@/data/accounts";
-import AccountAssistantModal from "@/components/AccountAssistantModal";
 import HeroSection from "@/components/HeroSection";
 import TrustStrip from "@/components/TrustStrip";
 import { StickyFilterBar } from "@/components/StickyFilterBar";
@@ -177,19 +176,18 @@ function AccountsList() {
   const [selected, setSelected] = useState<AccountListing | null>(null);
   const [imageZoomed, setImageZoomed] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const [assistantOpen, setAssistantOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const {
     searchQuery,
-    selectedClasses,
+    selectedClass,
     minPrice,
     maxPrice,
     levelFilter,
     sortBy,
     clearFilters,
     setPriceRange,
-    setSelectedClasses,
+    setSelectedClass,
     setLevelFilter,
   } = useAccountStore();
 
@@ -198,16 +196,7 @@ function AccountsList() {
     setLoading(true);
     const to = setTimeout(() => setLoading(false), 450);
     return () => clearTimeout(to);
-  }, [searchQuery, selectedClasses, minPrice, maxPrice, levelFilter, sortBy]);
-
-  // Assistente de contas automático na primeira visita
-  useEffect(() => {
-    const seen = localStorage.getItem("sellnbuy_assistant_seen");
-    if (!seen) {
-      const to = setTimeout(() => setAssistantOpen(true), 1000);
-      return () => clearTimeout(to);
-    }
-  }, []);
+  }, [searchQuery, selectedClass, minPrice, maxPrice, levelFilter, sortBy]);
 
   // Lógica de Filtragem e Ordenação das contas
   const { filtered, fallbackUsed } = useMemo(() => {
@@ -227,15 +216,16 @@ function AccountsList() {
     }
 
     // 2. Filtro de Classes
-    if (selectedClasses.length > 0) {
-      list = list.filter((a) => selectedClasses.includes(a.className));
+    if (selectedClass) {
+      list = list.filter((a) => a.className === selectedClass);
     }
 
     // 3. Filtro de Preço
     list = list.filter((a) => {
       const p = getMinCpsK(a);
       if (p === null) return true; // Negociáveis são sempre mantidas
-      return p >= minPrice && p <= maxPrice;
+      const pAbsolute = p * 1000;
+      return pAbsolute >= minPrice && pAbsolute <= maxPrice;
     });
 
     // 4. Filtro de Level
@@ -255,8 +245,8 @@ function AccountsList() {
     }
 
     // Fallback: se o filtro por classe resultou em 0 contas, traz sugestões alternativas
-    if (selectedClasses.length > 0 && list.length === 0 && levelFilter.length === 0) {
-      const fallback = ACCOUNTS.filter((a) => !selectedClasses.includes(a.className)).slice(0, 4);
+    if (selectedClass && list.length === 0 && levelFilter.length === 0) {
+      const fallback = ACCOUNTS.filter((a) => a.className !== selectedClass).slice(0, 4);
       return { filtered: fallback, fallbackUsed: true };
     }
 
@@ -284,26 +274,7 @@ function AccountsList() {
     });
 
     return { filtered: list, fallbackUsed: false };
-  }, [searchQuery, selectedClasses, minPrice, maxPrice, levelFilter, sortBy]);
-
-  const handleAssistantApply = (
-    budgetK: number | null,
-    className: string | null,
-    minLvl: number | null
-  ) => {
-    localStorage.setItem("sellnbuy_assistant_seen", "true");
-    if (budgetK !== null) {
-      setPriceRange(5000, budgetK);
-    }
-    if (className) {
-      setSelectedClasses([className]);
-    }
-    if (minLvl !== null) {
-      if (minLvl >= 140) setLevelFilter(["140+"]);
-      else if (minLvl >= 130) setLevelFilter(["130+"]);
-    }
-    toast.success(lang === "pt" ? "Filtros aplicados pelo Assistente! 🧙‍♂️" : "Filters applied by Assistant! 🧙‍♂️");
-  };
+  }, [searchQuery, selectedClass, minPrice, maxPrice, levelFilter, sortBy]);
 
   const handleClearFilters = () => {
     clearFilters();
@@ -320,7 +291,7 @@ function AccountsList() {
       <HeroSection />
       <TrustStrip />
 
-      {/* Título da Seção e Botão Assistente */}
+      {/* Título da Seção */}
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-4">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
@@ -332,13 +303,6 @@ function AccountsList() {
               {t("acc.subtitle")}
             </p>
           </div>
-          <button
-            onClick={() => setAssistantOpen(true)}
-            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 text-black text-xs font-bold shadow-lg shadow-amber-500/10 hover:opacity-95 transition-opacity self-start sm:self-auto hover:scale-105 duration-200"
-          >
-            <Sparkles size={13} />
-            <span>{t("acc.assistant")}</span>
-          </button>
         </div>
       </div>
 
@@ -388,15 +352,6 @@ function AccountsList() {
           </div>
         )}
       </div>
-
-      {/* Assistente Modal */}
-      <AccountAssistantModal
-        open={assistantOpen}
-        onClose={() => setAssistantOpen(false)}
-        onApply={handleAssistantApply}
-        initialBudget={minPrice !== 5000 ? maxPrice : null}
-        initialClass={selectedClasses.length > 0 ? selectedClasses[0] : null}
-      />
 
       {/* Drawer Lateral Filtros */}
       <FilterDrawer

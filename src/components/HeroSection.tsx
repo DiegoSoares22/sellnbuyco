@@ -84,8 +84,8 @@ export default function HeroSection() {
               className="text-sm sm:text-base text-slate-400 max-w-lg leading-relaxed"
             >
               {lang === "pt"
-                ? "Compre e venda contas high-level com total segurança. Contas verificadas, suporte dedicado e entrega imediata para garantir a melhor jornada no jogo."
-                : "Buy and sell high-level accounts with complete security. Verified accounts, dedicated support, and instant delivery to ensure your best in-game journey."}
+                ? "Compre e venda contas high-level com total segurança. Contas verificadas, suporte dedicado e negociação personalizada para garantir a melhor jornada no jogo."
+                : "Buy and sell high-level accounts with complete security. Verified accounts, dedicated support, and personalized negotiation to ensure your best in-game journey."}
             </motion.p>
 
             {/* Botões CTA duplos */}
