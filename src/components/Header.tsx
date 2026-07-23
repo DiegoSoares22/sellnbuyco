@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Globe, Search, Heart, RefreshCw, Trash2, MessageCircle } from "lucide-react";
+import { Menu, X, Globe, Search, Heart, Trash2, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/i18n";
 import { useAccountStore } from "@/hooks/useAccountStore";
@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import sellnbuycoLogo from "@/assets/sellnbuyco-logo.png";
 
 const WHATSAPP = "5575981382799";
 const buildWa = (msg: string) =>
@@ -52,21 +53,16 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border py-2.5">
       <div className="container max-w-7xl mx-auto px-4 flex items-center justify-between h-14">
-        {/* Logo "SellNBuyCO" */}
+        {/* Logo */}
         <Link
           to={withLang("/")}
-          className="flex items-center gap-2 font-bold text-lg text-foreground tracking-tight group"
+          className="flex items-center group"
         >
-          <motion.div
-            whileHover={{ rotate: 180 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="p-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-500"
-          >
-            <RefreshCw size={18} />
-          </motion.div>
-          <span>
-            Sell<span className="text-amber-500">N</span>Buy<span className="text-slate-400 font-light text-sm">CO</span>
-          </span>
+          <img
+            src={sellnbuycoLogo}
+            alt="SellNBuyCO"
+            className="h-10 w-auto object-contain"
+          />
         </Link>
 
         {/* Search Bar Expansível - Desktop */}

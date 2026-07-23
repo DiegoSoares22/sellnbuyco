@@ -42,15 +42,7 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Coluna da Esquerda (55% do grid) */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
-            {/* Badge Premium com Estrela e Animação Pulse */}
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-500 text-xs font-semibold uppercase tracking-wider animate-pulse-glow"
-            >
-              <Sparkles size={13} className="animate-spin-slow" />
-              <span>{lang === "pt" ? "MARKETPLACE PREMIUM" : "PREMIUM MARKETPLACE"}</span>
-            </motion.div>
+
 
             {/* Headline principal com gradiente dourado na palavra Conquer */}
             <motion.h1
