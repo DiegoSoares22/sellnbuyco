@@ -26,6 +26,8 @@ import ninjahw from "@/assets/ninjahw.jpg";
 import warriorcoutinho from "@/assets/warriorcoutinho.png";
 import nicholas from "@/assets/nicholas.jpg";
 import decenteArcherImg from "@/assets/decente-archer.jpg";
+import waterImg from "@/assets/water.jpg";
+import waternfireImg from "@/assets/waternfire.jpg";
 
 export interface AccountListing {
   id: string;
@@ -39,6 +41,63 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-67",
+    title: "Water / Monk",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: waterImg,
+    className: "Taoist",
+    prices: [{ label: "Preço", value: "11k CPs" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "water /monk",
+          "monk 20/15/35",
+          "chi alinhado e jiangh",
+          "vip 6",
+          "server light",
+        ],
+      },
+      {
+        title: "Detalhes",
+        items: [
+          "Lv. 140 Sacred Sky Water Taoist P1",
+          "Rune Points: 167.200 (IronShield +27)",
+          "Chi Points: 759.986",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-68",
+    title: "Water / Fire",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: waternfireImg,
+    className: "Taoist",
+    prices: [{ label: "Preço", value: "18k CPs" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "vendo water /fire",
+          "arquivo full",
+          "full slot",
+          "sever ligth",
+        ],
+      },
+      {
+        title: "Detalhes",
+        items: [
+          "Lv. 109 Sacred Star Fire Taoist P1",
+          "Rune Points: 159.600 (FineRain +27)",
+          "Skill StarChain (Fire)",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-66",
     title: "Decente archer p/ quem está voltando a jogar",
