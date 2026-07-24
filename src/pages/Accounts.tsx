@@ -299,9 +299,6 @@ function AccountsList() {
               <span>{t("acc.title")}</span>
               <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
             </h2>
-            <p className="text-xs sm:text-sm text-slate-400 mt-1 max-w-xl">
-              {t("acc.subtitle")}
-            </p>
           </div>
         </div>
       </div>

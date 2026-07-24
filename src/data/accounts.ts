@@ -15,7 +15,7 @@ import turquoiseImg from "@/assets/turquoise.png";
 import waterLowImg from "@/assets/water-low.png";
 import waterDellImg from "@/assets/water-dell.png";
 import topNinja129Img from "@/assets/top-ninja-129.jpg";
-import water2JailsImg from "@/assets/water2jail.jpg";
+import opKingPirateImg from "@/assets/opKingPirate.jpg";
 import sellWaterMaxArchiveImg from "@/assets/sell-water-max-archive.png";
 
 import archer140_16biImg from "@/assets/archer-140-16bi.png";
@@ -160,7 +160,7 @@ export const ACCOUNTS: AccountListing[] = [
     badgeColor: "bg-red-600",
     image: warriorcoutinho,
     className: "Warrior",
-    prices: [{ label: "Preço", value: "Consultar" }],
+    prices: [{ label: "Preço", value: "65k CPs" }],
     sections: [
       {
         title: "Atributos",
@@ -786,7 +786,7 @@ export const ACCOUNTS: AccountListing[] = [
     image: opNinjaHwStunImg,
     className: "Ninja",
     prices: [
-      { label: "Sem MythSoul/Bag", value: "170k CPS" },
+      { label: "Sem MythSoul/Bag", value: "150k CPs" },
     ],
     sections: [
       {
@@ -975,45 +975,41 @@ export const ACCOUNTS: AccountListing[] = [
   },
 
   {
-    id: "acc-59",
-    title: "Water com 2 jails",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: water2JailsImg,
-    className: "Taoist",
-    prices: [{ label: "Preço", value: "20k CPs" }],
+    id: "acc-70",
+    title: "OP King Pirata",
+    badge: "OP KING",
+    badgeColor: "bg-amber-500",
+    image: opKingPirateImg,
+    className: "Pirata",
+    prices: [{ label: "Preço", value: "360k CPs" }],
     sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Itens unbound (Steed, set pirate, ring/neck/boot)",
+          "6 ideal runes",
+          "1 botjail",
+          "360k CPs",
+        ],
+      },
       {
         title: "Atributos",
         items: [
-          "Lv. 140 Sacred Star Water Taoist P3",
-          "2 Jails · 388 BP",
-          "HP: 82.819 · Defense: 31.908",
-          "P-Strike: 99.60% · Break: 60.5%",
-          "Anti-break: 290.2% · Immunity: 253.00%",
-          "M-Strike: 71.20% · Penetration: 29.00%",
-          "Rune Points: 212.100",
-          "Taoist Tool Max",
-        ],
-      },
-      {
-        title: "Chi & Inner Power",
-        items: [
-          "Chi: Tiger 400, Turtle 400, Dragon 400, Phoenix 399",
-          "Inner Power Total Score: 3400",
-          "Superb Manual · Violet Glow · Divine North Skill · Essence of Yin",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "LegendTornadoSword (+12) 2x TortoiseGem",
-          "LegendNetherArmor (+12)",
-          "LegendStarTower (+12)",
+          "Lv. 140 Ghost Pirate",
+          "SVIP Level 3 (66d restantes)",
+          "HP: 92.006 · Magic: 1.500",
+          "Attack: 61.192 ~ 64.595",
+          "Defense: 30.133 · M-Attack: 27.763 · M-Defense: 8.059",
+          "P-Strike: 281.70% · Block: 30.00% · Break: 132.1%",
+          "Anti-break: 73.7% · M-Strike: 59.60%",
+          "Immunity: 260.15% · Penetration: 15.00%",
+          "Final P-Attack: 11.674 · Final P-Damage: 13.338",
+          "Final M-Attack: 7.324 · Final M-Damage: 7.427",
         ],
       },
     ],
   },
+
   {
     id: "acc-53",
     title: "Sell Water Max Archive 0 BJ",

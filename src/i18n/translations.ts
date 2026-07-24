@@ -27,8 +27,7 @@ export const translations = {
     "acc.backToShop": "Voltar à Loja",
     "acc.backToAccounts": "Voltar aos Accounts",
     "acc.title": "Accounts à Venda",
-    "acc.subtitle":
-      "Essa área é exclusiva para contas selecionadas. Normalmente disponíveis para clientes com histórico de compras mais elevado.",
+    "acc.subtitle": "",
     "acc.filters": "Filtros:",
     "acc.clearFilters": "Limpar filtros",
     "acc.clearFiltersLower": "limpar filtros",
@@ -106,8 +105,7 @@ export const translations = {
     "acc.backToShop": "Back to Shop",
     "acc.backToAccounts": "Back to Accounts",
     "acc.title": "Accounts for Sale",
-    "acc.subtitle":
-      "This area is reserved for hand-picked accounts. Usually available to clients with a higher purchase history.",
+    "acc.subtitle": "",
     "acc.filters": "Filters:",
     "acc.clearFilters": "Clear filters",
     "acc.clearFiltersLower": "clear filters",
