@@ -87,7 +87,7 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({ open, onOpenChange, 
     clearFilters();
     setLocalClass(null);
     setLocalMinPrice(5000);
-    setLocalMaxPrice(270000);
+    setLocalMaxPrice(400000);
     setLocalLevels([]);
     onOpenChange(false);
   };
@@ -136,7 +136,7 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({ open, onOpenChange, 
             </div>
             <Slider
               min={5000}
-              max={270000}
+              max={400000}
               step={5000}
               value={[localMinPrice, localMaxPrice]}
               onValueChange={([min, max]) => {

@@ -40,7 +40,7 @@ export const AccountStoreProvider: React.FC<{ children: React.ReactNode }> = ({ 
     searchParams.get("minPrice") ? parseInt(searchParams.get("minPrice")!) : 5000
   );
   const [maxPrice, setMaxPrice] = useState<number>(
-    searchParams.get("maxPrice") ? parseInt(searchParams.get("maxPrice")!) : 270000
+    searchParams.get("maxPrice") ? parseInt(searchParams.get("maxPrice")!) : 400000
   );
 
   // Level filters (comma-separated in URL)
@@ -92,7 +92,7 @@ export const AccountStoreProvider: React.FC<{ children: React.ReactNode }> = ({ 
     if (searchQuery) params.search = searchQuery;
     if (selectedClass) params.class = selectedClass;
     if (minPrice !== 5000) params.minPrice = minPrice.toString();
-    if (maxPrice !== 270000) params.maxPrice = maxPrice.toString();
+    if (maxPrice !== 400000) params.maxPrice = maxPrice.toString();
     if (levelFilter.length > 0) params.level = levelFilter.join(",");
     if (sortBy !== "newest") params.sort = sortBy;
 
@@ -120,14 +120,14 @@ export const AccountStoreProvider: React.FC<{ children: React.ReactNode }> = ({ 
     setSearchQuery("");
     setSelectedClass(null);
     setMinPrice(5000);
-    setMaxPrice(270000);
+    setMaxPrice(400000);
     setLevelFilter([]);
     setSortBy("newest");
   };
 
   const activeFiltersCount =
     (selectedClass ? 1 : 0) +
-    (minPrice !== 5000 || maxPrice !== 270000 ? 1 : 0) +
+    (minPrice !== 5000 || maxPrice !== 400000 ? 1 : 0) +
     (levelFilter.length > 0 ? levelFilter.length : 0);
 
   return (

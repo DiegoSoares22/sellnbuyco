@@ -27,6 +27,7 @@ import warriorcoutinho from "@/assets/warriorcoutinho.png";
 import nicholas from "@/assets/nicholas.jpg";
 import decenteArcherImg from "@/assets/decente-archer.jpg";
 import waternfireImg from "@/assets/waternfire.jpg";
+import water1jailImg from "@/assets/water-1jail.jpg";
 
 export interface AccountListing {
   id: string;
@@ -40,6 +41,56 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-71",
+    title: "Water 1 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: water1jailImg,
+    className: "Taoist",
+    prices: [{ label: "Preço", value: "20k CPs" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 140 Sacred Star Water Taoist P2",
+          "HP: 19.133",
+          "Attack: 1.031 · M-Attack: 31.694",
+          "Defense: 195 · M-Defense: 1.006",
+          "Damage: 66% · Block: 7.90%",
+          "Final P-Attack: 11.720 · Final M-Attack: 11.134",
+          "Final M-Damage: 967",
+          "Break: 30.1% · M-Strike: 80.1%",
+          "Immunity: 230.0% · Penetration: 15.00%",
+          "Dodge Rate: 12.00% · Lucky Strike: 7.90%",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "Rune Points: 216.300",
+        ],
+      },
+      {
+        title: "Eon Spirit",
+        items: [
+          "P8 100% · P7 100% · P6 100%",
+          "P8 100% · P6 100% · P4 100%",
+          "P5 100% · P3 100% · P1 100%",
+          "20 Heaven · 20 Mighty · 30 Cosmic",
+        ],
+      },
+      {
+        title: "Inner Power & Extras",
+        items: [
+          "Total Score: 5.400",
+          "1 Jail",
+          "90% Recognition",
+          "60 Wood Patches",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-68",
     title: "Water / Fire",
