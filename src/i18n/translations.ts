@@ -4,7 +4,6 @@ export const translations = {
     "nav.shop": "Shopping Mall",
     "nav.accounts": "Accounts à Venda",
     "nav.themeLight": "Modo claro",
-    "nav.themeDark": "Modo escuro",
     "nav.language": "Idioma",
 
     // Hero
@@ -82,7 +81,6 @@ export const translations = {
     "nav.shop": "Shopping Mall",
     "nav.accounts": "Accounts for Sale",
     "nav.themeLight": "Light mode",
-    "nav.themeDark": "Dark mode",
     "nav.language": "Language",
 
     // Hero

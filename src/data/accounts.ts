@@ -23,7 +23,6 @@ import sellWaterFullCrownImg from "@/assets/sell-water-full-crown.jpg";
 import sellArcherBreakImg from "@/assets/sell-archer-break.png";
 import rnspirata from "@/assets/rnspirata.jpg";
 import ninjahw from "@/assets/ninjahw.jpg";
-import warriorcoutinho from "@/assets/warriorcoutinho.png";
 import nicholas from "@/assets/nicholas.jpg";
 import decenteArcherImg from "@/assets/decente-archer.jpg";
 import waternfireImg from "@/assets/waternfire.jpg";
@@ -175,81 +174,6 @@ export const ACCOUNTS: AccountListing[] = [
           "Stone Cracker Lv 43",
           "Thorn Cutter Lv 45",
           "Cold Moon Lv 12",
-        ],
-      },
-    ],
-  },
-
-  {
-    id: "acc-64",
-    title: "Ótima oportunidade de account Ninja/Warrior/Pirate",
-    badge: "TOP",
-    badgeColor: "bg-red-600",
-    image: warriorcoutinho,
-    className: "Warrior",
-    prices: [{ label: "Preço", value: "65k CPs" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Lv. 140 Fury Warrior",
-          "HP: 19.513",
-          "Attack: 60.330 ~ 62.841",
-          "Defense: 47.961",
-          "M-Attack: 26.888",
-          "M-Defense: 13.446",
-          "Final P-Attack: 11.184",
-          "Final P-Damage: 11.707",
-          "Final M-Damage: 7.092",
-          "P-Strike: 108.60%",
-          "Break: 272.1%",
-          "Anti-Break: 82.1%",
-          "M-Strike: 54.20%",
-          "Immunity: 244.00%",
-          "Penetration: 15%",
-        ],
-      },
-      {
-        title: "Progressão",
-        items: [
-          "Rune Points: 314.200",
-          "Donation: 100.277.000.001",
-          "Battle Power: 648",
-          "Weapon Archives: 103.270",
-          "Rune Resonance: 90%",
-          "Sacred Fury Warrior",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "Set Full +12",
-          "Necklace +12",
-          "Headgear +12",
-          "Boots +12",
-          "Myth Soul",
-          "2 Socs",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "Runes Full Max",
-          "Rampage (+27)",
-          "Star Raid (+27)",
-          "Absolution (+27)",
-          "Diversas runas Max",
-        ],
-      },
-      {
-        title: "Eon Spirit",
-        items: [
-          "P8 Spirit",
-          "P9 Spirit",
-          "P6 Spirit",
-          "P5 Spirit (2x)",
-          "P4 Spirit (3x)",
-          "P1 Spirit",
         ],
       },
     ],

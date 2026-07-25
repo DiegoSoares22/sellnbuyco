@@ -175,6 +175,7 @@ function AccountsList() {
   // Estados locais para dialogs
   const [selected, setSelected] = useState<AccountListing | null>(null);
   const [imageZoomed, setImageZoomed] = useState(false);
+  const [zoomedImage, setZoomedImage] = useState<string | null>(null);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -343,6 +344,7 @@ function AccountsList() {
                   account={acc}
                   onSelect={() => setSelected(acc)}
                   onViewDetails={() => navigate(withLang(`/accounts/${acc.id}`))}
+                  onImageZoom={() => setZoomedImage(acc.image)}
                 />
               </motion.div>
             ))}
@@ -456,6 +458,27 @@ function AccountsList() {
                 </div>
               </div>
             </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {zoomedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[60] bg-black/90 flex items-center justify-center p-4 cursor-zoom-out"
+            onClick={() => setZoomedImage(null)}
+          >
+            <motion.img
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              src={zoomedImage}
+              alt="Account preview"
+              className="max-w-[90vw] max-h-[85vh] object-contain rounded-2xl"
+            />
           </motion.div>
         )}
       </AnimatePresence>

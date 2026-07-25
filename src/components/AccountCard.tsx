@@ -12,6 +12,7 @@ interface AccountCardProps {
   account: AccountListing;
   onSelect: () => void;
   onViewDetails: () => void;
+  onImageZoom?: () => void;
 }
 
 const CLASS_ICONS: Record<string, any> = {
@@ -31,7 +32,7 @@ const WHATSAPP = "5575981382799";
 const buildWa = (msg: string) =>
   `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
 
-export const AccountCard: React.FC<AccountCardProps> = ({ account, onSelect, onViewDetails }) => {
+export const AccountCard: React.FC<AccountCardProps> = ({ account, onSelect, onViewDetails, onImageZoom }) => {
   const { lang, t } = useI18n();
   const { isFavorite, toggleFavorite } = useAccountStore();
 
@@ -78,7 +79,11 @@ export const AccountCard: React.FC<AccountCardProps> = ({ account, onSelect, onV
           src={account.image}
           alt={account.title}
           loading="lazy"
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+          onClick={(e) => {
+            e.stopPropagation();
+            onImageZoom?.();
+          }}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out cursor-pointer"
         />
         {/* Overlay de gradiente */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#12121a] via-transparent to-transparent pointer-events-none" />

@@ -9,7 +9,6 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import sellnbuycoLogo from "@/assets/sellnbuyco-logo.png";
 
 const WHATSAPP = "5575981382799";
@@ -231,9 +230,6 @@ export default function Header() {
               )}
             </PopoverContent>
           </Popover>
-
-          {/* Toggle Dark/Light */}
-          <ThemeToggle />
 
           {/* Menu Hambúrguer (Mobile) */}
           <button
