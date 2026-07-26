@@ -27,6 +27,7 @@ import nicholas from "@/assets/nicholas.jpg";
 import decenteArcherImg from "@/assets/decente-archer.jpg";
 import waternfireImg from "@/assets/waternfire.jpg";
 import water1jailImg from "@/assets/water-1jail.jpg";
+import archerVoltandoImg from "@/assets/archer-voltando.jpg";
 
 export interface AccountListing {
   id: string;
@@ -40,6 +41,51 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-72",
+    title: "Ótima oportunidade para quem está voltando",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: archerVoltandoImg,
+    className: "Archer",
+    prices: [{ label: "Preço", value: "10k CPs" }],
+    sections: [
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 109 Sacred Sky Archer P1",
+          "0 Jail",
+          "HP: 75.316 · Magic: 1.200",
+          "Attack: 42.312 ~ 43.025",
+          "Defense: 21.210 · M-Attack: 23.634 · M-Defense: 16.100",
+          "Dodge: 69 · Agility: 1.100 · Accuracy: 200",
+          "M-Def: 87% · Damage: 45% · Blessed: 57%",
+          "Final P-Attack: 10.637 · Final M-Attack: 7.368",
+          "Final P-Damage: 10.737 · Final M-Damage: 6.437",
+          "P-Strike: 119.90% · Block: 30.00%",
+          "Break: 274.6% · Anti-break: 59.2%",
+          "M-Strike: 47.60% · Immunity: 240.17%",
+          "Penetration: 15.00% · Detonation: 72%",
+          "Parry: 7.00% · Lucky Strike: 7.00%",
+          "Dodge Rate: 5.00%",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "Rune Points: 160.900",
+          "Metal Resist: 80 · Wood Resist: 80 · Fire Resist: 80",
+        ],
+      },
+      {
+        title: "Inventário",
+        items: [
+          "MythSoul: 1.607",
+          "476 HP Breaker",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-71",
     title: "Water 1 Jail",
