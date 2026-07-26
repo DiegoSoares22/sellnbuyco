@@ -28,6 +28,7 @@ import decenteArcherImg from "@/assets/decente-archer.jpg";
 import waternfireImg from "@/assets/waternfire.jpg";
 import water1jailImg from "@/assets/water-1jail.jpg";
 import archerVoltandoImg from "@/assets/archer-voltando.jpg";
+import sellNinjaBreakHwImg from "@/assets/sell-ninja-break-hw.jpg";
 
 export interface AccountListing {
   id: string;
@@ -41,6 +42,76 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-73",
+    title: "Sell Ninja Break \ud83e\udd77",
+    badge: "DESTAQUE",
+    badgeColor: "bg-orange-500",
+    image: sellNinjaBreakHwImg,
+    className: "Ninja",
+    prices: [{ label: "Pre\u00e7o", value: "40k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Heaven Wonder",
+          "Full Perfection \u00b7 648",
+          "Ideal Rune",
+          "0 Jail",
+        ],
+      },
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 140 Sacred Star Ninja P3",
+          "HP: 79.064 \u00b7 Magic: 1.000",
+          "Attack: 56.013 ~ 59.759",
+          "Defense: 33.725 \u00b7 M-Attack: 23.417 \u00b7 M-Defense: 8.466",
+          "Dodge: 104 \u00b7 Agility: 1.073 \u00b7 Accuracy: 256",
+          "M-Def: 126% \u00b7 Blessed: 5.7%",
+          "Final P-Attack: 12.114 \u00b7 Final M-Attack: 8.364",
+          "Final P-Damage: 12.664 \u00b7 Final M-Damage: 7.249",
+          "P-Strike: 108.30% \u00b7 Block: 30.00%",
+          "Break: 48.30% \u00b7 Anti-break: 72.7%",
+          "Immunity: 231.54% \u00b7 Penetration: 15.00%",
+          "Detonation: 72% \u00b7 Parry: 7.00%",
+          "Lucky Strike: 7.00% \u00b7 Dash Rate: 3.00%",
+        ],
+      },
+      {
+        title: "Progress\u00e3o",
+        items: [
+          "Donation: 17Bi",
+          "Chi Full \u00b7 Jiang Full",
+          "Inner Power: 2.900",
+          "Rune Points: 198.700",
+          "Ninpo Score: 38.283",
+          "Set Tortoise",
+        ],
+      },
+      {
+        title: "Runas & Sigil",
+        items: [
+          "Heaven\u2019s Wonder (Bloodline Sigil Lv. 9)",
+          "Sharpness (+9) \u00b7 Barrier (+9) \u00b7 Sanctity (+9)",
+          "Deterrence (+9) \u00b7 DeadlySight (+9) \u00b7 Overwhelm (+9)",
+          "Metal Resist: 80 \u00b7 Wood Resist: 80 \u00b7 Fire Resist: 80",
+          "Phoenix Grace",
+        ],
+      },
+      {
+        title: "Chi & Inner Power",
+        items: [
+          "Dragon Lv.99 \u00b7 Phoenix Lv.99 \u00b7 Turtle Lv.99 \u00b7 Tiger Lv.99",
+          "400 Chi Score (cada)",
+          "Viodragon Club Recognition 60%",
+          "Love Forever Recognition 30%",
+          "Sphere Astredge Auto-activated",
+          "World Cup Trophy \u00b7 Defense +1200 \u00b7 HP +1200",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-72",
     title: "Ótima oportunidade para quem está voltando",
