@@ -27,8 +27,8 @@ export const Footer: React.FC = () => {
       {/* Conteúdo Principal do Footer */}
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-          {/* Coluna 1: Logo e Descrição (5 colunas no desktop) */}
-          <div className="md:col-span-5 space-y-4">
+          {/* Coluna 1: Logo e Descrição (7 colunas no desktop) */}
+          <div className="md:col-span-7 space-y-4">
             <Link to={withLang("/")} className="inline-flex items-center gap-2 group">
               <img
                 src={sellnbuycoLogo}
@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
                 className="h-9 w-auto object-contain transition-transform group-hover:scale-105"
               />
             </Link>
-            <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
+            <p className="text-xs text-slate-400 max-w-md leading-relaxed">
               {lang === "pt"
                 ? "Plataforma especializada na intermediação segura de contas de alta performance no Conquer Online. Valorizamos seu tempo e investimento."
                 : "Specialized platform for secure high-performance account trading in Conquer Online. We value your time and investment."}
@@ -47,27 +47,8 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Coluna 2: Navegação Rápida (3 colunas) */}
-          <div className="md:col-span-3 space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-200">
-              {lang === "pt" ? "Navegação" : "Navigation"}
-            </h4>
-            <ul className="space-y-2 text-xs text-slate-400">
-              <li>
-                <Link to={withLang("/")} className="hover:text-amber-400 transition-colors">
-                  {t("nav.accounts") || "Contas à venda"}
-                </Link>
-              </li>
-              <li>
-                <Link to={withLang("/recompensas")} className="hover:text-amber-400 transition-colors">
-                  {t("nav.rewards") || "Recompensas"}
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Coluna 3: Suporte & Atendimento (4 colunas) */}
-          <div className="md:col-span-4 space-y-3">
+          {/* Coluna 2: Suporte & Atendimento (5 colunas) */}
+          <div className="md:col-span-5 space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-200">
               {lang === "pt" ? "Atendimento" : "Support"}
             </h4>
