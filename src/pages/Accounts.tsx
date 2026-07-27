@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowLeft,
@@ -25,6 +25,8 @@ import { getMinCpsK, getAccountLevel } from "@/lib/accountFilters";
 import { useAccountStore } from "@/hooks/useAccountStore";
 import { useI18n } from "@/i18n";
 import { toast } from "sonner";
+import { AdBanner } from "@/components/AdBanner";
+import { Footer } from "@/components/Footer";
 
 const WHATSAPP = "5575981382799";
 
@@ -164,6 +166,8 @@ function AccountDetail({ account }: { account: AccountListing }) {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <Footer />
     </div>
   );
 }
@@ -292,8 +296,13 @@ function AccountsList() {
       <HeroSection />
       <TrustStrip />
 
+      {/* 3. Banner horizontal responsivo imediatamente após os três cards de benefícios */}
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <AdBanner variant="horizontal" className="my-4" />
+      </div>
+
       {/* Título da Seção */}
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-4">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
             <h2 className="text-xl sm:text-2xl font-extrabold text-slate-50 tracking-tight flex items-center gap-2">
@@ -333,21 +342,31 @@ function AccountsList() {
           <EmptyState onClear={handleClearFilters} />
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filtered.map((acc, i) => (
-              <motion.div
-                key={acc.id}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: Math.min(i, 8) * 0.05 }}
-              >
-                <AccountCard
-                  account={acc}
-                  onSelect={() => setSelected(acc)}
-                  onViewDetails={() => navigate(withLang(`/accounts/${acc.id}`))}
-                  onImageZoom={() => setZoomedImage(acc.image)}
-                />
-              </motion.div>
-            ))}
+            {filtered.map((acc, i) => {
+              const showBannerAfter = (i + 1) % 8 === 0 && i !== filtered.length - 1;
+              return (
+                <React.Fragment key={acc.id}>
+                  <motion.div
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: Math.min(i, 8) * 0.05 }}
+                  >
+                    <AccountCard
+                      account={acc}
+                      onSelect={() => setSelected(acc)}
+                      onViewDetails={() => navigate(withLang(`/accounts/${acc.id}`))}
+                      onImageZoom={() => setZoomedImage(acc.image)}
+                    />
+                  </motion.div>
+                  {/* 4. Banner responsivo após cada 8 cards */}
+                  {showBannerAfter && (
+                    <div className="col-span-full my-2 flex justify-center">
+                      <AdBanner variant="inline" className="w-full my-0" />
+                    </div>
+                  )}
+                </React.Fragment>
+              );
+            })}
           </div>
         )}
       </div>
@@ -482,6 +501,9 @@ function AccountsList() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* 7. Discrete Banner above Footer + Footer component */}
+      <Footer />
     </div>
   );
 }
