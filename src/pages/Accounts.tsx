@@ -27,6 +27,7 @@ import { useI18n } from "@/i18n";
 import { toast } from "sonner";
 import { AdBanner } from "@/components/AdBanner";
 import { Footer } from "@/components/Footer";
+import { AccountDetailPage } from "@/components/AccountDetailPage";
 
 const WHATSAPP = "5575981382799";
 
@@ -516,7 +517,7 @@ export default function Accounts() {
     if (!account) {
       return <AccountNotFound />;
     }
-    return <AccountDetail account={account} />;
+    return <AccountDetailPage account={account} />;
   }
 
   return <AccountsList />;
