@@ -13,6 +13,8 @@ export const AdBanner: React.FC<AdBannerProps> = ({
   className = "",
   scriptSrc,
 }) => {
+  if (!scriptSrc) return null;
+
   const [isVisible, setIsVisible] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);

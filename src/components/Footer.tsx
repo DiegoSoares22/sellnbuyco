@@ -19,10 +19,6 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="mt-16 border-t border-zinc-800/80 bg-[#07070b] relative z-10">
-      {/* 7. Banner discreto posicionado IMEDIATAMENTE ACIMA do conteúdo do Footer */}
-      <div className="container max-w-7xl mx-auto pt-8">
-        <AdBanner variant="footer" className="my-2" />
-      </div>
 
       {/* Conteúdo Principal do Footer */}
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

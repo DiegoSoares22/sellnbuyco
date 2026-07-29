@@ -297,11 +297,6 @@ function AccountsList() {
       <HeroSection />
       <TrustStrip />
 
-      {/* 3. Banner horizontal responsivo imediatamente após os três cards de benefícios */}
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AdBanner variant="horizontal" className="my-4" />
-      </div>
-
       {/* Título da Seção */}
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
