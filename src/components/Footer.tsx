@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ShieldCheck, MessageCircle, Heart } from "lucide-react";
 import { useI18n } from "@/i18n";
-import { AdBanner } from "@/components/AdBanner";
 import sellnbuycoLogo from "@/assets/sellnbuyco-logo.png";
 
 export const Footer: React.FC = () => {

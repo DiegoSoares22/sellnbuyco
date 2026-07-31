@@ -20,7 +20,6 @@ import { getAccountLevel } from "@/lib/accountFilters";
 import { ACCOUNTS, AccountListing } from "@/data/accounts";
 import { useI18n } from "@/i18n";
 import { toast } from "sonner";
-import { AdBanner } from "@/components/AdBanner";
 import { Footer } from "@/components/Footer";
 import { AccountCard } from "@/components/AccountCard";
 
@@ -202,9 +201,6 @@ export const AccountDetailPage: React.FC<AccountDetailPageProps> = ({ account })
           </div>
         </div>
 
-        {/* 1. BANNER RESPONSIVO APÓS A GALERIA */}
-        <AdBanner variant="horizontal" className="my-6" />
-
         {/* ESPECIFICAÇÕES DETALHADAS & DESCRIÇÃO COMPLETA */}
         <div className="space-y-6">
           <div className="flex items-center justify-between">
@@ -248,12 +244,6 @@ export const AccountDetailPage: React.FC<AccountDetailPageProps> = ({ account })
             ))}
           </div>
         </div>
-
-        {/* 2. BANNER APÓS A DESCRIÇÃO COMPLETA */}
-        <AdBanner variant="horizontal" className="my-6" />
-
-        {/* 3. BANNER ANTES DA SEÇÃO "CONTAS RELACIONADAS" */}
-        <AdBanner variant="horizontal" className="my-6" />
 
         {/* SEÇÃO DE DESCOBERTA & RECOMENDAÇÕES */}
         <div className="space-y-12 pt-4">

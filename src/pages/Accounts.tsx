@@ -25,7 +25,6 @@ import { getMinCpsK, getAccountLevel } from "@/lib/accountFilters";
 import { useAccountStore } from "@/hooks/useAccountStore";
 import { useI18n } from "@/i18n";
 import { toast } from "sonner";
-import { AdBanner } from "@/components/AdBanner";
 import { Footer } from "@/components/Footer";
 import { AccountDetailPage } from "@/components/AccountDetailPage";
 
@@ -338,31 +337,21 @@ function AccountsList() {
           <EmptyState onClear={handleClearFilters} />
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filtered.map((acc, i) => {
-              const showBannerAfter = (i + 1) % 8 === 0 && i !== filtered.length - 1;
-              return (
-                <React.Fragment key={acc.id}>
-                  <motion.div
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: Math.min(i, 8) * 0.05 }}
-                  >
-                    <AccountCard
-                      account={acc}
-                      onSelect={() => setSelected(acc)}
-                      onViewDetails={() => navigate(withLang(`/accounts/${acc.id}`))}
-                      onImageZoom={() => setZoomedImage(acc.image)}
-                    />
-                  </motion.div>
-                  {/* 4. Banner responsivo após cada 8 cards */}
-                  {showBannerAfter && (
-                    <div className="col-span-full my-2 flex justify-center">
-                      <AdBanner variant="inline" className="w-full my-0" />
-                    </div>
-                  )}
-                </React.Fragment>
-              );
-            })}
+            {filtered.map((acc, i) => (
+              <motion.div
+                key={acc.id}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: Math.min(i, 8) * 0.05 }}
+              >
+                <AccountCard
+                  account={acc}
+                  onSelect={() => setSelected(acc)}
+                  onViewDetails={() => navigate(withLang(`/accounts/${acc.id}`))}
+                  onImageZoom={() => setZoomedImage(acc.image)}
+                />
+              </motion.div>
+            ))}
           </div>
         )}
       </div>

@@ -11,7 +11,6 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Swords, Shield, Droplet, Crosshair, Anchor, Circle, Flame, Zap, Star, Compass, HelpCircle } from "lucide-react";
-import { AdBanner } from "@/components/AdBanner";
 
 interface FilterDrawerProps {
   open: boolean;
@@ -234,11 +233,6 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({ open, onOpenChange, 
                 );
               })}
             </div>
-          </div>
-
-          {/* 6. Banner 300x250 fixo abaixo dos filtros */}
-          <div className="pt-4 border-t border-zinc-800/60 flex justify-center">
-            <AdBanner variant="sidebar" className="my-2" />
           </div>
         </div>
 
