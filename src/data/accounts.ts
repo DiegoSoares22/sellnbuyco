@@ -24,6 +24,7 @@ import rnspirata from "@/assets/rnspirata.jpg";
 import ninjahw from "@/assets/ninjahw.jpg";
 import nicholas from "@/assets/nicholas.jpg";
 import decenteArcherImg from "@/assets/decente-archer.jpg";
+import topWaterArchivesFullImg from "@/assets/top-water-archives-full.jpg";
 
 export interface AccountListing {
   id: string;
@@ -37,6 +38,58 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-67",
+    title: "Top Water Archives full",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: topWaterArchivesFullImg,
+    className: "Taoist",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "1 Jail",
+          "Water Archives Full",
+          "Astral Edge: 90 - 80",
+        ],
+      },
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 140 Surge Water Taoist",
+          "405 BP (Myth Soul 648)",
+          "HP: 90.495 | Magic: 2.650",
+          "Attack: 25.560 ~ 26.531 | Defense: 34.148",
+          "M-Attack: 34.486 | M-Defense: 9.852",
+          "P-Strike: 116.10% | M-Strike: 77.40%",
+          "Break: 64.4% | Anti-Break: 292.9%",
+          "Immunity: 274.10% | Penetration: 25.00%",
+          "Final P-Attack: +11.149 | Final P-Damage: -10.679",
+          "Final M-Damage: +17.833 | Final M-Damage (Recebido): -8.963",
+          "Detoxication: 72.00% | Dodge Rate: 17.40%",
+          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "Rune Points: 244.900",
+          "Runas creditadas: Iron Bone, Silent Blade, Circle of Life, Solidness",
+        ],
+      },
+      {
+        title: "Progressão & Sub-Classes",
+        items: [
+          "Stone Cracker Lv 29",
+          "Cold Moon Lv 26",
+          "Thorn Cutter Lv 26",
+          "Eon Spirit: P9 0%, P7 100%, P9 0%, P7 100%, P6 100%, P5 0%, P5 0%, P4 100%, P4 100%",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-66",
     title: "Decente archer p/ quem está voltando a jogar",
