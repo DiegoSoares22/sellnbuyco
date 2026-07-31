@@ -10,7 +10,6 @@ import waterIdealImg from "@/assets/water-ideal.png";
 import archer26biImg from "@/assets/archer-26bi.jpg";
 import waterOpImg from "@/assets/water-op.jpg";
 import opNinjaHwStunImg from "@/assets/opNinjaHwStunImg.jpg";
-import turquoiseImg from "@/assets/turquoise.png";
 
 import waterLowImg from "@/assets/water-low.png";
 import waterDellImg from "@/assets/water-dell.png";
@@ -25,6 +24,7 @@ import ninjahw from "@/assets/ninjahw.jpg";
 import nicholas from "@/assets/nicholas.jpg";
 import decenteArcherImg from "@/assets/decente-archer.jpg";
 import topWaterArchivesFullImg from "@/assets/top-water-archives-full.jpg";
+import monk648PerfectionImg from "@/assets/monk-648-perfection.jpg";
 
 export interface AccountListing {
   id: string;
@@ -39,13 +39,60 @@ export interface AccountListing {
 
 export const ACCOUNTS: AccountListing[] = [
   {
+    id: "acc-68",
+    title: "Monk 648 Perfection",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: monk648PerfectionImg,
+    className: "Monk",
+    prices: [{ label: "Preço", value: "18k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "0 Jail",
+          "Monk 648 Perfection",
+          "Preço: 18k CPs",
+        ],
+      },
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 140 Sacred Star Monk P2",
+          "Título: Poet of Flower",
+          "394 BP",
+          "HP: 76.369 | Magic: 1.210",
+          "Attack: 35.079 ~ 35.775 | Defense: 29.920",
+          "M-Attack: 22.193 | M-Defense: 6.572",
+          "Dodge: 104 | Agility: 1.105 | Accuracy: 223",
+          "Attack: 75% | M-Def: 112% | Damage: 68% | Blessed: 67%",
+          "Final P-Attack: +10.329 | Final M-Attack: +6.819",
+          "Final P-Damage: -11.548 | Final M-Damage: -6.129",
+          "P-Strike: 93.34% | Block: 30.00% | Break: 68.5% | Anti-Break: 304.6%",
+          "M-Strike: 45.95% | Immunity: 237.83% | Penetration: 15.00%",
+          "Detoxication: 72.00% | Parry: 7.00% | Lucky Strike: 7.00%",
+        ],
+      },
+      {
+        title: "Progressão & Equipamentos",
+        items: [
+          "Rune Points: 191.300",
+          "Recognition: 75%",
+          "World Cup Trophy (Gold Trophy Lv 15)",
+          "Mount: Shadow Steed +12",
+          "Eon Spirit: P5 100%, P6 100%, P4 100%, P6 100%, P3 100%, P5 100%, P5 100%, P3 100%, P2 0%",
+        ],
+      },
+    ],
+  },
+  {
     id: "acc-67",
     title: "Top Water Archives full",
     badge: "NOVO",
     badgeColor: "bg-emerald-500",
     image: topWaterArchivesFullImg,
     className: "Taoist",
-    prices: [{ label: "Preço", value: "A combinar" }],
+    prices: [{ label: "Preço", value: "120k CPs" }],
     sections: [
       {
         title: "Destaques",
@@ -793,41 +840,6 @@ export const ACCOUNTS: AccountListing[] = [
         items: [
           "Max Taoist Archives",
           "Monk Archives: 20-20-20",
-        ],
-      },
-    ],
-  },
-
-  {
-    id: "acc-46",
-    title: "Vende-se - Turquoise",
-    badge: "NEW",
-    badgeColor: "bg-emerald-500",
-    image: turquoiseImg,
-    className: "Warrior",
-    prices: [{ label: "Preço", value: "R$ 230,00" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Warrior 140",
-          "JIANG: Alinhado",
-          "CHI: 75%",
-          "EPIC: Trojan",
-          "0 JAIL",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "GARMENT: 1 X 5 STAR",
-          "MOUNT: 1 X 5 STAR",
-        ],
-      },
-      {
-        title: "Observações",
-        items: [
-          "Não ACOMPANHA RELIC",
         ],
       },
     ],
