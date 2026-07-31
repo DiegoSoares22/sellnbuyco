@@ -33,8 +33,8 @@ export const Footer: React.FC = () => {
             </Link>
             <p className="text-xs text-slate-400 max-w-md leading-relaxed">
               {lang === "pt"
-                ? "Plataforma especializada na intermediação segura de contas de alta performance no Conquer Online. Valorizamos seu tempo e investimento."
-                : "Specialized platform for secure high-performance account trading in Conquer Online. We value your time and investment."}
+                ? "O marketplace premium para compra e venda segura de contas de jogos de alta performance. Valorizamos seu tempo e investimento."
+                : "The premium marketplace for secure buying and selling of high-performance game accounts. We value your time and investment."}
             </p>
             <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400">
               <ShieldCheck size={16} />
@@ -66,7 +66,7 @@ export const Footer: React.FC = () => {
         <div className="mt-12 pt-6 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-4">
           <p>© {new Date().getFullYear()} SellNBuyCO. All rights reserved.</p>
           <p className="flex items-center gap-1">
-            <span>Made for Conquer Online Players</span>
+            <span>Premium Game Account Marketplace</span>
             <Heart size={12} className="text-amber-500 fill-amber-500 inline" />
           </p>
         </div>

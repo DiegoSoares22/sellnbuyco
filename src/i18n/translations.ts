@@ -8,9 +8,9 @@ export const translations = {
 
     // Hero
     "hero.badge": "Marketplace Premium",
-    "hero.headline1": "Garanta sua próxima Account com segurança.",
-    "hero.headline2": "Accounts Premium com entrega rápida.",
-    "hero.headline3": "As melhores oportunidades do Conquer Online.",
+    "hero.headline1": "Encontre sua",
+    "hero.headline2": "conta perfeita",
+    "hero.headline3": "As melhores contas do mercado, com segurança total.",
     "hero.description":
       "Todas as accounts são cuidadosamente verificadas e negociadas com atendimento personalizado via WhatsApp.",
     "hero.viewDetails": "Ver detalhes",
@@ -63,7 +63,7 @@ export const translations = {
     "item.days14": "14 dias",
 
     // Welcome popup
-    "welcome.hello": "Olá, Conquistador! 👋",
+    "welcome.hello": "Bem-vindo! 👋",
     "welcome.subtitle": "Seja muito bem-vindo!",
     "welcome.p1":
       "Aqui você encontra itens selecionados com descontos exclusivos e uma forma muito mais inteligente de evoluir no jogo sem gastar além do necessário.",
@@ -85,9 +85,9 @@ export const translations = {
 
     // Hero
     "hero.badge": "Premium Marketplace",
-    "hero.headline1": "Secure your next Account with confidence.",
-    "hero.headline2": "Premium Accounts with fast delivery.",
-    "hero.headline3": "The best opportunities in Conquer Online.",
+    "hero.headline1": "Find your",
+    "hero.headline2": "perfect account",
+    "hero.headline3": "The best accounts on the market, with total security.",
     "hero.description":
       "Every account is carefully verified and negotiated with personalized support via WhatsApp.",
     "hero.viewDetails": "View details",
@@ -140,7 +140,7 @@ export const translations = {
     "item.days14": "14 days",
 
     // Welcome popup
-    "welcome.hello": "Hello, Conqueror! 👋",
+    "welcome.hello": "Welcome! 👋",
     "welcome.subtitle": "Welcome aboard!",
     "welcome.p1":
       "Here you'll find hand-picked items with exclusive discounts and a smarter way to progress in the game without overspending.",

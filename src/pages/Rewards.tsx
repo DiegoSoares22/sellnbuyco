@@ -195,7 +195,7 @@ export default function Rewards() {
   return (
     <div
       className="min-h-screen bg-cover bg-center bg-fixed"
-      style={{ backgroundImage: `url('https://w0.peakpx.com/wallpaper/67/757/HD-wallpaper-video-game-conquer-online.jpg')` }}
+      style={{ background: 'linear-gradient(135deg, #0a0a0f 0%, #1e1b4b 50%, #0a0a0f 100%)' }}
     >
       <div className="min-h-screen bg-background/85 dark:bg-background/80">
         <div className="container max-w-4xl py-8 px-4">

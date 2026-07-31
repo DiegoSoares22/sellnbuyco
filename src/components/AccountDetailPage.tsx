@@ -39,7 +39,7 @@ export const AccountDetailPage: React.FC<AccountDetailPageProps> = ({ account })
   // Scroll to top e atualizar Título para SEO ao carregar
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    document.title = `${account.title} | SellNBuyCO - Accounts Conquer Online`;
+    document.title = `${account.title} | SellNBuyCO`;
   }, [account]);
 
   const level = getAccountLevel(account);
@@ -139,7 +139,7 @@ export const AccountDetailPage: React.FC<AccountDetailPageProps> = ({ account })
                   )}
                   <span className="text-xs font-bold text-slate-300 bg-zinc-900 border border-zinc-800 px-3 py-1 rounded-lg inline-flex items-center gap-1">
                     <Trophy size={12} className="text-violet-500" />
-                    Conquer Online Server
+                    Game Server
                   </span>
                 </div>
               </div>

@@ -149,7 +149,7 @@ function buildItem(name: string, category: ItemCategory, isTemporary = false): G
     displayName: DISPLAY_NAMES[name] || name,
     image: IMAGE_MAP[name] || null,
     price: null,
-    tooltip_en: `${category.charAt(0).toUpperCase() + category.slice(1)} item from the Conquer Online store.`,
+    tooltip_en: `${category.charAt(0).toUpperCase() + category.slice(1)} item from the game store.`,
     tooltip_ptbr: ITEM_TOOLTIPS[name] || "Consultar descrição.",
     category,
     is_temporary: isTemporary,

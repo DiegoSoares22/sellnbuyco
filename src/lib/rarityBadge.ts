@@ -1,7 +1,7 @@
 import { Sparkles } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
-// ─── Rarity tier system (mirrors Conquer Online item quality) ─────────────────
+// ─── Rarity tier system for game item quality badges ─────────────────
 
 export interface RarityStyle {
   /** Tailwind gradient classes for badge background */
