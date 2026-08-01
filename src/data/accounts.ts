@@ -4,27 +4,24 @@ import archer129Img from "@/assets/archer129.jpg";
 
 import archerEpicImg from "@/assets/archer-epic.png";
 import decenteWaterImg from "@/assets/decente-water.png";
-import pirataIntermediarioImg from "@/assets/pirata-intermediario.png";
-import topPirateImg from "@/assets/top-pirate.png";
 import waterIdealImg from "@/assets/water-ideal.png";
 import archer26biImg from "@/assets/archer-26bi.jpg";
 import waterOpImg from "@/assets/water-op.jpg";
 import opNinjaHwStunImg from "@/assets/opNinjaHwStunImg.jpg";
 
 import waterLowImg from "@/assets/water-low.png";
-import waterDellImg from "@/assets/water-dell.png";
 import topNinja129Img from "@/assets/top-ninja-129.jpg";
 import opKingPirateImg from "@/assets/opKingPirate.jpg";
 import sellWaterMaxArchiveImg from "@/assets/sell-water-max-archive.png";
 
 import sellWaterFullCrownImg from "@/assets/sell-water-full-crown.jpg";
 import sellArcherBreakImg from "@/assets/sell-archer-break.png";
-import rnspirata from "@/assets/rnspirata.jpg";
 import ninjahw from "@/assets/ninjahw.jpg";
 import nicholas from "@/assets/nicholas.jpg";
 import decenteArcherImg from "@/assets/decente-archer.jpg";
 import topWaterArchivesFullImg from "@/assets/top-water-archives-full.jpg";
 import monk648PerfectionImg from "@/assets/monk-648-perfection.jpg";
+import beastWaterImg from "@/assets/beast-water.jpg";
 
 export interface AccountListing {
   id: string;
@@ -39,6 +36,54 @@ export interface AccountListing {
 
 export const ACCOUNTS: AccountListing[] = [
   {
+    id: "acc-69",
+    title: "Beast Water",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: beastWaterImg,
+    className: "Taoist",
+    prices: [{ label: "Preço", value: "160k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Beast Water",
+          "Noble Rank Princess",
+          "Donation: 50.1B",
+          "407 BP",
+          "Preço: 160k CPs",
+        ],
+      },
+      {
+        title: "Atributos",
+        items: [
+          "Lv. 140 Sacred Star Water Taoist P5",
+          "HP: 90.402 | Magic: 1.650",
+          "Attack: 26.365 ~ 27.336 | Defense: 34.281",
+          "M-Attack: 36.109 | M-Defense: 10.117",
+          "Dodge: 104 | Agility: 1.027 | M-Def: 110%",
+          "Damage: 72% | Blessed: 56%",
+          "Final P-Attack: +10.824 | Final M-Attack: +13.284",
+          "Final P-Damage: -19.737 | Final M-Damage: -13.097",
+          "P-Strike: 101.40% | Block: 30.00% | Break: 67.9% | Anti-Break: 294.2%",
+          "M-Strike: 68.00% | Immunity: 260.70% | Penetration: 25.00%",
+          "Detoxication: 72.00% | Parry: 7.00% | Lucky Strike: 7.00%",
+          "Dash Rate: 2.00% | Dodge Rate: 17.80% | Resist: 150%",
+          "Resistências Elementais: Metal 80 / Wood 80 / Water 80 / Fire 80",
+        ],
+      },
+      {
+        title: "Progressão & Runas",
+        items: [
+          "Rune Points: 334.300 (648 Perfection)",
+          "Recognition: 25% e 90%",
+          "Inner Power: Super HP-Manual, Divine Spirit, Divine Swift Skill, The Essence of Vitality, The Essence of Magic",
+          "Eon Spirit: Heaven 27 (P7 100%), Cosmic 26 (P6 100%), Cosmic 26 (P7 3%), P1 0%, P3 100%, P6 41%, P5 100%, P4 100%, P2 0%",
+        ],
+      },
+    ],
+  },
+  {
     id: "acc-68",
     title: "Monk 648 Perfection",
     badge: "NOVO",
@@ -50,7 +95,7 @@ export const ACCOUNTS: AccountListing[] = [
       {
         title: "Destaques",
         items: [
-          "0 Jail",
+          "1 Jail",
           "Monk 648 Perfection",
           "Preço: 18k CPs",
         ],
@@ -262,49 +307,7 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
-  {
-    id: "acc-62",
-    title: "Pirata Break",
-    badge: "DESTAQUE",
-    badgeColor: "bg-red-500",
-    image: rnspirata,
-    className: "Pirata",
-    prices: [{ label: "Preço", value: "65k CPs" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Build Break",
-          "Chi Full: Break, Immunity, HP, P-Attack",
-          "Jiang Hu: Full",
-          "Inner Power: 3200",
-          "Rune Score: 30.330",
-          "Rare Runes: Iron Bone, Sky Veil",
-          "Rune Ideal: 3",
-        ],
-      },
-      {
-        title: "Progressão",
-        items: [
-          "Gold Trophy",
-          "Relic Resonance: Break / P-Attack",
-          "Astral Edge: 95, 75",
-          "Eon Spirit: Lv. 9, Lv. 8, Lv. 8, Lv. 8, Lv. 6",
-          "Donation: 19B",
-        ],
-      },
-      {
-        title: "Archives",
-        items: [
-          "Trojan: 100k",
-          "Archer: 31, 21, 23",
-          "Water: Todos Lv. 30",
-          "Warrior: 41, 35, 12",
-          "Pirate: Todos Full",
-        ],
-      },
-    ],
-  },
+
   {
     id: "acc-63",
     title: "Ótima oportunidade de Ninja c/ HeavenWonders",
@@ -560,56 +563,7 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
-  {
-    id: "acc-22",
-    title: "Pirata Intermediário",
-    badge: "INTERMEDIÁRIO",
-    badgeColor: "bg-blue-500",
-    image: pirataIntermediarioImg,
-    className: "Pirata",
-    prices: [{ label: "Preço", value: "125K CPS" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Lv. 140 Ghost Pirate",
-          "P-Strike: 257.90%",
-          "Break: 106.5%",
-          "Rune Points: 351.500",
-          "49.4B Donation",
-          "Huntress Artemis P9 100%",
-          "Gold Trophy + Relic Brilliant Force",
-          "Unbound Items + STG Gears",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-23",
-    title: "TOP Pirate",
-    badge: "TOP",
-    badgeColor: "bg-amber-500",
-    image: topPirateImg,
-    className: "Pirata",
-    prices: [{ label: "Preço", value: "$4550 USD" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Lv. 140 Death Pirate",
-          "P-Strike: 138.30%",
-          "Break: 288.9%",
-          "Rune Points: 409.200",
-          "90.1B Donation",
-          "Huntress Artemis P9",
-          "Pirate Rank Archive #1",
-          "Unbound Gears Full",
-          "New Relic +650 P-Attack / +2.05% Break",
-          "FrostyHeart Plume + CelestialWings + EmeraldGlowWing",
-        ],
-      },
-    ],
-  },
+
   {
     id: "acc-24",
     title: "Water com Ideal Rune",
@@ -805,45 +759,7 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
-  {
-    id: "acc-41",
-    title: "Decent Water Taoist 196k Rune Score",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: waterDellImg,
-    className: "Taoist",
-    prices: [{ label: "Preço", value: "25K CPS" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Lv. 140 Sacred Star Water Taoist P1",
-          "Rune Score: 196.000 (Iron Bone & Nature Shield)",
-          "0 Jail",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "1 slot de runa faltando",
-          "Só 51 hammers para completar",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "Hossu com 2 gens Super -3",
-        ],
-      },
-      {
-        title: "Archives",
-        items: [
-          "Max Taoist Archives",
-          "Monk Archives: 20-20-20",
-        ],
-      },
-    ],
-  },
+
   {
     id: "acc-51",
     title: "Top Ninja lv129",
