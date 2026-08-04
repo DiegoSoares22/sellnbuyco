@@ -14,7 +14,6 @@ import topNinja129Img from "@/assets/top-ninja-129.jpg";
 import opKingPirateImg from "@/assets/opKingPirate.jpg";
 import sellWaterMaxArchiveImg from "@/assets/sell-water-max-archive.png";
 
-import sellWaterFullCrownImg from "@/assets/sell-water-full-crown.jpg";
 import sellArcherBreakImg from "@/assets/sell-archer-break.png";
 import ninjahw from "@/assets/ninjahw.jpg";
 import nicholas from "@/assets/nicholas.jpg";
@@ -897,60 +896,7 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
-  {
-    id: "acc-57",
-    title: "Sell Water Full Crouwn",
-    badge: "NEW",
-    badgeColor: "bg-emerald-500",
-    image: sellWaterFullCrownImg,
-    className: "Taoist",
-    prices: [{ label: "Preço", value: "70K CPS" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Lv. 140 Sacred Star Water Taoist",
-          "0 JB",
-          "Rune Score: 225.600",
-          "Inner Power: 2.900",
-          "Jhiang Grade 15",
-          "Chi Full (Final P Dmg · Max HP · Anti-Break · Immunity)",
-          "Outfit 67 Mount / 137 Garment",
-        ],
-      },
-      {
-        title: "Arquivos",
-        items: [
-          "Archives Water Full",
-          "Archives Trojan 94k",
-          "Archives Monk 20-28-30",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "Rare rune NatureShield",
-          "Credit rune SilentBlade",
-          "Rune Points: 225.600",
-        ],
-      },
-      {
-        title: "Relíquia & Equipamentos",
-        items: [
-          "Relic 2x Anti-Break Full",
-          "Hossu 2x Socket 2x Gem Ref -7",
-        ],
-      },
-      {
-        title: "Astredge & Skills",
-        items: [
-          "Astredge ativo",
-          "Dragon Club Level 4",
-          "Love Forever Level 2",
-        ],
-      },
-    ],
-  },
+
 ];
 
 export const CLASS_OPTIONS = [
