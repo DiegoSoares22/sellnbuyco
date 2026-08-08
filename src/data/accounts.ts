@@ -83,53 +83,6 @@ export const ACCOUNTS: AccountListing[] = [
     ],
   },
   {
-    id: "acc-68",
-    title: "Monk 648 Perfection",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: monk648PerfectionImg,
-    className: "Monk",
-    prices: [{ label: "Preço", value: "18k CPs" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "1 Jail",
-          "Monk 648 Perfection",
-          "Preço: 18k CPs",
-        ],
-      },
-      {
-        title: "Atributos",
-        items: [
-          "Lv. 140 Sacred Star Monk P2",
-          "Título: Poet of Flower",
-          "394 BP",
-          "HP: 76.369 | Magic: 1.210",
-          "Attack: 35.079 ~ 35.775 | Defense: 29.920",
-          "M-Attack: 22.193 | M-Defense: 6.572",
-          "Dodge: 104 | Agility: 1.105 | Accuracy: 223",
-          "Attack: 75% | M-Def: 112% | Damage: 68% | Blessed: 67%",
-          "Final P-Attack: +10.329 | Final M-Attack: +6.819",
-          "Final P-Damage: -11.548 | Final M-Damage: -6.129",
-          "P-Strike: 93.34% | Block: 30.00% | Break: 68.5% | Anti-Break: 304.6%",
-          "M-Strike: 45.95% | Immunity: 237.83% | Penetration: 15.00%",
-          "Detoxication: 72.00% | Parry: 7.00% | Lucky Strike: 7.00%",
-        ],
-      },
-      {
-        title: "Progressão & Equipamentos",
-        items: [
-          "Rune Points: 191.300",
-          "Recognition: 75%",
-          "World Cup Trophy (Gold Trophy Lv 15)",
-          "Mount: Shadow Steed +12",
-          "Eon Spirit: P5 100%, P6 100%, P4 100%, P6 100%, P3 100%, P5 100%, P5 100%, P3 100%, P2 0%",
-        ],
-      },
-    ],
-  },
-  {
     id: "acc-67",
     title: "Top Water Archives full",
     badge: "NOVO",
@@ -381,48 +334,6 @@ export const ACCOUNTS: AccountListing[] = [
     ],
   },
   {
-    id: "acc-60",
-    title: "Sell Archer Break",
-    badge: "NEW",
-    badgeColor: "bg-emerald-500",
-    image: sellArcherBreakImg,
-    className: "Archer",
-    prices: [{ label: "Preço", value: "15K CPS" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Full coroa - 648 Perfection",
-          "32B de Donation",
-          "0 BJ (Jail)",
-          "Chi full",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "Runas de archer lvl max",
-          "Iron Bone lvl 6",
-          "Slot de runas all open (Todos abertos)",
-        ],
-      },
-      {
-        title: "Arquivos",
-        items: [
-          "Arquivos principais full",
-        ],
-      },
-      {
-        title: "WarDrobe",
-        items: [
-          "142 Garments",
-          "84 Mounts",
-          "3x 5-Stars",
-        ],
-      },
-    ],
-  },
-  {
     id: "acc-11",
     title: "🥷 Ninja Break Volcano",
     badge: "NEW",
@@ -606,47 +517,6 @@ export const ACCOUNTS: AccountListing[] = [
     ],
   },
   {
-    id: "acc-28",
-    title: "Archer/Pirate 26B Donation",
-    badge: "TOP",
-    badgeColor: "bg-amber-500",
-    image: archer26biImg,
-    className: "Archer",
-    prices: [{ label: "Preço", value: "A combinar" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "26B Donation",
-          "Archer / Pirate",
-          "Strike / Immunity (Break on Retreat)",
-          "0 Jail",
-          "1 Cup",
-          "Astread 90% - 80%",
-          "Have Action and Footprint",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "Rune Score: 312K",
-          "1 Ideal",
-          "5 Credit Yellow",
-          "1 Credit Blue",
-          "Archer Archive: Max - 42 - Max",
-          "Pirate Archive: 4M",
-          "Monk Archive: 20 - 20 - 20",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "1 Unbound Max Violet Shield",
-        ],
-      },
-    ],
-  },
-  {
     id: "acc-29",
     title: "Ótima oportunidade Water account",
     badge: "PREMIUM",
@@ -695,49 +565,6 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
-  {
-    id: "acc-31",
-    title: "OP Ninja for sale",
-    badge: "OP",
-    badgeColor: "bg-red-500",
-    image: opNinjaHwStunImg,
-    className: "Ninja",
-    prices: [
-      { label: "Sem MythSoul/Bag", value: "150k CPs" },
-    ],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "HeavenWonders + Stun",
-          "63B Donate",
-          "Relic Ressonance done",
-          "301K Rune Score",
-          "Bound Gears",
-          "1 Jail",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "5 Credit Yellow Runes",
-          "Circle of Life",
-          "Solidness",
-          "Conqueror Blade",
-          "Tempered Glaive",
-          "Whetted Blade",
-          "1 Unbound Yellow Rune +8",
-        ],
-      },
-      {
-        title: "WardRobe",
-        items: [
-          "167 Garments",
-          "106 Mounts",
-        ],
-      },
-    ],
-  },
 
 
   {
@@ -759,100 +586,7 @@ export const ACCOUNTS: AccountListing[] = [
     ],
   },
 
-  {
-    id: "acc-51",
-    title: "Top Ninja lv129",
-    badge: "TOP",
-    badgeColor: "bg-red-500",
-    image: topNinja129Img,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "270k CPs" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Top ninja lv129",
-          "1 Jail",
-          "Lv. 129 Night Ninja",
-          "P-Strike: 280.10% · Break: 88.1%",
-          "Immunity: 130.70% · Anti-break: 304.1%",
-          "M-Strike: 58.20% · Block: 30.00%",
-          "Final P-Attack: 13.643 · Final M-Attack: 9.700",
-          "Final P-Damage: 14.647 · Final M-Damage: 9.086",
-        ],
-      },
-      {
-        title: "Ninja Sprint & Runas",
-        items: [
-          "Ninpo Score: 43.535",
-          "Gates Lv9 (Gate of Dawn, Gate of Rest, Gate of Life, Gate of Limit, Gate of Vow, Gate of Pain, Gate of Shock, Gate of Death)",
-          "Rune Points: 355.800",
-          "Sigil Album",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "Gold Trophy Lv. 15",
-          "Relic: LoyalFirmness ImperialTripodVessel (Anti-break +4.00% x2)",
-          "Steed +12 Lineage 12 (20.144 attack)",
-          "LegendMonsterSaber +12 · LegendStarTower +12",
-          "78B Donation · Noble Rank: Princess",
-        ],
-      },
-      {
-        title: "Astredge & Clubs",
-        items: [
-          "Viodragon Club Recognition 95% · Love Forever Recognition 45% · Heart Lock Recognition 45%",
-          "Sphere Astredge Auto-activated (Rating 130+)",
-          "Astredge Attack +15760 / +7875 · Astredge Defense +2625 / +250",
-          "Tiger Chi Score: 400 · Seal Retreater Study Score: 400",
-        ],
-      },
-      {
-        title: "Cosméticos",
-        items: [
-          "SpringFestivalWings · Radiant Return · Phoenix Grace",
-        ],
-      },
-    ],
-  },
 
-  {
-    id: "acc-70",
-    title: "OP King Pirata",
-    badge: "OP KING",
-    badgeColor: "bg-amber-500",
-    image: opKingPirateImg,
-    className: "Pirata",
-    prices: [{ label: "Preço", value: "360k CPs" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "Itens unbound (Steed, set pirate, ring/neck/boot)",
-          "6 ideal runes",
-          "1 botjail",
-          "360k CPs",
-        ],
-      },
-      {
-        title: "Atributos",
-        items: [
-          "Lv. 140 Ghost Pirate",
-          "SVIP Level 3 (66d restantes)",
-          "HP: 92.006 · Magic: 1.500",
-          "Attack: 61.192 ~ 64.595",
-          "Defense: 30.133 · M-Attack: 27.763 · M-Defense: 8.059",
-          "P-Strike: 281.70% · Block: 30.00% · Break: 132.1%",
-          "Anti-break: 73.7% · M-Strike: 59.60%",
-          "Immunity: 260.15% · Penetration: 15.00%",
-          "Final P-Attack: 11.674 · Final P-Damage: 13.338",
-          "Final M-Attack: 7.324 · Final M-Damage: 7.427",
-        ],
-      },
-    ],
-  },
 
   {
     id: "acc-53",
