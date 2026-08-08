@@ -5,21 +5,15 @@ import archer129Img from "@/assets/archer129.jpg";
 import archerEpicImg from "@/assets/archer-epic.png";
 import decenteWaterImg from "@/assets/decente-water.png";
 import waterIdealImg from "@/assets/water-ideal.png";
-import archer26biImg from "@/assets/archer-26bi.jpg";
 import waterOpImg from "@/assets/water-op.jpg";
-import opNinjaHwStunImg from "@/assets/opNinjaHwStunImg.jpg";
 
 import waterLowImg from "@/assets/water-low.png";
-import topNinja129Img from "@/assets/top-ninja-129.jpg";
-import opKingPirateImg from "@/assets/opKingPirate.jpg";
 import sellWaterMaxArchiveImg from "@/assets/sell-water-max-archive.png";
 
-import sellArcherBreakImg from "@/assets/sell-archer-break.png";
 import ninjahw from "@/assets/ninjahw.jpg";
 import nicholas from "@/assets/nicholas.jpg";
 import decenteArcherImg from "@/assets/decente-archer.jpg";
 import topWaterArchivesFullImg from "@/assets/top-water-archives-full.jpg";
-import monk648PerfectionImg from "@/assets/monk-648-perfection.jpg";
 import beastWaterImg from "@/assets/beast-water.jpg";
 
 export interface AccountListing {
