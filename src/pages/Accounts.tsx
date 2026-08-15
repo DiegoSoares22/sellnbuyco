@@ -27,6 +27,7 @@ import { useI18n } from "@/i18n";
 import { toast } from "sonner";
 import { Footer } from "@/components/Footer";
 import { AccountDetailPage } from "@/components/AccountDetailPage";
+import { LastUpdatedBadge } from "@/components/LastUpdatedBadge";
 
 const WHATSAPP = "5575981382799";
 
