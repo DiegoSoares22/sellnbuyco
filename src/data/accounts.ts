@@ -17,6 +17,9 @@ import topWaterArchivesFullImg from "@/assets/top-water-archives-full.jpg";
 import beastWaterImg from "@/assets/beast-water.jpg";
 import archerWarrior45bImg from "@/assets/archer-warrior-45b.png";
 import waterMulti28bImg from "@/assets/water-multi-28b.png";
+import waterFire12kImg from "@/assets/water-fire-12k.png";
+import waterFireMax16kImg from "@/assets/water-fire-max-16k.png";
+import ninjaSacredStarP2Img from "@/assets/ninja-sacred-star-p2.png";
 
 export interface AccountListing {
   id: string;
