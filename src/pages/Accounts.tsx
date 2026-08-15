@@ -27,6 +27,7 @@ import { useI18n } from "@/i18n";
 import { toast } from "sonner";
 import { Footer } from "@/components/Footer";
 import { AccountDetailPage } from "@/components/AccountDetailPage";
+import { LastUpdatedBadge } from "@/components/LastUpdatedBadge";
 
 const WHATSAPP = "5575981382799";
 
@@ -305,6 +306,7 @@ function AccountsList() {
               <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
             </h2>
           </div>
+          <LastUpdatedBadge />
         </div>
       </div>
 

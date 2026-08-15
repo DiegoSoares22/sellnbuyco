@@ -15,6 +15,8 @@ import nicholas from "@/assets/nicholas.jpg";
 import decenteArcherImg from "@/assets/decente-archer.jpg";
 import topWaterArchivesFullImg from "@/assets/top-water-archives-full.jpg";
 import beastWaterImg from "@/assets/beast-water.jpg";
+import archerWarrior45bImg from "@/assets/archer-warrior-45b.png";
+import waterMulti28bImg from "@/assets/water-multi-28b.png";
 
 export interface AccountListing {
   id: string;
@@ -28,6 +30,98 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-70",
+    title: "Archer / Warrior — 45B Donation",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: archerWarrior45bImg,
+    className: "Archer",
+    prices: [{ label: "Preço", value: "35k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Archer / Warrior",
+          "Servidor: Eagle",
+          "0 Jail",
+          "45B de Donation",
+          "Full coroa P7 Fixo -7",
+          "Jhiang Grade 15",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "Set Archer +12 P7 Knife / 1 Epic +12, a outra último Crystal",
+          "Set Warrior +12 P7 Scepter e Scyther",
+          "4x Acessórios Bound",
+        ],
+      },
+      {
+        title: "Progressão",
+        items: [
+          "Inner Power: 3100 score",
+          "Rune Score: 241.300",
+          "Chi Full: P-Attack, Immunity, Break, M-HP",
+          "Astrage 90% Nível 4",
+        ],
+      },
+      {
+        title: "WarDrobe",
+        items: ["165 Garments", "87 Mounts"],
+      },
+    ],
+  },
+  {
+    id: "acc-71",
+    title: "Water / Ninja / Warrior / Monk / Trojan — 28B Donation",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: waterMulti28bImg,
+    className: "Taoist",
+    prices: [{ label: "Preço", value: "30k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Water / Ninja / Warrior / Monk / Trojan",
+          "Servidor: Dragon",
+          "28B de Donation",
+          "Full coroa P7 Fixo -7",
+          "Jhiang Grade 15",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "Set Trojan +12 P7 Fix",
+          "Set Ninja Epic +12 P7 Fix",
+          "Shield e Scyther +12 P7",
+          "Hossu +12 — Hossu +8 (1 Socket)",
+          "Ring +12 P7 Coração",
+          "Neck +12 Dual",
+          "Boota +8 Socket",
+          "4 Acessórios Vinculados",
+          "Refinaria Neck / Ring / Boota Lv 6 Fixo",
+        ],
+      },
+      {
+        title: "Progressão",
+        items: [
+          "Inner Power: 2900 score",
+          "Rune Score: 263.000",
+          "Ninpo Score: 33K",
+          "Chi Full: Final P-Damage, Immunity, Anti-Break, M-HP",
+          "Astrage 65% Nível 3",
+        ],
+      },
+      {
+        title: "WarDrobe",
+        items: ["198 Garments", "105 Mounts"],
+      },
+    ],
+  },
   {
     id: "acc-69",
     title: "Beast Water",
