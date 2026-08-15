@@ -305,6 +305,7 @@ function AccountsList() {
               <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
             </h2>
           </div>
+          <LastUpdatedBadge />
         </div>
       </div>
 
