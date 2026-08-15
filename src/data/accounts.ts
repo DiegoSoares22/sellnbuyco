@@ -15,6 +15,8 @@ import nicholas from "@/assets/nicholas.jpg";
 import decenteArcherImg from "@/assets/decente-archer.jpg";
 import topWaterArchivesFullImg from "@/assets/top-water-archives-full.jpg";
 import beastWaterImg from "@/assets/beast-water.jpg";
+import archerWarrior45bImg from "@/assets/archer-warrior-45b.png";
+import waterMulti28bImg from "@/assets/water-multi-28b.png";
 
 export interface AccountListing {
   id: string;
