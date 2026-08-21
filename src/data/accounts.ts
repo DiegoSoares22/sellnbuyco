@@ -20,6 +20,9 @@ import waterMulti28bImg from "@/assets/water-multi-28b.png";
 import waterFire12kImg from "@/assets/water-fire-12k.png";
 import waterFireMax16kImg from "@/assets/water-fire-max-16k.png";
 import ninjaSacredStarP2Img from "@/assets/ninja-sacred-star-p2.png";
+import archerSacredStarP2Img from "@/assets/archer-sacred-star-p2.png";
+import ninjaSacredStar254kImg from "@/assets/ninja-sacred-star-p2-254k.png";
+import monkSacredStarP1Img from "@/assets/monk-sacred-star-p1.png";
 
 export interface AccountListing {
   id: string;
