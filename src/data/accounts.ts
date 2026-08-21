@@ -20,6 +20,9 @@ import waterMulti28bImg from "@/assets/water-multi-28b.png";
 import waterFire12kImg from "@/assets/water-fire-12k.png";
 import waterFireMax16kImg from "@/assets/water-fire-max-16k.png";
 import ninjaSacredStarP2Img from "@/assets/ninja-sacred-star-p2.png";
+import archerSacredStarP2Img from "@/assets/archer-sacred-star-p2.png";
+import ninjaSacredStar254kImg from "@/assets/ninja-sacred-star-p2-254k.png";
+import monkSacredStarP1Img from "@/assets/monk-sacred-star-p1.png";
 
 export interface AccountListing {
   id: string;
@@ -33,6 +36,168 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-75",
+    title: "Archer Sacred Star P2 — 26B Donation",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: archerSacredStarP2Img,
+    className: "Archer",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Sacred_Star_ArcherP2",
+          "Donation: 26.082.533.333",
+          "Noble Rank: Countess",
+          "403 BP | Mythsoul 648",
+          "Rune Points: 181.900",
+        ],
+      },
+      {
+        title: "Atributos",
+        items: [
+          "HP: 88.727 | Magic: 1.200",
+          "Attack: 50.369 ~ 51.678 | Defense: 27.628",
+          "M-Attack: 23.374 | M-Defense: 12.165",
+          "Dodge: 104 | Agility: 1.171 | Accuracy: 200",
+          "Attack: 210% | M-Def: 94% | Blessed: 57%",
+          "Final P-Attack: +10.510 | Final M-Attack: +6.960",
+          "Final P-Damage: -10.550 | Final M-Damage: -6.225",
+          "P-Strike: 150.06% | Block: 30.00%",
+          "Break: 260.2% | Anti-Break: 70.1% | M-Strike: 47.20%",
+          "Immunity: 217.10% | Penetration: 15.00%",
+          "Detoxication: 72% | Parry: 7.00% | Lucky Strike: 7.00%",
+          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire",
+        ],
+      },
+      {
+        title: "Runas & Bônus",
+        items: [
+          "Runas Main em Max (ciclo completo)",
+          "Stage Bonus: HP 3700 | P-Atk 1500 | M-Atk 2600",
+          "P-Strike 12.00% | M-Strike 10.00% | Break 15.00% | Anti-Break 15.00% | Immunity 12.00%",
+          "Recognition 90% / 70%",
+        ],
+      },
+      {
+        title: "Gear & Skills",
+        items: [
+          "Equipamentos +12 com sockets",
+          "Stone Cracker Lv 41 | Thorn Cutter Lv 56",
+          "Sigilos P9 47% / P7 100% / P7 100% / P5 100% / P6 100% / P6 0% / P6 0% / P4 0% / P4 0%",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-76",
+    title: "Ninja Sacred Star P2 — Ninpo 33.959",
+    badge: "TOP",
+    badgeColor: "bg-amber-500",
+    image: ninjaSacredStar254kImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Sacred_Star_NinjaP2",
+          "Contribution: 24.543.605.554 | Noble Rank: Countess",
+          "VIP Level 6 | 390 BP | Mythsoul 648",
+          "Ninpo Score: 33.959",
+          "Rune Points: 254.700",
+          "Jiang Hu: Score 81.000 | Grade 15 | Talent 4",
+        ],
+      },
+      {
+        title: "Atributos",
+        items: [
+          "HP: 76.861 | Magic: 1.200",
+          "Attack: 53.337 ~ 56.683 | Defense: 32.085",
+          "M-Attack: 24.284 | M-Defense: 8.051",
+          "Dodge: 104 | Agility: 1.073 | Accuracy: 246",
+          "Attack: 210% | M-Def: 106% | Blessed: 57%",
+          "Final P-Attack: +11.172 | Final M-Attack: +7.308",
+          "Final P-Damage: -10.775 | Final M-Damage: -6.425",
+          "P-Strike: 118.60% | Block: 30.00%",
+          "Break: 274.1% | Anti-Break: 73.6% | M-Strike: 47.30%",
+          "Immunity: 230.30% | Penetration: 15.00%",
+          "Detoxication: 72% | Parry: 7.00% | Lucky Strike: 7.00% | Dash Rate: 1.50%",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "SacredSkyHammer (+12) — P7 1-handed Soul, Lv 140",
+          "Attack 5215~7013 | Agility +23 | Speed 36",
+          "Lvl 5 Breakthrough: +9% | P-Strike 6.00% | Accuracy +23 | Attack +3432 | Break 12.0%",
+          "2 Socket Gems: DragonGem (Attack +15% cada)",
+          "Steed (+8)(B) Maroon~Steed — Lineage 310 | Attack 10-10 | HP +100 | Vigor 30",
+          "Sky Veil (+9) Max | Alternate Equipment completo",
+        ],
+      },
+      {
+        title: "Sigilos & Skills",
+        items: [
+          "Sigilos: P8 0% / P7 100% / P7 100% / P7 0% / P6 100% / P6 0%",
+          "Chi: Tiger 400 | Phoenix 400 | Dragon 400 | Turtle 400",
+          "Chi bônus: Max-HP +3500 | P-Attack +2000 | Immunity +20% | Break +20%",
+          "Skills Fire/Water/Earth/Wind/Lightning Release e Bloodline",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-77",
+    title: "Monk Sacred Star P1 — Illusion Master",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: monkSacredStarP1Img,
+    className: "Monk",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Sacred_Star_MonkP1",
+          "Título: Illusion Master",
+          "403 BP | Mythsoul 648",
+          "Rune Points: 246.800",
+        ],
+      },
+      {
+        title: "Atributos",
+        items: [
+          "HP: 78.711 | Magic: 1.510",
+          "Attack: 39.731 ~ 40.987 | Defense: 33.734",
+          "M-Attack: 24.434 | M-Defense: 7.842",
+          "Dodge: 104 | Agility: 1.105 | Accuracy: 223",
+          "M-Def: 145% | Damage: 84% | Blessed: 56%",
+          "Final P-Attack: +10.364 | Final M-Attack: +6.864",
+          "Final P-Damage: -10.454 | Final M-Damage: -6.209",
+          "P-Strike: 95.60% | Block: 30.00%",
+          "Break: 135.6% | Anti-Break: 216.8% | M-Strike: 48.20%",
+          "Immunity: 230.00% | Penetration: 15.00%",
+          "Detoxication: 72% | Parry: 7.00% | Lucky Strike: 7.00%",
+          "Dash Rate: 2.00% | Dodge Rate: 4.00% | Resist: 1.50%",
+          "Resistências: Metal 105 / Wood 105 / Fire 105",
+        ],
+      },
+      {
+        title: "Runas, Chi & Sigilos",
+        items: [
+          "Runas Main em Max (ciclo completo)",
+          "Chi: Dragon 400 | Phoenix 400 | Turtle 400 | Tiger 400",
+          "Chi bônus: P-Attack +2000 | Max-HP +3500 | Break +20% | Immunity +20%",
+          "Sigilos: P5 100% / P7 100% / P8 0% / P8 100% / P4 100% / P4 0% / P3 100% / P3 0% / P2 0%",
+          "Jiang Hu: Cosmic 20 | Mighty 23 | Heavenly 25",
+          "Equipamentos +12",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-72",
     title: "Water/Fire — faltando 7 lv para fix archives",
