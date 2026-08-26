@@ -18,10 +18,10 @@ import beastWaterImg from "@/assets/beast-water.jpg";
 import archerWarrior45bImg from "@/assets/archer-warrior-45b.png";
 import waterMulti28bImg from "@/assets/water-multi-28b.png";
 import waterFire12kImg from "@/assets/water-fire-12k.png";
-import waterFireMax16kImg from "@/assets/water-fire-max-16k.png";
+
 import ninjaSacredStarP2Img from "@/assets/ninja-sacred-star-p2.png";
 import archerSacredStarP2Img from "@/assets/archer-sacred-star-p2.png";
-import ninjaSacredStar254kImg from "@/assets/ninja-sacred-star-p2-254k.png";
+
 import monkSacredStarP1Img from "@/assets/monk-sacred-star-p1.png";
 
 export interface AccountListing {
@@ -244,104 +244,6 @@ export const ACCOUNTS: AccountListing[] = [
           "Stage Bonus: HP 3700 | P-Atk 1500 | M-Atk 2600",
           "P-Strike 12.00% | M-Strike 10.00% | Break 15.00% | Anti-Break 15.00% | Immunity 12.00%",
           "Archives com vários Max (Score 13/100 em progressão)",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-73",
-    title: "Water/Fire Max Archives",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: waterFireMax16kImg,
-    className: "Taoist",
-    prices: [{ label: "Preço", value: "16k CPs" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "Water / Fire Taoist",
-          "Max Archives",
-          "1 Jail",
-          "492 BP | Mythsoul 492",
-          "Recognition: 45%",
-        ],
-      },
-      {
-        title: "Atributos",
-        items: [
-          "Lv. 140 Sacred_Star_Fire_TaoistP3",
-          "HP: 81.468 | Magic: 2.400",
-          "Attack: 18.376 ~ 18.606 | Defense: 26.643",
-          "M-Attack: 80.967 | M-Defense: 10.423",
-          "Dodge: 53 | Agility: 1.000 | M-Attack: 105% | M-Def: 113%",
-          "Damage: 24% | Blessed: 54%",
-          "Final P-Attack: +10.684 | Final M-Attack: +10.984",
-          "Final P-Damage: -16.089 | Final M-Damage: -9.741",
-          "P-Strike: 92.60% | Block: 30.00% | Break: 7.60% | Anti-Break: 67.1%",
-          "M-Strike: 73.20% | Immunity: 234.00% | Penetration: 47.00%",
-          "Detoxication: 72.00% | Parry: 7.00% | Lucky Strike: 7.00%",
-          "Resistências: Metal 80 / Wood 80 / Fire 80",
-        ],
-      },
-      {
-        title: "Equipamentos & Runas",
-        items: [
-          "LegendDivineBacksword (+12) Epic Weapon — Lv 100, 2 Socket Gems (Tortoise Gem)",
-          "Perfection Progress: 1470/12000 | Enchanted HP: 255",
-          "Rune Points: 216.900",
-          "Runas Max: NatureShield +9, Barrier +9, BossKiller +9, FineRain +27, UniversalShield +9",
-          "DivineShield +9, Deterrence +9, JusticeGuard +9",
-          "Chi Full: 380 / 400 (Dissension, Turtle, Tiger, Phoenix)",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-74",
-    title: "Ninja Sacred Star P2 — 648 Mythsoul",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: ninjaSacredStarP2Img,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "A combinar" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "Ninja Break Build",
-          "403 BP | Mythsoul 648",
-          "Ninpo Score: 35.997",
-          "Recognition: 90% e 30%",
-          "Steed (+12) Frostbite — Lineage Lv 12",
-        ],
-      },
-      {
-        title: "Atributos",
-        items: [
-          "Lv. 140 Sacred_Star_NinjaP2",
-          "HP: 77.991 | Magic: 1.200",
-          "Attack: 52.608 ~ 55.954 | Defense: 32.135",
-          "M-Attack: 23.434 | M-Defense: 8.091",
-          "Dodge: 104 | Agility: 1.073 | Accuracy: 246",
-          "Attack: 210% | M-Def: 118% | Blessed: 57%",
-          "Final P-Attack: +10.329 | Final M-Attack: +6.829",
-          "Final P-Damage: -10.429 | Final M-Damage: -6.467",
-          "P-Strike: 116.60% | Block: 30.00%",
-          "Break: 274.1% | Anti-Break: 60.0%",
-          "M-Strike: 47.20% | Immunity: 227.15% | Penetration: 15.00%",
-          "Detoxication: 72.00% | Parry: 7.00% | Lucky Strike: 7.00%",
-          "Resistências: Metal 80 / Wood 80 / Fire 80",
-        ],
-      },
-      {
-        title: "Runas & Ninpo",
-        items: [
-          "Rune Points: 202.700",
-          "Stage Bonus: HP 3700 | P-Strike 12.00% | Break 15.00%",
-          "Ninpo: Ninja Sprint — Sigil Upgrade disponível",
-          "Bloodline Sigil: Paper Dance +6 (Score 1100)",
-          "Acessórios: GloryFlag (B) e Blowfish (B)",
         ],
       },
     ],
