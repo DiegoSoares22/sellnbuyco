@@ -18,6 +18,7 @@ import beastWaterImg from "@/assets/beast-water.jpg";
 import archerWarrior45bImg from "@/assets/archer-warrior-45b.png";
 import waterMulti28bImg from "@/assets/water-multi-28b.png";
 import waterFire12kImg from "@/assets/water-fire-12k.png";
+import ninjaSacredStar254kImg from "@/assets/ninja-sacred-star-p2-254k.png";
 
 import ninjaSacredStarP2Img from "@/assets/ninja-sacred-star-p2.png";
 import archerSacredStarP2Img from "@/assets/archer-sacred-star-p2.png";
