@@ -1,3 +1,4 @@
+import waterTaoistP6Lv129Img from "@/assets/water-taoist-p6-lv129.png.asset.json";
 import ninjaSacredStarP8HwStunImg from "@/assets/ninja-sacred-star-p8-hw-stun.png.asset.json";
 import warriorSacredStarP1Img from "@/assets/warrior-sacred-star-p1.png.asset.json";
 import decenteWaterImg from "@/assets/decente-water.png";
