@@ -230,8 +230,7 @@ function AccountsList() {
     list = list.filter((a) => {
       const p = getMinCpsK(a);
       if (p === null) return true; // Negociáveis são sempre mantidas
-      const pAbsolute = p * 1000;
-      return pAbsolute >= minPrice && pAbsolute <= maxPrice;
+      return p >= minPrice && p <= maxPrice;
     });
 
     // 4. Filtro de Level

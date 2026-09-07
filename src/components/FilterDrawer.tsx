@@ -86,8 +86,8 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({ open, onOpenChange, 
   const handleClear = () => {
     clearFilters();
     setLocalClass(null);
-    setLocalMinPrice(5000);
-    setLocalMaxPrice(400000);
+    setLocalMinPrice(0);
+    setLocalMaxPrice(1000);
     setLocalLevels([]);
     onOpenChange(false);
   };
@@ -131,13 +131,13 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({ open, onOpenChange, 
               {lang === "pt" ? "Preço (CPs)" : "Price (CPs)"}
             </Label>
             <div className="flex justify-between text-xs text-slate-400">
-              <span>5k</span>
-              <span>270k+</span>
+              <span>0k</span>
+              <span>1.000k (1M)</span>
             </div>
             <Slider
-              min={5000}
-              max={400000}
-              step={5000}
+              min={0}
+              max={1000}
+              step={5}
               value={[localMinPrice, localMaxPrice]}
               onValueChange={([min, max]) => {
                 setLocalMinPrice(min);

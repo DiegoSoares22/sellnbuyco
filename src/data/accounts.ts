@@ -1,6 +1,6 @@
-import waterTaoistP6Lv129Img from "@/assets/water-taoist-p6-lv129.png.asset.json";
-import ninjaSacredStarP8HwStunImg from "@/assets/ninja-sacred-star-p8-hw-stun.png.asset.json";
-import warriorSacredStarP1Img from "@/assets/warrior-sacred-star-p1.png.asset.json";
+import waterImg from "@/assets/water.jpg";
+import jojoNinjaImg from "@/assets/JojoNinja.JPG";
+import warriorImg from "@/assets/warriior.jpg";
 import decenteWaterImg from "@/assets/decente-water.png";
 import waterIdealImg from "@/assets/water-ideal.png";
 import waterOpImg from "@/assets/water-op.jpg";
@@ -36,7 +36,7 @@ export const ACCOUNTS: AccountListing[] = [
     title: "Water Taoist P6 — Lv 129",
     badge: "NOVO",
     badgeColor: "bg-emerald-500",
-    image: waterTaoistP6Lv129Img.url,
+    image: waterImg,
     className: "Taoist",
     prices: [{ label: "Preço", value: "4k CPs" }],
     sections: [
@@ -53,14 +53,14 @@ export const ACCOUNTS: AccountListing[] = [
         title: "Atributos",
         items: [
           "HP: 75.295 | Magic: 1.150",
-          "Attack: 13.198 ~ 13.460 | Defense: 25.984",
+          "Attack: 13.138 ~ 13.460 | Defense: 25.984",
           "M-Attack: 21.279 | M-Defense: 7.804",
           "Dodge: 10 | Agility: 1.009",
           "M-Def: 105% | Damage: 72% | Blessed: 51%",
           "Final P-Attack: +9.500 | Final M-Attack: +6.529",
-          "Final P-Damage: +26.593 | Final M-Damage: +14.609",
+          "Final P-Damage: +26.993 | Final M-Damage: +14.609",
           "P-Strike: 70.38% | Block: 30.00%",
-          "Break: 77.30% | Anti-Break: 221.60% | M-Strike: 41.98%",
+          "Break: 77.31% | Anti-Break: 221.60% | M-Strike: 41.98%",
           "Immunity: 207.36% | Penetration: 25.00%",
           "Detoxication: 72% | Parry: 6.00% | Lucky Strike: 6.00%",
           "Dodge Rate: 13.80%",
@@ -74,6 +74,7 @@ export const ACCOUNTS: AccountListing[] = [
           "Dragon Lv.99 — 400 Chi",
           "Tiger Lv.41 — 269 Chi",
           "Phoenix Lv.26 — 362 Chi",
+          "Remaining Chi: 31 (Max Recovery 16.500)",
           "Inner Power: Universal Concept, Secret of Breath, Demon Rider, Dragon Tactics",
           "Inner Power: Boundless Heart, Doctrine of Deity, Puzzle of Life, Pure Yang Concept",
         ],
@@ -92,7 +93,7 @@ export const ACCOUNTS: AccountListing[] = [
     title: "Ninja Sacred Star P8 — HW/Stun",
     badge: "NOVO",
     badgeColor: "bg-emerald-500",
-    image: ninjaSacredStarP8HwStunImg.url,
+    image: jojoNinjaImg,
     className: "Ninja",
     prices: [{ label: "Preço", value: "420k CPs" }],
     sections: [
@@ -152,7 +153,7 @@ export const ACCOUNTS: AccountListing[] = [
     title: "Warrior Sacred Star P1 — 14B Donation",
     badge: "NOVO",
     badgeColor: "bg-emerald-500",
-    image: warriorSacredStarP1Img.url,
+    image: warriorImg,
     className: "Warrior",
     prices: [{ label: "Preço", value: "10k CPs" }],
     sections: [
