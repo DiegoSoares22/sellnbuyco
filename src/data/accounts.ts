@@ -1,5 +1,5 @@
 import waterImg from "@/assets/water.jpg";
-import jojoNinjaImg from "@/assets/JojoNinja.JPG";
+import jojoNinjaImg from "@/assets/JojoNinja.jpg";
 import warriorImg from "@/assets/warriior.jpg";
 import decenteWaterImg from "@/assets/decente-water.png";
 import waterIdealImg from "@/assets/water-ideal.png";
