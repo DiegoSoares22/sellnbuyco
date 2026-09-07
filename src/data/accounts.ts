@@ -32,6 +32,62 @@ export interface AccountListing {
 
 export const ACCOUNTS: AccountListing[] = [
   {
+    id: "acc-80",
+    title: "Water Taoist P6 — Lv 129",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: waterTaoistP6Lv129Img.url,
+    className: "Taoist",
+    prices: [{ label: "Preço", value: "4k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 129 SacredSeaWaterTaoistP6",
+          "373 BP | Mythsoul 250",
+          "Rune Points: 124.600",
+          "My Potency: 10.740",
+        ],
+      },
+      {
+        title: "Atributos",
+        items: [
+          "HP: 75.295 | Magic: 1.150",
+          "Attack: 13.198 ~ 13.460 | Defense: 25.984",
+          "M-Attack: 21.279 | M-Defense: 7.804",
+          "Dodge: 10 | Agility: 1.009",
+          "M-Def: 105% | Damage: 72% | Blessed: 51%",
+          "Final P-Attack: +9.500 | Final M-Attack: +6.529",
+          "Final P-Damage: +26.593 | Final M-Damage: +14.609",
+          "P-Strike: 70.38% | Block: 30.00%",
+          "Break: 77.30% | Anti-Break: 221.60% | M-Strike: 41.98%",
+          "Immunity: 207.36% | Penetration: 25.00%",
+          "Detoxication: 72% | Parry: 6.00% | Lucky Strike: 6.00%",
+          "Dodge Rate: 13.80%",
+          "Resistências: Metal 55 / Wood 55 / Water 55 / Fire 55",
+        ],
+      },
+      {
+        title: "Chi & Inner Power",
+        items: [
+          "Turtle Lv.99 — 400 Chi",
+          "Dragon Lv.99 — 400 Chi",
+          "Tiger Lv.41 — 269 Chi",
+          "Phoenix Lv.26 — 362 Chi",
+          "Inner Power: Universal Concept, Secret of Breath, Demon Rider, Dragon Tactics",
+          "Inner Power: Boundless Heart, Doctrine of Deity, Puzzle of Life, Pure Yang Concept",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "Main Runas em Max (ciclo completo)",
+          "Rune Points: 124.600",
+        ],
+      },
+    ],
+  },
+  {
     id: "acc-79",
     title: "Ninja Sacred Star P8 — HW/Stun",
     badge: "NOVO",
