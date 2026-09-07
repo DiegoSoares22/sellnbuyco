@@ -1,8 +1,3 @@
-import ninjaBreakImg from "@/assets/ninja-break.jpeg";
-import archer129Img from "@/assets/archer129.jpg";
-
-
-import archerEpicImg from "@/assets/archer-epic.png";
 import decenteWaterImg from "@/assets/decente-water.png";
 import waterIdealImg from "@/assets/water-ideal.png";
 import waterOpImg from "@/assets/water-op.jpg";
@@ -15,12 +10,8 @@ import nicholas from "@/assets/nicholas.jpg";
 import decenteArcherImg from "@/assets/decente-archer.jpg";
 import topWaterArchivesFullImg from "@/assets/top-water-archives-full.jpg";
 import beastWaterImg from "@/assets/beast-water.jpg";
-import archerWarrior45bImg from "@/assets/archer-warrior-45b.png";
-import waterMulti28bImg from "@/assets/water-multi-28b.png";
 import waterFire12kImg from "@/assets/water-fire-12k.png";
-import ninjaSacredStar254kImg from "@/assets/ninja-sacred-star-p2-254k.png";
 
-import ninjaSacredStarP2Img from "@/assets/ninja-sacred-star-p2.png";
 import archerSacredStarP2Img from "@/assets/archer-sacred-star-p2.png";
 
 import monkSacredStarP1Img from "@/assets/monk-sacred-star-p1.png";
