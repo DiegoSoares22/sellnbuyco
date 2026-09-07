@@ -1,3 +1,4 @@
+import ninjaSacredStarP8HwStunImg from "@/assets/ninja-sacred-star-p8-hw-stun.png.asset.json";
 import warriorSacredStarP1Img from "@/assets/warrior-sacred-star-p1.png.asset.json";
 import decenteWaterImg from "@/assets/decente-water.png";
 import waterIdealImg from "@/assets/water-ideal.png";
@@ -29,6 +30,66 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-79",
+    title: "Ninja Sacred Star P8 — HW/Stun",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaSacredStarP8HwStunImg.url,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "420k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Sacred_Star_NinjaP8",
+          "Ninja Hw/Stun build",
+          "1 Jail",
+          "Mythsoul 648",
+          "Supreme Diamond VIP",
+          "Rune Points: 416.700",
+        ],
+      },
+      {
+        title: "Atributos",
+        items: [
+          "HP: 90.361 | Magic: 1.500",
+          "Attack: 64.810 ~ 68.516 | Defense: 33.588",
+          "M-Attack: 27.813 | M-Defense: 9.273",
+          "Dodge: 107 | Agility: 1.073 | Accuracy: 256",
+          "Attack: 1.070 | M-Def: 108% | Blessed: 57%",
+          "Final P-Attack: +13.264 | Final M-Attack: +9.384",
+          "Final P-Damage: +14.698 | Final M-Damage: +8.687",
+          "P-Strike: 145.50% | Block: 30.00%",
+          "Break: 27.26% | Anti-Break: 90.40% | M-Strike: 61.20%",
+          "Immunity: 245.50% | Penetration: 15.00%",
+          "Detoxication: 72% | Parry: 7.00% | Lucky Strike: 7.00%",
+          "Dash Rate: 5.00% | Dodge Rate: 13.40% | Hit Rate: 15.80%",
+          "Resist: 1.50%",
+          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
+        ],
+      },
+      {
+        title: "Runas & Gear",
+        items: [
+          "Main Runas em Max (ciclo completo)",
+          "Rune Points: 416.700",
+          "Recognition: 95% / 95% / 60%",
+          "3 unbound yellow rune +9",
+          "8 credit runes",
+          "Retreat chi: 4x P strike",
+          "Unbound steed / Boot",
+        ],
+      },
+      {
+        title: "Jiang Hu & Progressão",
+        items: [
+          "Jiang Hu: Heavenly 20 | Mighty 21 | Cosmic 20",
+          "Equipamentos +12 com sockets",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-78",
     title: "Warrior Sacred Star P1 — 14B Donation",
