@@ -1,8 +1,3 @@
-import ninjaBreakImg from "@/assets/ninja-break.jpeg";
-import archer129Img from "@/assets/archer129.jpg";
-
-
-import archerEpicImg from "@/assets/archer-epic.png";
 import decenteWaterImg from "@/assets/decente-water.png";
 import waterIdealImg from "@/assets/water-ideal.png";
 import waterOpImg from "@/assets/water-op.jpg";
@@ -15,12 +10,8 @@ import nicholas from "@/assets/nicholas.jpg";
 import decenteArcherImg from "@/assets/decente-archer.jpg";
 import topWaterArchivesFullImg from "@/assets/top-water-archives-full.jpg";
 import beastWaterImg from "@/assets/beast-water.jpg";
-import archerWarrior45bImg from "@/assets/archer-warrior-45b.png";
-import waterMulti28bImg from "@/assets/water-multi-28b.png";
 import waterFire12kImg from "@/assets/water-fire-12k.png";
-import ninjaSacredStar254kImg from "@/assets/ninja-sacred-star-p2-254k.png";
 
-import ninjaSacredStarP2Img from "@/assets/ninja-sacred-star-p2.png";
 import archerSacredStarP2Img from "@/assets/archer-sacred-star-p2.png";
 
 import monkSacredStarP1Img from "@/assets/monk-sacred-star-p1.png";
@@ -88,64 +79,6 @@ export const ACCOUNTS: AccountListing[] = [
           "Equipamentos +12 com sockets",
           "Stone Cracker Lv 41 | Thorn Cutter Lv 56",
           "Sigilos P9 47% / P7 100% / P7 100% / P5 100% / P6 100% / P6 0% / P6 0% / P4 0% / P4 0%",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-76",
-    title: "Ninja Sacred Star P2 — Ninpo 33.959",
-    badge: "TOP",
-    badgeColor: "bg-amber-500",
-    image: ninjaSacredStar254kImg,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "A combinar" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "Lv. 140 Sacred_Star_NinjaP2",
-          "Contribution: 24.543.605.554 | Noble Rank: Countess",
-          "VIP Level 6 | 390 BP | Mythsoul 648",
-          "Ninpo Score: 33.959",
-          "Rune Points: 254.700",
-          "Jiang Hu: Score 81.000 | Grade 15 | Talent 4",
-        ],
-      },
-      {
-        title: "Atributos",
-        items: [
-          "HP: 76.861 | Magic: 1.200",
-          "Attack: 53.337 ~ 56.683 | Defense: 32.085",
-          "M-Attack: 24.284 | M-Defense: 8.051",
-          "Dodge: 104 | Agility: 1.073 | Accuracy: 246",
-          "Attack: 210% | M-Def: 106% | Blessed: 57%",
-          "Final P-Attack: +11.172 | Final M-Attack: +7.308",
-          "Final P-Damage: -10.775 | Final M-Damage: -6.425",
-          "P-Strike: 118.60% | Block: 30.00%",
-          "Break: 274.1% | Anti-Break: 73.6% | M-Strike: 47.30%",
-          "Immunity: 230.30% | Penetration: 15.00%",
-          "Detoxication: 72% | Parry: 7.00% | Lucky Strike: 7.00% | Dash Rate: 1.50%",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "SacredSkyHammer (+12) — P7 1-handed Soul, Lv 140",
-          "Attack 5215~7013 | Agility +23 | Speed 36",
-          "Lvl 5 Breakthrough: +9% | P-Strike 6.00% | Accuracy +23 | Attack +3432 | Break 12.0%",
-          "2 Socket Gems: DragonGem (Attack +15% cada)",
-          "Steed (+8)(B) Maroon~Steed — Lineage 310 | Attack 10-10 | HP +100 | Vigor 30",
-          "Sky Veil (+9) Max | Alternate Equipment completo",
-        ],
-      },
-      {
-        title: "Sigilos & Skills",
-        items: [
-          "Sigilos: P8 0% / P7 100% / P7 100% / P7 0% / P6 100% / P6 0%",
-          "Chi: Tiger 400 | Phoenix 400 | Dragon 400 | Turtle 400",
-          "Chi bônus: Max-HP +3500 | P-Attack +2000 | Immunity +20% | Break +20%",
-          "Skills Fire/Water/Earth/Wind/Lightning Release e Bloodline",
         ],
       },
     ],
@@ -246,98 +179,6 @@ export const ACCOUNTS: AccountListing[] = [
           "P-Strike 12.00% | M-Strike 10.00% | Break 15.00% | Anti-Break 15.00% | Immunity 12.00%",
           "Archives com vários Max (Score 13/100 em progressão)",
         ],
-      },
-    ],
-  },
-  {
-    id: "acc-70",
-    title: "Archer / Warrior — 45B Donation",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: archerWarrior45bImg,
-    className: "Archer",
-    prices: [{ label: "Preço", value: "35k CPs" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "Archer / Warrior",
-          "Servidor: Eagle",
-          "0 Jail",
-          "45B de Donation",
-          "Full coroa P7 Fixo -7",
-          "Jhiang Grade 15",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "Set Archer +12 P7 Knife / 1 Epic +12, a outra último Crystal",
-          "Set Warrior +12 P7 Scepter e Scyther",
-          "4x Acessórios Bound",
-        ],
-      },
-      {
-        title: "Progressão",
-        items: [
-          "Inner Power: 3100 score",
-          "Rune Score: 241.300",
-          "Chi Full: P-Attack, Immunity, Break, M-HP",
-          "Astrage 90% Nível 4",
-        ],
-      },
-      {
-        title: "WarDrobe",
-        items: ["165 Garments", "87 Mounts"],
-      },
-    ],
-  },
-  {
-    id: "acc-71",
-    title: "Water / Ninja / Warrior / Monk / Trojan — 28B Donation",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: waterMulti28bImg,
-    className: "Taoist",
-    prices: [{ label: "Preço", value: "30k CPs" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "Water / Ninja / Warrior / Monk / Trojan",
-          "Servidor: Dragon",
-          "28B de Donation",
-          "Full coroa P7 Fixo -7",
-          "Jhiang Grade 15",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "Set Trojan +12 P7 Fix",
-          "Set Ninja Epic +12 P7 Fix",
-          "Shield e Scyther +12 P7",
-          "Hossu +12 — Hossu +8 (1 Socket)",
-          "Ring +12 P7 Coração",
-          "Neck +12 Dual",
-          "Boota +8 Socket",
-          "4 Acessórios Vinculados",
-          "Refinaria Neck / Ring / Boota Lv 6 Fixo",
-        ],
-      },
-      {
-        title: "Progressão",
-        items: [
-          "Inner Power: 2900 score",
-          "Rune Score: 263.000",
-          "Ninpo Score: 33K",
-          "Chi Full: Final P-Damage, Immunity, Anti-Break, M-HP",
-          "Astrage 65% Nível 3",
-        ],
-      },
-      {
-        title: "WarDrobe",
-        items: ["198 Garments", "105 Mounts"],
       },
     ],
   },
@@ -636,122 +477,6 @@ export const ACCOUNTS: AccountListing[] = [
           "Gate of Life: Lv. 5",
           "Gate of Limit: Lv. 9",
           "Gate of Shock: Lv. 9",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-11",
-    title: "🥷 Ninja Break Volcano",
-    badge: "NEW",
-    badgeColor: "bg-emerald-500",
-    image: ninjaBreakImg,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "18k CPs" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "0 Jail",
-          "Serve Volcano 💥",
-          "28B de Donation",
-          "Full Coroa P7 fixo -7",
-          "Relic 2x P-Attack",
-          "Inner Power Full 3500 score",
-          "Jhiang Grade 15",
-          "Chi Full (P-Attack, Break, M-HP, Immunity)",
-          "Ninpo Score 39040",
-          "Astrage 85% Nivel 4",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "Rune Points 195500",
-          "Runa Creditada",
-          "Sky Veil",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "Set Tortoise",
-          "Cap",
-          "Neck",
-          "Armor",
-          "Boots",
-        ],
-      },
-      {
-        title: "Archives",
-        items: [
-          "Arquivo Trojan 77675",
-          "Arquivo Monk lvl 20 all",
-        ],
-      },
-      {
-        title: "WarDrobe",
-        items: [
-          "146 Garments",
-          "82 Mounts",
-        ],
-      },
-      {
-        title: "HairStyles",
-        items: [
-          "FantasyBall",
-          "Rat",
-          "XmasSnow",
-          "FreshLotus",
-          "RedSnow",
-          "DelicateFox",
-          "MagicPoker",
-          "NightofFear",
-          "PumpKinHead",
-          "DragonFire",
-          "Nebula",
-          "Cloud",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-12",
-    title: "Archer/Ninja 129",
-    badge: "NEW",
-    badgeColor: "bg-emerald-500",
-    image: archer129Img,
-    className: "Archer",
-    prices: [
-      { label: "Preço", value: "9k CPS" },
-      { label: "Ou", value: "R$ 450.00" },
-    ],
-    sections: [
-      {
-        title: "Atributos",
-        items: ["Archer/Ninja 129", "0 Jail"],
-      },
-    ],
-  },
-
-  {
-    id: "acc-19",
-    title: "Decente Archer Epic",
-    badge: "EPIC",
-    badgeColor: "bg-purple-500",
-    image: archerEpicImg,
-    className: "Archer",
-    prices: [{ label: "Preço", value: "38K CPS" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Lv. 140 Sacred Star Archer P1",
-          "P-Strike: 275.80%",
-          "Break: 86.5%",
-          "Rune Points: 181.200",
-          "Huntress Artemis P7 100%",
-          "Conqueror Xiang Yu P7 100%",
         ],
       },
     ],
