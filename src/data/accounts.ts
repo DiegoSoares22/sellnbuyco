@@ -4,7 +4,6 @@ import decenteWaterImg from "@/assets/decente-water.png";
 import waterIdealImg from "@/assets/water-ideal.png";
 import waterOpImg from "@/assets/water-op.jpg";
 
-import waterLowImg from "@/assets/water-low.png";
 import sellWaterMaxArchiveImg from "@/assets/sell-water-max-archive.png";
 
 import ninjahw from "@/assets/ninjahw.jpg";
@@ -664,24 +663,7 @@ export const ACCOUNTS: AccountListing[] = [
   },
 
 
-  {
-    id: "acc-40",
-    title: "Water Low Lv",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: waterLowImg,
-    className: "Taoist",
-    prices: [{ label: "Preço", value: "5K CPS" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Lv. 98 Sacred Sea Water Taoist P5",
-          "Conta low level para evoluir",
-        ],
-      },
-    ],
-  },
+
 
 
 
