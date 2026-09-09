@@ -13,7 +13,6 @@ import topWaterArchivesFullImg from "@/assets/top-water-archives-full.jpg";
 import beastWaterImg from "@/assets/beast-water.jpg";
 import waterFire12kImg from "@/assets/water-fire-12k.png";
 
-import archerSacredStarP2Img from "@/assets/archer-sacred-star-p2.png";
 
 import monkSacredStarP1Img from "@/assets/monk-sacred-star-p1.png";
 
@@ -142,61 +141,6 @@ export const ACCOUNTS: AccountListing[] = [
         items: [
           "Jiang Hu: Heavenly 20 | Mighty 21 | Cosmic 20",
           "Equipamentos +12 com sockets",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-75",
-    title: "Archer Sacred Star P2 — 26B Donation",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: archerSacredStarP2Img,
-    className: "Archer",
-    prices: [{ label: "Preço", value: "A combinar" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "Lv. 140 Sacred_Star_ArcherP2",
-          "Donation: 26.082.533.333",
-          "Noble Rank: Countess",
-          "403 BP | Mythsoul 648",
-          "Rune Points: 181.900",
-        ],
-      },
-      {
-        title: "Atributos",
-        items: [
-          "HP: 88.727 | Magic: 1.200",
-          "Attack: 50.369 ~ 51.678 | Defense: 27.628",
-          "M-Attack: 23.374 | M-Defense: 12.165",
-          "Dodge: 104 | Agility: 1.171 | Accuracy: 200",
-          "Attack: 210% | M-Def: 94% | Blessed: 57%",
-          "Final P-Attack: +10.510 | Final M-Attack: +6.960",
-          "Final P-Damage: -10.550 | Final M-Damage: -6.225",
-          "P-Strike: 150.06% | Block: 30.00%",
-          "Break: 260.2% | Anti-Break: 70.1% | M-Strike: 47.20%",
-          "Immunity: 217.10% | Penetration: 15.00%",
-          "Detoxication: 72% | Parry: 7.00% | Lucky Strike: 7.00%",
-          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire",
-        ],
-      },
-      {
-        title: "Runas & Bônus",
-        items: [
-          "Runas Main em Max (ciclo completo)",
-          "Stage Bonus: HP 3700 | P-Atk 1500 | M-Atk 2600",
-          "P-Strike 12.00% | M-Strike 10.00% | Break 15.00% | Anti-Break 15.00% | Immunity 12.00%",
-          "Recognition 90% / 70%",
-        ],
-      },
-      {
-        title: "Gear & Skills",
-        items: [
-          "Equipamentos +12 com sockets",
-          "Stone Cracker Lv 41 | Thorn Cutter Lv 56",
-          "Sigilos P9 47% / P7 100% / P7 100% / P5 100% / P6 100% / P6 0% / P6 0% / P4 0% / P4 0%",
         ],
       },
     ],
