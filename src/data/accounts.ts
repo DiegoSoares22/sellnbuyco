@@ -1,6 +1,5 @@
 import waterImg from "@/assets/water.jpg";
 import jojoNinjaImg from "@/assets/JojoNinja.jpg";
-import warriorImg from "@/assets/warriior.jpg";
 import decenteWaterImg from "@/assets/decente-water.png";
 import waterIdealImg from "@/assets/water-ideal.png";
 import waterOpImg from "@/assets/water-op.jpg";
@@ -144,55 +143,6 @@ export const ACCOUNTS: AccountListing[] = [
         items: [
           "Jiang Hu: Heavenly 20 | Mighty 21 | Cosmic 20",
           "Equipamentos +12 com sockets",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-78",
-    title: "Warrior Sacred Star P1 — 14B Donation",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: warriorImg,
-    className: "Warrior",
-    prices: [{ label: "Preço", value: "10k CPs" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "Lv. 140 Sacred_Star_WarriorP1",
-          "Donation: 14.462.000.003",
-          "Noble Rank: Earl",
-          "396 BP",
-          "Rune Points: 252.500",
-        ],
-      },
-      {
-        title: "Atributos",
-        items: [
-          "HP: 80.963 | Magic: 1.500",
-          "Attack: 51.386 ~ 53.927 | Defense: 47.307",
-          "M-Attack: 24.224 | M-Defense: 13.417",
-          "Dodge: 104 | Agility: 1.050 | Accuracy: 223",
-          "M-Def: 104% | Damage: 24% | Blessed: 50%",
-          "Final P-Attack: +10.705 | Final M-Attack: +6.839",
-          "Final P-Damage: -10.429 | Final M-Damage: -6.129",
-          "P-Strike: 101.80% | Block: 46.00%",
-          "Break: 254.4% | Anti-Break: 94.3% | M-Strike: 46.20%",
-          "Immunity: 239.30% | Penetration: 15.00%",
-          "Detoxication: 72% | Parry: 7.00% | Lucky Strike: 7.00%",
-          "Dash Rate: 1.50% | Resist: 1.50%",
-          "Resistências: Water 105 / Fire 105",
-        ],
-      },
-      {
-        title: "Runas & Gear",
-        items: [
-          "Main Runas em Max (ciclo completo)",
-          "Stage Bonus: HP 4200 | P-Atk 2300 | M-Atk 3600",
-          "P-Strike 12.00% | M-Strike 10.00% | Break 15.00% | Anti-Break 15.00% | Immunity 12.00%",
-          "Weapon: LegendRatanLonghammer Lv 5",
-          "Recognition: 40%",
         ],
       },
     ],
