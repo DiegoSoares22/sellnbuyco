@@ -15,7 +15,7 @@ import waterFire12kImg from "@/assets/water-fire-12k.png";
 
 
 import monkSacredStarP1Img from "@/assets/monk-sacred-star-p1.png";
-import pirateSacredStarP9Img from "@/assets/pirate-sacred-star-p9.png.asset.json";
+import pirataSacredStarP9Img from "@/assets/pirata-sacred-star-p9.png.asset.json";
 
 export interface AccountListing {
   id: string;
@@ -34,7 +34,7 @@ export const ACCOUNTS: AccountListing[] = [
     title: "Pirate Sacred Star P9 — 0 Jail",
     badge: "NOVO",
     badgeColor: "bg-emerald-500",
-    image: pirateSacredStarP9Img.url,
+    image: pirataSacredStarP9Img.url,
     className: "Pirata",
     prices: [{ label: "Preço", value: "10k CPs" }],
     sections: [
