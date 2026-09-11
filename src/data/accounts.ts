@@ -30,6 +30,60 @@ export interface AccountListing {
 
 export const ACCOUNTS: AccountListing[] = [
   {
+    id: "acc-81",
+    title: "Pirate Sacred Star P9 — 0 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: pirateSacredStarP9Img.url,
+    className: "Pirata",
+    prices: [{ label: "Preço", value: "8k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 SacredSeaPirateP9",
+          "0 Jail",
+          "Servidor Storm",
+          "Rune Points: 111.800",
+        ],
+      },
+      {
+        title: "Atributos",
+        items: [
+          "HP: 75.270 | Magic: 400",
+          "Attack: 4.977 ~ 52.867 | Defense: 21.195",
+          "M-Attack: 22.080 | M-Defense: 6.016",
+          "Dodge: 104 | Agility: 1.149 | Accuracy: 246",
+          "M-Def: 87% | Blessed: 57%",
+          "Final P-Attack: +10.379 | Final M-Attack: +6.829",
+          "Final P-Damage: +10.479 | Final M-Damage: +6.129",
+          "P-Strike: 111.60% | Block: 30.00%",
+          "Break: 240.50% | Anti-Break: 58.10% | M-Strike: 47.20%",
+          "Immunity: 208.10% | Penetration: 15.00%",
+          "Detoxication: 72% | Parry: 7.00% | Lucky Strike: 7.00%",
+          "Hit Rate: 4.00%",
+          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "Rune Points: 111.800",
+          "Stage Bonus: HP 3.700 | P-Atk 1.500 | M-Atk 1.600",
+          "P-Stk 10.00% | M-Stk 10.00% | Break 15.00% | Anti-Brk 15.00% | Imm 10.00%",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "Steed +12 (Zebra) — Lineage 7.325",
+          "Legend Hunting Bow (Intern Archer) Lv. 15",
+          "Attack 76-94 | Agility +18 | Attack Rate 111",
+        ],
+      },
+    ],
+  },
+  {
     id: "acc-80",
     title: "Water Taoist P6 — Lv 129",
     badge: "NOVO",
