@@ -15,6 +15,7 @@ import waterFire12kImg from "@/assets/water-fire-12k.png";
 
 
 import monkSacredStarP1Img from "@/assets/monk-sacred-star-p1.png";
+import pirateSacredStarP9Img from "@/assets/pirate-sacred-star-p9.png.asset.json";
 
 export interface AccountListing {
   id: string;
