@@ -3,6 +3,8 @@ import jojoNinjaImg from "@/assets/JojoNinja.jpg";
 import decenteWaterImg from "@/assets/decente-water.png";
 import waterIdealImg from "@/assets/water-ideal.png";
 import waterOpImg from "@/assets/water-op.jpg";
+import pirate420kImg from "@/assets/pirate-420k.jpg";
+import pirate100kImg from "@/assets/pirate-100k.jpg";
 
 import sellWaterMaxArchiveImg from "@/assets/sell-water-max-archive.png";
 
