@@ -14,8 +14,6 @@ import beastWaterImg from "@/assets/beast-water.jpg";
 import waterFire12kImg from "@/assets/water-fire-12k.png";
 
 
-import monkSacredStarP1Img from "@/assets/monk-sacred-star-p1.png";
-import pirataSacredStarP9Img from "@/assets/pirata-sacred-star-p9.png";
 
 export interface AccountListing {
   id: string;
@@ -29,60 +27,6 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
-  {
-    id: "acc-81",
-    title: "Pirate Sacred Star P9 — 0 Jail",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: pirataSacredStarP9Img,
-    className: "Pirata",
-    prices: [{ label: "Preço", value: "10k CPs" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "Lv. 140 SacredSeaPirateP9",
-          "0 Jail",
-          "Servidor Storm",
-          "Rune Points: 111.800",
-        ],
-      },
-      {
-        title: "Atributos",
-        items: [
-          "HP: 75.270 | Magic: 400",
-          "Attack: 4.977 ~ 52.867 | Defense: 21.195",
-          "M-Attack: 22.080 | M-Defense: 6.016",
-          "Dodge: 104 | Agility: 1.149 | Accuracy: 246",
-          "M-Def: 87% | Blessed: 57%",
-          "Final P-Attack: +10.379 | Final M-Attack: +6.829",
-          "Final P-Damage: +10.479 | Final M-Damage: +6.129",
-          "P-Strike: 111.60% | Block: 30.00%",
-          "Break: 240.50% | Anti-Break: 58.10% | M-Strike: 47.20%",
-          "Immunity: 208.10% | Penetration: 15.00%",
-          "Detoxication: 72% | Parry: 7.00% | Lucky Strike: 7.00%",
-          "Hit Rate: 4.00%",
-          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "Rune Points: 111.800",
-          "Stage Bonus: HP 3.700 | P-Atk 1.500 | M-Atk 1.600",
-          "P-Stk 10.00% | M-Stk 10.00% | Break 15.00% | Anti-Brk 15.00% | Imm 10.00%",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "Steed +12 (Zebra) — Lineage 7.325",
-          "Legend Hunting Bow (Intern Archer) Lv. 15",
-          "Attack 76-94 | Agility +18 | Attack Rate 111",
-        ],
-      },
-    ],
-  },
   {
     id: "acc-80",
     title: "Water Taoist P6 — Lv 129",
@@ -196,55 +140,6 @@ export const ACCOUNTS: AccountListing[] = [
         items: [
           "Jiang Hu: Heavenly 20 | Mighty 21 | Cosmic 20",
           "Equipamentos +12 com sockets",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-77",
-    title: "Monk Sacred Star P1 — Illusion Master",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: monkSacredStarP1Img,
-    className: "Monk",
-    prices: [{ label: "Preço", value: "A combinar" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "Lv. 140 Sacred_Star_MonkP1",
-          "Título: Illusion Master",
-          "403 BP | Mythsoul 648",
-          "Rune Points: 246.800",
-        ],
-      },
-      {
-        title: "Atributos",
-        items: [
-          "HP: 78.711 | Magic: 1.510",
-          "Attack: 39.731 ~ 40.987 | Defense: 33.734",
-          "M-Attack: 24.434 | M-Defense: 7.842",
-          "Dodge: 104 | Agility: 1.105 | Accuracy: 223",
-          "M-Def: 145% | Damage: 84% | Blessed: 56%",
-          "Final P-Attack: +10.364 | Final M-Attack: +6.864",
-          "Final P-Damage: -10.454 | Final M-Damage: -6.209",
-          "P-Strike: 95.60% | Block: 30.00%",
-          "Break: 135.6% | Anti-Break: 216.8% | M-Strike: 48.20%",
-          "Immunity: 230.00% | Penetration: 15.00%",
-          "Detoxication: 72% | Parry: 7.00% | Lucky Strike: 7.00%",
-          "Dash Rate: 2.00% | Dodge Rate: 4.00% | Resist: 1.50%",
-          "Resistências: Metal 105 / Wood 105 / Fire 105",
-        ],
-      },
-      {
-        title: "Runas, Chi & Sigilos",
-        items: [
-          "Runas Main em Max (ciclo completo)",
-          "Chi: Dragon 400 | Phoenix 400 | Turtle 400 | Tiger 400",
-          "Chi bônus: P-Attack +2000 | Max-HP +3500 | Break +20% | Immunity +20%",
-          "Sigilos: P5 100% / P7 100% / P8 0% / P8 100% / P4 100% / P4 0% / P3 100% / P3 0% / P2 0%",
-          "Jiang Hu: Cosmic 20 | Mighty 23 | Heavenly 25",
-          "Equipamentos +12",
         ],
       },
     ],
