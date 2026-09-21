@@ -6,6 +6,11 @@ import waterOpImg from "@/assets/water-op.jpg";
 import pirate420kImg from "@/assets/pirate-420k.jpg";
 import pirate100kImg from "@/assets/pirate-100k.jpg";
 
+import luendroImg from "@/assets/luendro.png";
+import pirataImg from "@/assets/pirata.jpg";
+import ninja1Img from "@/assets/ninja1.png";
+import pirata2Img from "@/assets/pirata2.jpg";
+
 import sellWaterMaxArchiveImg from "@/assets/sell-water-max-archive.png";
 
 import ninjahw from "@/assets/ninjahw.jpg";
@@ -29,6 +34,200 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-87",
+    title: "Pirate Sacred Star P8 — 1 Bot Jail — 80B Donate",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: pirata2Img,
+    className: "Pirata",
+    prices: [{ label: "Preço", value: "160k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "1 botjail",
+          "5 runas do site",
+          "1 azul wave break",
+          "80b donate",
+          "4 ideal rune",
+          "mais infor pv",
+          "Preço: 160k CPs",
+          "Lv. 140 Sacred_Star_PirateP8",
+          "407 BP | Mythsoul 648",
+        ],
+      },
+      {
+        title: "Atributos & Astredge",
+        items: [
+          "HP: 84.842 | Attack: 58.477 ~ 61.880 | Defense: 30.123",
+          "P-Strike: 274.00% | Block: 60.00% | Break: 119.0% | Anti-break: 62.5%",
+          "Immunity: 255.27% | Penetration: 15.00%",
+          "Astredge Pinnacle 90%: Viodragon Club, Love Forever, Heart Lock",
+          "Astredge Excellence 40%: Warlord Spear",
+          "Celestial: Archer P8, Warrior P9, Taoist P8, Buddha P7, Oath P5",
+        ],
+      },
+      {
+        title: "Runas & Ninpo",
+        items: [
+          "Rune Points: 324.500",
+          "5 runas do site | 1 azul wave break | 4 ideal rune",
+          "Ninpo Score: 9.041",
+          "Archives: Pirate 2.581.829 | Warrior 3.471.523 | Archer 764.520 | Trojan 83.870",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-86",
+    title: "Ninja Sacred Star P7 — 1 Bot Jail — 160k CPs",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninja1Img,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "160k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "1 bot jail",
+          "Lv. 140 Sacred_Star_NinjaP7",
+          "475 BP | Mythsoul 648",
+          "Rune Points: 315.100",
+          "Preço: 160k CPs",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 78.876 | Magic: 1.500",
+          "Attack: 60.654 ~ 64.360 | Defense: 33.297",
+          "M-Attack: 26.403 | M-Defense: 8.933",
+          "Final P-Attack: +13.024 | Final M-Attack: +9.411",
+          "Final P-Damage: +14.267 | Final M-Damage: +8.844",
+          "P-Strike: 274.20% | Block: 30.00%",
+          "Break: 289.9% | Anti-break: 67.9%",
+          "Immunity: 157.92% | Penetration: 15.00%",
+          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
+        ],
+      },
+      {
+        title: "Relíquia & Runas",
+        items: [
+          "Rune Points: 315.100 (Ciclo de Runas Max)",
+          "Relíquia: Ferocious Roar HeartlessSeal (3.318 Pts)",
+          "P-Attack +650(+20) x3 (Sinergizado)",
+          "Ressonância 1: P-Strike +4.00%(+0.20%) x3 | Immunity +1.63% | Anti-break +1.57%",
+          "Ressonância 2: Final M-Damage +222 | P-Attack +650(+20) x2",
+          "Ressonância 3: Final M-Attack +107 | P-Strike +4.00%(+0.20%) x3 | Immunity +0.99%",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-85",
+    title: "Death Pirate 480 BP — Top Archives & Eonspirit",
+    badge: "TOP",
+    badgeColor: "bg-amber-500",
+    image: pirataImg,
+    className: "Pirata",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Donation: 46B",
+          "Chi: FULL (immu, HP, P-strike and P-Attack)",
+          "2 chi with Break retreat P-Strike",
+          "Rune Score - 313500 (Easy 335k)",
+          "Runes - 3 ideals ( can make 6 more)",
+          "3 hammers",
+          "Soulreap +18 / Calamity Finger +17",
+          "World Cup Trophy",
+          "157 Garments - 93 Mounts",
+          "Preço à combinar",
+        ],
+      },
+      {
+        title: "Runas & Relíquias",
+        items: [
+          "9 credited yellow Runes (Circle of life+9, Unswerving+9, Conqueror Blade+9, Silent Blade+9, Whetted Blade+9, Tempered Glaive+9, Solidness+9, Ironbone+6, Skyveil+6)",
+          "Relics (3x P-atk ressonance + equipped 3x P-atk )",
+          "Inner need The essence of Yang (C)",
+          "Astredge: Viodragon Club - 90% | Love Forever - 90% | Heart Lock - 50%",
+        ],
+      },
+      {
+        title: "Archives & Eonspirit",
+        items: [
+          "Pirate - Full 2M621",
+          "Warrior - 30 / 35 / 13",
+          "Monk - 20 / 20 / 20",
+          "Trojan - 62520k",
+          "Water - 20/20/20/20/28",
+          "Eonspirit: Archer P9, Monk P8, Water P9, Dune P7, Warrior P9",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "Lv. 140 Death Pirate | 480 BP | Mythsoul 648",
+          "HP: 86.300 | Attack: 61.879 ~ 65.282 | Defense: 33.244",
+          "M-Attack: 25.934 | M-Defense: 8.322",
+          "Final P-Attack: +14.144 | Final P-Damage: +15.485",
+          "P-Strike: 150.42% | Block: 30.00% | Break: 238.3% | Anti-break: 60.5%",
+          "Immunity: 239.00% | Penetration: 15.00%",
+          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-84",
+    title: "Pirate Sacred Star P5 — Ring Neck Steed — 95k CPs",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: luendroImg,
+    className: "Pirata",
+    prices: [{ label: "Preço", value: "95k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Ring neck steed 2 épic unbound",
+          "Lv. 140 Sacred_Star_PirateP5",
+          "407 BP | Mythsoul 648",
+          "Donation: 115.864.000.000 (Rank 7 Prince)",
+          "Rune Points: 252.900",
+          "Preço: 95k CPs",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 79.883 | Magic: 1.500",
+          "Attack: 53.902 ~ 56.992 | Defense: 30.163",
+          "M-Attack: 24.419 | M-Defense: 7.550",
+          "Final P-Attack: +11.007 | Final P-Damage: +11.097",
+          "P-Strike: 150.60% | Block: 30.00%",
+          "Break: 213.3% | Anti-break: 59.2%",
+          "Immunity: 229.60% | Penetration: 15.00%",
+          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
+        ],
+      },
+      {
+        title: "Equipamentos & Runas",
+        items: [
+          "Ring, neck, steed 2 épic unbound",
+          "Rune Points: 252.900",
+          "Activation Reward: Max HP +500 (Collected 14/14)",
+          "Recognition: 90% / 80%",
+          "Stage-Bonus: HP +4200, P-Atk +2300, M-Atk +3600, Imm +12.00%",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-83",
     title: "Death Pirate 488 BP — 1 Jail",
