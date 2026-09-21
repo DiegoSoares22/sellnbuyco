@@ -10,6 +10,8 @@ import luendroImg from "@/assets/luendro.png";
 import pirataImg from "@/assets/pirata.jpg";
 import ninja1Img from "@/assets/ninja1.png";
 import pirata2Img from "@/assets/pirata2.jpg";
+import filaktImg from "@/assets/filakt.png";
+import fireorwaterImg from "@/assets/fireorwater.png";
 
 import sellWaterMaxArchiveImg from "@/assets/sell-water-max-archive.png";
 
@@ -34,6 +36,96 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-89",
+    title: "Ótima oportunidade de Ninja prince/duke — 0 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: filaktImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "35k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Ótima oportunidade de Ninja prince/duke",
+          "0 Jail",
+          "Preço: 35k CPs",
+          "Lv. 140 Sacred_Star_NinjaP3",
+          "408 BP (Superman) | Mythsoul 648",
+          "Noble Rank: Duchess (Prince / Duke donation: 75.650.000.100)",
+          "Rune Points: 260.100",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 75.971 | Magic: 1.200",
+          "Attack: 53.563 ~ 56.909 | Defense: 29.881",
+          "M-Attack: 25.255 | M-Defense: 6.345",
+          "Final P-Attack: +11.264 | Final M-Attack: +7.794",
+          "Final P-Damage: +11.618 | Final M-Damage: +7.108",
+          "P-Strike: 150.03% | Block: 30.00%",
+          "Break: 245.7% | Anti-break: 72.9%",
+          "Immunity: 231.70% | Penetration: 15.00%",
+          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
+        ],
+      },
+      {
+        title: "Runas, Jiang Hu & Sub-Classes",
+        items: [
+          "Rune Points: 260.100 (Stage Bonus HP +4200, P-Atk +2300, M-Atk +3600, Imm +12.00%)",
+          "Recognition: 85%",
+          "Jiang Hu: Dragonhowl Lv.31 | Bloodlust Lv.28",
+          "Sub-Classes: P9 (100%), P9 (100%), P9 (100%), P8 (100%), P7, P6, P2 (100%)",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-88",
+    title: "Water Taoist P1 — 388 BP — 25k CPs",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: fireorwaterImg,
+    className: "Taoist",
+    prices: [{ label: "Preço", value: "25k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Sacred_Star_Water_TaoistP1",
+          "388 BP | Mythsoul 382",
+          "Preço: 25k CPs",
+          "Noble Rank: Earl (Donation: 11.929.000.000)",
+          "Rune Points: 160.200 (Heaven Max)",
+          "Skill: StarChain (Water) 500% DMG/s",
+        ],
+      },
+      {
+        title: "Atributos & Magia",
+        items: [
+          "HP: 75.289 | Magic: 5.600",
+          "Attack: 18.798 ~ 18.803 | Defense: 21.031",
+          "M-Attack: 61.079 | M-Defense: 7.619",
+          "Final P-Attack: +10.364 | Final M-Attack: +6.864",
+          "Final P-Damage: +11.454 | Final M-Damage: +6.129",
+          "P-Strike: 87.60% | Block: 30.00%",
+          "Break: 140.5% | Anti-break: 133.6% | M-Strike: 71.20%",
+          "Immunity: 179.52% | Penetration: 29.00%",
+          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
+        ],
+      },
+      {
+        title: "Runas & Sub-Classes",
+        items: [
+          "Rune Points: 160.200 (Stage Bonus HP +3700, P-Atk +1500, M-Atk +2600, Imm +12.00%)",
+          "Skill StarChain (Water) Maximizada",
+          "Sub-Classes: P9 (0%), P7 (100%), P7 (100%), P4 (100%), P4 (100%)",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-87",
     title: "Pirate Sacred Star P8 — 1 Bot Jail — 80B Donate",
