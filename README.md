@@ -1,65 +1,52 @@
-Web marketplace platform for buying and selling items within the Conquer Online MMORPG community. Built as a personal project to practice TypeScript, React, and modern frontend architecture in a real-world application context, using AI-assisted development with Lovable.
+# sellnbuyco
 
-Live: sellnbuyco.vercel.app
+Web marketplace for the Conquer Online MMORPG community, live in production with real daily traffic.
 
-About the Project
-Conquer Online has an active player economy but no dedicated marketplace outside of the game itself. This project was conceived to fill that gap — giving players a modern, responsive web interface to list and find items outside the game environment.
-I was responsible for the product conception, feature definition, navigation structure, and component architecture. The project became a practical playground for deepening my understanding of TypeScript, 
-component-based UI, and modern frontend tooling, with 143 commits reflecting continuous iteration and improvement.
+**Live:** https://sellnbuyco.vercel.app
 
-Technologies
+`TypeScript` `React` `Vite` `Tailwind CSS` `Supabase` `Vercel`
 
-TypeScript (97.8% of the codebase)
-React
-Tailwind CSS
-Vite (build tool)
-Supabase (backend as a service)
-Playwright (end-to-end testing configuration)
-Vitest (unit testing configuration)
-Vercel (deployment)
-Lovable (AI-assisted development)
-Bun (package manager)
+## About
 
+Conquer Online has an active player economy but no marketplace outside the game. This project gives players a responsive web interface to list and find items. I handled product conception, feature definition, navigation structure and component architecture, across 143 commits of continuous iteration.
 
-Project Structure
-sellnbuyco/
-├── src/              # Application source code
-├── public/           # Static assets
-├── supabase/         # Supabase configuration and migrations
-├── index.html        # Entry point
-├── vite.config.ts    # Vite build configuration
-├── tailwind.config.ts # Tailwind CSS configuration
-├── tsconfig.json     # TypeScript configuration
-├── playwright.config.ts # E2E test configuration
-└── vitest.config.ts  # Unit test configuration
+## Features
 
-What I practiced with this project
+- Listing system for in-game items
+- Responsive interface for desktop and mobile
+- Component architecture built to scale
+- Supabase as backend for data and authentication
+- Continuous deployment to Vercel from GitHub
 
-TypeScript in a real component-based React application
-Tailwind CSS for responsive and consistent styling
-Supabase integration for backend data management
-Vite as a modern build and development tool
-Testing infrastructure setup with Playwright and Vitest
-Vercel deployment with vercel.json configuration
-Continuous iteration through 143 commits, refining features and architecture over time
-AI-assisted development workflow, understanding how to direct, review, and improve AI-generated code
+## Stack
 
+| Layer | Tools |
+|---|---|
+| Frontend | TypeScript, React, Tailwind CSS |
+| Build | Vite, Bun |
+| Backend | Supabase |
+| Testing | Vitest for unit tests, Playwright for E2E |
+| Deploy | Vercel |
 
-Key Features
+## Running locally
 
-Product listing system for in-game items
-Responsive interface optimized for desktop and mobile
-Modern and intuitive navigation
-Scalable component architecture
-Production deployment via Vercel with continuous integration through GitHub
+```bash
+git clone https://github.com/DiegoSoares22/sellnbuyco.git
+cd sellnbuyco
+bun install
+bun run dev
+```
 
+Set the Supabase credentials in a local .env file before starting.
 
-Learning Context
-This project is part of my continuous learning path toward a broader full stack skill set. As a Backend Developer with a strong foundation in C# and ASP.NET Core, I used this project to explore the frontend ecosystem 
-in depth, working with TypeScript beyond basic exercises, understanding how Supabase handles data on the frontend side, and building familiarity with the tooling that modern React projects rely on.
-The 143 commits reflect real iteration: features added, decisions revisited, and code improved over time — which is how I prefer to learn.
+> Built with AI-assisted development (Lovable), with review and refactoring of the generated code.
 
-Author
-Diego Soares
-Backend Developer, C# and ASP.NET Core
-Portfolio · LinkedIn · GitHub
+## Sobre o projeto (PT-BR)
+
+Marketplace web para a comunidade do MMORPG Conquer Online, em producao e com trafego diario real.
+
+O Conquer Online tem uma economia ativa entre jogadores, mas nenhum marketplace fora do jogo. O projeto entrega uma interface web responsiva para anunciar e encontrar itens. Fui responsavel pela concepcao do produto, definicao de funcionalidades, estrutura de navegacao e arquitetura de componentes, em 143 commits de iteracao continua.
+
+---
+
+**Diego Soares** - https://www.linkedin.com/in/diego-soaresdev/ - https://diegosoares.vercel.app
