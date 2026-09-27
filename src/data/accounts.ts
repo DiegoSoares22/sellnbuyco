@@ -9,8 +9,12 @@ import pirate100kImg from "@/assets/pirate-100k.jpg";
 import luendroImg from "@/assets/luendro.png";
 import pirataImg from "@/assets/pirata.jpg";
 import ninja1Img from "@/assets/ninja1.png";
-import pirata2Img from "@/assets/pirata2.jpg";
 import filaktImg from "@/assets/filakt.png";
+import ninjaStarryP3Img from "@/assets/ninja-starry-p3.jpg";
+import ninjaHw240kImg from "@/assets/ninja-hw-240k.jpg";
+import ninjaArtemis451bpImg from "@/assets/ninja-artemis-451bp.jpg";
+import archerTigerP7Img from "@/assets/archer-tiger-p7.jpg";
+import waterDuchess458bpImg from "@/assets/water-duchess-458bp.jpg";
 import fireorwaterImg from "@/assets/fireorwater.png";
 
 import sellWaterMaxArchiveImg from "@/assets/sell-water-max-archive.png";
@@ -21,6 +25,7 @@ import nicholas from "@/assets/nicholas.jpg";
 import topWaterArchivesFullImg from "@/assets/top-water-archives-full.jpg";
 import beastWaterImg from "@/assets/beast-water.jpg";
 import waterFire12kImg from "@/assets/water-fire-12k.png";
+import fireTaoist425kImg from "@/assets/fire-taoist-425k-rune.jpg";
 
 
 
@@ -36,6 +41,298 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-95",
+    title: "Spark Fire Taoist — 185B Princess — 425k Runes — 101k M-Atk",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: fireTaoist425kImg,
+    className: "Taoist",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Spark Fire Taoist",
+          "Supreme Platinum VIP",
+          "Noble Rank: Princess (Donation: 185.030.000.000 | Ranking #4)",
+          "Rune Points: 425.400 (Top Tier Stage Bonus)",
+          "Mythsoul: 648/648 Max",
+          "Recognition: 95% / 90% / 80% (27 Heavenly, 25 Mighty, 25 Cosmic)",
+          "M-Attack: 101.846 (+180%)",
+          "Immunity: 286.30% | Break: 152.0%",
+          "Sub-Classes: 4x P9 100%, P8 100%, P7 100%",
+          "Skills: SoulReap +23, Wavebreak +23, Meganuke +23, Tempered Glaive +9 Max",
+        ],
+      },
+      {
+        title: "Atributos & Magia",
+        items: [
+          "HP: 99.496 | Magic: 2.950",
+          "M-Attack: 101.846 (+180%) | M-Defense: 12.951 (+113%)",
+          "Attack: 25.096 ~ 25.418 | Defense: 29.167",
+          "Final P-Attack: +14.471 | Final M-Attack: +16.769",
+          "Final P-Damage: +21.302 | Final M-Damage: +15.257",
+          "M-Strike: 97.70% | Immunity: 286.30% | Break: 152.0%",
+          "Anti-break: 71.3% | Penetration: 73.00% | P-Strike: 124.70%",
+          "Block: 30.00% | Blessed: 56% | Agility: 1000",
+          "Detoxication: 72% | Dodge Rate: 17.30% | Hit Rate: 15.80% | Resist: 1.50%",
+          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80 (Full 80)",
+        ],
+      },
+      {
+        title: "Runas & Detalhes",
+        items: [
+          "Rune Points: 425.400",
+          "Stage Bonus: HP +12.000, M-Atk +6.000, P-Atk +6.000, P-Stk +22.50%, M-Stk +22.50%, Break +25.00%, Anti-Brk +25.00%, Imm +22.50%",
+          "Runas Vermelhas / Ideais: Pitching, Acalanatha, TideTrap, SwingingTail, Sacrifice",
+          "Grade Completa de Runas Amarelas e Roxas Maximadas",
+          "Equipamentos Full +12 com Sockets e Dragon Souls",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-94",
+    title: "Ninja Sacred Star P5 — Heavenwonders — 1 Jail — 240k CPs",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaHw240kImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "240k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Ninja with Heavenwonders",
+          "1 Jail",
+          "Strike / Immunity Build",
+          "Preço: 240k CPs",
+          "Lv. 140 Sacred_Star_NinjaP5",
+          "407 BP | Mythsoul 648",
+          "Noble Rank: Prince (Donation: 86.832.000.000)",
+          "Rune Points: 333.300",
+          "Ninpo Score: 53.454",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 84.231 | Magic: 1.500",
+          "Attack: 57.602 ~ 61.308 | Defense: 31.355",
+          "M-Attack: 26.433 | M-Defense: 8.462",
+          "Final P-Attack: +10.824 | Final M-Attack: +7.304",
+          "Final P-Damage: +11.417 | Final M-Damage: +7.404",
+          "P-Strike: 261.40% | Block: 30.00%",
+          "Break: 119.9% | Anti-break: 61.7%",
+          "M-Strike: 53.90% | Immunity: 237.70% | Penetration: 15.00%",
+          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Sub-Classes",
+        items: [
+          "Rune Points: 333.300 (Stage Bonus HP +5200, P-Atk +3100, M-Atk +4600, P-Stk +15.00%, Break +15.00%, Anti-Brk +15.00%, Imm +15.00%)",
+          "Mount: Steed(+12) (Lineage Level 12 | Lineage: 2461)",
+          "Recognition: 90% / 90% / 80% (21 Heavenly, 20 Mighty, 20 Cosmic)",
+          "LegendNetherArmor(+12) [P7 Armor Soul P-Defense]",
+          "LegendMonsterSaber(+12) [P7.1-handed Soul]",
+          "LegendMoonHeadgear(+12) [P7 Headgear Soul Immunity]",
+          "LegendHeavenNecklace(+12) [P7 Necklace Soul]",
+          "Sub-Classes: P8 (100%), P5 (100%), P7, P8, P7, P5, P4, P3",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-93",
+    title: "Ninja Sacred Star P5 — 451 BP — Artemis P9 — 369k Runes",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaArtemis451bpImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Sacred_Star_NinjaP5",
+          "451 BP (Noble Pioneer / Prince)",
+          "Noble Rank: Prince (Donation: 58.753.944.438)",
+          "Rune Points: 369.200",
+          "Ninpo Score: 33.381",
+          "Huntress Artemis: P9 Celestial Archer P9 100% Ativado",
+          "Mega Phoenix Wings",
+          "GoldTrophy Lv.15 (12 Gold Trophies)",
+          "Recognition: 95% & 90%",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 85.278 | Magic: 1.500",
+          "Attack: 58.101 ~ 61.807 | Defense: 32.597",
+          "M-Attack: 27.144 | M-Defense: 8.720",
+          "Final P-Attack: +12.364 | Final M-Attack: +8.814",
+          "Final P-Damage: +13.497 | Final M-Damage: +8.613",
+          "P-Strike: 150.48% | Block: 30.00%",
+          "Break: 211.9% | Anti-break: 61.5%",
+          "M-Strike: 56.20% | Immunity: 242.78% | Penetration: 15.00%",
+          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
+        ],
+      },
+      {
+        title: "Talisman, Asas & Sub-Classes",
+        items: [
+          "GoldTrophy Level 15 (P-Strike +1%, M-Strike +1%, Immunity +1%, Break +1%, Anti-break +1%, Resisting Dash +1.50%)",
+          "Mega Phoenix Wings",
+          "Sub-Classes: Superb Manual, Violet Glow, Divine North Skill, The Essence of Yin, The Essence of Yang",
+          "Rune Points: 369.200 (Stage Bonus Maximizado)",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-92",
+    title: "Ninja Sacred Star P3 — 405 BP — Duke 31B Donate — Steed 142k",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaStarryP3Img,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Sacred_Star_NinjaP3",
+          "405 BP (Starry Promise)",
+          "Noble Rank: Duke (Donation: 31.580.999.997 | Ranking: 30)",
+          "Rune Points: 210.300",
+          "Ninpo Score: 42.017",
+          "Mount: Steed(+12)(B) Lineage Level 12 (Lineage: 142.892)",
+          "Astredge: Love Forever (Excellence)",
+          "Relic: [Deep Roar] HeartlessSeal (+650 P-Atk, +650 P-Atk, +1.64% Imm)",
+          "Recognition: 50%",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 78.501 | Magic: 1.200",
+          "Attack: 55.747 ~ 59.453 | Defense: 32.255",
+          "M-Attack: 23.379 | M-Defense: 8.121",
+          "Final P-Attack: +10.497 | Final M-Attack: +6.997",
+          "Final P-Damage: +10.587 | Final M-Damage: +6.322",
+          "P-Strike: 110.80% | Block: 30.00%",
+          "Break: 134.4% | Anti-break: 51.2%",
+          "M-Strike: 41.20% | Immunity: 221.84% | Penetration: 15.00%",
+          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
+        ],
+      },
+      {
+        title: "Runas, Relíquias & Sub-Classes",
+        items: [
+          "Rune Points: 210.300 (Stage Bonus HP +3700, P-Atk +1500, M-Atk +2600, P-Stk +12.00%, Break +15.00%, Imm +12.00%)",
+          "Relic HeartlessSeal com duplo P-Attack +650 e Imunidade +1.64%",
+          "Love Forever Excellence (P-Atk +2000, HP +3500, P-Stk +20%, Imm +20%)",
+          "Sub-Classes: Superb Manual, Violet Glow, Divine North Skill, The Essence of Yin, The Essence of Yang",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-91",
+    title: "Water Taoist — 458 BP Superman — Duchess 15B — 287% Anti-Break",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: waterDuchess458bpImg,
+    className: "Taoist",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Surge Water Taoist",
+          "458 BP (Superman)",
+          "Noble Rank: Duchess (Donation: 15.402.000.000)",
+          "Rune Points: 195.200",
+          "Anti-break: 287.2% | Immunity: 245.70% | M-Strike: 89.20%",
+          "Final P-Damage: +18.224 | Final M-Damage: +8.609",
+          "Backsword & Lotus P7 Soul (+12)",
+          "Relic: [Tenacity] BellOfDoom com Tenacity & Imunidade",
+          "Recognition: 30%",
+        ],
+      },
+      {
+        title: "Atributos & Magia",
+        items: [
+          "HP: 83.263 | Magic: 2.950",
+          "Attack: 22.556 ~ 23.527 | Defense: 33.832",
+          "M-Attack: 30.428 | M-Defense: 9.914",
+          "Final P-Attack: +11.534 | Final M-Attack: +10.734",
+          "Final P-Damage: +18.224 | Final M-Damage: +8.609",
+          "Anti-break: 287.2% | Immunity: 245.70%",
+          "M-Strike: 89.20% | P-Strike: 56.60% | Break: 81.5%",
+          "Penetration: 25.00% | Block: 30.00%",
+          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
+        ],
+      },
+      {
+        title: "Equipamentos & Sub-Classes",
+        items: [
+          "LegendTimeBacksword(+12) [P7 Backsword Soul, Magic Atk +4282, Lvl 5 Skill Critical Strike +12% Permanent, M-Strike 10.00%]",
+          "LegendUniversalLotus(+12)(B) [P7 Dragon Soul, Magic Def +2240, Immunity 6.00%, P7 Anima BP +5, BonusAttribute +12%]",
+          "Relic: [Tenacity] BellOfDoom (Immunity +4.00%(+0.10%), Tenacity +4.00%(+0.10%), Immunity: +0.1%)",
+          "Sub-Classes: Superb Manual, Violet Glow, Divine North Skill, The Essence of Yin, Max, Evolution, Thrill, Birth-death",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-90",
+    title: "Archer Sacred Sea P7 — Lv. 98 — 357 BP — 203% Break",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: archerTigerP7Img,
+    className: "Archer",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 98 SacredSeaArcherP7",
+          "357 BP (Roaring Tiger) | Mythsoul 299",
+          "Noble Rank: Earl (Donation: 4.103.000.000)",
+          "Rune Points: 90.800",
+          "Break: 203.2% | P-Strike: 147.83%",
+          "Immunity: 178.90% | M-Strike: 40.73%",
+          "Skills de Archer já treinadas (Stone Cracker Lv.36, Cold Moon Lv.16, Thorn Cutter Lv.49)",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 72.702 | Magic: 875",
+          "Attack: 38.947 ~ 39.543 | Defense: 19.490",
+          "M-Attack: 19.600 | M-Defense: 8.361",
+          "Final P-Attack: +10.539 | Final M-Attack: +6.727",
+          "Final P-Damage: +10.139 | Final M-Damage: +6.047",
+          "P-Strike: 147.83% | Block: 30.00%",
+          "Break: 203.2% | Anti-break: 54.3%",
+          "Immunity: 178.90% | Penetration: 12.00%",
+          "Resistências: Metal 40 / Wood 40 / Water 40 / Fire 40",
+        ],
+      },
+      {
+        title: "Runas & Habilidades",
+        items: [
+          "Rune Points: 90.800 (Stage Bonus HP +2200, P-Atk +1000, M-Atk +1600, Break +15.00%, Anti-Brk +15.00%, Imm +10.00%)",
+          "Skills: Stone Cracker Lv.36, Cold Moon Lv.16, Thorn Cutter Lv.49",
+          "Excelente base pronta para evolução ou conta de suporte/PvP",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-89",
     title: "Ótima oportunidade de Ninja prince/duke — 0 Jail",
@@ -122,51 +419,6 @@ export const ACCOUNTS: AccountListing[] = [
           "Rune Points: 160.200 (Stage Bonus HP +3700, P-Atk +1500, M-Atk +2600, Imm +12.00%)",
           "Skill StarChain (Water) Maximizada",
           "Sub-Classes: P9 (0%), P7 (100%), P7 (100%), P4 (100%), P4 (100%)",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-87",
-    title: "Pirate Sacred Star P8 — 1 Bot Jail — 80B Donate",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: pirata2Img,
-    className: "Pirata",
-    prices: [{ label: "Preço", value: "160k CPs" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "1 botjail",
-          "5 runas do site",
-          "1 azul wave break",
-          "80b donate",
-          "4 ideal rune",
-          "mais infor pv",
-          "Preço: 160k CPs",
-          "Lv. 140 Sacred_Star_PirateP8",
-          "407 BP | Mythsoul 648",
-        ],
-      },
-      {
-        title: "Atributos & Astredge",
-        items: [
-          "HP: 84.842 | Attack: 58.477 ~ 61.880 | Defense: 30.123",
-          "P-Strike: 274.00% | Block: 60.00% | Break: 119.0% | Anti-break: 62.5%",
-          "Immunity: 255.27% | Penetration: 15.00%",
-          "Astredge Pinnacle 90%: Viodragon Club, Love Forever, Heart Lock",
-          "Astredge Excellence 40%: Warlord Spear",
-          "Celestial: Archer P8, Warrior P9, Taoist P8, Buddha P7, Oath P5",
-        ],
-      },
-      {
-        title: "Runas & Ninpo",
-        items: [
-          "Rune Points: 324.500",
-          "5 runas do site | 1 azul wave break | 4 ideal rune",
-          "Ninpo Score: 9.041",
-          "Archives: Pirate 2.581.829 | Warrior 3.471.523 | Archer 764.520 | Trojan 83.870",
         ],
       },
     ],
