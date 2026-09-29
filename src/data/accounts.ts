@@ -20,7 +20,6 @@ import fireorwaterImg from "@/assets/fireorwater.png";
 import sellWaterMaxArchiveImg from "@/assets/sell-water-max-archive.png";
 
 import ninjahw from "@/assets/ninjahw.jpg";
-import nicholas from "@/assets/nicholas.jpg";
 
 import topWaterArchivesFullImg from "@/assets/top-water-archives-full.jpg";
 import beastWaterImg from "@/assets/beast-water.jpg";
@@ -94,12 +93,12 @@ export const ACCOUNTS: AccountListing[] = [
   },
   {
     id: "acc-94",
-    title: "Ninja Sacred Star P5 — Heavenwonders — 1 Jail — 240k CPs",
+    title: "Ninja Sacred Star P5 — Heavenwonders — 1 Jail — 210k CPs",
     badge: "NOVO",
     badgeColor: "bg-emerald-500",
     image: ninjaHw240kImg,
     className: "Ninja",
-    prices: [{ label: "Preço", value: "240k CPs" }],
+    prices: [{ label: "Preço", value: "210k CPs" }],
     sections: [
       {
         title: "Destaques",
@@ -107,7 +106,7 @@ export const ACCOUNTS: AccountListing[] = [
           "Ninja with Heavenwonders",
           "1 Jail",
           "Strike / Immunity Build",
-          "Preço: 240k CPs",
+          "Preço: 210k CPs",
           "Lv. 140 Sacred_Star_NinjaP5",
           "407 BP | Mythsoul 648",
           "Noble Rank: Prince (Donation: 86.832.000.000)",
@@ -579,7 +578,7 @@ export const ACCOUNTS: AccountListing[] = [
     badgeColor: "bg-emerald-500",
     image: pirate420kImg,
     className: "Pirata",
-    prices: [{ label: "Preço", value: "420k CPs" }],
+    prices: [{ label: "Preço", value: "380k CPs" }],
     sections: [
       {
         title: "Destaques",
@@ -758,7 +757,7 @@ export const ACCOUNTS: AccountListing[] = [
     badgeColor: "bg-emerald-500",
     image: jojoNinjaImg,
     className: "Ninja",
-    prices: [{ label: "Preço", value: "420k CPs" }],
+    prices: [{ label: "Preço", value: "360k CPs" }],
     sections: [
       {
         title: "Destaques",
@@ -961,78 +960,6 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
-  {
-    id: "acc-65",
-    title: "Beast Pirate P2",
-    badge: "END GAME",
-    badgeColor: "bg-purple-600",
-    image: nicholas,
-    className: "Pirata",
-    prices: [{ label: "Preço", value: "260k CPs" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "1 Bot Jail",
-          "Chi: HP, P-Attack, Strike e Immunity",
-          "Chi Alternativo: Break",
-          "7M Chi Score",
-          "Inner Power: 3500 (Máximo)",
-          "Gold Trophy",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "Rune Score: 372.500 (40 Hammers)",
-          "5 Ideals prontos + material para criar mais 4",
-          "9 Yellow Rune Credits",
-          "Adamant, Solidness, Tempered Glaive",
-          "Conqueror's Blade, Circle, Silent Blade",
-          "Front Break, Fearless, Whetted Blade",
-          "Iron Bone e Sky Veil",
-          "Violet Shield e Nature Shield",
-          "Todas as Blue Runes (4 Credits)",
-          "Runas Unbound: Evocation, Soul Chant e Sharpness",
-        ],
-      },
-      {
-        title: "Archives",
-        items: [
-          "Pirate: Full Max (2.8M Score)",
-          "Main Sigils Maxados",
-          "Warrior: 42 / Max / 12 (12.9M Score)",
-          "Monk: 28 / 23 / 27",
-          "Trojan: 100k",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "2 Weapons Unbound",
-          "Armor Unbound",
-          "Hat Unbound",
-          "Steed Unbound",
-          "Todos Full Perfection +12 P7",
-          "4 Relic Resonance desbloqueadas",
-          "1.800 Prism Stones investidas",
-          "Diversos acessórios extras",
-        ],
-      },
-      {
-        title: "Extras",
-        items: [
-          "30 Bilhões de Donation",
-          "Acompanha 2.000 CPs (Bound)",
-          "Supreme ativo neste trimestre e no próximo",
-          "175 Free Training Pills",
-          "100 Knowledge Pills para Jiang Hu",
-          "Conta vendida sem os Myth Souls",
-        ],
-      },
-    ],
-  },
-
   {
     id: "acc-63",
     title: "Ótima oportunidade de Ninja c/ HeavenWonders",
