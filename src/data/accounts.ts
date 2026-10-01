@@ -24,9 +24,7 @@ import ninjahw from "@/assets/ninjahw.jpg";
 import topWaterArchivesFullImg from "@/assets/top-water-archives-full.jpg";
 import beastWaterImg from "@/assets/beast-water.jpg";
 import waterFire12kImg from "@/assets/water-fire-12k.png";
-import fireTaoist425kImg from "@/assets/fire-taoist-425k-rune.jpg";
-
-
+import decenteNinja25kImg from "@/assets/decente-ninja-25k.jpg";
 
 export interface AccountListing {
   id: string;
@@ -41,52 +39,57 @@ export interface AccountListing {
 
 export const ACCOUNTS: AccountListing[] = [
   {
-    id: "acc-95",
-    title: "Spark Fire Taoist — 185B Princess — 425k Runes — 101k M-Atk",
+    id: "acc-96",
+    title: "Decente Ninja — 0 Jail — Gears P7 Perm — 25k CPs",
     badge: "NOVO",
     badgeColor: "bg-emerald-500",
-    image: fireTaoist425kImg,
-    className: "Taoist",
-    prices: [{ label: "Preço", value: "A combinar" }],
+    image: decenteNinja25kImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "25k CPs" }],
     sections: [
       {
         title: "Destaques",
         items: [
-          "Lv. 140 Spark Fire Taoist",
-          "Supreme Platinum VIP",
-          "Noble Rank: Princess (Donation: 185.030.000.000 | Ranking #4)",
-          "Rune Points: 425.400 (Top Tier Stage Bonus)",
+          "Decente Ninja",
+          "0 Jail",
+          "Gears P7 permanent c/ refinery permanent Lv. 6",
+          "Unbound garments & mounts",
+          "Rare wings (Morning-feather)",
+          "Preço: 25k CPs",
+          "Lv. 140 Sacred_Star_NinjaP3",
+          "463 BP",
+          "Noble Rank: Countess (Donation: 13.624.000.000)",
+          "Rune Points: 153.100",
+          "Ninpo Score: 19.393 (Ninja Sprint)",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 75.818 | Magic: 400",
+          "Attack: 55.834 ~ 59.180 | Defense: 33.736",
+          "M-Attack: 22.240 | M-Defense: 8.418",
+          "Final P-Attack: +12.714 | Final M-Attack: +8.924",
+          "Final P-Damage: +13.900 | Final M-Damage: +7.819",
+          "P-Strike: 122.70% | Block: 30.00%",
+          "Break: 272.8% | Anti-break: 73.5%",
+          "Immunity: 228.90% | M-Strike: 48.30%",
+          "Penetration: 15.00% | Detoxication: 72%",
+          "Parry: 7.00% | Lucky Strike: 7.00% | Dash Rate: 3.50%",
+          "Dodge Rate: 17.30% | Hit Rate: 15.80% | Resist: 1.50%",
+          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Sub-Classes",
+        items: [
+          "Gears P7 permanent com refinery permanent Lv. 6",
+          "Unbound garments & mounts",
+          "Rare wings: Morning-feather",
+          "Rune Points: 153.100 (Stage Bonus HP +3700, P-Atk +1500, M-Atk +1600, P-Stk +10.00%, Break +15.00%, Anti-Brk +15.00%, Imm +10.00%)",
           "Mythsoul: 648/648 Max",
-          "Recognition: 95% / 90% / 80% (27 Heavenly, 25 Mighty, 25 Cosmic)",
-          "M-Attack: 101.846 (+180%)",
-          "Immunity: 286.30% | Break: 152.0%",
-          "Sub-Classes: 4x P9 100%, P8 100%, P7 100%",
-          "Skills: SoulReap +23, Wavebreak +23, Meganuke +23, Tempered Glaive +9 Max",
-        ],
-      },
-      {
-        title: "Atributos & Magia",
-        items: [
-          "HP: 99.496 | Magic: 2.950",
-          "M-Attack: 101.846 (+180%) | M-Defense: 12.951 (+113%)",
-          "Attack: 25.096 ~ 25.418 | Defense: 29.167",
-          "Final P-Attack: +14.471 | Final M-Attack: +16.769",
-          "Final P-Damage: +21.302 | Final M-Damage: +15.257",
-          "M-Strike: 97.70% | Immunity: 286.30% | Break: 152.0%",
-          "Anti-break: 71.3% | Penetration: 73.00% | P-Strike: 124.70%",
-          "Block: 30.00% | Blessed: 56% | Agility: 1000",
-          "Detoxication: 72% | Dodge Rate: 17.30% | Hit Rate: 15.80% | Resist: 1.50%",
-          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80 (Full 80)",
-        ],
-      },
-      {
-        title: "Runas & Detalhes",
-        items: [
-          "Rune Points: 425.400",
-          "Stage Bonus: HP +12.000, M-Atk +6.000, P-Atk +6.000, P-Stk +22.50%, M-Stk +22.50%, Break +25.00%, Anti-Brk +25.00%, Imm +22.50%",
-          "Runas Vermelhas / Ideais: Pitching, Acalanatha, TideTrap, SwingingTail, Sacrifice",
-          "Grade Completa de Runas Amarelas e Roxas Maximadas",
-          "Equipamentos Full +12 com Sockets e Dragon Souls",
+          "Recognition: 90% / 25%",
+          "Sub-Classes: P8 100%, P7 100%, P5 100%, P5 100%, P4 100%",
         ],
       },
     ],
