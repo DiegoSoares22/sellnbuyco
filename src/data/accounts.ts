@@ -25,6 +25,7 @@ import waterWilsaoImg from "@/assets/water-wilsao.jpg";
 import decenteNinja8kImg from "@/assets/decente-ninja-8k.png";
 import waterFire12kImg from "@/assets/water-fire-12k.png";
 import decenteNinja25kImg from "@/assets/decente-ninja-25k.jpg";
+import ninjaHeavenWondersImg from "@/assets/ninja-heavenwonders.png";
 
 export interface AccountListing {
   id: string;
