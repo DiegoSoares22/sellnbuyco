@@ -25,6 +25,7 @@ import waterWilsaoImg from "@/assets/water-wilsao.jpg";
 import decenteNinja8kImg from "@/assets/decente-ninja-8k.png";
 import waterFire12kImg from "@/assets/water-fire-12k.png";
 import decenteNinja25kImg from "@/assets/decente-ninja-25k.jpg";
+import ninjaHeavenWondersImg from "@/assets/ninja-heavenwonders.png";
 
 export interface AccountListing {
   id: string;
@@ -38,6 +39,55 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-98",
+    title: "Ninja c/ HeavenWonders e ótimo donate — 0 Jail — 50k CPs",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaHeavenWondersImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "50k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Servidor Storm",
+          "0 Jail",
+          "Preço: 50k CPs",
+          "Lv. 140 Sacred Star Ninja P1",
+          "Noble Rank: Prince (Donation: 50.652.000.000)",
+          "Ninpo Score: 29.215 (Ninja Sprint)",
+          "Heaven's Wonder — Bloodline Sigil Level 9",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 75.320 | Magic: 1.200",
+          "Attack: 51.726 ~ 55.221 | Defense: 31.210",
+          "M-Attack: 23.580 | M-Defense: 8.292",
+          "Dodge: 105 | Agility: 1.073 | Accuracy: 248",
+          "Blessed: 57%",
+          "Final P-Attack: +11.966 | Final M-Attack: +8.342",
+          "Final P-Damage: +12.304 | Final M-Damage: +7.059",
+          "P-Strike: 116.90% | Block: 30.00% | Break: 260.4%",
+          "Anti-Break: 59.8% | M-Strike: 47.30%",
+          "Immunity: 210.60% | Penetration: 15.00% | Detoxication: 72%",
+          "Lucky Strike: 7.00% | Dash Rate: 1.50% | Dodge Rate: 7.00% | Hit Rate: 13.80%",
+          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
+        ],
+      },
+      {
+        title: "Runas & Sigils",
+        items: [
+          "Rune Points: 193.800 (runas principais em Max)",
+          "Sigil: Heaven's Wonder — Bloodline Sigil Level 9 (Suitable Gates: Limit/Death)",
+          "Mythsoul: 648",
+          "Stage-Bonus: HP +3.700 | P-Atk +1.500 | M-Atk +2.600 | P-Strk +12.00% | M-Strk +15.00% | Break +15.00% | Anti-Brk +15.00%",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-97",
     title: "Decente Ninja — 0 Jail — 8k CPs",
