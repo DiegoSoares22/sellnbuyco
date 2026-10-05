@@ -5,7 +5,7 @@ import { useI18n } from "@/i18n";
  * Data/hora (horário de Brasília) da última atualização do catálogo.
  * Atualizar manualmente sempre que novos anúncios forem publicados.
  */
-export const LAST_UPDATED_BR = "28/09 às 22:45";
+export const LAST_UPDATED_BR = "04/10 às 23:20";
 
 export function LastUpdatedBadge({ className = "" }: { className?: string }) {
   const { lang } = useI18n();

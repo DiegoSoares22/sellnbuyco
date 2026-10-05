@@ -15,7 +15,6 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import { ACCOUNTS } from "@/data/accounts";
 import type { AccountListing } from "@/data/accounts";
 import HeroSection from "@/components/HeroSection";
-import TrustStrip from "@/components/TrustStrip";
 import { StickyFilterBar } from "@/components/StickyFilterBar";
 import { FilterDrawer } from "@/components/FilterDrawer";
 import { AccountCard } from "@/components/AccountCard";
@@ -292,9 +291,9 @@ function AccountsList() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0f]">
-      {/* Hero Section e TrustStrip */}
+      {/* Hero Section */}
       <HeroSection />
-      <TrustStrip />
+
 
       {/* Título da Seção */}
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4">

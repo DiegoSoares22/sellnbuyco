@@ -6,7 +6,6 @@ import waterOpImg from "@/assets/water-op.jpg";
 import pirate420kImg from "@/assets/pirate-420k.jpg";
 import pirate100kImg from "@/assets/pirate-100k.jpg";
 
-import luendroImg from "@/assets/luendro.png";
 import pirataImg from "@/assets/pirata.jpg";
 import ninja1Img from "@/assets/ninja1.png";
 import filaktImg from "@/assets/filakt.png";
@@ -22,7 +21,8 @@ import sellWaterMaxArchiveImg from "@/assets/sell-water-max-archive.png";
 import ninjahw from "@/assets/ninjahw.jpg";
 
 import topWaterArchivesFullImg from "@/assets/top-water-archives-full.jpg";
-import beastWaterImg from "@/assets/beast-water.jpg";
+import waterWilsaoImg from "@/assets/water-wilsao.jpg";
+import decenteNinja8kImg from "@/assets/decente-ninja-8k.png";
 import waterFire12kImg from "@/assets/water-fire-12k.png";
 import decenteNinja25kImg from "@/assets/decente-ninja-25k.jpg";
 
@@ -38,6 +38,55 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-97",
+    title: "Decente Ninja — 0 Jail — 8k CPs",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: decenteNinja8kImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "8k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Decente Ninja",
+          "0 Jail",
+          "Preço: 8k CPs",
+          "Lv. 109 SacredSkyNinjaP3",
+          "Noble Rank: Countess (Donation: 8.086.000.000)",
+          "Ninpo Score: 27.975 (Ninja Sprint)",
+          "Rune Points: 1.601.000",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 75.199 | Magic: 1.200",
+          "Attack: 43.608 ~ 46.078 | Defense: 23.102",
+          "M-Attack: 22.793 | M-Defense: 6.093",
+          "Dodge: 69 | Agility: 1.062 | Accuracy: 246",
+          "Blessed: 57%",
+          "Final P-Attack: +10.364 | Final M-Attack: +6.864",
+          "Final P-Damage: +10.722 | Final M-Damage: +6.129",
+          "P-Strike: 106.60% | Block: 30.00% | Break: 24.1%",
+          "Anti-Break: 58.1% | M-Strike: 47.20%",
+          "Immunity: 21.96% | Penetration: 15.00% | Parry: 7.00%",
+          "Lucky Strike: 7.00% | Dash Rate: 1.50% | Dodge Rate: 7.00% | Hit Rate: 7.00%",
+          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
+        ],
+      },
+      {
+        title: "Runas & Sigils",
+        items: [
+          "Rune Points: 1.601.000 (runas principais em Max)",
+          "Sigil: aumenta o nível total dos sigils embutidos em 4 (P9 Sage)",
+          "Recognition: 50%",
+          "Stage-Bonus: HP +3.700 | P-Atk +1.500 | M-Atk +2.600 | Imm +12.00%",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-96",
     title: "Decente Ninja — 0 Jail — Gears P7 Perm — 25k CPs",
@@ -530,51 +579,6 @@ export const ACCOUNTS: AccountListing[] = [
     ],
   },
   {
-    id: "acc-84",
-    title: "Pirate Sacred Star P5 — Ring Neck Steed — 95k CPs",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: luendroImg,
-    className: "Pirata",
-    prices: [{ label: "Preço", value: "95k CPs" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "Ring neck steed 2 épic unbound",
-          "Lv. 140 Sacred_Star_PirateP5",
-          "407 BP | Mythsoul 648",
-          "Donation: 115.864.000.000 (Rank 7 Prince)",
-          "Rune Points: 252.900",
-          "Preço: 95k CPs",
-        ],
-      },
-      {
-        title: "Atributos & Combate",
-        items: [
-          "HP: 79.883 | Magic: 1.500",
-          "Attack: 53.902 ~ 56.992 | Defense: 30.163",
-          "M-Attack: 24.419 | M-Defense: 7.550",
-          "Final P-Attack: +11.007 | Final P-Damage: +11.097",
-          "P-Strike: 150.60% | Block: 30.00%",
-          "Break: 213.3% | Anti-break: 59.2%",
-          "Immunity: 229.60% | Penetration: 15.00%",
-          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
-        ],
-      },
-      {
-        title: "Equipamentos & Runas",
-        items: [
-          "Ring, neck, steed 2 épic unbound",
-          "Rune Points: 252.900",
-          "Activation Reward: Max HP +500 (Collected 14/14)",
-          "Recognition: 90% / 80%",
-          "Stage-Bonus: HP +4200, P-Atk +2300, M-Atk +3600, Imm +12.00%",
-        ],
-      },
-    ],
-  },
-  {
     id: "acc-83",
     title: "Death Pirate 488 BP — 1 Jail",
     badge: "NOVO",
@@ -868,9 +872,9 @@ export const ACCOUNTS: AccountListing[] = [
     title: "Beast Water",
     badge: "NOVO",
     badgeColor: "bg-emerald-500",
-    image: beastWaterImg,
+    image: waterWilsaoImg,
     className: "Taoist",
-    prices: [{ label: "Preço", value: "160k CPs" }],
+    prices: [{ label: "Preço", value: "120k CPs" }],
     sections: [
       {
         title: "Destaques",
@@ -879,7 +883,7 @@ export const ACCOUNTS: AccountListing[] = [
           "Noble Rank Princess",
           "Donation: 50.1B",
           "407 BP",
-          "Preço: 160k CPs",
+          "Preço: 120k CPs",
         ],
       },
       {
@@ -918,7 +922,7 @@ export const ACCOUNTS: AccountListing[] = [
     badgeColor: "bg-emerald-500",
     image: topWaterArchivesFullImg,
     className: "Taoist",
-    prices: [{ label: "Preço", value: "120k CPs" }],
+    prices: [{ label: "Preço", value: "90k CPs" }],
     sections: [
       {
         title: "Destaques",
