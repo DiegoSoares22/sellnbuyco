@@ -27,6 +27,8 @@ import waterFire12kImg from "@/assets/water-fire-12k.png";
 import decenteNinja25kImg from "@/assets/decente-ninja-25k.jpg";
 import decenteNinjaP4Img from "@/assets/decente-ninja-p4.jpg";
 import ninjaHeavenWondersImg from "@/assets/ninja-heavenwonders.png";
+import decenteWarriorImg from "@/assets/decente-warrior.png";
+
 
 export interface AccountListing {
   id: string;
@@ -40,6 +42,55 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-100",
+    title: "Decente Warrior 0 jail — 18k CPs",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: decenteWarriorImg,
+    className: "Warrior",
+    prices: [{ label: "Preço", value: "18k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Decente Warrior",
+          "0 Jail",
+          "Preço: 18k CPs",
+          "Lv. 140 Rage Warrior",
+          "Noble Rank: Earl (Donation: 25.970.000.000)",
+          "Rune Points: 240.200 (runas principais em Max)",
+          "Mythsoul: 648",
+          "Reconhecimentos: 90% / 90% / 65%",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 74.566 | Magic: 1.200",
+          "Attack: 53.749 ~ 56.290 | Defense: 41.872",
+          "M-Attack: 24.934 | M-Defense: 13.667",
+          "Dodge: 104 | Agility: 1.050 | Accuracy: 1.783",
+          "Blessed: 97%",
+          "Final P-Attack: +10.879 | Final M-Attack: +7.030",
+          "Final P-Damage: +10.999 | Final M-Damage: +6.154",
+          "P-Strike: 125.60% | Block: 46.00% | Break: 237.8%",
+          "Anti-Break: 79.1% | M-Strike: 47.20%",
+          "Immunity: 210.30% | Penetration: 15.00% | Detoxication: 72%",
+          "Parry: 7.00% | Lucky Strike: 7.00% | Dodge Rate: 11.00% | Hit Rate: 5.00%",
+          "Resistências: Metal 105 / Wood 105 / Water 105 / Fire 105",
+        ],
+      },
+      {
+        title: "Equipamentos & Runas",
+        items: [
+          "Legend Demon Scythe +12 (B) — Original: Samurai Scythe, P7 ScytheSoul, Attack 3.350 ~ 3.423",
+          "Equipamentos principais +12 com buffs Lv.6",
+          "Runas principais em Max — Rune Points: 240.200",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-99",
     title: "Decente Ninja 0 jail — 25k CPs",
