@@ -28,6 +28,7 @@ import decenteNinja25kImg from "@/assets/decente-ninja-25k.jpg";
 import decenteNinjaP4Img from "@/assets/decente-ninja-p4.jpg";
 import ninjaHeavenWondersImg from "@/assets/ninja-heavenwonders.png";
 import decenteWarriorImg from "@/assets/decente-warrior.png";
+import archerEpicOriginsImg from "@/assets/archer-epic-origins.png";
 
 
 export interface AccountListing {
@@ -42,6 +43,59 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-101",
+    title: "Archer epic c/ runa creditada [Servidor Origins/ApeMount]",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: archerEpicOriginsImg,
+    className: "Archer",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Archer epic com runa creditada (Ideal Collection)",
+          "Servidor Origins / ApeMount",
+          "Preço: A combinar",
+          "Lv. 140 ArcherMasterP2 (Superman)",
+          "B.P.: 407",
+          "Rune Points: 164.500 (runas principais em Max)",
+          "Mythsoul: 536",
+          "Equipamento Solar Steel +12 (B) — 1-handed Weapon",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 69.492 | Magic: 1.692",
+          "Attack: 47.070 ~ 51.698 | Defense: 27.070",
+          "M-Attack: 20.208 | M-Defense: 5.939",
+          "Dodge: 104 | Agility: 1.073 | Accuracy: 876",
+          "Hit Rate: 210% | M-Det: 362% | P-Det: 621%",
+          "Final P-Attack: +9.728 | Final M-Attack: +6.307",
+          "Final P-Damage: +9.798 | Final M-Damage: +5.743",
+          "P-Strike: 255.43% | Block: 11.00% | Break: 361.4%",
+          "Anti-Break: 68.0% | M-Strike: 43.28%",
+          "Immunity: 236.30% | Penetration: 15.00% | Detoxication: 72%",
+          "Fury: 20% | Lucky Strike: 7.00%",
+          "Resistências: Metal 80 / Wood 80 / Water 80",
+        ],
+      },
+      {
+        title: "Runas & Stage Bonus",
+        items: [
+          "Main: Sharpness +9 (Max) | Judgment +9 (Max) | BloodFeast +9 (Max)",
+          "Healer +9 (Max) | XPBooster +9 (Max) | UniversalShield +9 (Max)",
+          "Miracle Touch +8 | Conqueror's Blade +9 (Max) | Tortoise Breaker +9 (Max)",
+          "Ideal Collection desbloqueada — runa creditada",
+          "Stage Bonus: HP 3.700 | P-Atk 15.00 | M-Atk 2.600",
+          "P-Stk 12.00% | M-Stk 10.00% | Imm 12.00%",
+          "Break 15.00% | Anti-Brk 15.00%",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-100",
     title: "Decente Warrior 0 jail — 18k CPs",
