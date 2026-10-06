@@ -25,6 +25,7 @@ import waterWilsaoImg from "@/assets/water-wilsao.jpg";
 import decenteNinja8kImg from "@/assets/decente-ninja-8k.png";
 import waterFire12kImg from "@/assets/water-fire-12k.png";
 import decenteNinja25kImg from "@/assets/decente-ninja-25k.jpg";
+import decenteNinjaP4Img from "@/assets/decente-ninja-p4.jpg";
 import ninjaHeavenWondersImg from "@/assets/ninja-heavenwonders.png";
 
 export interface AccountListing {
@@ -39,6 +40,58 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-99",
+    title: "Decente Ninja 0 jail — 25k CPs",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: decenteNinjaP4Img,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "25k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Decente Ninja",
+          "0 Jail",
+          "Preço: 25k CPs",
+          "Lv. 140 Sacred_Star_NinjaP4",
+          "Noble Rank: Earl (Donation: 33.328.999.998)",
+          "Rune Points: 247.100 (runas principais em Max)",
+          "Mythsoul: 648",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 79.631 | Magic: 1.200",
+          "Attack: 55.630 ~ 58.976 | Defense: 34.177",
+          "M-Attack: 24.399 | M-Defense: 8.592",
+          "Dodge: 108 | Agility: 1.073 | Accuracy: 256",
+          "Blessed: 57%",
+          "Final P-Attack: +12.594 | Final M-Attack: +8.884",
+          "Final P-Damage: +13.394 | Final M-Damage: +8.049",
+          "P-Strike: 107.00% | Block: 30.00% | Break: 276.0%",
+          "Anti-Break: 59.9% | M-Strike: 47.40%",
+          "Immunity: 228.80% | Penetration: 15.00% | Detoxication: 72%",
+          "Parry: 7.00% | Lucky Strike: 7.00% | Dash Rate: 1.50% | Dodge Rate: 5.00%",
+          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
+        ],
+      },
+      {
+        title: "Equipamentos & Runas",
+        items: [
+          "Legend Heaven Necklace +12 (B) — P7 NecklaceSoul, Lv. 139, Def +1.543, Magic Def +5%, HP +900, Lv.6 M-Defense +12% (Permanent)",
+          "Legend Sky Hammer +12 (B) — P7 1-handedSoul, Lv. 140, Attack 5.215 ~ 7.013, Agility +23, Lv.6 Breakthrough +10% (Permanent)",
+          "Legend Dragon Ring +12 (B) — P7 RingSoul[Break], Lv. 136, Attack 2.600 ~ 3.249, Agility +27, Lv.6 Breakthrough +14% (Permanent)",
+          "Legend Moon Headgear +12 (B) — HeadgearSoul[Immunity], Lv. 140, Def +4.056, Magic Def +21%, Lv.6 Intensification +320 (Permanent)",
+          "Legend Roc Boots +12 (B) — P3 BootsDragonSoul, Lv. 129, Dodge +84, Lv.6 Immunity +6% (Permanent)",
+          "Runas principais em Max — Rune Points: 247.100",
+          "Aura elemental: Metal/Wood/Water/Fire 15 nos equipamentos",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-98",
     title: "Ninja c/ HeavenWonders e ótimo donate — 0 Jail — 50k CPs",
