@@ -26,7 +26,6 @@ import decenteNinja8kImg from "@/assets/decente-ninja-8k.png";
 import waterFire12kImg from "@/assets/water-fire-12k.png";
 import decenteNinja25kImg from "@/assets/decente-ninja-25k.jpg";
 import decenteNinjaP4Img from "@/assets/decente-ninja-p4.jpg";
-import ninjaHeavenWondersImg from "@/assets/ninja-heavenwonders.png";
 import decenteWarriorImg from "@/assets/decente-warrior.png";
 import archerEpicOriginsImg from "@/assets/archer-epic-origins.png";
 
@@ -198,55 +197,6 @@ export const ACCOUNTS: AccountListing[] = [
     ],
   },
   {
-    id: "acc-98",
-    title: "Ninja c/ HeavenWonders e ótimo donate — 0 Jail — 50k CPs",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: ninjaHeavenWondersImg,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "50k CPs" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "Servidor Storm",
-          "0 Jail",
-          "Preço: 50k CPs",
-          "Lv. 140 Sacred Star Ninja P1",
-          "Noble Rank: Prince (Donation: 50.652.000.000)",
-          "Ninpo Score: 29.215 (Ninja Sprint)",
-          "Heaven's Wonder — Bloodline Sigil Level 9",
-        ],
-      },
-      {
-        title: "Atributos & Combate",
-        items: [
-          "HP: 75.320 | Magic: 1.200",
-          "Attack: 51.726 ~ 55.221 | Defense: 31.210",
-          "M-Attack: 23.580 | M-Defense: 8.292",
-          "Dodge: 105 | Agility: 1.073 | Accuracy: 248",
-          "Blessed: 57%",
-          "Final P-Attack: +11.966 | Final M-Attack: +8.342",
-          "Final P-Damage: +12.304 | Final M-Damage: +7.059",
-          "P-Strike: 116.90% | Block: 30.00% | Break: 260.4%",
-          "Anti-Break: 59.8% | M-Strike: 47.30%",
-          "Immunity: 210.60% | Penetration: 15.00% | Detoxication: 72%",
-          "Lucky Strike: 7.00% | Dash Rate: 1.50% | Dodge Rate: 7.00% | Hit Rate: 13.80%",
-          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
-        ],
-      },
-      {
-        title: "Runas & Sigils",
-        items: [
-          "Rune Points: 193.800 (runas principais em Max)",
-          "Sigil: Heaven's Wonder — Bloodline Sigil Level 9 (Suitable Gates: Limit/Death)",
-          "Mythsoul: 648",
-          "Stage-Bonus: HP +3.700 | P-Atk +1.500 | M-Atk +2.600 | P-Strk +12.00% | M-Strk +15.00% | Break +15.00% | Anti-Brk +15.00%",
-        ],
-      },
-    ],
-  },
-  {
     id: "acc-97",
     title: "Decente Ninja — 0 Jail — 8k CPs",
     badge: "NOVO",
@@ -297,12 +247,12 @@ export const ACCOUNTS: AccountListing[] = [
   },
   {
     id: "acc-96",
-    title: "Decente Ninja — 0 Jail — Gears P7 Perm — 25k CPs",
+    title: "Decente Ninja — 0 Jail — Gears P7 Perm — 18k CPs",
     badge: "NOVO",
     badgeColor: "bg-emerald-500",
     image: decenteNinja25kImg,
     className: "Ninja",
-    prices: [{ label: "Preço", value: "25k CPs" }],
+    prices: [{ label: "Preço", value: "18k CPs" }],
     sections: [
       {
         title: "Destaques",
@@ -312,7 +262,7 @@ export const ACCOUNTS: AccountListing[] = [
           "Gears P7 permanent c/ refinery permanent Lv. 6",
           "Unbound garments & mounts",
           "Rare wings (Morning-feather)",
-          "Preço: 25k CPs",
+          "Preço: 18k CPs",
           "Lv. 140 Sacred_Star_NinjaP3",
           "463 BP",
           "Noble Rank: Countess (Donation: 13.624.000.000)",
@@ -353,12 +303,12 @@ export const ACCOUNTS: AccountListing[] = [
   },
   {
     id: "acc-94",
-    title: "Ninja Sacred Star P5 — Heavenwonders — 1 Jail — 210k CPs",
+    title: "Ninja Sacred Star P5 — Heavenwonders — 1 Jail — 200k CPs",
     badge: "NOVO",
     badgeColor: "bg-emerald-500",
     image: ninjaHw240kImg,
     className: "Ninja",
-    prices: [{ label: "Preço", value: "210k CPs" }],
+    prices: [{ label: "Preço", value: "200k CPs" }],
     sections: [
       {
         title: "Destaques",
@@ -366,7 +316,7 @@ export const ACCOUNTS: AccountListing[] = [
           "Ninja with Heavenwonders",
           "1 Jail",
           "Strike / Immunity Build",
-          "Preço: 210k CPs",
+          "Preço: 200k CPs",
           "Lv. 140 Sacred_Star_NinjaP5",
           "407 BP | Mythsoul 648",
           "Noble Rank: Prince (Donation: 86.832.000.000)",
@@ -640,19 +590,19 @@ export const ACCOUNTS: AccountListing[] = [
   },
   {
     id: "acc-88",
-    title: "Water Taoist P1 — 388 BP — 25k CPs",
+    title: "Water Taoist P1 — 388 BP — 14k CPs",
     badge: "NOVO",
     badgeColor: "bg-emerald-500",
     image: fireorwaterImg,
     className: "Taoist",
-    prices: [{ label: "Preço", value: "25k CPs" }],
+    prices: [{ label: "Preço", value: "14k CPs" }],
     sections: [
       {
         title: "Destaques",
         items: [
           "Lv. 140 Sacred_Star_Water_TaoistP1",
           "388 BP | Mythsoul 382",
-          "Preço: 25k CPs",
+          "Preço: 14k CPs",
           "Noble Rank: Earl (Donation: 11.929.000.000)",
           "Rune Points: 160.200 (Heaven Max)",
           "Skill: StarChain (Water) 500% DMG/s",
@@ -793,7 +743,7 @@ export const ACCOUNTS: AccountListing[] = [
     badgeColor: "bg-emerald-500",
     image: pirate420kImg,
     className: "Pirata",
-    prices: [{ label: "Preço", value: "380k CPs" }],
+    prices: [{ label: "Preço", value: "370k CPs" }],
     sections: [
       {
         title: "Destaques",
@@ -972,7 +922,7 @@ export const ACCOUNTS: AccountListing[] = [
     badgeColor: "bg-emerald-500",
     image: jojoNinjaImg,
     className: "Ninja",
-    prices: [{ label: "Preço", value: "360k CPs" }],
+    prices: [{ label: "Preço", value: "340k CPs" }],
     sections: [
       {
         title: "Destaques",
