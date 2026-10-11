@@ -297,12 +297,12 @@ export const ACCOUNTS: AccountListing[] = [
   },
   {
     id: "acc-96",
-    title: "Decente Ninja — 0 Jail — Gears P7 Perm — 25k CPs",
+    title: "Decente Ninja — 0 Jail — Gears P7 Perm — 18k CPs",
     badge: "NOVO",
     badgeColor: "bg-emerald-500",
     image: decenteNinja25kImg,
     className: "Ninja",
-    prices: [{ label: "Preço", value: "25k CPs" }],
+    prices: [{ label: "Preço", value: "18k CPs" }],
     sections: [
       {
         title: "Destaques",
@@ -312,7 +312,7 @@ export const ACCOUNTS: AccountListing[] = [
           "Gears P7 permanent c/ refinery permanent Lv. 6",
           "Unbound garments & mounts",
           "Rare wings (Morning-feather)",
-          "Preço: 25k CPs",
+          "Preço: 18k CPs",
           "Lv. 140 Sacred_Star_NinjaP3",
           "463 BP",
           "Noble Rank: Countess (Donation: 13.624.000.000)",
@@ -353,12 +353,12 @@ export const ACCOUNTS: AccountListing[] = [
   },
   {
     id: "acc-94",
-    title: "Ninja Sacred Star P5 — Heavenwonders — 1 Jail — 210k CPs",
+    title: "Ninja Sacred Star P5 — Heavenwonders — 1 Jail — 200k CPs",
     badge: "NOVO",
     badgeColor: "bg-emerald-500",
     image: ninjaHw240kImg,
     className: "Ninja",
-    prices: [{ label: "Preço", value: "210k CPs" }],
+    prices: [{ label: "Preço", value: "200k CPs" }],
     sections: [
       {
         title: "Destaques",
@@ -366,7 +366,7 @@ export const ACCOUNTS: AccountListing[] = [
           "Ninja with Heavenwonders",
           "1 Jail",
           "Strike / Immunity Build",
-          "Preço: 210k CPs",
+          "Preço: 200k CPs",
           "Lv. 140 Sacred_Star_NinjaP5",
           "407 BP | Mythsoul 648",
           "Noble Rank: Prince (Donation: 86.832.000.000)",
@@ -640,19 +640,19 @@ export const ACCOUNTS: AccountListing[] = [
   },
   {
     id: "acc-88",
-    title: "Water Taoist P1 — 388 BP — 25k CPs",
+    title: "Water Taoist P1 — 388 BP — 14k CPs",
     badge: "NOVO",
     badgeColor: "bg-emerald-500",
     image: fireorwaterImg,
     className: "Taoist",
-    prices: [{ label: "Preço", value: "25k CPs" }],
+    prices: [{ label: "Preço", value: "14k CPs" }],
     sections: [
       {
         title: "Destaques",
         items: [
           "Lv. 140 Sacred_Star_Water_TaoistP1",
           "388 BP | Mythsoul 382",
-          "Preço: 25k CPs",
+          "Preço: 14k CPs",
           "Noble Rank: Earl (Donation: 11.929.000.000)",
           "Rune Points: 160.200 (Heaven Max)",
           "Skill: StarChain (Water) 500% DMG/s",
@@ -793,7 +793,7 @@ export const ACCOUNTS: AccountListing[] = [
     badgeColor: "bg-emerald-500",
     image: pirate420kImg,
     className: "Pirata",
-    prices: [{ label: "Preço", value: "380k CPs" }],
+    prices: [{ label: "Preço", value: "370k CPs" }],
     sections: [
       {
         title: "Destaques",
@@ -972,7 +972,7 @@ export const ACCOUNTS: AccountListing[] = [
     badgeColor: "bg-emerald-500",
     image: jojoNinjaImg,
     className: "Ninja",
-    prices: [{ label: "Preço", value: "360k CPs" }],
+    prices: [{ label: "Preço", value: "340k CPs" }],
     sections: [
       {
         title: "Destaques",
