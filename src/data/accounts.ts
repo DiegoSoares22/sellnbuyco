@@ -28,6 +28,7 @@ import decenteNinja25kImg from "@/assets/decente-ninja-25k.jpg";
 import decenteNinjaP4Img from "@/assets/decente-ninja-p4.jpg";
 import decenteWarriorImg from "@/assets/decente-warrior.png";
 import archerEpicOriginsImg from "@/assets/archer-epic-origins.png";
+import archerTwinCityOriginsImg from "@/assets/archer-twincity-origins.jpg";
 
 
 export interface AccountListing {
@@ -42,6 +43,72 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-102",
+    title: "Decente account server TwinCity[Origins] — 0 Jail — 18k CPs",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: archerTwinCityOriginsImg,
+    className: "Archer",
+    prices: [{ label: "Preço", value: "18k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Servidor TwinCity [Origins]",
+          "0 Jail",
+          "Preço: 18k CPs",
+          "Lv. 140 ArcherMasterP2",
+          "B.P.: 419",
+          "Noble Rank: Countess (Donation: 20.847.000.000)",
+          "Rune Points: 129.300",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 78.136",
+          "Attack: 50.343 ~ 53.135 | Defense: 28.664",
+          "M-Attack: 21.324 | M-Defense: 7.966",
+          "Final P-Attack: +10.164 | Final P-Damage: +10.254",
+          "P-Strike: 263.80% | Break: 65.4% | Anti-Break: 46.7%",
+          "Immunity: 216.55% | Detoxication: 72% | Penetration: 15.00%",
+          "Lucky Strike: 7.00% | Parry: 7.00%",
+          "Dodge: 8.00% | Hit Rate: 10.00%",
+          "Resistências: Metal 80 / Wood 80 / Water 80",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "Rune Points: 129.300",
+          "Runas principais em Max",
+          "Cold Moon Lv 31",
+          "Stone Cracker Max",
+          "Thorn Cutter Lv 45",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "Set completo +12 (headgear, necklace, armor, bow, ring, boots)",
+          "Acessórios e talismãs +12 com sockets",
+          "Gold Trophy relic",
+          "Steeds de +4 a +8 no warehouse",
+        ],
+      },
+      {
+        title: "Inner Power",
+        items: [
+          "Superb Manual · Violet Glow · Divine North Skill",
+          "The Essence of Yin · The Essence of Yang",
+          "My Potency: 31.700",
+          "Dragon Lv96 · Tiger Lv99 · Phoenix Lv82 · Turtle Lv68",
+          "Chi Points: 333.017",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-101",
     title: "Archer epic c/ runa creditada [Servidor Origins/ApeMount]",
