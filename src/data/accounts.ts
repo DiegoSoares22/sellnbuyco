@@ -62,7 +62,6 @@ export const ACCOUNTS: AccountListing[] = [
           "B.P.: 419",
           "Noble Rank: Countess (Donation: 20.847.000.000)",
           "Rune Points: 129.300",
-          "Mythsoul: 648",
         ],
       },
       {
