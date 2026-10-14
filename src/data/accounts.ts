@@ -25,8 +25,6 @@ import waterWilsaoImg from "@/assets/water-wilsao.jpg";
 import decenteNinja8kImg from "@/assets/decente-ninja-8k.png";
 import waterFire12kImg from "@/assets/water-fire-12k.png";
 import decenteNinja25kImg from "@/assets/decente-ninja-25k.jpg";
-import decenteNinjaP4Img from "@/assets/decente-ninja-p4.jpg";
-import decenteWarriorImg from "@/assets/decente-warrior.png";
 import archerEpicOriginsImg from "@/assets/archer-epic-origins.png";
 import archerTwinCityOriginsImg from "@/assets/archer-twincity-origins.jpg";
 
@@ -158,107 +156,6 @@ export const ACCOUNTS: AccountListing[] = [
           "Stage Bonus: HP 3.700 | P-Atk 15.00 | M-Atk 2.600",
           "P-Stk 12.00% | M-Stk 10.00% | Imm 12.00%",
           "Break 15.00% | Anti-Brk 15.00%",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-100",
-    title: "Decente Warrior 0 jail — 18k CPs",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: decenteWarriorImg,
-    className: "Warrior",
-    prices: [{ label: "Preço", value: "18k CPs" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "Decente Warrior",
-          "0 Jail",
-          "Preço: 18k CPs",
-          "Lv. 140 Rage Warrior",
-          "Noble Rank: Earl (Donation: 25.970.000.000)",
-          "Rune Points: 240.200 (runas principais em Max)",
-          "Mythsoul: 648",
-          "Reconhecimentos: 90% / 90% / 65%",
-        ],
-      },
-      {
-        title: "Atributos & Combate",
-        items: [
-          "HP: 74.566 | Magic: 1.200",
-          "Attack: 53.749 ~ 56.290 | Defense: 41.872",
-          "M-Attack: 24.934 | M-Defense: 13.667",
-          "Dodge: 104 | Agility: 1.050 | Accuracy: 1.783",
-          "Blessed: 97%",
-          "Final P-Attack: +10.879 | Final M-Attack: +7.030",
-          "Final P-Damage: +10.999 | Final M-Damage: +6.154",
-          "P-Strike: 125.60% | Block: 46.00% | Break: 237.8%",
-          "Anti-Break: 79.1% | M-Strike: 47.20%",
-          "Immunity: 210.30% | Penetration: 15.00% | Detoxication: 72%",
-          "Parry: 7.00% | Lucky Strike: 7.00% | Dodge Rate: 11.00% | Hit Rate: 5.00%",
-          "Resistências: Metal 105 / Wood 105 / Water 105 / Fire 105",
-        ],
-      },
-      {
-        title: "Equipamentos & Runas",
-        items: [
-          "Legend Demon Scythe +12 (B) — Original: Samurai Scythe, P7 ScytheSoul, Attack 3.350 ~ 3.423",
-          "Equipamentos principais +12 com buffs Lv.6",
-          "Runas principais em Max — Rune Points: 240.200",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-99",
-    title: "Decente Ninja 0 jail — 25k CPs",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: decenteNinjaP4Img,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "25k CPs" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "Decente Ninja",
-          "0 Jail",
-          "Preço: 25k CPs",
-          "Lv. 140 Sacred_Star_NinjaP4",
-          "Noble Rank: Earl (Donation: 33.328.999.998)",
-          "Rune Points: 247.100 (runas principais em Max)",
-          "Mythsoul: 648",
-        ],
-      },
-      {
-        title: "Atributos & Combate",
-        items: [
-          "HP: 79.631 | Magic: 1.200",
-          "Attack: 55.630 ~ 58.976 | Defense: 34.177",
-          "M-Attack: 24.399 | M-Defense: 8.592",
-          "Dodge: 108 | Agility: 1.073 | Accuracy: 256",
-          "Blessed: 57%",
-          "Final P-Attack: +12.594 | Final M-Attack: +8.884",
-          "Final P-Damage: +13.394 | Final M-Damage: +8.049",
-          "P-Strike: 107.00% | Block: 30.00% | Break: 276.0%",
-          "Anti-Break: 59.9% | M-Strike: 47.40%",
-          "Immunity: 228.80% | Penetration: 15.00% | Detoxication: 72%",
-          "Parry: 7.00% | Lucky Strike: 7.00% | Dash Rate: 1.50% | Dodge Rate: 5.00%",
-          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
-        ],
-      },
-      {
-        title: "Equipamentos & Runas",
-        items: [
-          "Legend Heaven Necklace +12 (B) — P7 NecklaceSoul, Lv. 139, Def +1.543, Magic Def +5%, HP +900, Lv.6 M-Defense +12% (Permanent)",
-          "Legend Sky Hammer +12 (B) — P7 1-handedSoul, Lv. 140, Attack 5.215 ~ 7.013, Agility +23, Lv.6 Breakthrough +10% (Permanent)",
-          "Legend Dragon Ring +12 (B) — P7 RingSoul[Break], Lv. 136, Attack 2.600 ~ 3.249, Agility +27, Lv.6 Breakthrough +14% (Permanent)",
-          "Legend Moon Headgear +12 (B) — HeadgearSoul[Immunity], Lv. 140, Def +4.056, Magic Def +21%, Lv.6 Intensification +320 (Permanent)",
-          "Legend Roc Boots +12 (B) — P3 BootsDragonSoul, Lv. 129, Dodge +84, Lv.6 Immunity +6% (Permanent)",
-          "Runas principais em Max — Rune Points: 247.100",
-          "Aura elemental: Metal/Wood/Water/Fire 15 nos equipamentos",
         ],
       },
     ],
