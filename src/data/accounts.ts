@@ -29,6 +29,24 @@ import archerEpicOriginsImg from "@/assets/archer-epic-origins.png";
 import archerTwinCityOriginsImg from "@/assets/archer-twincity-origins.jpg";
 import ninja1Jail35kImg from "@/assets/ninja-1jail-35k.png";
 import archerBreak0JailImg from "@/assets/archer-break-0jail.png";
+import ninjaTortoisePredatorImg from "@/assets/ninja-tortoise-predator.webp";
+import ninjaTidalVow411bpImg from "@/assets/ninja-tidalvow-411bp.jpg";
+import ninjaStarrider405bpImg from "@/assets/ninja-starrider-405bp.jpg";
+import ninjaMrPopularity385bpImg from "@/assets/ninja-mrpopularity-385bp.jpg";
+import ninjaFuSeekerP3Img from "@/assets/ninja-fuseeker-p3.jpg";
+import pirateGhost484bpImg from "@/assets/pirate-ghost-484bp.jpg";
+import archerGracefulP1Img from "@/assets/archer-graceful-p1.jpg";
+import ninjaMasterP4Lv119Img from "@/assets/ninja-master-p4-lv119.jpg";
+import ninjaStellar383bpImg from "@/assets/ninja-stellar-383bp.jpg";
+import pirateDeath478bpImg from "@/assets/pirate-death-478bp.jpg";
+import ninjaStarrider372bpImg from "@/assets/ninja-starrider-372bp.jpg";
+import taoistSurgeWater428bpImg from "@/assets/taoist-surge-water-428bp.jpg";
+import archerMrPopularity433bpImg from "@/assets/archer-mrpopularity-433bp.jpg";
+import pirateFogTortoisePredatorImg from "@/assets/pirate-fog-tortoise-predator.jpg";
+import ninjaPrincess366bpImg from "@/assets/ninja-princess-366bp.jpg";
+import ninjaTidalVowP2Lv140Img from "@/assets/ninja-tidalvow-p2-lv140.jpg";
+import monkP3Duchess56bImg from "@/assets/monk-p3-duchess-56b.jpg";
+import monkFlowerBelle380bpImg from "@/assets/monk-flowerbelle-380bp.jpg";
 
 
 export interface AccountListing {
@@ -43,6 +61,837 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-122",
+    title: "Monk Saint Lv 109 P3 — 380 BP — Countess 28B",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: monkFlowerBelle380bpImg,
+    className: "Monk",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 109 SacredSkySaintP3 (servidor Cancer)",
+          "380 BP | Perfection 648",
+          "Noble Rank: Countess (Donation: 28.263.000.000)",
+          "Rune Points: 190.000",
+          "Weapon Archives: 101.270",
+          "Astredge: Viodragon Club 95% · Love Forever 5%",
+          "67 Garments + 33 Mounts",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 75.104 | Magic: 410",
+          "Attack: 41.714 ~ 42.550 | Defense: 19.256",
+          "M-Attack: 23.074 | M-Defense: 6.138",
+          "Final P-Attack: +10.679 | Final M-Attack: +7.279",
+          "Final P-Damage: -10.929 | Final M-Damage: -6.429",
+          "P-Strike: 106.60% | Break: 255.5% | Anti-Break: 62.1%",
+          "M-Strike: 47.20% | Immunity: 207.10% | Penetration: 15.00%",
+        ],
+      },
+      {
+        title: "Relíquia, Chi & Progressão",
+        items: [
+          "Relíquia: [Deep Roar] HeartlessSeal (2.647 Pts) — P-Attack +301 · +302",
+          "Runa: VioletShield(+9) Max",
+          "Chi: Dragon · Phoenix · Turtle Lv.99 · Tiger Lv.81 (400 cada)",
+          "Jiang Hu: Cosmic 24 · Mighty 11 · Heaven 15",
+          "Thorn Cutter Lv.45 · Cold Moon Lv.17 · Stone Cracker Lv.35",
+          "Sub-Classes: P9 (100%) · P5 (100%) · P5 (100%) · P3 (100%)",
+          "Garment: Cloudbloom (Sweet)",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-121",
+    title: "Monk Lv 140 P3 — Duchess 56B — Block 46%",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: monkP3Duchess56bImg,
+    className: "Monk",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Sacred_Star_MonkP3 (servidor Champions_EU)",
+          "Perfection 648",
+          "Noble Rank: Duchess (Donation: 56.699.222.222 · Ranking 17)",
+          "Rune Points: 280.800",
+          "Weapon Archives: 94.015",
+          "Astredge: Viodragon Club 95% · Love Forever 75%",
+          "172 Garments + 101 Mounts",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 76.895 | Magic: 1.210",
+          "Attack: 43.385 ~ 44.312 | Defense: 24.657",
+          "M-Attack: 25.823 | M-Defense: 6.619",
+          "Final P-Attack: +10.784 | Final M-Attack: +7.284",
+          "Final P-Damage: -11.606 | Final M-Damage: -7.057",
+          "P-Strike: 115.60% | Block: 46.00% | Break: 230.5% | Anti-Break: 81.2%",
+          "M-Strike: 52.20% | Immunity: 241.88% | Penetration: 15.00%",
+        ],
+      },
+      {
+        title: "Equipamentos & Progressão",
+        items: [
+          "LegendNetherArmor(+12) P7 Armor Soul [P-Defense] · LegendMoonHeadgear(+12)(B) · LegendJustBacksword(B)",
+          "Chi: Dragon · Phoenix · Tiger Lv.99 (400 cada)",
+          "Jiang Hu: Cosmic 31 · Mighty 5 · Heaven 21",
+          "Thorn Cutter Lv.40 · Cold Moon Lv.6 · Stone Cracker Lv.39",
+          "Runa: SoulChant(+7)",
+          "Sub-Classes: P8 (100%) · P7 (100%) · P7 (100%) · P6 (100%) · P6 (100%) · P5 (100%)",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-120",
+    title: "Ninja Lv 140 P2 — Duke 36B — Total Rating 102k",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaTidalVowP2Lv140Img,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Sacred_Star_NinjaP2 (servidor Emerald)",
+          "Perfection 648",
+          "Noble Rank: Duke (Donation: 36.608.000.000 · Ranking 41)",
+          "Rune Points: 250.400 | Ninpo Score: 33.873",
+          "Weapon Archives: 102.375",
+          "Astredge: Viodragon Club 90% · Love Forever 60%",
+          "171 Garments + 88 Mounts",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 78.431 | Magic: 1.200",
+          "Attack: 52.563 ~ 55.909 | Defense: 32.425",
+          "M-Attack: 24.735 | M-Defense: 8.348",
+          "Final P-Attack: +11.309 | Final M-Attack: +7.575",
+          "Final P-Damage: -11.307 | Final M-Damage: -6.990",
+          "P-Strike: 213.28% | Break: 123.5% | Anti-Break: 58.1%",
+          "M-Strike: 47.20% | Immunity: 228.20% | Penetration: 15.00%",
+        ],
+      },
+      {
+        title: "Chi & Progressão",
+        items: [
+          "Chi: Dragon · Phoenix · Tiger · Turtle Lv.99 (400 cada)",
+          "Runas: Infinity(+16) · Rampage(+16) · All-round(+21) · SoulChant(+9) Max",
+          "Jiang Hu: Heaven 11 · Cosmic 11 · Mighty 11",
+          "Thorn Cutter Lv.28 · Cold Moon Lv.20 · Stone Cracker Lv.21",
+          "Dragonhowl Lv.32 · Bloodlust Lv.23 · Redcurse Lv.10 | Bloodline: Bone Pulse",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-119",
+    title: "Ninja Lv 99 P3 — 366 BP — Princess 80B — Anti-Break 317%",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaPrincess366bpImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 99 Sacred_Star_NinjaP3 (servidor Fire)",
+          "366 BP | Perfection 648",
+          "Noble Rank: Princess (Donation: 80.141.000.000 · Ranking 11)",
+          "Rune Points: 267.000 | Ninpo Score: 45.455",
+          "Bloodline: Hel Vortex (Max) · Infinite Mist (Max) · Paper Dance · Heaven's Wonder · Bone Pulse",
+          "Astredge: Viodragon Club 90% · Love Forever 90% · Heart Lock 25%",
+          "Footprint: Phoenix Grace",
+          "140 Garments + 62 Mounts",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 73.537 | Magic: 1.500",
+          "Attack: 44.084 ~ 46.154 | Defense: 20.636",
+          "M-Attack: 25.298 | M-Defense: 7.159",
+          "Final P-Attack: +10.749 | Final M-Attack: +7.249",
+          "Final P-Damage: -11.342 | Final M-Damage: -7.032",
+          "P-Strike: 259.50% | Break: 82.5% | Anti-Break: 317.8%",
+          "M-Strike: 48.20% | Immunity: 131.50% | Penetration: 15.00%",
+        ],
+      },
+      {
+        title: "Relíquia, Chi & Progressão",
+        items: [
+          "Relíquia: [Wild Force] BellofDoom (7.111 Pts) — P-Strike +4.00% x2 · Anti-break +1.80%",
+          "Runas: NatureShield(+9) · Sky Veil(+9) · Infinity(+15) · IronShield(+27)",
+          "Chi: Tiger · Phoenix · Turtle Lv.99 · Dragon Lv.59 (400 cada)",
+          "Jiang Hu: Cosmic 12 · Mighty 12 · Heaven 11",
+          "Thorn Cutter Lv.43 · Stone Cracker Lv.15 · Cold Moon Lv.11",
+          "Steed(+12) Blazehoof (Lineage Level 12) · Steed(+8)(B) Golden Steed",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-118",
+    title: "Fog Pirate Lv 140 — Duchess 65B — Ideal Tortoise Predator",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: pirateFogTortoisePredatorImg,
+    className: "Pirata",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Fog Pirate",
+          "Perfection 648",
+          "Noble Rank: Duchess (Donation: 65.109.999.995 · Ranking 19)",
+          "Rune Points: 301.200",
+          "Runas Ideal: Tortoise Predator (Max) · Supreme Armor(+9) · Unbreakable(+9)",
+          "Huntress Artemis P9 Celestial Archer (100%)",
+          "Astredge: Viodragon Club 95% · Love Forever 90% · Heart Lock 60%",
+          "186 Garments + 89 Mounts",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 85.470 | Magic: 1.200",
+          "Attack: 60.115 ~ 63.519 | Defense: 33.236",
+          "M-Attack: 26.338 | M-Defense: 8.442",
+          "Final P-Attack: +14.126 | Final M-Attack: +9.379",
+          "Final P-Damage: -14.982 | Final M-Damage: -8.672",
+          "P-Strike: 130.80% | Break: 280.7% | Anti-Break: 60.1%",
+          "M-Strike: 52.20% | Immunity: 235.50% | Penetration: 15.00%",
+        ],
+      },
+      {
+        title: "Equipamentos & Progressão",
+        items: [
+          "LegendRepentRapier(+12) · LegendMoonHeadgear(+12) P7 Headgear Soul [Immunity]",
+          "Overlord Lv.9 · Armed Lv.9 · Sense Lv.9",
+          "Jiang Hu: Mighty 10 · Heaven 10 · Cosmic 13",
+          "Stone Cracker Lv.45 · Cold Moon Lv.9 · Thorn Cutter Lv.45",
+          "Chi: Seal Retreat 400 · Dragon 400",
+          "Warmaster Lady P8 · Victorious Buddha P8",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-117",
+    title: "Archer Lv 109 P2 — 433 BP — P-Strike 301% — Inner Power Perfect",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: archerMrPopularity433bpImg,
+    className: "Archer",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 109 Sacred_Star_ArcherP2",
+          "433 BP | Perfection 648",
+          "Rune Points: 236.900",
+          "Inner Power Perfect: Superb Manual · Violet Glow · Divine North Skill · Essence of Yin · Essence of Yang",
+          "Stone Cracker Lv.49 · Thorn Cutter Lv.42",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 75.028 | Magic: 1.200",
+          "Attack: 46.894 ~ 48.359 | Defense: 23.187",
+          "M-Attack: 24.313 | M-Defense: 6.879",
+          "Final P-Attack: +13.254 | Final M-Attack: +9.174",
+          "Final P-Damage: -13.997 | Final M-Damage: -8.302",
+          "P-Strike: 301.80% | Break: 71.7% | Anti-Break: 229.7%",
+          "M-Strike: 58.40% | Immunity: 150.14% | Penetration: 15.00%",
+        ],
+      },
+      {
+        title: "Relíquia & Runas",
+        items: [
+          "Relíquia: [Brilliant Force] BellofDoom — P-Strike +4.00% x3 · Immunity +1.54%",
+          "Runa: SoulReap(+12)",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-116",
+    title: "Surge Water Taoist Lv 129 — 428 BP — Anti-Break 292%",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: taoistSurgeWater428bpImg,
+    className: "Taoist",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 129 Surge Water Taoist",
+          "428 BP | Perfection 648",
+          "Noble Rank: Duchess (Donation: 28.144.001.100)",
+          "Rune Points: 256.000",
+          "LegendUniversalLotus(+12)(B) P7 Dragon Soul",
+          "Heaven Max (Vicissitude · Highest Good · Evolution · Thrill · Birth-death)",
+          "Astredge: 60% · 90% · 90%",
+        ],
+      },
+      {
+        title: "Atributos & Magia",
+        items: [
+          "HP: 90.375 | Magic: 950",
+          "Attack: 20.411 ~ 20.641 | Defense: 27.829",
+          "M-Attack: 40.694 | M-Defense: 8.601",
+          "Final P-Attack: +12.645 | Final M-Attack: +15.089",
+          "Final P-Damage: -22.066 | Final M-Damage: -13.824",
+          "P-Strike: 101.30% | Break: 74.0% | Anti-Break: 292.5%",
+          "M-Strike: 67.80% | Immunity: 271.40% | Penetration: 29.00%",
+        ],
+      },
+      {
+        title: "Chi & Progressão",
+        items: [
+          "Chi: Tiger · Turtle · Dragon · Phoenix Lv.99 (400 cada)",
+          "Buckler (Immunity +2.0% · Anti-break +2.0%) · Athanasy (Max HP +500 · Anti-break +2.0%)",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-115",
+    title: "Ninja Lv 109 P2 — 372 BP — Dragon Ring Break +14%",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaStarrider372bpImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 109 Sacred_Star_NinjaP2 (servidor Aquarius)",
+          "372 BP | Perfection 648",
+          "Noble Rank: Earl (Donation: 19.296.000.001)",
+          "Rune Points: 176.900 | Ninpo Score: 30.260",
+          "LegendDragonRing(+12) P7 Ring Soul [Break] — Lvl 6 Breakthrough +14% permanente",
+          "LegendSkyHammer(+12) P7.1-handedSoul",
+          "Steed(+12) Spitfire — Lineage Level 12",
+          "138 Garments + 66 Mounts",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 75.246 | Magic: 855",
+          "Attack: 45.317 ~ 47.808 | Defense: 18.455",
+          "M-Attack: 23.404 | M-Defense: 5.767",
+          "Final P-Attack: +10.394 | Final M-Attack: +7.096",
+          "Final P-Damage: -10.474 | Final M-Damage: -6.348",
+          "P-Strike: 107.40% | Break: 275.1% | Anti-Break: 72.4%",
+          "M-Strike: 47.30% | Immunity: 229.00% | Penetration: 15.00%",
+        ],
+      },
+      {
+        title: "Relíquia, Chi & Progressão",
+        items: [
+          "Relíquia: [Deep Roar] HeartlessSeal (7.427 Pts) — P-Attack +650 x2 · Break +2.55%",
+          "Chi: Tiger · Dragon · Turtle · Phoenix Lv.99 (400 cada)",
+          "Bloodlust Lv.15 · Dragonhowl Lv.29",
+          "Bloodline: Paper Dance · Hel Vortex",
+          "Astredge: 75%",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-114",
+    title: "Death Pirate Lv 140 — 478 BP — 379k Runes — Bloodlust Max",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: pirateDeath478bpImg,
+    className: "Pirata",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Death Pirate",
+          "478 BP | Perfection 648",
+          "Noble Rank: Earl (Donation: 33.664.000.000)",
+          "Rune Points: 379.200",
+          "Runas raras amarelas: Sharpness(+9) · Evocation(+9) · SoulChant(+9)",
+          "Overlord Lv.9 · Armed Lv.9 · Sense Lv.9",
+          "Steed(+12) Blazehoof — Lineage Level 12 (Lineage 87.885)",
+          "134 Garments + 86 Mounts",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 90.950 | Magic: 1.500",
+          "Attack: 63.914 ~ 67.317 | Defense: 32.254",
+          "M-Attack: 26.423 | M-Defense: 8.386",
+          "Final P-Attack: +14.355 | Final M-Attack: +9.299",
+          "Final P-Damage: -15.634 | Final M-Damage: -8.787",
+          "P-Strike: 273.80% | Break: 132.5% | Anti-Break: 72.2%",
+          "M-Strike: 59.10% | Immunity: 242.47% | Penetration: 15.00%",
+          "Dodge Rate: 17.30% | Hit Rate: 15.80% | Resist: 3.00%",
+        ],
+      },
+      {
+        title: "Equipamentos & Progressão",
+        items: [
+          "LegendMoonHeadgear(+12) P7 Headgear Soul [Immunity] · LegendNetherArmor(+12) P7 Armor Soul [P-Defense]",
+          "LegendDeathPistol(+12) P7 Pistol Soul · LegendRepentRapier(+12) P7 Rapier Soul",
+          "Relíquia: [Brilliant Force] BellofDoom (sinergizada) — P-Strike +4.00% x3 · P-Attack +650 x6",
+          "Jiang Hu: Heaven 30 · Mighty 29 · Cosmic 27",
+          "Dragonhowl Lv.42 · Bloodlust Max · Redcurse Lv.12",
+          "Astredge: Viodragon Club 90% · Love Forever 85%",
+          "Sub-Classes: P9 (0%) · P8 (100%) · P8 (100%) · P8 (0%) · P7 (100%)",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-113",
+    title: "Ninja Lv 140 P3 — 383 BP — Heaven's Wonder Max",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaStellar383bpImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Sacred_Star_NinjaP3 (servidor Pyramid)",
+          "383 BP | Perfection 630",
+          "Noble Rank: Countess (Donation: 32.199.000.001)",
+          "Rune Points: 270.400 | Ninpo Score: 31.903",
+          "Weapon Archives: 100.260",
+          "Bloodline: Heaven's Wonder (Max) · Paper Dance · Hel Vortex · Infinite Mist · Bone Pulse",
+          "Astredge: Viodragon Club 95% · Love Forever 90% · Heart Lock 50%",
+          "Footprint: Phoenix Grace",
+          "169 Garments + 105 Mounts",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 77.856 | Magic: 1.200",
+          "Attack: 49.119 ~ 51.816 | Defense: 28.005",
+          "M-Attack: 24.904 | M-Defense: 7.646",
+          "Final P-Attack: +10.552 | Final M-Attack: +6.864",
+          "Final P-Damage: -10.742 | Final M-Damage: -6.129",
+          "P-Strike: 112.60% | Break: 273.5% | Anti-Break: 60.1%",
+          "M-Strike: 52.20% | Immunity: 230.20% | Penetration: 15.00%",
+        ],
+      },
+      {
+        title: "Chi & Progressão",
+        items: [
+          "Jiang Hu: Cosmic 24 · Mighty 24 · Heaven 24",
+          "Chi: Dragon Lv.99 · Phoenix Lv.99 · Turtle Lv.99 · Tiger Lv.91 (400 cada)",
+          "Stone Cracker Lv.30 · Cold Moon Lv.22 · Thorn Cutter Lv.31",
+          "Runa: SoulChant(+9) Max",
+          "LegendMoonHeadgear(+12) P7 Headgear Soul [Immunity]",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-112",
+    title: "Ninja Lv 119 Master P4 — Earl 11B — P-Strike 187%",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaMasterP4Lv119Img,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 119 NinjaMasterP4 (servidor Susanoo_EU)",
+          "Perfection 261",
+          "Noble Rank: Earl (Donation: 11.691.500.000)",
+          "Rune Points: 135.400 | Ninpo Score: 23.875",
+          "Astredge: 90% · 75%",
+          "Footprint: Phoenix Grace",
+          "98 Garments + 45 Mounts",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 75.203 | Magic: 1.280",
+          "Attack: 37.077 ~ 40.576 | Defense: 23.424",
+          "M-Attack: 18.959 | M-Defense: 6.115",
+          "Final P-Attack: +10.877 | Final M-Attack: +6.829",
+          "Final P-Damage: -10.012 | Final M-Damage: -6.129",
+          "P-Strike: 187.30% | Break: 150.4% | Anti-Break: 94.0%",
+          "M-Strike: 45.10% | Immunity: 205.10% | Penetration: 15.00%",
+        ],
+      },
+      {
+        title: "Relíquia & Progressão",
+        items: [
+          "Relíquia: [Wild Force] BellofDoom (7.581 Pts) — Final P-Attack +465 · P-Strike +4.00% x2",
+          "Stone Cracker Lv.14 | Bloodline: Hell Vortex",
+          "Sub-Classes: P8 (100%) · P8 (100%) · P7 (100%) · P5 (100%) · P6 (0%) · P1 (0%)",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-111",
+    title: "Archer Lv 140 P1 — Earl 38B — Tvastar Heart — P-Strike 272%",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: archerGracefulP1Img,
+    className: "Archer",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Sacred_Star_ArcherP1 (servidor Fire)",
+          "Perfection 648",
+          "Noble Rank: Earl (Donation: 38.673.500.000)",
+          "Rune Points: 189.900 | Ninpo Score: 13.500",
+          "Tvastar Heart (B) — Archer Epic Weapon",
+          "Astredge: 95% · 80%",
+          "Footprint: Phoenix Grace",
+          "152 Garments + 58 Mounts",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 83.300 | Magic: 1.200",
+          "Attack: 52.205 ~ 54.997 | Defense: 29.452",
+          "M-Attack: 23.260 | M-Defense: 6.702",
+          "Final P-Attack: +10.414 | Final M-Attack: +6.874",
+          "Final P-Damage: -10.474 | Final M-Damage: -6.184",
+          "P-Strike: 272.34% | Break: 96.6% | Anti-Break: 58.4%",
+          "M-Strike: 47.60% | Immunity: 222.40% | Penetration: 15.00%",
+        ],
+      },
+      {
+        title: "Relíquia & Progressão",
+        items: [
+          "Relíquia: [Wild Force] BellofDoom (4.010 Pts) — P-Strike +2.73% · +2.71%",
+          "Runa: SoulChant(+9) Max",
+          "Stone Cracker Max · Cold Moon Lv.30 · Thorn Cutter Lv.55",
+          "Inner Power: Superb Manual · Violet Glow · Divine North Skill · Essence of Yin",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-110",
+    title: "Ghost Pirate Lv 140 — 484 BP — Duke 32B — P-Strike 270%",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: pirateGhost484bpImg,
+    className: "Pirata",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Ghost Pirate (servidor Emerald)",
+          "484 BP | Perfection 648",
+          "Noble Rank: Duke (Donation: 32.536.000.001)",
+          "Rune Points: 313.500 | Ninpo Score: 19.102",
+          "Weapon Archives: 62.530",
+          "Overlord Lv.9 · Armed Lv.9 · Sense Lv.9",
+          "Footprint: Phoenix Grace",
+          "196 Garments + 104 Mounts",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 85.996 | Magic: 1.200",
+          "Attack: 58.285 ~ 61.689 | Defense: 33.711",
+          "M-Attack: 26.933 | M-Defense: 8.979",
+          "Final P-Attack: +14.089 | Final M-Attack: +9.419",
+          "Final P-Damage: -15.272 | Final M-Damage: -8.777",
+          "P-Strike: 270.00% | Break: 118.0% | Anti-Break: 76.0%",
+          "M-Strike: 52.90% | Immunity: 238.54% | Penetration: 15.00%",
+        ],
+      },
+      {
+        title: "Relíquia & Progressão",
+        items: [
+          "Relíquia: [Brilliant Force] BellofDoom (7.756 Pts, sinergizada) — P-Strike +4.00% x3 · Anti-break +1.12%",
+          "Astredge: 95% · 95% · 35%",
+          "Dragonhowl Lv.18 · Bloodlust Lv.15 · Redcurse Lv.5",
+          "Stone Cracker Lv.30 · Cold Moon Lv.5 · Thorn Cutter Lv.18",
+          "Sub-Classes: P9 (0%) · P8 (100%) · P8 (100%) · P7 (100%) · P6 (100%) · P6 (100%) · P5 (0%) · P4 (0%)",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-109",
+    title: "Ninja Lv 99 P3 — Duke 35B — P-Strike 248%",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaFuSeekerP3Img,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 99 Sacred_Star_NinjaP3 (servidor Cancer)",
+          "Perfection 648",
+          "Noble Rank: Duke (Donation: 35.522.500.000)",
+          "Rune Points: 265.600 | Ninpo Score: 35.660",
+          "Weapon Archives: 51.930",
+          "Astredge: Viodragon Club 95% · Love Forever 55%",
+          "164 Garments + 71 Mounts",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 75.458 | Magic: 1.200",
+          "Attack: 44.173 ~ 46.242 | Defense: 23.071",
+          "M-Attack: 24.399 | M-Defense: 7.203",
+          "Final P-Attack: +12.880 | Final M-Attack: +8.932",
+          "Final P-Damage: -13.262 | Final M-Damage: -7.742",
+          "P-Strike: 248.30% | Break: 84.6% | Anti-Break: 85.5%",
+          "M-Strike: 48.40% | Immunity: 229.20% | Penetration: 15.00%",
+        ],
+      },
+      {
+        title: "Relíquia, Runas & Progressão",
+        items: [
+          "Relíquia: [Wild Force] BellofDoom (7.367 Pts) — Final P-Attack +408 · P-Strike +4.00% x2",
+          "Runas: VioletShield(+8) · NatureShield(+9) · StarRaid(+23) · All-round(+27) · Caprice(+15) · Rampage(+15)",
+          "Chi: P-Attack +2000 · P-Strike +20% · Immunity +20% · Max HP +3500",
+          "Stone Cracker Lv.24 · Cold Moon Lv.12 · Thorn Cutter Lv.27",
+          "Dragonhowl Lv.37 · Bloodlust Lv.19 | Bloodline: Paper Dance · Hel Vortex",
+          "Sub-Classes: P8 (100%) · P8 (100%) · P7 (100%) · P7 (100%) · P6 (100%) · P5 (100%) · P4 (100%) · P4 (100%)",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-108",
+    title: "Ninja Lv 109 P2 — 385 BP — LegendSkyHammer +12",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaMrPopularity385bpImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 109 Sacred_Star_NinjaP2 (servidor Dragon)",
+          "385 BP | Perfection 648",
+          "Noble Rank: Duchess (Donation: 19.661.000.000)",
+          "Rune Points: 203.000 | Ninpo Score: 36.169",
+          "LegendSkyHammer(+12) P7.1-handedSoul — Lvl 6 Breakthrough +10%",
+          "Astredge: Viodragon Club 95% · Love Forever 15%",
+          "132 Garments + 57 Mounts",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 76.434 | Magic: 800",
+          "Attack: 44.465 ~ 46.956 | Defense: 22.341",
+          "M-Attack: 23.374 | M-Defense: 7.233",
+          "Final P-Attack: +10.964 | Final M-Attack: +7.899",
+          "Final P-Damage: -11.674 | Final M-Damage: -6.884",
+          "P-Strike: 96.60% | Break: 273.5% | Anti-Break: 58.2%",
+          "M-Strike: 47.20% | Immunity: 229.08% | Penetration: 15.00%",
+        ],
+      },
+      {
+        title: "Chi & Progressão",
+        items: [
+          "Chi: Dragon Lv.95 · Phoenix Lv.99 · Turtle Lv.99 · Tiger Lv.99 (400 cada)",
+          "Runa: All-round(+16)",
+          "Bloodline: Paper Dance",
+          "Sub-Classes: P8 (100%) · P7 (100%) · P7 (100%) · P6 (100%)",
+          "Hammer of Discipline (B) x2",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-107",
+    title: "Ninja Lv 140 P2 — 405 BP — Duke 53B — Steed 88k",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaStarrider405bpImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Sacred_Star_NinjaP2 (servidor Hebby)",
+          "405 BP | Perfection 648",
+          "Noble Rank: Duke (Donation: 53.044.999.998 · Ranking 19)",
+          "Rune Points: 181.200 | Ninpo Score: 38.356",
+          "Steed(+12) Zebra — Lineage Level 12 (Lineage 88.186)",
+          "Astredge: Viodragon Club 90% · Love Forever 25%",
+          "151 Garments + 90 Mounts",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 75.311 | Magic: 1.200",
+          "Attack: 52.983 ~ 56.329 | Defense: 32.135",
+          "M-Attack: 23.374 | M-Defense: 8.061",
+          "Final P-Attack: +10.364 | Final M-Attack: +6.864",
+          "Final P-Damage: -10.454 | Final M-Damage: -6.129",
+          "P-Strike: 106.60% | Break: 275.8% | Anti-Break: 58.1%",
+          "M-Strike: 47.20% | Immunity: 222.76% | Penetration: 15.00%",
+        ],
+      },
+      {
+        title: "Relíquia, Chi & Progressão",
+        items: [
+          "Relíquia: [Deep Roar] HeartlessSeal (4.180 Pts) — P-Attack +278 · +237 · Immunity +0.66% · Break +1.78%",
+          "Chi: Dragon Lv.99 · Tiger Lv.99 · Turtle Lv.89 · Phoenix Lv.99 (400 cada)",
+          "Runas: All-round(+10) · SoulChant(+5)",
+          "Bloodline: Infinite Mist · Paper Dance",
+          "Sub-Classes: P8 (100%) · P7 (100%) · P4 (100%) · P4 (100%) · P7 (0%) · P6 (0%)",
+          "Captain Morgan's Flag x2",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-106",
+    title: "Ninja Lv 99 P3 — 411 BP — Duke 46B — Break 276%",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaTidalVow411bpImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 99 Sacred_Star_NinjaP3 (servidor Mausoleum)",
+          "411 BP | Perfection 648",
+          "Noble Rank: Duke (Donation: 46.391.000.000 · Ranking 18)",
+          "Rune Points: 223.300",
+          "Ninpo Score: 27.828 | Weapon Archives: 84.495",
+          "Astredge: Love Forever 95% · Viodragon Club 95% · Heart Lock 70%",
+          "Footprint: Phoenix Grace",
+          "153 Garments + 95 Mounts",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 75.372 | Magic: 1.200",
+          "Attack: 44.738 ~ 46.605 | Defense: 22.902",
+          "M-Attack: 24.298 | M-Defense: 7.455",
+          "Final P-Attack: +12.979 | Final M-Attack: +8.999",
+          "Final P-Damage: -14.526 | Final M-Damage: -8.282",
+          "P-Strike: 129.60% | Break: 276.0% | Anti-Break: 60.1%",
+          "M-Strike: 48.20% | Immunity: 231.30% | Penetration: 15.00%",
+        ],
+      },
+      {
+        title: "Relíquia, Chi & Progressão",
+        items: [
+          "Relíquia: [Deep Roar] HeartlessSeal (7.028 Pts) — P-Attack +650 x2",
+          "Chi: Dragon Lv.99 · Turtle Lv.86 · Tiger Lv.71 · Phoenix Lv.99 (400 cada)",
+          "Stone Cracker Lv.21 · Cold Moon Lv.15 · Thorn Cutter Lv.31",
+          "Bloodline: Paper Dance | Garment: Cloudbloom (Sweet)",
+          "Sub-Classes: P9 (100%) · P9 (15%) · P9 (100%) · P9 (0%)",
+          "Inner Power: Superb Manual · Violet Glow · Divine North Skill · Essence of Yin · Essence of Yang",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-105",
+    title: "Ninja Ideal Tortoise Predator — 0 Botjail — Break 317%",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaTortoisePredatorImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 109 Sacred_Star_NinjaP2",
+          "0 Botjail",
+          "1 Ideal [Tortoise Predator]",
+          "Max Main Sigil",
+          "Slash Sigil (Max)",
+          "Break with Relic Double: 317%",
+          "Tortoise Gears [Armor + Necklace + Boot]",
+          "Score Rune: 241k",
+          "1 Footprint [Phoenix Grace]",
+          "Relic [Double Break almost 4%]",
+          "Astredge: Viodragon 90% + Love Forever 70%",
+          "184 Garments + 104 Mounts",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "372 BP | Perfection 648",
+          "HP: 78.152 | Magic: 1.200",
+          "Attack: 45.149 ~ 47.640 | Defense: 23.552",
+          "M-Attack: 24.934 | M-Defense: 7.444",
+          "Final P-Attack: +10.364 | Final M-Attack: +6.864",
+          "Final P-Damage: -10.454 | Final M-Damage: -6.239",
+          "P-Strike: 96.70% | Block: 30.00%",
+          "Break: 281.9% (316.9% com a relíquia) | Anti-Break: 56.1%",
+          "M-Strike: 47.20% | Immunity: 228.70% | Penetration: 15.00%",
+          "Detoxication: 72% | Parry: 8.00% | Lucky Strike: 7.00%",
+          "Dash Rate: 1.50% | Dodge Rate: 13.40% | Hit Rate: 13.40%",
+          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
+        ],
+      },
+      {
+        title: "Runas, Relíquia & Progressão",
+        items: [
+          "Rune Points: 241.000 (runas principais em Max)",
+          "Ninpo Score: 38.783 (Ninja Sprint)",
+          "Relíquia: [Cloud Shock] HeartlessSeal (5.169 Pts)",
+          "Break +3.55% (+0.10%) | Break +3.52% (+0.10%)",
+          "Chi: Dragon Lv.87 | Tiger Lv.99 | Turtle Lv.99 | Phoenix Lv.99 (400 cada)",
+          "Inner Power: Superb Manual · Violet Glow · Divine North Skill · The Essence of Yin (Perfect)",
+          "Sub-Classes: P8 (100%) · P8 (96%) · P6 (100%)",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-104",
     title: "Archer break — 0 Jail — 25k CPs",

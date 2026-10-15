@@ -561,9 +561,20 @@ na faixa clara, `{colors.link-dark}` na escura e branco na faixa da marca.
 - **Ampliar print**: fundo `{colors.canvas-dark}` a 95%, print inteiro, paddle de fechar.
 - Esc fecha, foco preso, foco volta para quem abriu.
 
-### Gaveta de filtros (`drawer`)
-- Clara, entra pela direita, ocupa a tela no celular. Seções com rótulo em
-  `{typography.caption-sm}` maiúsculo. Rodapé com "Limpar" (secundário) e "Aplicar filtros" (primário).
+### Filtros (barra + gaveta `drawer`)
+- Tudo sai das contas à venda (`src/lib/catalog.ts`): nada de opção que leva a zero resultado.
+- Barra: botão "Preço e level" (com `badge-info` contando o que está aplicado), linha fina, e os
+  `filter-pill` de classe — só as classes que têm conta, da mais comum para a menos comum.
+  Abaixo, quando há filtro na gaveta, uma linha "Aplicado:" com cada filtro como pílula removível
+  e "Limpar tudo".
+- Gaveta clara (`{colors.canvas-light}` explícito), entra pela direita, tela cheia no celular.
+  Seções com rótulo em `{typography.caption-sm}` maiúsculo:
+  - Preço em CPs: faixa escrita por extenso em `{typography.heading-lg}`, slider de duas alças de 0
+    até o teto (maior preço arredondado para cima: 370k → 400k), campos mínimo/máximo e um checkbox
+    explícito para incluir as contas "A combinar" (com a quantidade).
+  - Level: só as faixas com conta (140, 130–139, 120–129, 110–119, abaixo do 110), com a contagem.
+- Rodapé: "Limpar" (secundário) e "Ver N contas" (primário), com a contagem ao vivo pela mesma
+  regra da lista (`filterAccounts`).
 
 ### Navegação (`primary-nav`)
 - 64px, escura. Logo + nome à esquerda, busca em pílula, idioma (PT/EN), interesses (círculo

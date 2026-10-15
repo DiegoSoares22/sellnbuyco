@@ -10,7 +10,7 @@ import { StickyFilterBar } from "@/components/StickyFilterBar";
 import { FilterDrawer } from "@/components/FilterDrawer";
 import { AccountCard } from "@/components/AccountCard";
 import { EmptyState } from "@/components/EmptyState";
-import { getMinCpsK, getAccountLevel } from "@/lib/accountFilters";
+import { getMinCpsK, getAccountLevel, filterAccounts } from "@/lib/accountFilters";
 import { useAccountStore } from "@/hooks/useAccountStore";
 import { useI18n } from "@/i18n";
 import { toast } from "sonner";
@@ -48,6 +48,7 @@ function AccountsList() {
     selectedClass,
     minPrice,
     maxPrice,
+    includeNegotiable,
     levelFilter,
     sortBy,
     clearFilters,
@@ -70,50 +71,16 @@ function AccountsList() {
     setSearchParams(next, { replace: true });
   };
 
-  // Lógica de Filtragem e Ordenação das contas
+  // Filtragem (mesma regra da contagem da gaveta, em lib/accountFilters) e ordenação
   const { filtered, fallbackUsed } = useMemo(() => {
-    let list = [...ACCOUNTS];
-
-    // 1. Busca por Texto (redução de atrito)
-    if (searchQuery.trim()) {
-      const q = searchQuery.toLowerCase();
-      list = list.filter((a) => {
-        const matchTitle = a.title.toLowerCase().includes(q);
-        const matchClass = a.className.toLowerCase().includes(q);
-        const matchSections = a.sections.some((sec) =>
-          sec.items.some((item) => item.toLowerCase().includes(q))
-        );
-        return matchTitle || matchClass || matchSections;
-      });
-    }
-
-    // 2. Filtro de Classes
-    if (selectedClass) {
-      list = list.filter((a) => a.className === selectedClass);
-    }
-
-    // 3. Filtro de Preço
-    list = list.filter((a) => {
-      const p = getMinCpsK(a);
-      if (p === null) return true; // Negociáveis são sempre mantidas
-      return p >= minPrice && p <= maxPrice;
+    const list = filterAccounts(ACCOUNTS, {
+      search: searchQuery,
+      className: selectedClass,
+      minPrice,
+      maxPrice,
+      includeNegotiable,
+      levels: levelFilter,
     });
-
-    // 4. Filtro de Level
-    if (levelFilter.length > 0) {
-      list = list.filter((a) => {
-        const lvl = getAccountLevel(a);
-        if (lvl === null) return false;
-        return levelFilter.some((f) => {
-          if (f === "99") return lvl >= 99 && lvl < 110;
-          if (f === "119") return lvl >= 110 && lvl < 125;
-          if (f === "129") return lvl >= 125 && lvl < 130;
-          if (f === "130+") return lvl >= 130;
-          if (f === "140+") return lvl >= 140;
-          return false;
-        });
-      });
-    }
 
     // Fallback: se o filtro por classe resultou em 0 contas, traz sugestões alternativas
     if (selectedClass && list.length === 0 && levelFilter.length === 0) {
@@ -138,14 +105,12 @@ function AccountsList() {
         const lB = getAccountLevel(b) ?? 0;
         return lB - lA;
       }
-      // "newest" - Ordem original invertida (mais recentes primeiro)
-      const idxA = ACCOUNTS.indexOf(a);
-      const idxB = ACCOUNTS.indexOf(b);
-      return idxB - idxA;
+      // "newest": anúncio novo entra no topo do arquivo de dados, então a ordem do arquivo já é a mais recente primeiro
+      return ACCOUNTS.indexOf(a) - ACCOUNTS.indexOf(b);
     });
 
     return { filtered: list, fallbackUsed: false };
-  }, [searchQuery, selectedClass, minPrice, maxPrice, levelFilter, sortBy]);
+  }, [searchQuery, selectedClass, minPrice, maxPrice, includeNegotiable, levelFilter, sortBy]);
 
   const handleClearFilters = () => {
     clearFilters();

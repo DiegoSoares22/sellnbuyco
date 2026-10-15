@@ -1,5 +1,9 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+import { PRICE_CEILING } from "@/lib/catalog";
+
+// Teto do filtro de preço vem das contas à venda (lib/catalog): acompanha se entrar uma conta mais cara
+const clampPrice = (n: number) => Math.min(Math.max(0, Number.isFinite(n) ? n : 0), PRICE_CEILING);
 
 interface AccountStoreContextType {
   searchQuery: string;
@@ -10,6 +14,8 @@ interface AccountStoreContextType {
   minPrice: number;
   maxPrice: number;
   setPriceRange: (min: number, max: number) => void;
+  includeNegotiable: boolean;
+  setIncludeNegotiable: (include: boolean) => void;
   levelFilter: string[];
   setLevelFilter: (levels: string[]) => void;
   toggleLevel: (level: string) => void;
@@ -36,12 +42,14 @@ export const AccountStoreProvider: React.FC<{ children: React.ReactNode }> = ({ 
   );
 
   // Price range (minPrice, maxPrice in k CPs)
-  const [minPrice, setMinPrice] = useState<number>(
-    searchParams.get("minPrice") ? parseInt(searchParams.get("minPrice")!) : 0
+  // (links antigos podem trazer valores fora da faixa atual: são limitados ao teto)
+  const [minPrice, setMinPrice] = useState<number>(() => clampPrice(parseInt(searchParams.get("minPrice") ?? "0")));
+  const [maxPrice, setMaxPrice] = useState<number>(() =>
+    searchParams.get("maxPrice") ? clampPrice(parseInt(searchParams.get("maxPrice")!)) : PRICE_CEILING
   );
-  const [maxPrice, setMaxPrice] = useState<number>(
-    searchParams.get("maxPrice") ? parseInt(searchParams.get("maxPrice")!) : 1000
-  );
+
+  // Contas sem preço em CPs ("A combinar"): entram por padrão; ?acombinar=0 tira
+  const [includeNegotiable, setIncludeNegotiable] = useState<boolean>(searchParams.get("acombinar") !== "0");
 
   // Level filters (comma-separated in URL)
   const [levelFilter, setLevelFilter] = useState<string[]>(
@@ -85,7 +93,8 @@ export const AccountStoreProvider: React.FC<{ children: React.ReactNode }> = ({ 
       search: searchQuery || null,
       class: selectedClass,
       minPrice: minPrice !== 0 ? minPrice.toString() : null,
-      maxPrice: maxPrice !== 1000 ? maxPrice.toString() : null,
+      maxPrice: maxPrice !== PRICE_CEILING ? maxPrice.toString() : null,
+      acombinar: includeNegotiable ? null : "0",
       level: levelFilter.length > 0 ? levelFilter.join(",") : null,
       sort: sortBy !== "newest" ? sortBy : null,
     };
@@ -97,7 +106,7 @@ export const AccountStoreProvider: React.FC<{ children: React.ReactNode }> = ({ 
       else next.set(key, value);
     }
     setSearchParams(next, { replace: true });
-  }, [searchQuery, selectedClass, minPrice, maxPrice, levelFilter, sortBy, searchParams, setSearchParams]);
+  }, [searchQuery, selectedClass, minPrice, maxPrice, includeNegotiable, levelFilter, sortBy, searchParams, setSearchParams]);
 
   const toggleClass = (cls: string) => {
     setSelectedClass((prev) => (prev === cls ? null : cls));
@@ -120,15 +129,17 @@ export const AccountStoreProvider: React.FC<{ children: React.ReactNode }> = ({ 
     setSearchQuery("");
     setSelectedClass(null);
     setMinPrice(0);
-    setMaxPrice(1000);
+    setMaxPrice(PRICE_CEILING);
+    setIncludeNegotiable(true);
     setLevelFilter([]);
     setSortBy("newest");
   };
 
+  // Conta só o que está na gaveta (preço, "a combinar", level); a classe tem os próprios chips
   const activeFiltersCount =
-    (selectedClass ? 1 : 0) +
-    (minPrice !== 0 || maxPrice !== 1000 ? 1 : 0) +
-    (levelFilter.length > 0 ? levelFilter.length : 0);
+    (minPrice !== 0 || maxPrice !== PRICE_CEILING ? 1 : 0) +
+    (includeNegotiable ? 0 : 1) +
+    (levelFilter.length > 0 ? 1 : 0);
 
   return (
     <AccountStoreContext.Provider
@@ -141,6 +152,8 @@ export const AccountStoreProvider: React.FC<{ children: React.ReactNode }> = ({ 
         minPrice,
         maxPrice,
         setPriceRange,
+        includeNegotiable,
+        setIncludeNegotiable,
         levelFilter,
         setLevelFilter,
         toggleLevel,

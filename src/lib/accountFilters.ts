@@ -95,13 +95,15 @@ export function getAccountLevel(account: AccountListing): number | null {
   return null;
 }
 
-export type LevelBucket = { key: string; label: string; test: (lvl: number) => boolean };
+export type LevelBucket = { key: string; label: string; labelEn: string; test: (lvl: number) => boolean };
 
+// Faixas sem sobreposição e com o nome dizendo o intervalo; só aparecem as que têm conta
 export const LEVEL_BUCKETS: LevelBucket[] = [
-  { key: "99", label: "Level 99", test: (l) => l >= 99 && l < 110 },
-  { key: "119", label: "Level 119", test: (l) => l >= 110 && l < 125 },
-  { key: "129", label: "Level 129", test: (l) => l >= 125 && l < 130 },
-  { key: "130+", label: "Level 130+", test: (l) => l >= 130 },
+  { key: "140", label: "Level 140", labelEn: "Level 140", test: (l) => l >= 140 },
+  { key: "130", label: "Level 130 a 139", labelEn: "Level 130–139", test: (l) => l >= 130 && l < 140 },
+  { key: "120", label: "Level 120 a 129", labelEn: "Level 120–129", test: (l) => l >= 120 && l < 130 },
+  { key: "110", label: "Level 110 a 119", labelEn: "Level 110–119", test: (l) => l >= 110 && l < 120 },
+  { key: "lt110", label: "Abaixo do 110", labelEn: "Below 110", test: (l) => l < 110 },
 ];
 
 export function getAvailableLevelBuckets(accounts: AccountListing[]) {
@@ -134,3 +136,60 @@ export function filterByLevelBuckets(accounts: AccountListing[], bucketKeys: str
   });
 }
 
+
+/**
+ * Teto do filtro de preço, tirado das contas à venda e arredondado para cima num número redondo
+ * (370k → 400k, 900k → 900k). Se amanhã entrar uma conta mais cara, o filtro acompanha sozinho.
+ */
+export function getPriceCeiling(accounts: AccountListing[]): number {
+  const max = Math.max(0, ...accounts.map((a) => getMinCpsK(a) ?? 0));
+  if (max === 0) return 100;
+  const step = max <= 100 ? 10 : max <= 500 ? 50 : 100;
+  return Math.ceil(max / step) * step;
+}
+
+/** Passo do slider de preço: fino em tetos baixos, mais largo em tetos altos */
+export function getPriceStep(ceiling: number): number {
+  return ceiling <= 200 ? 5 : 10;
+}
+
+export interface AccountCriteria {
+  search: string;
+  className: string | null;
+  minPrice: number;
+  maxPrice: number;
+  /** Contas sem preço em CPs ("A combinar") entram no resultado? */
+  includeNegotiable: boolean;
+  levels: string[];
+}
+
+/** Um só lugar para a regra de filtro: a página e a contagem da gaveta usam a mesma função. */
+export function filterAccounts(accounts: AccountListing[], c: AccountCriteria): AccountListing[] {
+  const q = c.search.trim().toLowerCase();
+  // Chaves de level desconhecidas (links antigos) são ignoradas em vez de zerar a lista
+  const buckets = LEVEL_BUCKETS.filter((b) => c.levels.includes(b.key));
+
+  return accounts.filter((a) => {
+    if (q) {
+      const hit =
+        a.title.toLowerCase().includes(q) ||
+        a.className.toLowerCase().includes(q) ||
+        a.sections.some((sec) => sec.items.some((item) => item.toLowerCase().includes(q)));
+      if (!hit) return false;
+    }
+    if (c.className && a.className !== c.className) return false;
+
+    const price = getMinCpsK(a);
+    if (price === null) {
+      if (!c.includeNegotiable) return false;
+    } else if (price < c.minPrice || price > c.maxPrice) {
+      return false;
+    }
+
+    if (buckets.length > 0) {
+      const lvl = getAccountLevel(a);
+      if (lvl === null || !buckets.some((b) => b.test(lvl))) return false;
+    }
+    return true;
+  });
+}
