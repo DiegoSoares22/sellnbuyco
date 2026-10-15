@@ -43,6 +43,74 @@ export interface AccountListing {
 
 export const ACCOUNTS: AccountListing[] = [
   {
+    id: "acc-103",
+    title: "8 GP account / decent donate — 1 Jail — 35k CPs",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninja1Jail35kImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "35k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Servidor NinjasAssemble",
+          "1 Jail",
+          "Preço: 35k CPs",
+          "Lv. 140 Sacred_Star_NinjaP3",
+          "B.P.: 347 (título Saint)",
+          "Noble Rank: Prince (Donation: 78.512.000.000 · Ranking 5)",
+          "Rune Points: 228.900",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 75.090 | Magic: 1.200",
+          "Attack: 46.759 ~ 50.246 | Defense: 17.370",
+          "M-Attack: 22.184 | M-Defense: 5.892",
+          "Final P-Attack: +10.394 | Final P-Damage: -9.964",
+          "P-Strike: 200.40% | Break: 102.5% | Anti-Break: 50.3%",
+          "Immunity: 192.96% | Detoxication: 72% | Penetration: 15.00%",
+          "Attack: 165% | Blessed: 35% | Block: 30.00%",
+          "Dodge: 93 | Agility: 1.073 | Accuracy: 231",
+          "Resistências: Metal 50 / Wood 50 / Water 50 / Fire 50",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "Rune Points: 228.900",
+          "Runas principais em Max",
+          "Assassin (Main) · Comprehension · Pitching · FrostArrows",
+          "Acalanatha · Tide Trap · SwingingTail · Sacrifice · BurningSky",
+          "Stage Bonus: HP +3.700 · P-Atk +1.500 · M-Atk +2.600",
+          "Stage Bonus: P-Stk 12% · M-Stk 10% · Imm 12% · Break 15% · Anti.Brk 15%",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "LegendDemonScythe(+12)[B] — P7ScytheSoul (InternNinja)",
+          "Arma: Attack 3.350 ~ 3.423 · P-Strike 17% · Break 18%",
+          "Sockets: DragonGem Attack +15% (x2)",
+          "Necklace +12 · Armor +6 · Head +8 · Ring +12 · Botas +12",
+          "Talismãs +7 / +8 (Lv. 4)",
+          "Asas: HolyWings",
+          "Steeds: Bloodlust Lv 40 · Dragonhowl Lv 31",
+        ],
+      },
+      {
+        title: "Sigils & Portões",
+        items: [
+          "Sigils: P7 0% · P6 100% (x3) · P4 100% · P1 0% · P6 0% · P4 0% (x2)",
+          "Portões: Dawn · Life · Limit · Shock · Death · View · Pain · Rest",
+          "Bônus: +2 níveis nos sigils engastados para atingir P4 Sage",
+        ],
+      },
+    ],
+  },
+  {
     id: "acc-102",
     title: "Decente account server TwinCity[Origins] — 0 Jail — 18k CPs",
     badge: "NOVO",
