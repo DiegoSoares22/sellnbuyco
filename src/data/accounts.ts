@@ -27,6 +27,7 @@ import waterFire12kImg from "@/assets/water-fire-12k.png";
 import decenteNinja25kImg from "@/assets/decente-ninja-25k.jpg";
 import archerEpicOriginsImg from "@/assets/archer-epic-origins.png";
 import archerTwinCityOriginsImg from "@/assets/archer-twincity-origins.jpg";
+import ninja1Jail35kImg from "@/assets/ninja-1jail-35k.png";
 
 
 export interface AccountListing {
