@@ -44,6 +44,59 @@ export interface AccountListing {
 
 export const ACCOUNTS: AccountListing[] = [
   {
+    id: "acc-104",
+    title: "Archer break — 0 Jail — 25k CPs",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: archerBreak0JailImg,
+    className: "Archer",
+    prices: [{ label: "Preço", value: "25k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Servidor Honor",
+          "0 Jail",
+          "Preço: 25k CPs",
+          "Lv. 140 Sacred_Star_ArcherP1",
+          "B.P.: 443",
+          "Noble Rank: Earl (Donation: 17.013.000.000)",
+          "Mythsoul: 641",
+          "Rune Points: 174.300",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 90.764",
+          "Attack: 50.934 ~ 52.243 | Defense: 31.879",
+          "Final P-Attack: +12.227 | Final P-Damage: -12.977",
+          "P-Strike: 127.90% | Break: 306.8% | Anti-Break: 72.2%",
+          "Immunity: 241.05% | M-Strike: 48.30% | Block: 30.00%",
+          "Parry: 7.00% | Lucky Strike: 7.00% | Dash Rate: 1.00%",
+        ],
+      },
+      {
+        title: "Runas",
+        items: [
+          "Rune Points: 174.300",
+          "Stone Cracker Lv 45 · Cold Moon Lv 27 · Thorn Cutter Lv 56",
+          "Runas principais em Max",
+          "Stage Bonus: HP +3.700 · P-Atk +1.500 · M-Atk +2.600",
+          "Stage Bonus: P-Stk 12% · M-Stk 10% · Imm 12% · Break 15% · Anti.Brk 15%",
+        ],
+      },
+      {
+        title: "Equipamentos",
+        items: [
+          "Set completo +12 com bênção -7% dano",
+          "Talismãs +12 (refino 8/8)",
+          "Steeds: P9 100% · P7 100% (x2) · P6 100% (x2) · P5 0% · P4 0% · P3 0% (x2)",
+        ],
+      },
+    ],
+  },
+  {
     id: "acc-103",
     title: "8 GP account / decent donate — 1 Jail — 35k CPs",
     badge: "NOVO",
