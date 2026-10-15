@@ -24,7 +24,7 @@ export const translations = {
 
     // Accounts page
     "acc.backToShop": "Voltar à Loja",
-    "acc.backToAccounts": "Voltar aos Accounts",
+    "acc.backToAccounts": "Ver contas à venda",
     "acc.title": "Accounts à Venda",
     "acc.subtitle": "",
     "acc.filters": "Filtros:",
@@ -41,14 +41,15 @@ export const translations = {
     "acc.foundMany": "accounts encontradas",
     "acc.emptyTitle": "Nenhuma account com esses filtros",
     "acc.emptyHint": "Tente relaxar um dos filtros abaixo.",
-    "acc.classSoldOut": "Ooops... parece que todas as accounts dessa classe já foram vendidas 😢",
+    "acc.classSoldOut": "Ooops… parece que todas as accounts dessa classe já foram vendidas 😢",
     "acc.classSoldOutHint": "Mas encontramos outras opções interessantes para você:",
     "acc.viewDetails": "Ver detalhes",
-    "acc.interested": "Fiquei interessado",
+    "acc.interested": "Tenho interesse",
     "acc.interestedContact": "Fiquei interessado, entrar em contato",
     "acc.makeOffer": "Fazer uma oferta",
-    "acc.directLink": "Link direto",
-    "acc.notFound": "Account não encontrado",
+    "acc.directLink": "Abrir página da conta",
+    "acc.notFound": "Conta não encontrada",
+    "acc.notFoundHint": "Ela pode ter sido vendida ou o link está incompleto. Veja as contas que estão à venda agora.",
 
     // WhatsApp templates
     "wa.interest": "Olá, Diego! Tudo bem? Fiquei interessado por {title}. Gostaria de mais informações.",
@@ -101,7 +102,7 @@ export const translations = {
 
     // Accounts page
     "acc.backToShop": "Back to Shop",
-    "acc.backToAccounts": "Back to Accounts",
+    "acc.backToAccounts": "See Accounts for Sale",
     "acc.title": "Accounts for Sale",
     "acc.subtitle": "",
     "acc.filters": "Filters:",
@@ -118,14 +119,15 @@ export const translations = {
     "acc.foundMany": "accounts found",
     "acc.emptyTitle": "No accounts match these filters",
     "acc.emptyHint": "Try relaxing one of the filters below.",
-    "acc.classSoldOut": "Ooops... looks like all accounts of this class are already sold 😢",
+    "acc.classSoldOut": "Ooops… looks like all accounts of this class are already sold 😢",
     "acc.classSoldOutHint": "But we found other interesting options for you:",
     "acc.viewDetails": "View details",
-    "acc.interested": "I'm interested",
+    "acc.interested": "I'm Interested",
     "acc.interestedContact": "I'm interested, contact me",
     "acc.makeOffer": "Make an offer",
-    "acc.directLink": "Direct link",
-    "acc.notFound": "Account not found",
+    "acc.directLink": "Open Account Page",
+    "acc.notFound": "Account Not Found",
+    "acc.notFoundHint": "It may have been sold, or the link is incomplete. See the accounts for sale right now.",
 
     // WhatsApp templates
     "wa.interest": "Hi Diego! How are you? I'm interested in {title}. Could you share more info?",

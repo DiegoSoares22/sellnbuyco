@@ -1,7 +1,7 @@
 import React from "react";
-import { Filter } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { MessageCircle } from "lucide-react";
 import { useI18n } from "@/i18n";
+import { buildWa } from "@/lib/whatsapp";
 
 interface EmptyStateProps {
   onClear: () => void;
@@ -10,25 +10,31 @@ interface EmptyStateProps {
 export const EmptyState: React.FC<EmptyStateProps> = ({ onClear }) => {
   const { lang } = useI18n();
 
+  const waHref = buildWa(
+    lang === "pt"
+      ? "Olá! Não achei no site a conta que procuro. Alguém está vendendo?"
+      : "Hi! I couldn't find the account I'm looking for on the site. Is anyone selling one?",
+  );
+
   return (
-    <div className="my-10 p-10 rounded-2xl border border-dashed border-zinc-800 bg-[#12121a]/30 text-center max-w-lg mx-auto">
-      <div className="mx-auto w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-500 border border-amber-500/20 flex items-center justify-center mb-4">
-        <Filter size={20} className="animate-pulse" />
-      </div>
-      <h3 className="text-base font-bold text-slate-100 mb-2">
-        {lang === "pt" ? "Nenhuma account encontrada" : "No accounts found"}
+    <div className="my-xl max-w-xl rounded-md bg-surface-card p-lg sm:p-xl">
+      <h3 className="text-heading-lg text-ink">
+        {lang === "pt" ? "Nenhuma conta com esses filtros" : "No Accounts Match These Filters"}
       </h3>
-      <p className="text-xs text-slate-400 mb-5 max-w-xs mx-auto leading-relaxed">
+      <p className="mt-xs text-pretty text-body-sm text-body-light">
         {lang === "pt"
-          ? "Nenhum resultado corresponde aos filtros aplicados. Tente limpar os filtros para ver todas as opções disponíveis."
-          : "No accounts match the filters you have set. Try clearing the filters to see all available options."}
+          ? "Limpe os filtros para ver todas as contas à venda, ou pergunte no WhatsApp se alguém está vendendo o que você procura."
+          : "Clear the filters to see every account for sale, or ask on WhatsApp whether someone is selling what you need."}
       </p>
-      <Button
-        onClick={onClear}
-        className="rounded-xl bg-amber-500 hover:bg-amber-600 text-black font-bold text-xs px-5 h-9.5"
-      >
-        {lang === "pt" ? "Limpar filtros" : "Clear filters"}
-      </Button>
+      <div className="mt-lg flex flex-wrap items-center gap-sm">
+        <button type="button" onClick={onClear} className="btn btn-primary">
+          {lang === "pt" ? "Limpar filtros" : "Clear Filters"}
+        </button>
+        <a href={waHref} target="_blank" rel="noopener noreferrer" className="btn btn-secondary-light">
+          <MessageCircle size={16} aria-hidden="true" />
+          {lang === "pt" ? "Perguntar no WhatsApp" : "Ask on WhatsApp"}
+        </a>
+      </div>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useCallback, useContext, useMemo } from "react";
+import { createContext, ReactNode, useCallback, useContext, useEffect, useMemo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { translations, TranslationKey } from "./translations";
 
@@ -32,6 +32,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const location = useLocation();
   const navigate = useNavigate();
   const lang = detectLang(location.pathname);
+
+  // Leitor de tela e tradutor automático usam o lang do <html> para escolher voz/idioma
+  useEffect(() => {
+    document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
+  }, [lang]);
 
   const withLang = useCallback(
     (path: string) => {

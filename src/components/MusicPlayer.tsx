@@ -1,40 +1,60 @@
-import { useState, useRef, useEffect } from "react";
+import { useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
+import { useI18n } from "@/i18n";
 
-const MUSIC_URL = "https://www.youtube.com/embed/B0xna59xvgg?autoplay=1&loop=1&playlist=B0xna59xvgg&controls=0&showinfo=0&rel=0&modestbranding=1";
+const VIDEO_ID = "B0xna59xvgg";
+const MUSIC_URL = `https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&loop=1&playlist=${VIDEO_ID}&controls=0&rel=0&modestbranding=1&enablejsapi=1`;
 
+/**
+ * Música de fundo desligada por padrão: o iframe só é criado no primeiro clique
+ * (o gesto do visitante libera o autoplay com som). Depois, pausar/retomar vai pela
+ * API do player via postMessage, sem recarregar o iframe nem reiniciar a faixa.
+ */
 export default function MusicPlayer() {
-  const [muted, setMuted] = useState(false);
+  const { lang } = useI18n();
   const [started, setStarted] = useState(false);
+  const [playing, setPlaying] = useState(false);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
-  useEffect(() => {
-    const t = setTimeout(() => {
-      setStarted(true);
-    }, 1000);
-    return () => clearTimeout(t);
-  }, []);
+  const command = (func: "playVideo" | "pauseVideo") => {
+    iframeRef.current?.contentWindow?.postMessage(
+      JSON.stringify({ event: "command", func, args: [] }),
+      "https://www.youtube.com",
+    );
+  };
 
   const handleToggle = () => {
-    if (!started) setStarted(true);
-    setMuted((p) => !p);
+    if (!started) {
+      setStarted(true);
+      setPlaying(true);
+      return;
+    }
+    command(playing ? "pauseVideo" : "playVideo");
+    setPlaying((p) => !p);
   };
 
   return (
     <>
       <button
+        type="button"
         onClick={handleToggle}
-        className="fixed bottom-4 left-4 z-50 w-10 h-10 rounded-full bg-card border border-border shadow-lg flex items-center justify-center text-card-foreground hover:border-primary/50 transition-colors"
-        title={muted ? "Ativar música" : "Mutar música"}
+        aria-pressed={playing}
+        aria-label={lang === "pt" ? "Música de fundo" : "Background Music"}
+        className={`paddle fixed bottom-[max(1rem,env(safe-area-inset-bottom))] left-[max(1rem,env(safe-area-inset-left))] z-50 shadow-[0_8px_24px_rgba(0,0,0,0.35)] [--focus-ring:theme(colors.primary.DEFAULT)] ${
+          playing ? "bg-primary hover:bg-primary-pressed" : ""
+        }`}
       >
-        {muted ? <VolumeX size={16} /> : <Volume2 size={16} />}
+        {playing ? <Volume2 size={16} aria-hidden="true" /> : <VolumeX size={16} aria-hidden="true" />}
       </button>
 
       {started && (
         <iframe
-          src={`${MUSIC_URL}&mute=${muted ? 1 : 0}`}
+          ref={iframeRef}
+          src={MUSIC_URL}
           className="hidden"
           allow="autoplay"
-          title="Background Music"
+          tabIndex={-1}
+          title={lang === "pt" ? "Música de fundo" : "Background music"}
         />
       )}
     </>

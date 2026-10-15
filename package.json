@@ -10,7 +10,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "design:lint": "npx --yes @google/design.md@0.4.0 lint DESIGN.md",
+    "design:tokens": "npx --yes @google/design.md@0.4.0 export --format json-tailwind DESIGN.md > src/design/tokens.json"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

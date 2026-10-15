@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { MotionConfig } from "framer-motion";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -22,8 +23,11 @@ const App = () => (
       <BrowserRouter>
         <AccountStoreProvider>
           <LanguageProvider>
+            <MotionConfig reducedMotion="user">
             <div className="app-root bg-background text-foreground min-h-screen">
               <Header />
+              {/* Alvo do link "Pular para o conteúdo" do Header */}
+              <main id="conteudo" tabIndex={-1} className="outline-none">
               <Routes>
                 {/* PT — /accounts é agora a raiz */}
                 <Route path="/" element={<Accounts />} />
@@ -44,8 +48,10 @@ const App = () => (
                 <Route path="/en/shopping-mall" element={<Navigate to="/en" replace />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
+              </main>
               <MusicPlayer />
             </div>
+            </MotionConfig>
           </LanguageProvider>
         </AccountStoreProvider>
       </BrowserRouter>

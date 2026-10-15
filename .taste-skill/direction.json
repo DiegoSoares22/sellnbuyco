@@ -1,0 +1,572 @@
+{
+ "version": 1,
+ "at": "2026-10-15T05:11:09.592Z",
+ "seed": 1765593944,
+ "redraws": 0,
+ "input": {
+  "brief": "Marketplace brasileiro de contas prontas de Conquer Online, negociadas pelo WhatsApp, preços em CPs ou dólar",
+  "sector": "ecommerce",
+  "tone": "bold",
+  "have": [
+   "product-photo"
+  ],
+  "keep": [],
+  "avoid": [],
+  "sections": [
+   "list",
+   "how-it-works",
+   "faq",
+   "contact",
+   "footer"
+  ],
+  "direction": "hero-object"
+ },
+ "imagery": "own",
+ "allow": [],
+ "direction": {
+  "id": "hero-object",
+  "name": "The object, large",
+  "sectors": [
+   "physical-product",
+   "ecommerce",
+   "consumer-app",
+   "fashion",
+   "finance",
+   "health",
+   "restaurant",
+   "music"
+  ],
+  "tones": [
+   "bold",
+   "luxury",
+   "quiet"
+  ],
+  "needs": [
+   "product-photo"
+  ],
+  "idea": "Show the thing, bigger than seems reasonable. One photographed object fills the first screen, scaled until the viewport crops it, with the text small and tucked beside or behind it. The crop is the idea: a record whose edge leaves the top-right corner, a bottle whose shoulder runs off the bottom, a chair seen so close you read its grain. Being that close reads as confidence in the object. Everything else on the page serves it: details as tight close-ups, facts as short lines, one way to buy.",
+  "composition": "First screen: the object occupies 55–75% of the viewport and breaks at least one edge. It sits on a flat field (ground colour or one bold colour), never in a box. The headline is short and either very large and partly hidden behind the object (10–13vw, the object overlapping two or three letters) or small (28–36px) in the opposite corner with a one-line description. No navigation bar beyond a wordmark and one action. Following sections: a row of three or four close-up details at different crop ratios (not equal tiles), a single wide photograph of the object in use, a plain list of facts set large (materials, size, price) aligned to one edge, then the purchase action. The object returns once at the end from a different angle.",
+  "typography": "Either very large and structural or very small and precise; pick one for the headline and hold it. Facts are set in the text face at 22–28px, not in a table.",
+  "typeClasses": [
+   "grotesk-light",
+   "grotesk-tight",
+   "extended-heavy",
+   "serif-light-large"
+  ],
+  "colour": "A flat field chosen to make the object's own colour sing (its complement, or a tone darker than its shadow side). One field for the whole page, or a second for the facts section.",
+  "paletteTags": [
+   "single-field",
+   "light-neutral",
+   "pastel-fields",
+   "dark-neutral"
+  ],
+  "imagery": "Use the product's own photographs if they exist. Otherwise use a still-life from the dealt set as a stand-in and say so. Prefer images with a plain background; use `mix-blend-mode: multiply` on light fields so a white studio background disappears into the page colour.",
+  "photoTreatment": "Scale the main image well past its container (`width: 120–160%`) and let `overflow: hidden` on the section do the cropping.",
+  "sectionTags": [
+   "object-led",
+   "photo-led",
+   "colour-field"
+  ],
+  "motion": "shutter-image",
+  "richness": "The object's surface at close range, and the tension of the crop.",
+  "pitfalls": "A small centred product shot with space all round is a catalogue thumbnail, not this direction. If the image has a busy background it cannot sit on a field; crop tighter or change image. Keep text off the object's focal area.",
+  "seenIn": [
+   "opl-when-you-wish-upon-a-starboy",
+   "opl-plastic",
+   "opl-archiv",
+   "aww-moto-finance",
+   "aww-the-watch",
+   "opl-aevion"
+  ],
+  "allow": []
+ },
+ "hero": {
+  "id": "single-object-on-plinth",
+  "name": "Single object on a plinth",
+  "archetype": "object-centre",
+  "directions": [
+   "quiet-instrument",
+   "hero-object",
+   "specimen-catalogue"
+  ],
+  "needs": [
+   "product-photo"
+  ],
+  "blueprint": "An off-white screen that is about 80% empty and does not need to scroll. One photographed object stands dead centre: a studio shot on a plain background, shown 440px tall (about half the viewport height) whatever its width, with `mix-blend-mode: multiply` so its backdrop disappears into the page. It rests on a plinth, a rounded square 520px across filled one step lighter than the page and centred behind it, with no border. The wordmark sits top-left at a 56px margin in a heavy serif or grotesk, about 400px wide (28% of the viewport) and 80px tall; it is the only large type. Opposite it, top-right on the same margin and aligned to the wordmark's top, sits the one supporting sentence at 15px, right-aligned, max 36ch. Centred 40px under the plinth is the single action: a compact email field or button 240px wide with 8px corners. Further objects replace the first in the same position by crossfade, each scaled to the same visual mass. There is no navigation. Nothing else touches the edges, and the object never grows beyond half the viewport height.",
+  "mobile": "The wordmark sits top-left at 44vw wide with 20px margins and the supporting sentence drops beneath it at 14px. The plinth is 78vw square, centred at 54% of the height, with the object 44svh tall on it. The action sits 32px under the plinth, 40px in from each side. The screen stays mostly empty and the objects swap in place.",
+  "headline": "None beyond the name: the wordmark top-left, up to about 10 characters, is the only large type and the object is the statement.",
+  "motion": "slow-crossfade",
+  "seenIn": [
+   "opl-archiv",
+   "opl-humanoid-index"
+  ]
+ },
+ "type": {
+  "id": "panchang-switzer",
+  "name": "Panchang / Switzer",
+  "class": "extended-heavy",
+  "display": {
+   "family": "Panchang",
+   "source": "fontshare",
+   "slug": "panchang",
+   "weights": [
+    700
+   ],
+   "italic": false,
+   "settings": "weight 700 · tracking -0.02em · leading 1.0 · uppercase; four words or fewer per line because the face is very wide",
+   "css": "<link rel=\"preconnect\" href=\"https://api.fontshare.com\">\n<link rel=\"preconnect\" href=\"https://cdn.fontshare.com\" crossorigin>\n<link href=\"https://api.fontshare.com/v2/css?f[]=panchang@700&display=swap\" rel=\"stylesheet\">\n<link href=\"https://api.fontshare.com/v2/css?f[]=switzer@400,500&display=swap\" rel=\"stylesheet\">"
+  },
+  "text": {
+   "family": "Switzer",
+   "source": "fontshare",
+   "slug": "switzer",
+   "weights": [
+    400,
+    500
+   ],
+   "italic": false,
+   "settings": "400 for body, 500 for emphasis · leading 1.5 · tracking 0",
+   "css": "<link rel=\"preconnect\" href=\"https://api.fontshare.com\">\n<link rel=\"preconnect\" href=\"https://cdn.fontshare.com\" crossorigin>\n<link href=\"https://api.fontshare.com/v2/css?f[]=panchang@700&display=swap\" rel=\"stylesheet\">\n<link href=\"https://api.fontshare.com/v2/css?f[]=switzer@400,500&display=swap\" rel=\"stylesheet\">"
+  },
+  "standsInFor": [
+   "Monument Extended",
+   "Owners Wide",
+   "Nimbus Sans Extended"
+  ],
+  "note": "A flat-sided extended grotesk in heavy capitals, wide enough that two words fill the screen, with a neutral sans kept small. Suits portfolios, real estate, travel and brand sites that want a broad, confident wordmark.",
+  "seenIn": [
+   "opl-belen-jones",
+   "aww-lxl-creative",
+   "aww-realevate",
+   "aww-the-tuscan-journey-begins"
+  ],
+  "links": [
+   "https://api.fontshare.com/v2/css?f[]=panchang@700&display=swap",
+   "https://api.fontshare.com/v2/css?f[]=switzer@400,500&display=swap"
+  ],
+  "scale": {
+   "step-small": "clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem)",
+   "step-body": "clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem)",
+   "step-lead": "clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem)",
+   "step-head": "clamp(2rem, 1.3rem + 3.2vw, 4rem)"
+  }
+ },
+ "palette": {
+  "id": "green-black-bone",
+  "name": "Green-black and bone",
+  "tags": [
+   "dark-neutral",
+   "earth"
+  ],
+  "bg": "#161c1a",
+  "surface": "#1f2725",
+  "ink": "#e3e2da",
+  "muted": "#8e948d",
+  "accent": "#9fc7b8",
+  "accentInk": "#161c1a",
+  "note": "Bone type on green-black from top to bottom, with panels and drawn details barely lighter than the ground so photographs supply the colour. Pale jade is for the booking or contact button alone.",
+  "seenIn": [
+   "opl-kereliott",
+   "aww-lama-lama-2"
+  ]
+ },
+ "photos": {
+  "set": "interior-and-table",
+  "title": "Interior and table",
+  "note": "rooms, windows, chairs, cups, food and tabletops",
+  "treatment": "Scale the main image well past its container (`width: 120–160%`) and let `overflow: hidden` on the section do the cropping.",
+  "others": [
+   "hands-and-making",
+   "field-and-farm",
+   "object-still",
+   "plants-and-flowers"
+  ],
+  "photos": [
+   {
+    "id": 326,
+    "alt": "Hand holding a white bowl with yellow slices on a pale surface",
+    "tone": "light",
+    "colours": [
+     "cream",
+     "pale yellow",
+     "warm beige"
+    ],
+    "mono": false,
+    "calm": "left",
+    "quality": 5,
+    "ratio": 1.51,
+    "by": "Dominik Martin",
+    "page": "https://unsplash.com/photos/JYFmYif4n70"
+   },
+   {
+    "id": 625,
+    "alt": "Wooden dining table with white moulded chairs beside large windows",
+    "tone": "light",
+    "colours": [
+     "white",
+     "warm wood",
+     "cream"
+    ],
+    "mono": false,
+    "calm": "left",
+    "quality": 5,
+    "ratio": 1.5,
+    "by": "Breather",
+    "page": "https://unsplash.com/photos/DEdM9Vs6s8w"
+   },
+   {
+    "id": 1068,
+    "alt": "Small plant in a vase on a white table against a blue wall",
+    "tone": "mid",
+    "colours": [
+     "bright blue",
+     "white",
+     "green"
+    ],
+    "mono": false,
+    "calm": "top",
+    "quality": 5,
+    "ratio": 1.74,
+    "by": "Padurariu Alexandru",
+    "page": "https://unsplash.com/photos/iNmouRApXYM"
+   },
+   {
+    "id": 889,
+    "alt": "Close-up of frosted frozen berries in purple and red",
+    "tone": "mid",
+    "colours": [
+     "frosted purple",
+     "berry red",
+     "pale lilac"
+    ],
+    "mono": false,
+    "calm": "top",
+    "quality": 4,
+    "ratio": 1.5,
+    "by": "Devin Rajaram",
+    "page": "https://unsplash.com/photos/X5ChCOu8CQg"
+   },
+   {
+    "id": 1080,
+    "alt": "Fresh red strawberries packed tightly, filling the frame",
+    "tone": "mid",
+    "colours": [
+     "strawberry red",
+     "green",
+     "pink"
+    ],
+    "mono": false,
+    "calm": "none",
+    "quality": 4,
+    "ratio": 1.5,
+    "by": "veeterzy",
+    "page": "https://unsplash.com/photos/OJJIaFZOeX4"
+   },
+   {
+    "id": 834,
+    "alt": "Three framed prints on a pale wall above a dark tufted bench",
+    "tone": "mid",
+    "colours": [
+     "cream",
+     "charcoal",
+     "pale blue"
+    ],
+    "mono": false,
+    "calm": "centre",
+    "quality": 4,
+    "ratio": 0.67,
+    "by": "The Anchor",
+    "page": "https://unsplash.com/photos/6hgsktgpfIE"
+   },
+   {
+    "id": 311,
+    "alt": "Wooden chair by a curtained window at dusk",
+    "tone": "dark",
+    "colours": [
+     "dark brown",
+     "dusty blue",
+     "cream"
+    ],
+    "mono": false,
+    "calm": "left",
+    "quality": 4,
+    "ratio": 1.78,
+    "by": "Logan Adermatt",
+    "page": "https://unsplash.com/photos/VkF8pVVoFg0"
+   },
+   {
+    "id": 429,
+    "alt": "White cup filled with fresh raspberries on a pale wooden table",
+    "tone": "light",
+    "colours": [
+     "raspberry red",
+     "white",
+     "pale wood"
+    ],
+    "mono": false,
+    "calm": "left",
+    "quality": 4,
+    "ratio": 1.78,
+    "by": "Glen Carrie",
+    "page": "https://unsplash.com/photos/FjjUVn_KHLU"
+   }
+  ]
+ },
+ "motion": {
+  "id": "slow-crossfade",
+  "name": "Slow crossfade",
+  "description": "The principal photograph quietly changes: three or four images of the same framing crossfade over about 1.6 seconds, holding five to six seconds each, or the fixed image changes when its matching section arrives. It should feel like light shifting in a room. Pause when the tab is hidden; under reduced motion show only the first image."
+ },
+ "sections": [
+  {
+   "id": "list-menu-photo-bullets",
+   "role": "list",
+   "name": "Two-column menu, photo bullets",
+   "shape": "grid",
+   "tags": [
+    "object-led",
+    "photo-led"
+   ],
+   "directions": [
+    "specimen-catalogue",
+    "one-motif",
+    "hero-object",
+    "colour-chapters"
+   ],
+   "needs": [],
+   "blueprint": "A menu or catalogue list in which each item has a small cut-out photograph where a bullet would be. Each category opens with its name at clamp(32px, 3.4vw, 50px) at the left margin and the number of items at 16px right-aligned on the same baseline, with 96px above and 40px below. Items then run in two columns with a 64px gutter and 36px between rows. Each item is a two-part row: a 64px photograph of the item on a plain background at the left (multiplied onto the ground with `mix-blend-mode: multiply`, or masked to the page's one shape), then 20px to its right the name in bold at 17–18px with the price right-aligned on the same line, and beneath it a two- or three-line description at 15px in the soft ink, max 38ch. A short note such as an allergen follows the description in the accent ink. No boxes. Holds 6–10 items per category.",
+   "mobile": "One column. Photographs shrink to 52px and stay at the left; name and price share the first line with the description beneath at 15px. Category names at 8.5vw with the count on the same baseline. A sticky row of category names as text links lets the reader jump.",
+   "seenIn": [
+    "opl-madie",
+    "opl-zara-webb"
+   ]
+  },
+  {
+   "id": "how-it-works-one-verb-at-a-time",
+   "role": "how-it-works",
+   "name": "One verb at a time",
+   "shape": "full-bleed",
+   "tags": [
+    "photo-led",
+    "poster"
+   ],
+   "directions": [
+    "pinned-poster",
+    "loud-flat-poster",
+    "dark-room",
+    "hero-object",
+    "sentence-as-layout",
+    "place-carries-it"
+   ],
+   "needs": [],
+   "blueprint": "Three to five full-bleed panels, each 100svh tall, stacked with no gap; each is one stage and holds one photograph covering it. In every panel a single word, the verb for that stage ('Cut', 'Fold', 'Stitch', 'Press'), is set at clamp(96px, 17vw, 300px), heavy and centred, inside a wrapper that is position: sticky; top: 50% and shifted up by half its own height. Because each word is sticky only within its own panel, it holds the centre of the screen while its photograph passes behind it, and is then pushed out by the next panel's verb. Use mix-blend-mode: difference in white, or one solid colour tested on every image. One sentence at 18px sits in the bottom-left corner of each panel over a neutral scrim limited to that corner. There is no separate heading: the verbs, read in order, are both the heading and the sequence.",
+   "mobile": "Panels stay 100svh, each photograph cropped to a vertical slice. The verb is 24vw, still sticky at the centre. The sentence sits along the bottom over a scrim at 16px, full width with 16px margins.",
+   "seenIn": [
+    "opl-eagles-nest",
+    "aww-seasats",
+    "aww-vero-new-york"
+   ]
+  },
+  {
+   "id": "faq-accordion-beside-tall-photo",
+   "role": "faq",
+   "name": "Questions beside a tall photograph",
+   "shape": "split",
+   "tags": [
+    "photo-led",
+    "quiet"
+   ],
+   "directions": [
+    "place-carries-it",
+    "split-stage",
+    "uneven-photographs",
+    "dark-room",
+    "hero-object",
+    "page-is-the-object"
+   ],
+   "needs": [],
+   "blueprint": "One field in a deep or pale flat tone, split 5 to 7. Left, columns 1–5: a heading of two to four words at 36–44px; under it the three or four practical facts people ask first (address, times, how to arrive) as plain lines at 18px; then five or six questions as an accordion with no lines between rows, only 28px of space. Each question is a `<summary>` at 20px with a small chevron drawn from two 2px strokes at its right; the open answer sits beneath at 17px in the softer ink, on the same left edge. One filled button and one text link close the column. Right, columns 7–12: a tall photograph (3:4) that bleeds off the top edge of the section and stops 80px short of the bottom, with a second, square photograph a third of its width overlapping its lower-left corner by 40px.",
+   "mobile": "The tall photograph leads at full width, 4:5, with the square one overlapping its bottom-right corner at 38% width. Heading at 30px, facts at 17px, then the accordion at full width with 24px between questions and 44px touch targets. Button full width at the end.",
+   "seenIn": [
+    "opl-sarah-matt-wedding"
+   ]
+  },
+  {
+   "id": "contact-visit-card-on-photograph",
+   "role": "contact",
+   "name": "Visit card on a photograph",
+   "shape": "full-bleed",
+   "tags": [
+    "photo-led",
+    "object-led"
+   ],
+   "directions": [
+    "place-carries-it",
+    "dark-room",
+    "page-is-the-object",
+    "pinned-poster",
+    "hero-object"
+   ],
+   "needs": [],
+   "blueprint": "A full-bleed photograph of the place, 100vw by 100svh, carries one solid card and nothing else. The card is a filled panel in the paper colour, fully opaque, 380px wide with 8px corners and 32px padding, placed in the upper-right corner 60px from the top and right edges (or the upper-left: pick the corner where the photograph is calmest). It holds, top to bottom: a two- or three-word title at 28px in a light weight; the address on two lines at 16px; the opening hours as three rows with days at the left and times right-aligned in tabular figures; the phone number; then, flush with the card's bottom edge and spanning its width, a solid booking button 52px tall. The card may be `position: sticky; top: 60px` inside a taller section so it holds while the photograph scrolls beneath it. The photograph's focal point must stay clear of the card. No heading outside the card.",
+   "mobile": "The photograph is 100vw by 70svh. The card leaves the corner: it spans the width with 16px margins and overlaps the photograph's bottom edge by 80px, so image and card interlock. The booking button is full width, 56px tall, at the card's bottom.",
+   "seenIn": [
+    "opl-the-deep-end",
+    "opl-madie"
+   ]
+  },
+  {
+   "id": "footer-back-of-the-card",
+   "role": "footer",
+   "name": "The back of the card",
+   "shape": "stack",
+   "tags": [
+    "object-led",
+    "quiet"
+   ],
+   "directions": [
+    "page-is-the-object",
+    "specimen-catalogue",
+    "borrowed-category",
+    "hero-object",
+    "place-carries-it"
+   ],
+   "needs": [],
+   "blueprint": "The footer is the reverse side of the page's artefact, laid out as the back of a postcard. A paper-coloured panel spans columns 2–11 on the contrasting ground, about 420px tall, its top edge cut into a row of twelve semicircular scallops (an inline SVG path or `clip-path`, each scallop about 100px wide). The panel is divided by space into two halves. Left half: a short sign-off of two to four words at 32px, then two or three lines at 16px, written like a message. Right half: the address block, four left-aligned lines at 18px with 12px between them, each line a link (email, telephone, street, social); above it in the top-right corner, a stamp: one small photograph, 3:4 and 88px wide, with a 6px paper-coloured margin. Along the panel's bottom edge, a single centred line at 12px gives the copyright like a printer's imprint.",
+   "mobile": "The panel runs full width with six scallops across its top edge. The stamp sits top-right at 64px wide; the sign-off and message come first, then the address lines at 17px beneath them, then the imprint line centred at 12px.",
+   "seenIn": [
+    "opl-zara-webb",
+    "opl-britt-taylor",
+    "opl-sarah-matt-wedding",
+    "opl-transport"
+   ]
+  }
+ ],
+ "references": [
+  {
+   "id": "opl-plastic",
+   "name": "Plastic",
+   "url": "https://myplastic.app",
+   "source": "One Page Love",
+   "kind": "consumer-app",
+   "score": 7.1,
+   "idea": "A plain, quiet app page given one physical object: a photographed vinyl record cropped by the top-right corner of the viewport.",
+   "mood": [
+    "clean",
+    "calm",
+    "tactile",
+    "friendly"
+   ],
+   "archetype": "other: centred-statement-with-corner-object",
+   "hero": "Pale grey page with no navigation, only a bold wordmark with a small orange-red caps descriptor beneath it at top left (80px margin). A photographed black vinyl record with an orange-red label is cropped by the top-right corner, showing a quarter disc about 360px wide and tall, with an orange wire stand poking out below it. The headline is centred slightly above the middle in two lines at 74px (5.2vw), about 37% of the viewport wide, followed by a two-line 17px sentence and two black store badges side by side. Lower down, an award mark and a laurel-framed rating sit centred; the bottom fifth is empty.",
+   "type": "Archivo only. Headline weight 500, sentence case, tight leading, 74px against 17px body, about a 4.4x jump. Feature headings near 30px in two colours, a much larger heading in the dark section (digest peak 12vw), and tiny tracked caps in the footer.",
+   "colour": "#f5f5f5 #d5d5d5 #090d0e #171615 #e0441c — Greys and near-black with one orange-red accent taken from the record label; it colours the logo descriptor and the first line of each feature heading. One near-black section breaks the light page.",
+   "imagery": "Phone mockups with real app screens (album-cover grids, a camera view) sit inside mid-grey rounded panels and are cropped by the panel edge. The hero uses a cut-out photographed record with a soft shadow; album art supplies the colour.",
+   "layout": "Centred hero, then feature rows on a wide container: a tall grey panel on one side and a short text block vertically centred on the other, sides swapping per row. A dark full-width section with offset white cards follows, then a narrow FAQ column and a sparse footer.",
+   "sections": [
+    {
+     "role": "features",
+     "description": "Each feature is a two-column row. One column is a mid-grey rounded panel about 540px wide and 720px tall containing a phone mockup pinned near the top, with the next phone's top edge peeking in at the panel's bottom. The other column holds a two-line heading, first line orange-red and second near-black at the same size, over a three-line grey paragraph, vertically centred. The panel side alternates left and right."
+    },
+    {
+     "role": "showcase",
+     "description": "A near-black full-width section opens with a large centred white heading. Below it, white rounded cards of different sizes are placed off-grid at staggered horizontal positions: one holds an album-cover collage with a record sliding out, with a bold white caption and a grey line beneath it on the dark ground; another is a small data card listing collection fields as label and value rows."
+    },
+    {
+     "role": "faq",
+     "description": "A left-aligned column about 480px wide, offset toward the page centre and headed by a bold short title. Six questions in small bold text are separated by hairlines, each with a plus sign at the right edge. A generous empty gap follows before a footer of three tiny caps link groups spread left, centre and right, small legal notes, and a pipe-separated caps link row."
+    }
+   ],
+   "steal": [
+    "Crop one photographed physical object by a viewport corner so the hero has a subject without a centred mockup.",
+    "Set two-line feature headings at one size with the first line in the accent colour and the second in ink.",
+    "Drop the nav entirely on a one-page app site: wordmark plus a one-line descriptor top left, store badges directly under the headline."
+   ]
+  },
+  {
+   "id": "opl-when-you-wish-upon-a-starboy",
+   "name": "starboy",
+   "url": "https://lilguy.net/",
+   "source": "One Page Love",
+   "kind": "physical-product",
+   "score": 7.7,
+   "idea": "A tiny gadget shown enormous: product renders so large the screen crops them, wrapped around a nursery-rhyme headline in fat lowercase.",
+   "mood": [
+    "playful",
+    "glossy",
+    "loud",
+    "toy-like",
+    "deadpan"
+   ],
+   "archetype": "split-text-media",
+   "hero": "No nav, logo or button. Off-white ground. The right half holds the headline: five stacked lines of very bold rounded lowercase at 13vw (187px), right-aligned and almost touching the right edge, with tight negative tracking and leading under 0.9, so the stack runs from 5% below the top to past the fold and the last line's descenders are cut off. The left 60% is one transparent-shelled, star-shaped device rendered at huge scale (yellow circuit board, round black screen), rotated and cropped by the top, left and bottom edges, its right-hand points tucking behind the letters. A chrome keyring loop peeks in at bottom-right.",
+   "type": "Milling Triplex 1mm, bold, for the headline at 187px in lowercase with -0.055em tracking, one or two words per line over eleven lines; the same family at about 13px for body copy, product names and footer links, all lowercase. Two sizes only, a 14:1 jump.",
+   "colour": "#f9f9f9 #2a2b2d #f5d900 #8d8e96 #b8a45c #2f6fe0 — Off-white page with charcoal type. Colour lives in the objects: circuit-board yellow, chrome, matte black, brass. A small blue logo in the footer is the only interface colour.",
+   "imagery": "Photoreal renders of star-shaped devices in four materials, cut out with no background or cast shadow, scaled well beyond the viewport, each rotated differently and cropped by the edges. Accessories are shown small and centred in grid cells.",
+   "layout": "Three acts: three screens of oversized renders tumbling diagonally with the headline set right, then left; one screen holding a single narrow text column and nothing else; then a three-column hairline-divided product grid running edge to edge with no outer margin.",
+   "sections": [
+    {
+     "role": "gallery",
+     "description": "The second and third screens are only renders: a matte-black star and a chrome star overlap on a diagonal, each wider than half the viewport and cropped by two edges. The second half of the headline then appears left-aligned at the same 13vw, left of centre, while a brass star fills the right half and bleeds off the top and right. No captions or interface."
+    },
+    {
+     "role": "intro",
+     "description": "A single column of 13px lowercase text about 290px wide, placed roughly 15% from the left and starting at the top of the viewport: five short paragraphs, the first in medium weight. The remaining three-quarters of the screen is blank off-white. No heading, image or button accompanies it."
+    },
+    {
+     "role": "showcase",
+     "description": "Three equal columns span the full viewport width, separated by faint 1px vertical and horizontal lines. Each cell holds one cut-out render centred with generous air and a caption row along its bottom edge: product name at left, price with stock count or a coming-soon note in grey at right, all 13px lowercase. The footer is one row: small blue logo left, five text links right."
+    }
+   ],
+   "steal": [
+    "Scale the product until two or three viewport edges crop it, and let its silhouette tuck behind the headline letters.",
+    "Break a sentence into one or two words per line at 13vw, right-aligned for the first half and left-aligned for the second, so the headline spans several screens.",
+    "Follow a loud hero with one tiny text column on an otherwise empty screen; the drop in scale does the pacing."
+   ]
+  },
+  {
+   "id": "aww-aardvark-book-club",
+   "name": "Aardvark Book Club",
+   "url": "https://aardvarkbookclub.com",
+   "source": "Awwwards Site of the Day",
+   "kind": "ecommerce",
+   "score": 7.7,
+   "idea": "A book club dressed as a sweet shop: fat black type, tumbling 3D books and boxes on wavy colour fields, annotated with handwritten asides.",
+   "mood": [
+    "playful",
+    "loud",
+    "bookish",
+    "warm"
+   ],
+   "archetype": "split-text-media",
+   "hero": "A saturated yellow field with two large wavy blobs, pale yellow then orange, rising from the bottom. A three-line headline in Champ Bold, black, at about 8.3vw with leading under 0.85, is flush to a 15px left margin and reaches 60% across. Beneath it: a four-line paragraph 310px wide and a magenta split button (label plus arrow square). Right of centre a 3D hardback in navy and pink tilts 20 degrees, 600px tall; another book is cropped by the top-left corner, a third by the bottom edge. A purple handwritten note sits rotated at far right. Nav: pale-yellow pill links centred, an orange login button, black round social icons.",
+   "type": "Champ Bold, an ultra-heavy wide sans with a looped g, for headings at 120px with tight tracking and leading; Degular for 18px body and pill labels; a purple handwritten script (Hello Organichand) for rotated margin notes and step labels. Three distinct voices.",
+   "colour": "#ffd249 #faed8f #f9a21f #ffdbfd #a4f6f8 #fd48f2 — Each section owns one flat candy colour: yellow hero, white shelf, pink steps, cyan unboxing, deep violet footer. Type stays black; buttons are magenta.",
+   "imagery": "3D-rendered hardbacks and a patterned shipping box, cut out and tilted, floating over flat wavy vector shapes; real book covers on tilted coloured cards; black line drawings of figures on step cards. Nothing sits square to the grid.",
+   "layout": "Sections are full-width panels with roughly 80px corner radius inset about 20px from the viewport, each a different colour. Headings alternate left and centre; cards overlap and rotate a few degrees; handwritten notes are tucked beside headings at an angle.",
+   "sections": [
+    {
+     "role": "showcase",
+     "description": "White band. A centred black heading at 5.5vw over a two-line subline, with a rotated handwritten note at its upper left. Below, a horizontal row of book covers, each on a rounded colour-matched card with a small tag pill at top-left; cards tilt alternately by 3 degrees at staggered heights, the last cropped by the right edge, with two round arrow buttons above at right. Later, covers give way to same-coloured info cards with genre pills, heavy title and blurb."
+    },
+    {
+     "role": "how-it-works",
+     "description": "A pale-pink rounded panel with lighter wavy shapes inside. Heavy black heading at left with a handwritten aside beside it; a small round logo stamp and a magenta split button at right. Along the bottom, four portrait cards about 250px wide in cyan, magenta, yellow and violet overlap like a fanned hand, each rotated a few degrees, with a handwritten step label at top, a black line drawing in the middle and a heavy caption at the foot."
+    },
+    {
+     "role": "other",
+     "description": "A full-viewport cyan rounded panel containing only a 3D shipping box wrapped in a wavy magenta, violet and black pattern, centred. Across the scroll it goes from closed and tilted to lid open, growing to about 57% of the viewport width, with a single handwritten note at its right. No heading and no button."
+    },
+    {
+     "role": "footer",
+     "description": "The preceding white section ends in large rounded bottom corners over a deep violet footer. Left: white logo, two store badges, two magenta round social icons. Centre: the patterned box again, cropped by the bottom edge. Right: a small heavy heading, a white rounded email field and a magenta split button. A black legal strip closes the page."
+    }
+   ],
+   "steal": [
+    "Give each section one flat saturated colour inside a large-radius inset panel and keep the type black across all of them.",
+    "Add rotated handwritten margin notes beside headings to carry secondary facts in a second voice.",
+    "Fan step cards so they overlap and tilt instead of sitting in an even grid."
+   ]
+  }
+ ]
+}

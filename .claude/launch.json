@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "vite",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "set VITE_SUPABASE_URL=http://supabase.test&& set VITE_SUPABASE_PUBLISHABLE_KEY=placeholder&& npm run dev"],
+      "port": 8080
+    }
+  ]
+}

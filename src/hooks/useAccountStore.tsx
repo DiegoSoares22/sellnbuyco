@@ -52,52 +52,52 @@ export const AccountStoreProvider: React.FC<{ children: React.ReactNode }> = ({ 
   const [sortBy, setSortBy] = useState(searchParams.get("sort") || "newest");
 
   // Favorites (persisted in localStorage)
-  const [favorites, setFavorites] = useState<string[]>([]);
-
-  // Load favorites from local storage on mount
-  useEffect(() => {
+  const [favorites, setFavorites] = useState<string[]>(() => {
     try {
       const stored = localStorage.getItem("sellnbuy_favs");
-      if (stored) {
-        setFavorites(JSON.parse(stored));
-      }
+      return stored ? JSON.parse(stored) : [];
     } catch (e) {
       console.error("Failed to load favorites", e);
+      return [];
     }
-  }, []);
+  });
 
   // Sync favorites with localStorage
-  const saveFavorites = (newFavs: string[]) => {
-    setFavorites(newFavs);
+  useEffect(() => {
     try {
-      localStorage.setItem("sellnbuy_favs", JSON.stringify(newFavs));
+      localStorage.setItem("sellnbuy_favs", JSON.stringify(favorites));
     } catch (e) {
       console.error("Failed to save favorites", e);
     }
-  };
+  }, [favorites]);
 
+  // Atualização funcional: o "Desfazer" de um toast chama isto depois, com o estado já mudado
   const toggleFavorite = (id: string) => {
-    if (favorites.includes(id)) {
-      saveFavorites(favorites.filter((favId) => favId !== id));
-    } else {
-      saveFavorites([...favorites, id]);
-    }
+    setFavorites((prev) => (prev.includes(id) ? prev.filter((favId) => favId !== id) : [...prev, id]));
   };
 
   const isFavorite = (id: string) => favorites.includes(id);
 
-  // Sync state with URL search params
+  // Sync state with URL search params. Só mexe nas chaves de filtro, para não apagar
+  // outras (ex.: ?conta= da prévia) nem o state da navegação quando nada mudou.
   useEffect(() => {
-    const params: Record<string, string> = {};
-    if (searchQuery) params.search = searchQuery;
-    if (selectedClass) params.class = selectedClass;
-    if (minPrice !== 0) params.minPrice = minPrice.toString();
-    if (maxPrice !== 1000) params.maxPrice = maxPrice.toString();
-    if (levelFilter.length > 0) params.level = levelFilter.join(",");
-    if (sortBy !== "newest") params.sort = sortBy;
+    const filters: Record<string, string | null> = {
+      search: searchQuery || null,
+      class: selectedClass,
+      minPrice: minPrice !== 0 ? minPrice.toString() : null,
+      maxPrice: maxPrice !== 1000 ? maxPrice.toString() : null,
+      level: levelFilter.length > 0 ? levelFilter.join(",") : null,
+      sort: sortBy !== "newest" ? sortBy : null,
+    };
+    if (Object.entries(filters).every(([key, value]) => searchParams.get(key) === value)) return;
 
-    setSearchParams(params, { replace: true });
-  }, [searchQuery, selectedClass, minPrice, maxPrice, levelFilter, sortBy, setSearchParams]);
+    const next = new URLSearchParams(searchParams);
+    for (const [key, value] of Object.entries(filters)) {
+      if (value === null) next.delete(key);
+      else next.set(key, value);
+    }
+    setSearchParams(next, { replace: true });
+  }, [searchQuery, selectedClass, minPrice, maxPrice, levelFilter, sortBy, searchParams, setSearchParams]);
 
   const toggleClass = (cls: string) => {
     setSelectedClass((prev) => (prev === cls ? null : cls));

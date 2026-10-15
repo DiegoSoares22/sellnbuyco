@@ -1,24 +1,14 @@
-import React, { useState, useMemo, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import {
-  ArrowLeft,
-  MessageCircle,
-  X,
-  HandCoins,
-  Sparkles,
-  ExternalLink,
-  ChevronRight,
-  ShieldAlert,
-} from "lucide-react";
-import { getRarityClasses, isTemporalBadge } from "@/lib/rarityBadge";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { useMemo, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import * as DialogPrimitive from "@radix-ui/react-dialog";
+import { ArrowRight, ChevronRight, MessageCircle, X } from "lucide-react";
+import { Link, useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { ACCOUNTS } from "@/data/accounts";
 import type { AccountListing } from "@/data/accounts";
 import HeroSection from "@/components/HeroSection";
 import { StickyFilterBar } from "@/components/StickyFilterBar";
 import { FilterDrawer } from "@/components/FilterDrawer";
 import { AccountCard } from "@/components/AccountCard";
-import { AccountCardSkeleton } from "@/components/AccountCardSkeleton";
 import { EmptyState } from "@/components/EmptyState";
 import { getMinCpsK, getAccountLevel } from "@/lib/accountFilters";
 import { useAccountStore } from "@/hooks/useAccountStore";
@@ -26,162 +16,32 @@ import { useI18n } from "@/i18n";
 import { toast } from "sonner";
 import { Footer } from "@/components/Footer";
 import { AccountDetailPage } from "@/components/AccountDetailPage";
-import { LastUpdatedBadge } from "@/components/LastUpdatedBadge";
+import { formatLastUpdated } from "@/lib/lastUpdated";
+import { formatPrice, meaningfulBadge } from "@/lib/price";
+import { buildWa } from "@/lib/whatsapp";
+import { returnFocusProps } from "@/lib/dialogFocus";
+import { ImageZoomDialog } from "@/components/ImageZoomDialog";
+import { getHighlights } from "@/lib/highlights";
+import { BENTO_CROPS, cropStyle } from "@/lib/printCrops";
 
-const WHATSAPP = "5575981382799";
-
-const buildWa = (msg: string) =>
-  `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
-
-function OfferButton({ title, className = "" }: { title: string; className?: string }) {
-  const { t, lang } = useI18n();
-
-  const handleClick = () => {
-    toast.success(lang === "pt" ? "Redirecionando para o WhatsApp... 📲" : "Redirecting to WhatsApp... 📲");
-  };
-
-  return (
-    <a
-      href={buildWa(t("wa.offer", { title }))}
-      target="_blank"
-      rel="noopener noreferrer"
-      onClick={(e) => {
-        e.stopPropagation();
-        handleClick();
-      }}
-      className={`group relative inline-flex items-center justify-center gap-2 py-2.5 rounded-xl border border-amber-500/25 bg-amber-500/5 text-amber-400 text-xs font-bold hover:bg-amber-500/15 hover:border-amber-500/40 hover:shadow-lg hover:shadow-amber-500/5 transition-all overflow-hidden ${className}`}
-    >
-      <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
-      <HandCoins size={14} /> {t("acc.makeOffer")}
-    </a>
-  );
-}
-
-function AccountDetail({ account }: { account: AccountListing }) {
-  const [imageZoomed, setImageZoomed] = useState(false);
-  const { t, lang, withLang } = useI18n();
-
-  const handleInterestClick = () => {
-    toast.success(lang === "pt" ? "Redirecionando para o WhatsApp... 📲" : "Redirecting to WhatsApp... 📲");
-  };
-
-  return (
-    <div className="min-h-screen bg-[#0a0a0f] py-8 px-4 sm:px-6 lg:px-8">
-      <div className="container max-w-4xl mx-auto">
-        <Link
-          to={withLang("/")}
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-slate-200 transition-colors mb-6 group"
-        >
-          <ArrowLeft size={14} className="group-hover:-translate-x-0.5 transition-transform" />
-          <span>{t("acc.backToAccounts")}</span>
-        </Link>
-
-        <div className="bg-[#12121a] border border-zinc-800 rounded-3xl overflow-hidden shadow-2xl shadow-black/50">
-          <div className="grid grid-cols-1 md:grid-cols-12">
-            {/* Lado Esquerdo: Imagem da conta */}
-            <div className="md:col-span-5 relative bg-zinc-950 min-h-[300px] md:min-h-full">
-              <img
-                src={account.image}
-                alt={account.title}
-                className="absolute inset-0 w-full h-full object-cover cursor-zoom-in hover:brightness-110 transition-all duration-300"
-                onClick={() => setImageZoomed(true)}
-              />
-              <span className={`absolute top-4 left-4 ${getRarityClasses(account.badge)} text-[10px] font-bold px-2.5 py-1 rounded-md inline-flex items-center gap-1 border`}>
-                {isTemporalBadge(account.badge) && <Sparkles size={10} />}
-                {account.badge}
-              </span>
-            </div>
-
-            {/* Lado Direito: Informações detalhadas */}
-            <div className="md:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-6">
-              <div>
-                <h1 className="text-xl sm:text-2xl font-bold text-slate-100 leading-tight">{account.title}</h1>
-                <div className="flex flex-wrap gap-2 mt-3">
-                  {account.prices.map((p, pi) => (
-                    <span key={pi} className="text-xs font-bold text-amber-500 bg-amber-500/10 border border-amber-500/20 px-3 py-1 rounded-lg">
-                      {p.label}: {p.value}
-                    </span>
-                  ))}
-                  <span className="text-xs font-bold text-slate-400 bg-zinc-900 border border-zinc-800 px-3 py-1 rounded-lg">
-                    {account.className}
-                  </span>
-                </div>
-              </div>
-
-              {/* Seções de Atributos */}
-              <div className="space-y-4 max-h-[320px] overflow-y-auto no-scrollbar pr-1 border-y border-zinc-850 py-4">
-                {account.sections.map((sec, si) => (
-                  <div key={si} className="space-y-1.5">
-                    <h3 className={`text-xs font-bold uppercase tracking-wider ${
-                      si === 0 ? "text-amber-500" : si === 1 ? "text-violet-500" : si === 2 ? "text-cyan-500" : "text-slate-400"
-                    }`}>
-                      {sec.title}
-                    </h3>
-                    <ul className="space-y-1">
-                      {sec.items.map((item, ii) => (
-                        <li key={ii} className="text-xs text-slate-300 pl-3 border-l-2 border-zinc-800 leading-relaxed">
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-
-              <div className="space-y-3 pt-2">
-                <a
-                  href={buildWa(t("wa.interestAccount", { title: account.title }))}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={handleInterestClick}
-                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-black font-bold text-sm shadow-md shadow-emerald-500/10 transition-colors"
-                >
-                  <MessageCircle size={16} />
-                  <span>{t("acc.interestedContact")}</span>
-                </a>
-                <OfferButton title={account.title} className="w-full py-3" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <AnimatePresence>
-        {imageZoomed && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-black/90 flex items-center justify-center p-4 cursor-zoom-out"
-            onClick={() => setImageZoomed(false)}
-          >
-            <motion.img
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              src={account.image}
-              alt={account.title}
-              className="max-w-[90vw] max-h-[85vh] object-contain rounded-2xl"
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <Footer />
-    </div>
-  );
-}
+/** A prévia aberta fica na URL (?conta=acc-83): dá para compartilhar e o Voltar do navegador fecha. */
+const PREVIEW_PARAM = "conta";
 
 function AccountsList() {
   const { lang, t, withLang } = useI18n();
   const navigate = useNavigate();
+  const location = useLocation();
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const previewId = searchParams.get(PREVIEW_PARAM);
+  const selected = previewId ? ACCOUNTS.find((a) => a.id === previewId) ?? null : null;
 
   // Estados locais para dialogs
-  const [selected, setSelected] = useState<AccountListing | null>(null);
-  const [imageZoomed, setImageZoomed] = useState(false);
-  const [zoomedImage, setZoomedImage] = useState<string | null>(null);
+  const [zoomed, setZoomed] = useState<AccountListing | null>(null);
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const [loading, setLoading] = useState(false);
+
+  // Quem abriu a prévia recebe o foco de volta ao fechar (ver returnFocusProps)
+  const previewOpener = useRef<HTMLElement | null>(null);
 
   const {
     searchQuery,
@@ -191,17 +51,24 @@ function AccountsList() {
     levelFilter,
     sortBy,
     clearFilters,
-    setPriceRange,
-    setSelectedClass,
-    setLevelFilter,
   } = useAccountStore();
 
-  // Ativar shimmer loading temporário ao alterar filtros
-  useEffect(() => {
-    setLoading(true);
-    const to = setTimeout(() => setLoading(false), 450);
-    return () => clearTimeout(to);
-  }, [searchQuery, selectedClass, minPrice, maxPrice, levelFilter, sortBy]);
+  const openPreview = (acc: AccountListing) => {
+    const next = new URLSearchParams(searchParams);
+    next.set(PREVIEW_PARAM, acc.id);
+    setSearchParams(next, { state: { preview: true } });
+  };
+
+  // Aberta por aqui: volta uma entrada no histórico. Aberta por link direto: só tira o parâmetro.
+  const closePreview = () => {
+    if ((location.state as { preview?: boolean } | null)?.preview) {
+      navigate(-1);
+      return;
+    }
+    const next = new URLSearchParams(searchParams);
+    next.delete(PREVIEW_PARAM);
+    setSearchParams(next, { replace: true });
+  };
 
   // Lógica de Filtragem e Ordenação das contas
   const { filtered, fallbackUsed } = useMemo(() => {
@@ -286,208 +153,192 @@ function AccountsList() {
   };
 
   const handleWhatsAppRedirect = () => {
-    toast.success(lang === "pt" ? "Redirecionando para o WhatsApp... 📲" : "Redirecting to WhatsApp... 📲");
+    toast.success(lang === "pt" ? "Redirecionando para o WhatsApp… 📲" : "Redirecting to WhatsApp… 📲");
   };
 
+  const heading = (delay: number) => ({
+    initial: { opacity: 0, y: 24 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, margin: "-10% 0px" },
+    transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] as const },
+  });
+
+  const zoomLabel = lang === "pt" ? "Ampliar print de" : "Enlarge screenshot of";
+  const closeLabel = lang === "pt" ? "Fechar" : "Close";
+  const selectedPrice = selected ? formatPrice(selected, lang) : null;
+  const selectedBadge = selected ? meaningfulBadge(selected.badge) : null;
+  const selectedLevel = selected ? getAccountLevel(selected) : null;
+  const selectedMeta = selected
+    ? [selected.className, selectedLevel ? `Lv ${selectedLevel}` : null, ...getHighlights(selected)].filter(Boolean).join(" · ")
+    : "";
+  // Os primeiros itens da primeira seção são os destaques que o vendedor escolheu
+  const selectedFacts = selected ? (selected.sections[0]?.items ?? []).slice(0, 5) : [];
+
   return (
-    <div className="min-h-screen bg-[#0a0a0f]">
-      {/* Hero Section */}
+    <div>
+      {/* Capítulo 1 (faixa escura): conta em destaque */}
       <HeroSection />
 
-
-      {/* Título da Seção */}
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <div>
-            <h2 className="text-xl sm:text-2xl font-extrabold text-slate-50 tracking-tight flex items-center gap-2">
-              <span>{t("acc.title")}</span>
-              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-            </h2>
-          </div>
-          <LastUpdatedBadge />
+      {/* Capítulo 2 (faixa clara): catálogo */}
+      <section className="band-light" aria-labelledby="todas-as-contas-titulo">
+        {/* No desktop o scroll-padding do <html> já conta a barra de filtros, que aqui ainda não está colada no topo */}
+        <div
+          id="todas-as-contas"
+          className="page-container grid gap-md pb-xl pt-section-mobile md:pt-section-tablet lg:-scroll-mt-16 lg:grid-cols-12 lg:items-end lg:gap-x-lg lg:pt-section"
+        >
+          <motion.h2 {...heading(0)} id="todas-as-contas-titulo" className="text-display-lg text-ink lg:col-span-6">
+            {lang === "pt" ? "Todas as contas" : "All Accounts"}
+          </motion.h2>
+          <motion.div {...heading(0.08)} className="lg:col-span-5 lg:col-start-8">
+            <p className="max-w-[52ch] text-body-sm text-body-light">
+              {lang === "pt"
+                ? "Cada conta com os próprios prints. Preço em CPs, conversa direta pelo WhatsApp."
+                : "Every account with its own screenshots. Prices in CPs, straight talk on WhatsApp."}
+            </p>
+            <p className="tabular mt-xs text-caption-md text-mute-light">
+              {lang === "pt"
+                ? `Atualizado em ${formatLastUpdated(lang)} (Brasília)`
+                : `Updated ${formatLastUpdated(lang)} (Brasília time)`}
+            </p>
+          </motion.div>
         </div>
-      </div>
 
-      {/* Sticky Filter Bar */}
-      <StickyFilterBar
-        onOpenFilters={() => setFiltersOpen(true)}
-        filteredCount={filtered.length}
-      />
+        <StickyFilterBar
+          onOpenFilters={() => setFiltersOpen(true)}
+          filtersOpen={filtersOpen}
+          filteredCount={filtered.length}
+        />
 
-      {/* Corpo principal das Contas */}
-      <div id="accounts-listing" className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {fallbackUsed && (
-          <div className="mb-8 p-4 rounded-2xl border border-amber-500/20 bg-amber-500/5 text-xs sm:text-sm text-slate-200 flex items-start gap-3">
-            <ShieldAlert size={16} className="text-amber-500 shrink-0 mt-0.5" />
-            <div>
-              <p className="font-bold">{t("acc.classSoldOut")}</p>
-              <p className="text-slate-400 mt-1">{t("acc.classSoldOutHint")}</p>
+        <div
+          id="accounts-listing"
+          className="page-container pb-section-mobile pt-xl md:pb-section-tablet lg:pb-section"
+        >
+          {fallbackUsed && (
+            <div className="mb-xl rounded-md bg-surface-card p-lg">
+              <p className="text-heading-md text-ink">{t("acc.classSoldOut")}</p>
+              <p className="mt-1 text-body-sm text-body-light">{t("acc.classSoldOutHint")}</p>
             </div>
-          </div>
-        )}
+          )}
 
-        {/* Grid de Cards com Skeleton Loading ou Empty State */}
-        {loading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <AccountCardSkeleton key={i} />
-            ))}
-          </div>
-        ) : filtered.length === 0 ? (
-          <EmptyState onClear={handleClearFilters} />
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filtered.map((acc, i) => (
-              <motion.div
-                key={acc.id}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: Math.min(i, 8) * 0.05 }}
-              >
-                <AccountCard
-                  account={acc}
-                  onSelect={() => setSelected(acc)}
-                  onViewDetails={() => navigate(withLang(`/accounts/${acc.id}`))}
-                  onImageZoom={() => setZoomedImage(acc.image)}
-                />
-              </motion.div>
-            ))}
-          </div>
-        )}
-      </div>
-
-      {/* Drawer Lateral Filtros */}
-      <FilterDrawer
-        open={filtersOpen}
-        onOpenChange={setFiltersOpen}
-        filteredCount={filtered.length}
-      />
-
-      {/* Modal Detalhes do Produto */}
-      <AnimatePresence>
-        {selected && !imageZoomed && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-start justify-center overflow-y-auto p-4 pt-12"
-            onClick={() => setSelected(null)}
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 40 }}
-              className="bg-[#12121a] border border-zinc-800 rounded-3xl w-full max-w-2xl overflow-hidden mb-12 shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="relative aspect-[16/9] bg-zinc-950">
-                <img
-                  src={selected.image}
-                  alt={selected.title}
-                  className="w-full h-full object-cover cursor-zoom-in hover:brightness-110 transition-all duration-300"
-                  onClick={() => setImageZoomed(true)}
-                />
-                <button
-                  onClick={() => setSelected(null)}
-                  className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/50 hover:bg-black/85 text-white flex items-center justify-center backdrop-blur-sm transition-all"
+          {filtered.length === 0 ? (
+            <EmptyState onClear={handleClearFilters} />
+          ) : (
+            <div className="rhythm-grid">
+              {filtered.map((acc, i) => (
+                <motion.div
+                  key={acc.id}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "0px 0px -8% 0px" }}
+                  transition={{ duration: 0.6, delay: (i % 4) * 0.07, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <X size={15} />
-                </button>
-                <span className={`absolute top-4 left-4 ${getRarityClasses(selected.badge)} text-[10px] font-bold px-2.5 py-1 rounded-md inline-flex items-center gap-1 border`}>
-                  {isTemporalBadge(selected.badge) && <Sparkles size={9} />}
-                  {selected.badge}
-                </span>
-              </div>
+                  <AccountCard account={acc} onSelect={() => openPreview(acc)} onImageZoom={() => setZoomed(acc)} />
+                </motion.div>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
 
-              <div className="p-6 sm:p-8 space-y-6">
-                <div>
-                  <h2 className="text-lg sm:text-xl font-bold text-slate-100 leading-tight">{selected.title}</h2>
-                  <div className="flex flex-wrap gap-2 mt-3">
-                    {selected.prices.map((p, pi) => (
-                      <span key={pi} className="text-xs font-bold text-amber-500 bg-amber-500/10 border border-amber-500/20 px-3 py-1.5 rounded-lg">
-                        {p.label}: {p.value}
-                      </span>
+      {/* Gaveta de filtros */}
+      <FilterDrawer open={filtersOpen} onOpenChange={setFiltersOpen} />
+
+      {/* Prévia da conta (dialog-card): print + closes à esquerda, decisão à direita. Radix cuida de
+          Esc, foco preso, devolução do foco e trava de scroll */}
+      <DialogPrimitive.Root open={selected !== null} onOpenChange={(open) => !open && closePreview()}>
+        {selected && selectedPrice && (
+          <DialogPrimitive.Portal>
+            <DialogPrimitive.Overlay className="fixed inset-0 z-50 overflow-y-auto overscroll-contain bg-canvas-dark/80 p-4 pt-12 data-[state=open]:animate-in data-[state=open]:fade-in-0 sm:pt-16">
+              <DialogPrimitive.Content
+                aria-describedby={undefined}
+                {...returnFocusProps(previewOpener)}
+                className="band-light relative mx-auto mb-12 grid w-full max-w-[1120px] overflow-hidden rounded-lg shadow-[0_24px_64px_rgba(0,0,0,0.35)] outline-none data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:slide-in-from-bottom-10 data-[state=open]:duration-500 lg:grid-cols-12"
+              >
+                <DialogPrimitive.Close
+                  aria-label={closeLabel}
+                  className="absolute right-md top-md z-10 flex h-10 w-10 items-center justify-center rounded-full bg-canvas-dark/70 text-on-dark transition-colors hover:bg-canvas-dark lg:right-lg lg:top-lg lg:border lg:border-ash-light lg:bg-canvas-light lg:text-ink lg:hover:border-ink lg:hover:bg-canvas-light"
+                >
+                  <X size={18} aria-hidden="true" />
+                </DialogPrimitive.Close>
+
+                {/* Galeria: print + três closes num bento sem vão */}
+                <div className="p-md sm:p-lg lg:col-span-7">
+                  <button
+                    type="button"
+                    onClick={() => setZoomed(selected)}
+                    aria-label={`${zoomLabel} ${selected.title}`}
+                    className="block aspect-video w-full cursor-zoom-in overflow-hidden rounded-t-md bg-surface-soft focus-visible:[outline-offset:-3px]"
+                  >
+                    <img src={selected.image} alt="" width={1280} height={720} className="h-full w-full object-cover" />
+                  </button>
+                  <div aria-hidden="true" className="mt-0.5 grid grid-cols-3 gap-0.5 overflow-hidden rounded-b-md">
+                    {BENTO_CROPS.map((crop, i) => (
+                      <div key={i} className="aspect-square bg-surface-soft bg-no-repeat" style={cropStyle(selected.image, crop)} />
                     ))}
-                    <span className="text-xs font-bold text-slate-400 bg-zinc-900 border border-zinc-800 px-3 py-1.5 rounded-lg">
-                      {selected.className}
-                    </span>
                   </div>
                 </div>
 
-                {/* Detalhes de atributos das abas/seções */}
-                <div className="space-y-4 max-h-[250px] overflow-y-auto no-scrollbar border-y border-zinc-850 py-4">
-                  {selected.sections.map((sec, si) => (
-                    <div key={si} className="space-y-1.5">
-                      <h3 className={`text-[11px] font-bold uppercase tracking-wider ${
-                        si === 0 ? "text-amber-500" : si === 1 ? "text-violet-500" : si === 2 ? "text-cyan-500" : "text-slate-400"
-                      }`}>
-                        {sec.title}
-                      </h3>
-                      <ul className="space-y-1">
-                        {sec.items.map((item, ii) => (
-                          <li key={ii} className="text-xs text-slate-300 pl-3 border-l-2 border-zinc-800 leading-relaxed">
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
+                {/* Decisão: o que é, quanto custa, o que tem de melhor, e como falar */}
+                <div className="flex flex-col px-lg pb-lg lg:col-span-5 lg:py-xl lg:pl-xs lg:pr-xl">
+                  {selectedBadge && <span className="badge-info mb-md self-start">{selectedBadge}</span>}
+                  <DialogPrimitive.Title className="text-heading-xl text-ink lg:pr-12">{selected.title}</DialogPrimitive.Title>
+                  <p className="mt-1 text-caption-md text-mute-light" translate="no">
+                    {selectedMeta}
+                  </p>
+                  <p className="tabular mt-lg text-price-lg text-ink">
+                    {selectedPrice.amount}
+                    {selectedPrice.unit && <span className="ml-1.5 text-body-sm text-mute-light">{selectedPrice.unit}</span>}
+                  </p>
 
-                <div className="space-y-3 pt-2">
-                  <div className="flex flex-col sm:flex-row gap-3">
+                  <ul className="mt-lg">
+                    {selectedFacts.map((item, i) => (
+                      <li key={i} className="break-words border-b border-hairline-light py-sm text-body-sm text-body-light last:border-0">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link to={withLang(`/accounts/${selected.id}`)} className="link-light mt-sm self-start text-caption-md">
+                    {lang === "pt" ? "Ver todos os atributos" : "See All Attributes"}
+                  </Link>
+
+                  <div className="mt-auto space-y-sm pt-xl">
                     <a
                       href={buildWa(t("wa.interest", { title: selected.title }))}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={handleWhatsAppRedirect}
-                      className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-black font-bold text-xs sm:text-sm shadow-md shadow-emerald-500/10 transition-colors"
+                      className="btn btn-commerce w-full"
                     >
-                      <MessageCircle size={15} />
+                      <MessageCircle size={16} aria-hidden="true" />
                       <span>{t("acc.interested")}</span>
                     </a>
-                    <button
-                      onClick={() => {
-                        navigate(withLang(`/accounts/${selected.id}`));
-                        setSelected(null);
-                        toast.success(lang === "pt" ? "Link direto aberto!" : "Direct link opened!");
-                      }}
-                      className="px-4 py-3 rounded-xl border border-zinc-800 hover:bg-zinc-800/80 text-slate-300 text-xs font-bold flex items-center justify-center gap-1.5 transition-colors"
-                    >
+                    <Link to={withLang(`/accounts/${selected.id}`)} className="btn btn-secondary-light w-full">
                       <span>{t("acc.directLink")}</span>
-                      <ExternalLink size={13} />
-                    </button>
+                      <ArrowRight size={16} aria-hidden="true" />
+                    </Link>
+                    <a
+                      href={buildWa(t("wa.offer", { title: selected.title }))}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="link-light block py-xs text-center text-caption-md"
+                    >
+                      {t("acc.makeOffer")}
+                    </a>
                   </div>
-                  <OfferButton title={selected.title} className="w-full py-3" />
                 </div>
-              </div>
-            </motion.div>
-          </motion.div>
+              </DialogPrimitive.Content>
+            </DialogPrimitive.Overlay>
+          </DialogPrimitive.Portal>
         )}
-      </AnimatePresence>
+      </DialogPrimitive.Root>
 
-      <AnimatePresence>
-        {zoomedImage && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-black/90 flex items-center justify-center p-4 cursor-zoom-out"
-            onClick={() => setZoomedImage(null)}
-          >
-            <motion.img
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              src={zoomedImage}
-              alt="Account preview"
-              className="max-w-[90vw] max-h-[85vh] object-contain rounded-2xl"
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Print ampliado: abre por cima da prévia (ou direto do card) */}
+      <ImageZoomDialog
+        image={zoomed && { src: zoomed.image, title: zoomed.title }}
+        onClose={() => setZoomed(null)}
+      />
 
-      {/* 7. Discrete Banner above Footer + Footer component */}
+      {/* Capítulo 3 (faixa da marca) */}
       <Footer />
     </div>
   );
@@ -510,17 +361,20 @@ export default function Accounts() {
 function AccountNotFound() {
   const { t, withLang } = useI18n();
   return (
-    <div className="min-h-screen bg-[#0a0a0f] flex items-center justify-center px-4">
-      <div className="text-center max-w-sm">
-        <h1 className="text-xl font-bold text-slate-100 mb-2">{t("acc.notFound")}</h1>
-        <Link
-          to={withLang("/accounts")}
-          className="text-amber-500 hover:underline text-xs font-semibold flex items-center justify-center gap-1.5"
-        >
-          <span>{t("acc.backToAccounts")}</span>
-          <ChevronRight size={14} />
-        </Link>
-      </div>
+    <div>
+      <section className="band-dark">
+        <div className="page-container flex min-h-[calc(100svh-theme(spacing.nav-height))] flex-col items-start justify-center py-section-mobile md:py-section-tablet lg:py-section">
+          <h1 className="max-w-[20ch] text-display-lg text-on-dark">{t("acc.notFound")}</h1>
+          <p className="mt-md max-w-[46ch] text-body-md text-body-dark">
+            {t("acc.notFoundHint")}
+          </p>
+          <Link to={withLang("/")} className="btn btn-primary mt-xl">
+            <span>{t("acc.backToAccounts")}</span>
+            <ChevronRight size={16} aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+      <Footer />
     </div>
   );
 }

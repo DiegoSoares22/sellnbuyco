@@ -1,74 +1,97 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ShieldCheck, MessageCircle, Heart } from "lucide-react";
 import { useI18n } from "@/i18n";
+import { buildWa } from "@/lib/whatsapp";
 import sellnbuycoLogo from "@/assets/sellnbuyco-logo.png";
 
-export const Footer: React.FC = () => {
-  const { lang, t, withLang } = useI18n();
+const linkClass =
+  "text-caption-md text-on-primary underline decoration-on-primary/40 decoration-1 underline-offset-4 transition-colors hover:decoration-on-primary hover:decoration-2";
 
-  const handleWhatsApp = () => {
-    const WHATSAPP = "5575981382799";
-    const msg =
-      lang === "pt"
-        ? "Olá! Vim pelo site SellNBuyCO e gostaria de tirar uma dúvida."
-        : "Hello! I came from SellNBuyCO website and have a question.";
-    window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, "_blank");
-  };
+/**
+ * Faixa da marca (footer-section): o único bloco violeta de ponta a ponta da página.
+ * Nome grande (footer-wordmark) como fechamento, frase à esquerda, links em colunas separadas
+ * por linhas de ritmo à direita, linha fina com © no fim.
+ */
+export const Footer: React.FC = () => {
+  const { lang, withLang, switchLang } = useI18n();
+
+  const waHref = buildWa(
+    lang === "pt"
+      ? "Olá! Vim pelo site SellNBuyCO e gostaria de tirar uma dúvida."
+      : "Hello! I came from SellNBuyCO website and have a question.",
+  );
 
   return (
-    <footer className="mt-16 border-t border-zinc-800/80 bg-[#07070b] relative z-10">
-
-      {/* Conteúdo Principal do Footer */}
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-          {/* Coluna 1: Logo e Descrição (7 colunas no desktop) */}
-          <div className="md:col-span-7 space-y-4">
-            <Link to={withLang("/")} className="inline-flex items-center gap-2 group">
-              <img
-                src={sellnbuycoLogo}
-                alt="SellNBuyCO"
-                className="h-9 w-auto object-contain transition-transform group-hover:scale-105"
-              />
-            </Link>
-            <p className="text-xs text-slate-400 max-w-md leading-relaxed">
-              {lang === "pt"
-                ? "O marketplace premium para compra e venda segura de contas de jogos de alta performance. Valorizamos seu tempo e investimento."
-                : "The premium marketplace for secure buying and selling of high-performance game accounts. We value your time and investment."}
-            </p>
-            <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400">
-              <ShieldCheck size={16} />
-              <span>{lang === "pt" ? "Negociação 100% Garantida" : "100% Guaranteed Trade"}</span>
-            </div>
-          </div>
-
-          {/* Coluna 2: Suporte & Atendimento (5 colunas) */}
-          <div className="md:col-span-5 space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-200">
-              {lang === "pt" ? "Atendimento" : "Support"}
-            </h4>
-            <p className="text-xs text-slate-400 leading-relaxed">
-              {lang === "pt"
-                ? "Dúvidas ou interessado em uma conta? Fale conosco direto no WhatsApp."
-                : "Questions or interested in an account? Contact us directly on WhatsApp."}
-            </p>
-            <button
-              onClick={handleWhatsApp}
-              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 text-xs font-bold transition-all"
-            >
-              <MessageCircle size={14} />
-              <span>WhatsApp Direct</span>
-            </button>
-          </div>
+    <footer className="band-brand">
+      <div className="page-container pb-xl pt-section-mobile md:pt-section-tablet lg:pt-section">
+        <div className="flex items-center gap-md lg:gap-lg">
+          <img
+            src={sellnbuycoLogo}
+            alt=""
+            width={96}
+            height={81}
+            loading="lazy"
+            className="w-14 shrink-0 sm:w-20 lg:w-24"
+          />
+          <p translate="no" className="text-display-wordmark text-on-primary">
+            SellNBuyCO
+          </p>
         </div>
 
-        {/* Rodapé Direitos Autorais */}
-        <div className="mt-12 pt-6 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-4">
-          <p>© {new Date().getFullYear()} SellNBuyCO. All rights reserved.</p>
-          <p className="flex items-center gap-1">
-            <span>Premium Game Account Marketplace</span>
-            <Heart size={12} className="text-amber-500 fill-amber-500 inline" />
+        <div className="mt-xxl grid gap-xl lg:grid-cols-12 lg:gap-x-lg">
+          <p className="max-w-[46ch] text-body-md text-on-primary/80 lg:col-span-5">
+            {lang === "pt"
+              ? "Cada conta aqui é mostrada com os prints dela mesma. Quer saber algo antes de fechar? Pergunte pelo WhatsApp."
+              : "Every account here is shown with its own screenshots. Want to know something before you close? Ask on WhatsApp."}
           </p>
+
+          <nav
+            aria-label={lang === "pt" ? "Rodapé" : "Footer"}
+            className="grid grid-cols-2 gap-x-xxl lg:col-span-5 lg:col-start-8"
+          >
+            <div>
+              <h2 className="text-caption-sm text-on-primary/80">{lang === "pt" ? "Loja" : "Store"}</h2>
+              <ul className="mt-sm space-y-sm">
+                <li>
+                  <Link to={withLang("/")} className={linkClass}>
+                    {lang === "pt" ? "Todas as contas" : "All Accounts"}
+                  </Link>
+                </li>
+                <li>
+                  <Link to={withLang("/recompensas")} className={linkClass}>
+                    {lang === "pt" ? "Recompensas" : "Rewards"}
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div className="relative before:absolute before:-left-6 before:bottom-0 before:top-0 before:w-px before:bg-on-primary/20">
+              <h2 className="text-caption-sm text-on-primary/80">{lang === "pt" ? "Atendimento" : "Support"}</h2>
+              <ul className="mt-sm space-y-sm">
+                <li>
+                  <a href={waHref} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                    WhatsApp
+                  </a>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    onClick={() => switchLang(lang === "pt" ? "en" : "pt")}
+                    lang={lang === "pt" ? "en" : "pt-BR"}
+                    className={linkClass}
+                  >
+                    {lang === "pt" ? "Read in English" : "Ler em português"}
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
+        <div className="mt-xxl flex flex-wrap items-center justify-between gap-sm border-t border-on-primary/20 pt-lg text-caption-md text-on-primary/80">
+          <p>
+            © {new Date().getFullYear()} <span translate="no">SellNBuyCO</span>
+          </p>
+          <p>{lang === "pt" ? "Bom jogo." : "Good game."}</p>
         </div>
       </div>
     </footer>
