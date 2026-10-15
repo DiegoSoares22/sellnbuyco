@@ -57,11 +57,6 @@ export const Footer: React.FC = () => {
                     {lang === "pt" ? "Todas as contas" : "All Accounts"}
                   </Link>
                 </li>
-                <li>
-                  <Link to={withLang("/recompensas")} className={linkClass}>
-                    {lang === "pt" ? "Recompensas" : "Rewards"}
-                  </Link>
-                </li>
               </ul>
             </div>
             <div className="relative before:absolute before:-left-6 before:bottom-0 before:top-0 before:w-px before:bg-on-primary/20">

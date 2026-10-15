@@ -4,7 +4,8 @@ import type { AccountListing } from "@/data/accounts";
 const PATTERNS: [RegExp, (m: RegExpMatchArray) => string][] = [
   [/\b(\d{3})\s*BP\b|B\.P\.:\s*(\d{3})/i, (m) => `${m[1] ?? m[2]} BP`],
   [/Rune Points:?\s*([\d.]+)/i, (m) => `Rune Points ${m[1]}`],
-  [/Myth\s?soul:?\s*(\d+)/i, (m) => `Mythsoul ${m[1]}`],
+  // Perfection da conta (dados antigos chamavam de "Mythsoul"); aceita "648 Perfection" também
+  [/(?:Perfection|Myth\s?soul):?\s*(\d+)|(\d{3})\s*Perfection/i, (m) => `Perfection ${m[1] ?? m[2]}`],
 ];
 
 /**

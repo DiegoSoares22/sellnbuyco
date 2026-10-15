@@ -598,7 +598,7 @@ na faixa clara, `{colors.link-dark}` na escura e branco na faixa da marca.
   `.filter-pill`, `.paddle`, `.badge-info`, `.link-light`, `.link-dark`, `.text-input`,
   `.rhythm-grid` / `.rhythm-cols` (grade com `rhythm-line`), `.crop-frame`, `.bleed-right`.
 - Closes do print: presets em `src/lib/printCrops.ts` (zoom + ponto de mira). Fatos curtos:
-  `src/lib/highlights.ts` (BP, Rune Points, Mythsoul tirados dos atributos).
+  `src/lib/highlights.ts` (BP, Rune Points, Perfection tirados dos atributos).
 
 ## Do's and Don'ts
 
