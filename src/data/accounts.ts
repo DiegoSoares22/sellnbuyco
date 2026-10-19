@@ -1,3 +1,8 @@
+import octoberAccount1Img from "@/assets/account-oct18-1.jpg.asset.json";
+import octoberAccount2Img from "@/assets/account-oct18-2.jpg.asset.json";
+import octoberAccount3Img from "@/assets/account-oct18-3.jpg.asset.json";
+import octoberAccount4Img from "@/assets/account-oct18-4.jpg.asset.json";
+import octoberAccount5Img from "@/assets/account-oct18-5.jpg.asset.json";
 import waterImg from "@/assets/water.jpg";
 import jojoNinjaImg from "@/assets/JojoNinja.jpg";
 import decenteWaterImg from "@/assets/decente-water.png";
@@ -24,7 +29,6 @@ import topWaterArchivesFullImg from "@/assets/top-water-archives-full.jpg";
 import waterWilsaoImg from "@/assets/water-wilsao.jpg";
 import decenteNinja8kImg from "@/assets/decente-ninja-8k.png";
 import waterFire12kImg from "@/assets/water-fire-12k.png";
-import decenteNinja25kImg from "@/assets/decente-ninja-25k.jpg";
 import archerEpicOriginsImg from "@/assets/archer-epic-origins.png";
 import archerTwinCityOriginsImg from "@/assets/archer-twincity-origins.jpg";
 import ninja1Jail35kImg from "@/assets/ninja-1jail-35k.png";
@@ -61,6 +65,220 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    "id": "acc-123",
+    "title": "Ninja Sacred Star P2 — Lv 109 — Break build",
+    "badge": "NOVO",
+    "badgeColor": "bg-emerald-500",
+    "image": octoberAccount1Img.url,
+    "className": "Ninja",
+    "prices": [
+      {
+        "label": "Preço",
+        "value": "30k CPs"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Destaques",
+        "items": [
+          "Lv. 109 Sacred_Star_NinjaP2",
+          "372 BP | Perfection 648",
+          "Rune Points: 241.000",
+          "Ninpo Score: 38.783 (Ninja Sprint)"
+        ]
+      },
+      {
+        "title": "Atributos & Combate",
+        "items": [
+          "HP: 78.152 | Attack: 45.149 ~ 47.640",
+          "P-Strike: 96.70% | Break: 281.9%",
+          "Anti-Break: 56.1% | Immunity: 228.70%"
+        ]
+      },
+      {
+        "title": "Equipamentos, Runas & Progressão",
+        "items": [
+          "Runas principais em Max",
+          "Relíquia: [Cloud Shock] HeartlessSeal — 1.691 Pts",
+          "Chi: Dragon, Phoenix, Tiger e Turtle — 400",
+          "Astredge: Love Forever — Recognition 70%"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "acc-124",
+    "title": "Fire/Water — Max Archives — 1 Jail",
+    "badge": "NOVO",
+    "badgeColor": "bg-emerald-500",
+    "image": octoberAccount2Img.url,
+    "className": "Taoist",
+    "prices": [
+      {
+        "label": "Preço",
+        "value": "15k CPs"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Destaques",
+        "items": [
+          "Lv. 140 Sacred_Star_Fire_TaoistP3",
+          "401 BP",
+          "Fire/Water — Max archives",
+          "1 Jail",
+          "Rune Points: 211.800"
+        ]
+      },
+      {
+        "title": "Atributos & Combate",
+        "items": [
+          "P-Strike: 102.60% | Break: 120.8%",
+          "Immunity: 237.90% | Penetration: 21.00%"
+        ]
+      },
+      {
+        "title": "Runas, Relíquia & Progressão",
+        "items": [
+          "Taoist Tool: Score 13.300 | Mastery Score: 469.000 | Max",
+          "Runas principais em Max",
+          "Relíquia: [Fate] Keen SparklyWesternMirror — 485 Pts",
+          "Astredge: Love Forever — Recognition 90%"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "acc-125",
+    "title": "Ninja Sacred Star P5 — 320k Rune Points — 1 Jail",
+    "badge": "NOVO",
+    "badgeColor": "bg-emerald-500",
+    "image": octoberAccount3Img.url,
+    "className": "Ninja",
+    "prices": [
+      {
+        "label": "Preço",
+        "value": "90k CPs"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Destaques",
+        "items": [
+          "Lv. 140 Sacred_Star_NinjaP5",
+          "1 Jail",
+          "Perfection 648",
+          "Rune Points: 320.300",
+          "Ninpo Score: 44.316 (Ninja Sprint)",
+          "Total Rating: 100.160"
+        ]
+      },
+      {
+        "title": "Atributos & Combate",
+        "items": [
+          "HP: 81.428 | Attack: 61.341 ~ 65.047",
+          "P-Strike: 103.60% | Break: 280.1%",
+          "Immunity: 236.34% | Anti-Break: 76.3%"
+        ]
+      },
+      {
+        "title": "Equipamentos, Runas & Progressão",
+        "items": [
+          "Runas principais em Max",
+          "Astredge: Viodragon Club 95% · Love Forever 90% · Heart Lock 50%",
+          "Chi: Lv.99 — 400",
+          "Wings: Starry Featherfall · Phoenix Grace",
+          "Archives Perfect: Superb Manual · Violet Glow · Divine North · The Essence of Star"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "acc-126",
+    "title": "Ninja Sacred Star P5 — 332k Rune Points — 41B Donation",
+    "badge": "NOVO",
+    "badgeColor": "bg-emerald-500",
+    "image": octoberAccount4Img.url,
+    "className": "Ninja",
+    "prices": [
+      {
+        "label": "Preço",
+        "value": "130k CPs"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Destaques",
+        "items": [
+          "Lv. 140 Sacred_Star_NinjaP5",
+          "405 BP | Perfection 648",
+          "Donation: 41.474.000.000",
+          "Rune Points: 332.400",
+          "Ninpo Score: 44.714 (Ninja Sprint)"
+        ]
+      },
+      {
+        "title": "Atributos & Combate",
+        "items": [
+          "HP: 83.711 | Attack: 58.342 ~ 62.048",
+          "Break: 275.5% | Immunity: 237.13%"
+        ]
+      },
+      {
+        "title": "Equipamentos, Runas & Progressão",
+        "items": [
+          "Astredge: Heart Lock 75% · Love Forever 95% · Viodragon Club 90%",
+          "Wings: Starry Featherfall · Phoenix Grace · HolyWings",
+          "Thorn Cutter Max · Cold Moon Max · Stone Cracker Max",
+          "Jiang Hu: Cosmic 20 · Mighty 20 · Heaven 20",
+          "Runas principais em Max"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "acc-127",
+    "title": "Ninja Duke — 60B Donation — 277k Rune Points",
+    "badge": "NOVO",
+    "badgeColor": "bg-emerald-500",
+    "image": octoberAccount5Img.url,
+    "className": "Ninja",
+    "prices": [
+      {
+        "label": "Preço",
+        "value": "150k CPs"
+      }
+    ],
+    "sections": [
+      {
+        "title": "Destaques",
+        "items": [
+          "405 BP | Perfection 648",
+          "Noble Rank: Duke (Donation: 60.459.555.552)",
+          "Rune Points: 277.300",
+          "Weapon Archives: 100.380"
+        ]
+      },
+      {
+        "title": "Equipamentos & Runas",
+        "items": [
+          "Equipamentos +12",
+          "Runas principais em Max",
+          "Wings: MorningFeather · Silent Wings · Mega Phoenix Wings · HolyBlueWings"
+        ]
+      },
+      {
+        "title": "Chi & Progressão",
+        "items": [
+          "Inner Power: 3.100 (Ranking 55)",
+          "Seal Retreat Study: 400",
+          "P-Attack +2.000 | Max HP +3.500 | Anti-Break +20% | P-Strike +20%",
+          "Astredge Recognition: 90% · 90% · 40%"
+        ]
+      }
+    ]
+  },
   {
     id: "acc-122",
     title: "Monk Saint Lv 109 P3 — 380 BP — Countess 28B",
@@ -1177,62 +1395,6 @@ export const ACCOUNTS: AccountListing[] = [
           "Sigil: aumenta o nível total dos sigils embutidos em 4 (P9 Sage)",
           "Recognition: 50%",
           "Stage-Bonus: HP +3.700 | P-Atk +1.500 | M-Atk +2.600 | Imm +12.00%",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-96",
-    title: "Decente Ninja — 0 Jail — Gears P7 Perm — 18k CPs",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: decenteNinja25kImg,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "18k CPs" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "Decente Ninja",
-          "0 Jail",
-          "Gears P7 permanent c/ refinery permanent Lv. 6",
-          "Unbound garments & mounts",
-          "Rare wings (Morning-feather)",
-          "Preço: 18k CPs",
-          "Lv. 140 Sacred_Star_NinjaP3",
-          "463 BP",
-          "Noble Rank: Countess (Donation: 13.624.000.000)",
-          "Rune Points: 153.100",
-          "Ninpo Score: 19.393 (Ninja Sprint)",
-        ],
-      },
-      {
-        title: "Atributos & Combate",
-        items: [
-          "HP: 75.818 | Magic: 400",
-          "Attack: 55.834 ~ 59.180 | Defense: 33.736",
-          "M-Attack: 22.240 | M-Defense: 8.418",
-          "Final P-Attack: +12.714 | Final M-Attack: +8.924",
-          "Final P-Damage: +13.900 | Final M-Damage: +7.819",
-          "P-Strike: 122.70% | Block: 30.00%",
-          "Break: 272.8% | Anti-break: 73.5%",
-          "Immunity: 228.90% | M-Strike: 48.30%",
-          "Penetration: 15.00% | Detoxication: 72%",
-          "Parry: 7.00% | Lucky Strike: 7.00% | Dash Rate: 3.50%",
-          "Dodge Rate: 17.30% | Hit Rate: 15.80% | Resist: 1.50%",
-          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
-        ],
-      },
-      {
-        title: "Equipamentos, Runas & Sub-Classes",
-        items: [
-          "Gears P7 permanent com refinery permanent Lv. 6",
-          "Unbound garments & mounts",
-          "Rare wings: Morning-feather",
-          "Rune Points: 153.100 (Stage Bonus HP +3700, P-Atk +1500, M-Atk +1600, P-Stk +10.00%, Break +15.00%, Anti-Brk +15.00%, Imm +10.00%)",
-          "Perfection: 648/648 Max",
-          "Recognition: 90% / 25%",
-          "Sub-Classes: P8 100%, P7 100%, P5 100%, P5 100%, P4 100%",
         ],
       },
     ],
