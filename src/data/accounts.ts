@@ -1,8 +1,8 @@
-import octoberAccount1Img from "@/assets/account-oct18-1.jpg.asset.json";
-import octoberAccount2Img from "@/assets/account-oct18-2.jpg.asset.json";
-import octoberAccount3Img from "@/assets/account-oct18-3.jpg.asset.json";
-import octoberAccount4Img from "@/assets/account-oct18-4.jpg.asset.json";
-import octoberAccount5Img from "@/assets/account-oct18-5.jpg.asset.json";
+import octoberAccount1Img from "@/assets/account-oct18-1.jpg";
+import octoberAccount2Img from "@/assets/account-oct18-2.jpg";
+import octoberAccount3Img from "@/assets/account-oct18-3.jpg";
+import octoberAccount4Img from "@/assets/account-oct18-4.jpg";
+import octoberAccount5Img from "@/assets/account-oct18-5.jpg";
 import waterImg from "@/assets/water.jpg";
 import jojoNinjaImg from "@/assets/JojoNinja.jpg";
 import decenteWaterImg from "@/assets/decente-water.png";
@@ -66,22 +66,17 @@ export interface AccountListing {
 
 export const ACCOUNTS: AccountListing[] = [
   {
-    "id": "acc-123",
-    "title": "Ninja Sacred Star P2 — Lv 109 — Break build",
-    "badge": "NOVO",
-    "badgeColor": "bg-emerald-500",
-    "image": octoberAccount1Img.url,
-    "className": "Ninja",
-    "prices": [
+    id: "acc-123",
+    title: "Ninja Sacred Star P2 — Lv 109 — Break build",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: octoberAccount1Img,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "30k CPs" }],
+    sections: [
       {
-        "label": "Preço",
-        "value": "30k CPs"
-      }
-    ],
-    "sections": [
-      {
-        "title": "Destaques",
-        "items": [
+        title: "Destaques",
+        items: [
           "Lv. 109 Sacred_Star_NinjaP2",
           "372 BP | Perfection 648",
           "Rune Points: 241.000",
@@ -89,16 +84,16 @@ export const ACCOUNTS: AccountListing[] = [
         ]
       },
       {
-        "title": "Atributos & Combate",
-        "items": [
+        title: "Atributos & Combate",
+        items: [
           "HP: 78.152 | Attack: 45.149 ~ 47.640",
           "P-Strike: 96.70% | Break: 281.9%",
           "Anti-Break: 56.1% | Immunity: 228.70%"
         ]
       },
       {
-        "title": "Equipamentos, Runas & Progressão",
-        "items": [
+        title: "Equipamentos, Runas & Progressão",
+        items: [
           "Runas principais em Max",
           "Relíquia: [Cloud Shock] HeartlessSeal — 1.691 Pts",
           "Chi: Dragon, Phoenix, Tiger e Turtle — 400",
@@ -108,22 +103,17 @@ export const ACCOUNTS: AccountListing[] = [
     ]
   },
   {
-    "id": "acc-124",
-    "title": "Fire/Water — Max Archives — 1 Jail",
-    "badge": "NOVO",
-    "badgeColor": "bg-emerald-500",
-    "image": octoberAccount2Img.url,
-    "className": "Taoist",
-    "prices": [
+    id: "acc-124",
+    title: "Fire/Water — Max Archives — 1 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: octoberAccount2Img,
+    className: "Taoist",
+    prices: [{ label: "Preço", value: "15k CPs" }],
+    sections: [
       {
-        "label": "Preço",
-        "value": "15k CPs"
-      }
-    ],
-    "sections": [
-      {
-        "title": "Destaques",
-        "items": [
+        title: "Destaques",
+        items: [
           "Lv. 140 Sacred_Star_Fire_TaoistP3",
           "401 BP",
           "Fire/Water — Max archives",
@@ -132,15 +122,15 @@ export const ACCOUNTS: AccountListing[] = [
         ]
       },
       {
-        "title": "Atributos & Combate",
-        "items": [
+        title: "Atributos & Combate",
+        items: [
           "P-Strike: 102.60% | Break: 120.8%",
           "Immunity: 237.90% | Penetration: 21.00%"
         ]
       },
       {
-        "title": "Runas, Relíquia & Progressão",
-        "items": [
+        title: "Runas, Relíquia & Progressão",
+        items: [
           "Taoist Tool: Score 13.300 | Mastery Score: 469.000 | Max",
           "Runas principais em Max",
           "Relíquia: [Fate] Keen SparklyWesternMirror — 485 Pts",
@@ -150,22 +140,17 @@ export const ACCOUNTS: AccountListing[] = [
     ]
   },
   {
-    "id": "acc-125",
-    "title": "Ninja Sacred Star P5 — 320k Rune Points — 1 Jail",
-    "badge": "NOVO",
-    "badgeColor": "bg-emerald-500",
-    "image": octoberAccount3Img.url,
-    "className": "Ninja",
-    "prices": [
+    id: "acc-125",
+    title: "Ninja Sacred Star P5 — 320k Rune Points — 1 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: octoberAccount3Img,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "90k CPs" }],
+    sections: [
       {
-        "label": "Preço",
-        "value": "90k CPs"
-      }
-    ],
-    "sections": [
-      {
-        "title": "Destaques",
-        "items": [
+        title: "Destaques",
+        items: [
           "Lv. 140 Sacred_Star_NinjaP5",
           "1 Jail",
           "Perfection 648",
@@ -175,16 +160,16 @@ export const ACCOUNTS: AccountListing[] = [
         ]
       },
       {
-        "title": "Atributos & Combate",
-        "items": [
+        title: "Atributos & Combate",
+        items: [
           "HP: 81.428 | Attack: 61.341 ~ 65.047",
           "P-Strike: 103.60% | Break: 280.1%",
           "Immunity: 236.34% | Anti-Break: 76.3%"
         ]
       },
       {
-        "title": "Equipamentos, Runas & Progressão",
-        "items": [
+        title: "Equipamentos, Runas & Progressão",
+        items: [
           "Runas principais em Max",
           "Astredge: Viodragon Club 95% · Love Forever 90% · Heart Lock 50%",
           "Chi: Lv.99 — 400",
@@ -195,22 +180,17 @@ export const ACCOUNTS: AccountListing[] = [
     ]
   },
   {
-    "id": "acc-126",
-    "title": "Ninja Sacred Star P5 — 332k Rune Points — 41B Donation",
-    "badge": "NOVO",
-    "badgeColor": "bg-emerald-500",
-    "image": octoberAccount4Img.url,
-    "className": "Ninja",
-    "prices": [
+    id: "acc-126",
+    title: "Ninja Sacred Star P5 — 332k Rune Points — 41B Donation",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: octoberAccount4Img,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "130k CPs" }],
+    sections: [
       {
-        "label": "Preço",
-        "value": "130k CPs"
-      }
-    ],
-    "sections": [
-      {
-        "title": "Destaques",
-        "items": [
+        title: "Destaques",
+        items: [
           "Lv. 140 Sacred_Star_NinjaP5",
           "405 BP | Perfection 648",
           "Donation: 41.474.000.000",
@@ -219,15 +199,15 @@ export const ACCOUNTS: AccountListing[] = [
         ]
       },
       {
-        "title": "Atributos & Combate",
-        "items": [
+        title: "Atributos & Combate",
+        items: [
           "HP: 83.711 | Attack: 58.342 ~ 62.048",
           "Break: 275.5% | Immunity: 237.13%"
         ]
       },
       {
-        "title": "Equipamentos, Runas & Progressão",
-        "items": [
+        title: "Equipamentos, Runas & Progressão",
+        items: [
           "Astredge: Heart Lock 75% · Love Forever 95% · Viodragon Club 90%",
           "Wings: Starry Featherfall · Phoenix Grace · HolyWings",
           "Thorn Cutter Max · Cold Moon Max · Stone Cracker Max",
@@ -238,22 +218,17 @@ export const ACCOUNTS: AccountListing[] = [
     ]
   },
   {
-    "id": "acc-127",
-    "title": "Ninja Duke — 60B Donation — 277k Rune Points",
-    "badge": "NOVO",
-    "badgeColor": "bg-emerald-500",
-    "image": octoberAccount5Img.url,
-    "className": "Ninja",
-    "prices": [
+    id: "acc-127",
+    title: "Ninja Duke — 60B Donation — 277k Rune Points",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: octoberAccount5Img,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "150k CPs" }],
+    sections: [
       {
-        "label": "Preço",
-        "value": "150k CPs"
-      }
-    ],
-    "sections": [
-      {
-        "title": "Destaques",
-        "items": [
+        title: "Destaques",
+        items: [
           "405 BP | Perfection 648",
           "Noble Rank: Duke (Donation: 60.459.555.552)",
           "Rune Points: 277.300",
@@ -261,16 +236,16 @@ export const ACCOUNTS: AccountListing[] = [
         ]
       },
       {
-        "title": "Equipamentos & Runas",
-        "items": [
+        title: "Equipamentos & Runas",
+        items: [
           "Equipamentos +12",
           "Runas principais em Max",
           "Wings: MorningFeather · Silent Wings · Mega Phoenix Wings · HolyBlueWings"
         ]
       },
       {
-        "title": "Chi & Progressão",
-        "items": [
+        title: "Chi & Progressão",
+        items: [
           "Inner Power: 3.100 (Ranking 55)",
           "Seal Retreat Study: 400",
           "P-Attack +2.000 | Max HP +3.500 | Anti-Break +20% | P-Strike +20%",
