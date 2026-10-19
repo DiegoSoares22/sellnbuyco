@@ -1,0 +1,2 @@
+- [ ] Remove the specified Ninja listing and add the five uploaded accounts with confirmed prices.
+- [ ] Verify prices, jail information, and image loading in the catalog.
