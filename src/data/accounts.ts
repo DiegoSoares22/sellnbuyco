@@ -51,6 +51,7 @@ import ninjaPrincess366bpImg from "@/assets/ninja-princess-366bp.jpg";
 import ninjaTidalVowP2Lv140Img from "@/assets/ninja-tidalvow-p2-lv140.jpg";
 import monkP3Duchess56bImg from "@/assets/monk-p3-duchess-56b.jpg";
 import monkFlowerBelle380bpImg from "@/assets/monk-flowerbelle-380bp.jpg";
+import pirataMaxArchivesImg from "@/assets/pirata-max-archives-lv140.webp";
 
 
 export interface AccountListing {
@@ -65,6 +66,53 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-128",
+    title: "Pirata Max Archives — Lv 140 — 0 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: pirataMaxArchivesImg,
+    className: "Pirata",
+    prices: [{ label: "Preço", value: "25k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "0 Jail",
+          "Archives: Max",
+          "Sacred_Star_PirateP3 (servidor Eagle)",
+          "372 BP | Perfection 648",
+          "Noble Rank: Countess (Donation: 33.010.000.001)",
+          "Rune Points: 206.400",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP: 75.214 | Magic: 1.200",
+          "Attack: 44.711 ~ 46.208 | Defense: 22.182",
+          "M-Attack: 24.023 | M-Defense: 6.853",
+          "Final P-Attack: +11.152 | Final M-Attack: +7.102",
+          "Final P-Damage: -11.517 | Final M-Damage: -6.752",
+          "P-Strike: 120.70% | Break: 273.6% | Anti-Break: 72.1%",
+          "M-Strike: 47.30% | Immunity: 228.20% | Penetration: 15.00%",
+          "Block: 30.00% | Blessed: 57% | Attack: +210%",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Progressão",
+        items: [
+          "Full set +12 (P9)",
+          "Runas principais em Max (10 em Max · 1 Lv.8)",
+          "Ideal Collection: 30.205 · 26.760 · 4.625 · 4.600",
+          "SENSE · ARMED · OVERLORD — Lv.9",
+          "Wings: Love Wings · Spotless Feather · Fluttering Flag",
+          "Astredge: P9 100% · P8 66% · P6 100%",
+          "Recognition: 95% · 90% · 80%",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-123",
     title: "Ninja Sacred Star P2 — Lv 109 — Break build",
