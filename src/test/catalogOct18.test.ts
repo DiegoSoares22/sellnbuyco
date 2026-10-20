@@ -9,6 +9,7 @@ describe("October 18 catalog updates", () => {
     ["acc-126", "130k CPs"],
     ["acc-127", "150k CPs"],
     ["acc-128", "25k CPs"],
+    ["acc-129", "25k CPs"],
   ])("stores the confirmed price for %s", (id, price) => {
     expect(ACCOUNTS.find((account) => account.id === id)?.prices[0]?.value).toBe(price);
   });
@@ -24,6 +25,14 @@ describe("October 18 catalog updates", () => {
     expect(items).toContain("0 Jail");
     expect(items).toContain("Archives: Max");
     expect(account?.className).toBe("Pirata");
+  });
+
+  it("lists the new archer as 0 Jail with 1 ideal rune", () => {
+    const account = ACCOUNTS.find((listing) => listing.id === "acc-129");
+    const items = account?.sections.flatMap((section) => section.items) ?? [];
+    expect(items).toContain("0 Jail");
+    expect(items).toContain("1 Ideal Rune");
+    expect(account?.className).toBe("Archer");
   });
 
   it("removes the specified Gears P7 Ninja listing", () => {
