@@ -1,3 +1,4 @@
 - [x] Remove the specified Ninja listing and add the five uploaded accounts with confirmed prices.
 - [x] Verify prices, jail information, and image loading in the catalog.
 - [x] Add the "Pirata Max Archives — Lv 140 — 0 Jail" listing at 25k CPs and verify it in the preview.
+- [x] Add the "Archer 1 Ideal Rune — Lv 140 — 0 Jail" listing at 25k CPs and verify it in the preview.

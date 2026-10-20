@@ -52,6 +52,7 @@ import ninjaTidalVowP2Lv140Img from "@/assets/ninja-tidalvow-p2-lv140.jpg";
 import monkP3Duchess56bImg from "@/assets/monk-p3-duchess-56b.jpg";
 import monkFlowerBelle380bpImg from "@/assets/monk-flowerbelle-380bp.jpg";
 import pirataMaxArchivesImg from "@/assets/pirata-max-archives-lv140.webp";
+import archer1IdealRuneImg from "@/assets/archer-1-ideal-rune-lv140.webp";
 
 
 export interface AccountListing {
@@ -66,6 +67,45 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-129",
+    title: "Archer 1 Ideal Rune — Lv 140 — 0 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: archer1IdealRuneImg,
+    className: "Archer",
+    prices: [{ label: "Preço", value: "25k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "0 Jail",
+          "1 Ideal Rune",
+          "Lv. 140 Sacred_Star_ArcherP1 (servidor Honor)",
+          "464 BP | Mythsoul 643",
+          "Noble Rank: Earl (Donation: 17.101.000.000)",
+          "Rune Points: 174.300",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "P-Strike: 127.90% | Break: 307.0% | Anti-Break: 72.2%",
+          "Immunity: 241.05% | Penetration: 15.00% | Block: 30.00%",
+          "Recognition: 90% · 70%",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Progressão",
+        items: [
+          "Full set +12",
+          "Runas principais em Max (16 em Max)",
+          "Ideal Collection: Thorn Cutter Lv.56 · Stone Cracker Lv.45 · Cold Moon Lv.27",
+          "Astredge: P9 100% · P7 100% · P7 100% · P6 100% · P6 100%",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-128",
     title: "Pirata Max Archives — Lv 140 — 0 Jail",
