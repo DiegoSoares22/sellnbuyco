@@ -13,7 +13,6 @@ import pirate100kImg from "@/assets/pirate-100k.jpg";
 
 import pirataImg from "@/assets/pirata.jpg";
 import ninja1Img from "@/assets/ninja1.png";
-import filaktImg from "@/assets/filakt.png";
 import ninjaStarryP3Img from "@/assets/ninja-starry-p3.jpg";
 import ninjaHw240kImg from "@/assets/ninja-hw-240k.jpg";
 import ninjaArtemis451bpImg from "@/assets/ninja-artemis-451bp.jpg";
@@ -27,7 +26,6 @@ import ninjahw from "@/assets/ninjahw.jpg";
 
 import topWaterArchivesFullImg from "@/assets/top-water-archives-full.jpg";
 import waterWilsaoImg from "@/assets/water-wilsao.jpg";
-import decenteNinja8kImg from "@/assets/decente-ninja-8k.png";
 import waterFire12kImg from "@/assets/water-fire-12k.png";
 import archerEpicOriginsImg from "@/assets/archer-epic-origins.png";
 import archerTwinCityOriginsImg from "@/assets/archer-twincity-origins.jpg";
