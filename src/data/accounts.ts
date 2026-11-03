@@ -611,9 +611,6 @@ export const ACCOUNTS: AccountListing[] = [
     ],
   },
   {
-    ],
-  },
-  {
     id: "acc-115",
     title: "Ninja Lv 109 P2 — 372 BP — Dragon Ring Break +14%",
     badge: "NOVO",
