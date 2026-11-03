@@ -28,7 +28,6 @@ import topWaterArchivesFullImg from "@/assets/top-water-archives-full.jpg";
 import waterWilsaoImg from "@/assets/water-wilsao.jpg";
 import waterFire12kImg from "@/assets/water-fire-12k.png";
 import archerEpicOriginsImg from "@/assets/archer-epic-origins.png";
-import archerTwinCityOriginsImg from "@/assets/archer-twincity-origins.jpg";
 import ninja1Jail35kImg from "@/assets/ninja-1jail-35k.png";
 import archerBreak0JailImg from "@/assets/archer-break-0jail.png";
 import ninjaTortoisePredatorImg from "@/assets/ninja-tortoise-predator.webp";
@@ -42,7 +41,6 @@ import ninjaMasterP4Lv119Img from "@/assets/ninja-master-p4-lv119.jpg";
 import ninjaStellar383bpImg from "@/assets/ninja-stellar-383bp.jpg";
 import pirateDeath478bpImg from "@/assets/pirate-death-478bp.jpg";
 import ninjaStarrider372bpImg from "@/assets/ninja-starrider-372bp.jpg";
-import taoistSurgeWater428bpImg from "@/assets/taoist-surge-water-428bp.jpg";
 import archerMrPopularity433bpImg from "@/assets/archer-mrpopularity-433bp.jpg";
 import pirateFogTortoisePredatorImg from "@/assets/pirate-fog-tortoise-predator.jpg";
 import ninjaPrincess366bpImg from "@/assets/ninja-princess-366bp.jpg";
@@ -613,45 +611,6 @@ export const ACCOUNTS: AccountListing[] = [
     ],
   },
   {
-    id: "acc-116",
-    title: "Surge Water Taoist Lv 129 — 428 BP — Anti-Break 292%",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: taoistSurgeWater428bpImg,
-    className: "Taoist",
-    prices: [{ label: "Preço", value: "A combinar" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "Lv. 129 Surge Water Taoist",
-          "428 BP | Perfection 648",
-          "Noble Rank: Duchess (Donation: 28.144.001.100)",
-          "Rune Points: 256.000",
-          "LegendUniversalLotus(+12)(B) P7 Dragon Soul",
-          "Heaven Max (Vicissitude · Highest Good · Evolution · Thrill · Birth-death)",
-          "Astredge: 60% · 90% · 90%",
-        ],
-      },
-      {
-        title: "Atributos & Magia",
-        items: [
-          "HP: 90.375 | Magic: 950",
-          "Attack: 20.411 ~ 20.641 | Defense: 27.829",
-          "M-Attack: 40.694 | M-Defense: 8.601",
-          "Final P-Attack: +12.645 | Final M-Attack: +15.089",
-          "Final P-Damage: -22.066 | Final M-Damage: -13.824",
-          "P-Strike: 101.30% | Break: 74.0% | Anti-Break: 292.5%",
-          "M-Strike: 67.80% | Immunity: 271.40% | Penetration: 29.00%",
-        ],
-      },
-      {
-        title: "Chi & Progressão",
-        items: [
-          "Chi: Tiger · Turtle · Dragon · Phoenix Lv.99 (400 cada)",
-          "Buckler (Immunity +2.0% · Anti-break +2.0%) · Athanasy (Max HP +500 · Anti-break +2.0%)",
-        ],
-      },
     ],
   },
   {
@@ -1293,71 +1252,6 @@ export const ACCOUNTS: AccountListing[] = [
     ],
   },
   {
-    id: "acc-102",
-    title: "Decente account server TwinCity[Origins] — 0 Jail — 18k CPs",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: archerTwinCityOriginsImg,
-    className: "Archer",
-    prices: [{ label: "Preço", value: "18k CPs" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "Servidor TwinCity [Origins]",
-          "0 Jail",
-          "Preço: 18k CPs",
-          "Lv. 140 ArcherMasterP2",
-          "B.P.: 419",
-          "Noble Rank: Countess (Donation: 20.847.000.000)",
-          "Rune Points: 129.300",
-        ],
-      },
-      {
-        title: "Atributos & Combate",
-        items: [
-          "HP: 78.136",
-          "Attack: 50.343 ~ 53.135 | Defense: 28.664",
-          "M-Attack: 21.324 | M-Defense: 7.966",
-          "Final P-Attack: +10.164 | Final P-Damage: +10.254",
-          "P-Strike: 263.80% | Break: 65.4% | Anti-Break: 46.7%",
-          "Immunity: 216.55% | Detoxication: 72% | Penetration: 15.00%",
-          "Lucky Strike: 7.00% | Parry: 7.00%",
-          "Dodge: 8.00% | Hit Rate: 10.00%",
-          "Resistências: Metal 80 / Wood 80 / Water 80",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "Rune Points: 129.300",
-          "Runas principais em Max",
-          "Cold Moon Lv 31",
-          "Stone Cracker Max",
-          "Thorn Cutter Lv 45",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "Set completo +12 (headgear, necklace, armor, bow, ring, boots)",
-          "Acessórios e talismãs +12 com sockets",
-          "Gold Trophy relic",
-          "Steeds de +4 a +8 no warehouse",
-        ],
-      },
-      {
-        title: "Inner Power",
-        items: [
-          "Superb Manual · Violet Glow · Divine North Skill",
-          "The Essence of Yin · The Essence of Yang",
-          "My Potency: 31.700",
-          "Dragon Lv96 · Tiger Lv99 · Phoenix Lv82 · Turtle Lv68",
-          "Chi Points: 333.017",
-        ],
-      },
-    ],
-  },
   {
     id: "acc-101",
     title: "Archer epic c/ runa creditada [Servidor Origins/ApeMount]",
