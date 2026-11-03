@@ -1249,7 +1249,6 @@ export const ACCOUNTS: AccountListing[] = [
     ],
   },
   {
-  {
     id: "acc-101",
     title: "Archer epic c/ runa creditada [Servidor Origins/ApeMount]",
     badge: "NOVO",
