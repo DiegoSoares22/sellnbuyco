@@ -43,6 +43,9 @@ import monkP3Duchess56bImg from "@/assets/monk-p3-duchess-56b.jpg";
 import monkFlowerBelle380bpImg from "@/assets/monk-flowerbelle-380bp.jpg";
 import pirataMaxArchivesImg from "@/assets/pirata-max-archives-lv140.webp";
 import archer1IdealRuneImg from "@/assets/archer-1-ideal-rune-lv140.webp";
+import pirateTriumph0JailImg from "@/assets/pirate-triumph-0jail.webp";
+import waterTaoistSnowWhite467bpImg from "@/assets/water-taoist-snowwhite-467bp.webp";
+import waterTaoistVolcanoLv140Img from "@/assets/water-taoist-volcano-lv140.webp";
 
 
 export interface AccountListing {
