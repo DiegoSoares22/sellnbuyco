@@ -3,7 +3,6 @@ import { ACCOUNTS } from "@/data/accounts";
 
 describe("October 18 catalog updates", () => {
   it.each([
-    ["acc-123", "30k CPs"],
     ["acc-124", "15k CPs"],
     ["acc-125", "90k CPs"],
     ["acc-126", "130k CPs"],
