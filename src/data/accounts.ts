@@ -1,4 +1,3 @@
-import octoberAccount1Img from "@/assets/account-oct18-1.jpg";
 import octoberAccount2Img from "@/assets/account-oct18-2.jpg";
 import octoberAccount3Img from "@/assets/account-oct18-3.jpg";
 import octoberAccount4Img from "@/assets/account-oct18-4.jpg";
@@ -12,8 +11,6 @@ import pirate420kImg from "@/assets/pirate-420k.jpg";
 import pirate100kImg from "@/assets/pirate-100k.jpg";
 
 import pirataImg from "@/assets/pirata.jpg";
-import ninja1Img from "@/assets/ninja1.png";
-import ninjaStarryP3Img from "@/assets/ninja-starry-p3.jpg";
 import ninjaHw240kImg from "@/assets/ninja-hw-240k.jpg";
 import ninjaArtemis451bpImg from "@/assets/ninja-artemis-451bp.jpg";
 import archerTigerP7Img from "@/assets/archer-tiger-p7.jpg";
@@ -25,12 +22,9 @@ import sellWaterMaxArchiveImg from "@/assets/sell-water-max-archive.png";
 import ninjahw from "@/assets/ninjahw.jpg";
 
 import topWaterArchivesFullImg from "@/assets/top-water-archives-full.jpg";
-import waterWilsaoImg from "@/assets/water-wilsao.jpg";
 import waterFire12kImg from "@/assets/water-fire-12k.png";
 import archerEpicOriginsImg from "@/assets/archer-epic-origins.png";
-import ninja1Jail35kImg from "@/assets/ninja-1jail-35k.png";
 import archerBreak0JailImg from "@/assets/archer-break-0jail.png";
-import ninjaTortoisePredatorImg from "@/assets/ninja-tortoise-predator.webp";
 import ninjaTidalVow411bpImg from "@/assets/ninja-tidalvow-411bp.jpg";
 import ninjaStarrider405bpImg from "@/assets/ninja-starrider-405bp.jpg";
 import ninjaMrPopularity385bpImg from "@/assets/ninja-mrpopularity-385bp.jpg";
@@ -148,43 +142,6 @@ export const ACCOUNTS: AccountListing[] = [
         ],
       },
     ],
-  },
-  {
-    id: "acc-123",
-    title: "Ninja Sacred Star P2 — Lv 109 — Break build",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: octoberAccount1Img,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "30k CPs" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "Lv. 109 Sacred_Star_NinjaP2",
-          "372 BP | Perfection 648",
-          "Rune Points: 241.000",
-          "Ninpo Score: 38.783 (Ninja Sprint)"
-        ]
-      },
-      {
-        title: "Atributos & Combate",
-        items: [
-          "HP: 78.152 | Attack: 45.149 ~ 47.640",
-          "P-Strike: 96.70% | Break: 281.9%",
-          "Anti-Break: 56.1% | Immunity: 228.70%"
-        ]
-      },
-      {
-        title: "Equipamentos, Runas & Progressão",
-        items: [
-          "Runas principais em Max",
-          "Relíquia: [Cloud Shock] HeartlessSeal — 1.691 Pts",
-          "Chi: Dragon, Phoenix, Tiger e Turtle — 400",
-          "Astredge: Love Forever — Recognition 70%"
-        ]
-      }
-    ]
   },
   {
     id: "acc-124",
@@ -1071,63 +1028,6 @@ export const ACCOUNTS: AccountListing[] = [
     ],
   },
   {
-    id: "acc-105",
-    title: "Ninja Ideal Tortoise Predator — 0 Botjail — Break 317%",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: ninjaTortoisePredatorImg,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "A combinar" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "Lv. 109 Sacred_Star_NinjaP2",
-          "0 Botjail",
-          "1 Ideal [Tortoise Predator]",
-          "Max Main Sigil",
-          "Slash Sigil (Max)",
-          "Break with Relic Double: 317%",
-          "Tortoise Gears [Armor + Necklace + Boot]",
-          "Score Rune: 241k",
-          "1 Footprint [Phoenix Grace]",
-          "Relic [Double Break almost 4%]",
-          "Astredge: Viodragon 90% + Love Forever 70%",
-          "184 Garments + 104 Mounts",
-        ],
-      },
-      {
-        title: "Atributos & Combate",
-        items: [
-          "372 BP | Perfection 648",
-          "HP: 78.152 | Magic: 1.200",
-          "Attack: 45.149 ~ 47.640 | Defense: 23.552",
-          "M-Attack: 24.934 | M-Defense: 7.444",
-          "Final P-Attack: +10.364 | Final M-Attack: +6.864",
-          "Final P-Damage: -10.454 | Final M-Damage: -6.239",
-          "P-Strike: 96.70% | Block: 30.00%",
-          "Break: 281.9% (316.9% com a relíquia) | Anti-Break: 56.1%",
-          "M-Strike: 47.20% | Immunity: 228.70% | Penetration: 15.00%",
-          "Detoxication: 72% | Parry: 8.00% | Lucky Strike: 7.00%",
-          "Dash Rate: 1.50% | Dodge Rate: 13.40% | Hit Rate: 13.40%",
-          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
-        ],
-      },
-      {
-        title: "Runas, Relíquia & Progressão",
-        items: [
-          "Rune Points: 241.000 (runas principais em Max)",
-          "Ninpo Score: 38.783 (Ninja Sprint)",
-          "Relíquia: [Cloud Shock] HeartlessSeal (5.169 Pts)",
-          "Break +3.55% (+0.10%) | Break +3.52% (+0.10%)",
-          "Chi: Dragon Lv.87 | Tiger Lv.99 | Turtle Lv.99 | Phoenix Lv.99 (400 cada)",
-          "Inner Power: Superb Manual · Violet Glow · Divine North Skill · The Essence of Yin (Perfect)",
-          "Sub-Classes: P8 (100%) · P8 (96%) · P6 (100%)",
-        ],
-      },
-    ],
-  },
-  {
     id: "acc-104",
     title: "Archer break — 0 Jail — 25k CPs",
     badge: "NOVO",
@@ -1176,74 +1076,6 @@ export const ACCOUNTS: AccountListing[] = [
           "Set completo +12 com bênção -7% dano",
           "Talismãs +12 (refino 8/8)",
           "Steeds: P9 100% · P7 100% (x2) · P6 100% (x2) · P5 0% · P4 0% · P3 0% (x2)",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-103",
-    title: "8 GP account / decent donate — 1 Jail — 35k CPs",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: ninja1Jail35kImg,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "35k CPs" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "Servidor NinjasAssemble",
-          "1 Jail",
-          "Preço: 35k CPs",
-          "Lv. 140 Sacred_Star_NinjaP3",
-          "B.P.: 347 (título Saint)",
-          "Noble Rank: Prince (Donation: 78.512.000.000 · Ranking 5)",
-          "Rune Points: 228.900",
-        ],
-      },
-      {
-        title: "Atributos & Combate",
-        items: [
-          "HP: 75.090 | Magic: 1.200",
-          "Attack: 46.759 ~ 50.246 | Defense: 17.370",
-          "M-Attack: 22.184 | M-Defense: 5.892",
-          "Final P-Attack: +10.394 | Final P-Damage: -9.964",
-          "P-Strike: 200.40% | Break: 102.5% | Anti-Break: 50.3%",
-          "Immunity: 192.96% | Detoxication: 72% | Penetration: 15.00%",
-          "Attack: 165% | Blessed: 35% | Block: 30.00%",
-          "Dodge: 93 | Agility: 1.073 | Accuracy: 231",
-          "Resistências: Metal 50 / Wood 50 / Water 50 / Fire 50",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "Rune Points: 228.900",
-          "Runas principais em Max",
-          "Assassin (Main) · Comprehension · Pitching · FrostArrows",
-          "Acalanatha · Tide Trap · SwingingTail · Sacrifice · BurningSky",
-          "Stage Bonus: HP +3.700 · P-Atk +1.500 · M-Atk +2.600",
-          "Stage Bonus: P-Stk 12% · M-Stk 10% · Imm 12% · Break 15% · Anti.Brk 15%",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "LegendDemonScythe(+12)[B] — P7ScytheSoul (InternNinja)",
-          "Arma: Attack 3.350 ~ 3.423 · P-Strike 17% · Break 18%",
-          "Sockets: DragonGem Attack +15% (x2)",
-          "Necklace +12 · Armor +6 · Head +8 · Ring +12 · Botas +12",
-          "Talismãs +7 / +8 (Lv. 4)",
-          "Asas: HolyWings",
-          "Steeds: Bloodlust Lv 40 · Dragonhowl Lv 31",
-        ],
-      },
-      {
-        title: "Sigils & Portões",
-        items: [
-          "Sigils: P7 0% · P6 100% (x3) · P4 100% · P1 0% · P6 0% · P4 0% (x2)",
-          "Portões: Dawn · Life · Limit · Shock · Death · View · Pain · Rest",
-          "Bônus: +2 níveis nos sigils engastados para atingir P4 Sage",
         ],
       },
     ],
@@ -1402,54 +1234,6 @@ export const ACCOUNTS: AccountListing[] = [
     ],
   },
   {
-    id: "acc-92",
-    title: "Ninja Sacred Star P3 — 405 BP — Duke 31B Donate — Steed 142k",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: ninjaStarryP3Img,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "A combinar" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "Lv. 140 Sacred_Star_NinjaP3",
-          "405 BP (Starry Promise)",
-          "Noble Rank: Duke (Donation: 31.580.999.997 | Ranking: 30)",
-          "Rune Points: 210.300",
-          "Ninpo Score: 42.017",
-          "Mount: Steed(+12)(B) Lineage Level 12 (Lineage: 142.892)",
-          "Astredge: Love Forever (Excellence)",
-          "Relic: [Deep Roar] HeartlessSeal (+650 P-Atk, +650 P-Atk, +1.64% Imm)",
-          "Recognition: 50%",
-        ],
-      },
-      {
-        title: "Atributos & Combate",
-        items: [
-          "HP: 78.501 | Magic: 1.200",
-          "Attack: 55.747 ~ 59.453 | Defense: 32.255",
-          "M-Attack: 23.379 | M-Defense: 8.121",
-          "Final P-Attack: +10.497 | Final M-Attack: +6.997",
-          "Final P-Damage: +10.587 | Final M-Damage: +6.322",
-          "P-Strike: 110.80% | Block: 30.00%",
-          "Break: 134.4% | Anti-break: 51.2%",
-          "M-Strike: 41.20% | Immunity: 221.84% | Penetration: 15.00%",
-          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
-        ],
-      },
-      {
-        title: "Runas, Relíquias & Sub-Classes",
-        items: [
-          "Rune Points: 210.300 (Stage Bonus HP +3700, P-Atk +1500, M-Atk +2600, P-Stk +12.00%, Break +15.00%, Imm +12.00%)",
-          "Relic HeartlessSeal com duplo P-Attack +650 e Imunidade +1.64%",
-          "Love Forever Excellence (P-Atk +2000, HP +3500, P-Stk +20%, Imm +20%)",
-          "Sub-Classes: Superb Manual, Violet Glow, Divine North Skill, The Essence of Yin, The Essence of Yang",
-        ],
-      },
-    ],
-  },
-  {
     id: "acc-91",
     title: "Water Taoist — 458 BP Superman — Duchess 15B — 287% Anti-Break",
     badge: "NOVO",
@@ -1582,52 +1366,6 @@ export const ACCOUNTS: AccountListing[] = [
           "Rune Points: 160.200 (Stage Bonus HP +3700, P-Atk +1500, M-Atk +2600, Imm +12.00%)",
           "Skill StarChain (Water) Maximizada",
           "Sub-Classes: P9 (0%), P7 (100%), P7 (100%), P4 (100%), P4 (100%)",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-86",
-    title: "Ninja Sacred Star P7 — 1 Bot Jail — 160k CPs",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: ninja1Img,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "160k CPs" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "1 bot jail",
-          "Lv. 140 Sacred_Star_NinjaP7",
-          "475 BP | Perfection 648",
-          "Rune Points: 315.100",
-          "Preço: 160k CPs",
-        ],
-      },
-      {
-        title: "Atributos & Combate",
-        items: [
-          "HP: 78.876 | Magic: 1.500",
-          "Attack: 60.654 ~ 64.360 | Defense: 33.297",
-          "M-Attack: 26.403 | M-Defense: 8.933",
-          "Final P-Attack: +13.024 | Final M-Attack: +9.411",
-          "Final P-Damage: +14.267 | Final M-Damage: +8.844",
-          "P-Strike: 274.20% | Block: 30.00%",
-          "Break: 289.9% | Anti-break: 67.9%",
-          "Immunity: 157.92% | Penetration: 15.00%",
-          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
-        ],
-      },
-      {
-        title: "Relíquia & Runas",
-        items: [
-          "Rune Points: 315.100 (Ciclo de Runas Max)",
-          "Relíquia: Ferocious Roar HeartlessSeal (3.318 Pts)",
-          "P-Attack +650(+20) x3 (Sinergizado)",
-          "Ressonância 1: P-Strike +4.00%(+0.20%) x3 | Immunity +1.63% | Anti-break +1.57%",
-          "Ressonância 2: Final M-Damage +222 | P-Attack +650(+20) x2",
-          "Ressonância 3: Final M-Attack +107 | P-Strike +4.00%(+0.20%) x3 | Immunity +0.99%",
         ],
       },
     ],
@@ -1876,7 +1614,7 @@ export const ACCOUNTS: AccountListing[] = [
     badgeColor: "bg-emerald-500",
     image: jojoNinjaImg,
     className: "Ninja",
-    prices: [{ label: "Preço", value: "340k CPs" }],
+    prices: [{ label: "Preço", value: "320k CPs" }],
     sections: [
       {
         title: "Destaques",
@@ -1975,54 +1713,6 @@ export const ACCOUNTS: AccountListing[] = [
           "Stage Bonus: HP 3700 | P-Atk 1500 | M-Atk 2600",
           "P-Strike 12.00% | M-Strike 10.00% | Break 15.00% | Anti-Break 15.00% | Immunity 12.00%",
           "Archives com vários Max (Score 13/100 em progressão)",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-69",
-    title: "Beast Water",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: waterWilsaoImg,
-    className: "Taoist",
-    prices: [{ label: "Preço", value: "120k CPs" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "Beast Water",
-          "Noble Rank Princess",
-          "Donation: 50.1B",
-          "407 BP",
-          "Preço: 120k CPs",
-        ],
-      },
-      {
-        title: "Atributos",
-        items: [
-          "Lv. 140 Sacred Star Water Taoist P5",
-          "HP: 90.402 | Magic: 1.650",
-          "Attack: 26.365 ~ 27.336 | Defense: 34.281",
-          "M-Attack: 36.109 | M-Defense: 10.117",
-          "Dodge: 104 | Agility: 1.027 | M-Def: 110%",
-          "Damage: 72% | Blessed: 56%",
-          "Final P-Attack: +10.824 | Final M-Attack: +13.284",
-          "Final P-Damage: -19.737 | Final M-Damage: -13.097",
-          "P-Strike: 101.40% | Block: 30.00% | Break: 67.9% | Anti-Break: 294.2%",
-          "M-Strike: 68.00% | Immunity: 260.70% | Penetration: 25.00%",
-          "Detoxication: 72.00% | Parry: 7.00% | Lucky Strike: 7.00%",
-          "Dash Rate: 2.00% | Dodge Rate: 17.80% | Resist: 150%",
-          "Resistências Elementais: Metal 80 / Wood 80 / Water 80 / Fire 80",
-        ],
-      },
-      {
-        title: "Progressão & Runas",
-        items: [
-          "Rune Points: 334.300 (648 Perfection)",
-          "Recognition: 25% e 90%",
-          "Inner Power: Super HP-Manual, Divine Spirit, Divine Swift Skill, The Essence of Vitality, The Essence of Magic",
-          "Eon Spirit: Heaven 27 (P7 100%), Cosmic 26 (P6 100%), Cosmic 26 (P7 3%), P1 0%, P3 100%, P6 41%, P5 100%, P4 100%, P2 0%",
         ],
       },
     ],
