@@ -61,6 +61,124 @@ export interface AccountListing {
 
 export const ACCOUNTS: AccountListing[] = [
   {
+    id: "acc-130",
+    title: "Pirata Max Archives — 2 Epic Archers — 0 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: pirateTriumph0JailImg,
+    className: "Pirata",
+    prices: [{ label: "Preço", value: "15k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "0 Jail",
+          "Archives: Max for Pirate",
+          "Pode ser Archer / Ninja / Pirate",
+          "2 Epic Archers · 1x Break Knife Soul",
+          "Lv. 140 SacredSkyPirateP3 (servidor Triumph)",
+          "402 BP | Mythsoul 648",
+          "Noble Rank: Earl (Donation: 15.484.000.000)",
+          "Rune Points: 167.500",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "Build: Pitch Warrior",
+          "SENSE Lv.9 · ARMED Lv.9 · OVERLORD Lv.9",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Progressão",
+        items: [
+          "Full set +12 (Super Gems / P-Souls equipados)",
+          "Runas principais em Max · BOSS Lv.6",
+          "Ideal Collection: Stone Cracker Lv.30 · Cold Moon Lv.10 · Thorn Cutter Lv.43",
+          "Runas: Comprehension · Pitching · FrostArrows · Assassin · Acalanatha · TideTrap · SwingingTail · Sacrifice · BurningSky",
+          "Chi: Dragon Lv.99 · Turtle Lv.99 · Tiger Lv.99 · Lv.99 (400 Study Chi)",
+          "Recognition: 90% · 75%",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-131",
+    title: "Water Taoist P3 — 467 BP — SnowWhite",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: waterTaoistSnowWhite467bpImg,
+    className: "Taoist",
+    prices: [{ label: "Preço", value: "150k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 129 Sacred_Star_Water_TaoistP3 (servidor SnowWhite)",
+          "467 BP | Mythsoul 648",
+          "Noble Rank: Countess (Donation: 14.319.711.111)",
+          "Rune Points: 194.300",
+          "10 Ideal Runes",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "StarChain (Water): Max",
+          "Heavenl 31 · Mighty 31 · Cosmic 31",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Progressão",
+        items: [
+          "Full set +12 com P-Souls",
+          "Runas principais em Max",
+          "Inventário: 287 runas vermelhas · 285 amarelas · 10 ideais",
+          "Steed +12 (Pink Steed) · Lineage 12 · 30.250 points",
+          "Chi: Turtle Lv.99 · Dragon Lv.99 · Tiger Lv.99 · Phoenix Lv.82 (400 Study Chi)",
+          "Recognition: 95% · 30%",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-132",
+    title: "Water Taoist P3 — Lv 140 — Volcano",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: waterTaoistVolcanoLv140Img,
+    className: "Taoist",
+    prices: [{ label: "Preço", value: "25k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 SacredSkyWaterTaoistP3 (servidor Volcano)",
+          "403 BP | Mythsoul 648",
+          "Noble Rank: Earl (Donation: 7.761.000.000)",
+          "Rune Points: 161.600",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "StarChain (Water): Max",
+          "Cosmic 20 · Mighty 20 · Heavenl 23",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Progressão",
+        items: [
+          "Full set +12",
+          "SacredNetherArmor +12 (EternalRobe) · P7 Armor Soul [P-Defense]",
+          "SacredStarHeadgear +12 (DistinctCap) · P7 Headgear Soul [Immunity]",
+          "Runas: Sacrifice · Comprehension · Pitching · FrostArrows · Assassin · Acalanatha · TideTrap · SwingingTail · BurningSky",
+          "Recognition: 30% · 90%",
+        ],
+      },
+    ],
+  },
+  {
     id: "acc-129",
     title: "Archer 1 Ideal Rune — Lv 140 — 0 Jail",
     badge: "NOVO",
