@@ -38,3 +38,30 @@ describe("October 18 catalog updates", () => {
     expect(ACCOUNTS.some((account) => account.id === "acc-96")).toBe(false);
   });
 });
+
+describe("November 6 catalog updates", () => {
+  it.each([
+    ["acc-130", "15k CPs"],
+    ["acc-131", "150k CPs"],
+    ["acc-132", "25k CPs"],
+  ])("stores the confirmed price for %s", (id, price) => {
+    expect(ACCOUNTS.find((account) => account.id === id)?.prices[0]?.value).toBe(price);
+  });
+
+  it("lists the Triumph pirate as 0 Jail with max archives", () => {
+    const account = ACCOUNTS.find((listing) => listing.id === "acc-130");
+    const items = account?.sections.flatMap((section) => section.items) ?? [];
+    expect(items).toContain("0 Jail");
+    expect(items).toContain("Archives: Max for Pirate");
+    expect(account?.className).toBe("Pirata");
+  });
+
+  it("keeps jail out of the two water listings that did not show it", () => {
+    for (const id of ["acc-131", "acc-132"]) {
+      const account = ACCOUNTS.find((listing) => listing.id === id);
+      const items = account?.sections.flatMap((section) => section.items) ?? [];
+      expect(items.some((item) => /jail/i.test(item))).toBe(false);
+      expect(account?.className).toBe("Taoist");
+    }
+  });
+});

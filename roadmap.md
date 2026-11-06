@@ -2,3 +2,4 @@
 - [x] Verify prices, jail information, and image loading in the catalog.
 - [x] Add the "Pirata Max Archives — Lv 140 — 0 Jail" listing at 25k CPs and verify it in the preview.
 - [x] Add the "Archer 1 Ideal Rune — Lv 140 — 0 Jail" listing at 25k CPs and verify it in the preview.
+- [x] Add the Triumph pirate (15k CPs, 0 Jail), the SnowWhite water taoist (150k CPs) and the Volcano water taoist (25k CPs); verify prices and images in the preview.
