@@ -1,9 +1,6 @@
-import octoberAccount2Img from "@/assets/account-oct18-2.jpg";
 import octoberAccount3Img from "@/assets/account-oct18-3.jpg";
 import octoberAccount4Img from "@/assets/account-oct18-4.jpg";
-import octoberAccount5Img from "@/assets/account-oct18-5.jpg";
 import waterImg from "@/assets/water.jpg";
-import jojoNinjaImg from "@/assets/JojoNinja.jpg";
 import decenteWaterImg from "@/assets/decente-water.png";
 import waterIdealImg from "@/assets/water-ideal.png";
 import waterOpImg from "@/assets/water-op.jpg";
@@ -41,9 +38,7 @@ import ninjaPrincess366bpImg from "@/assets/ninja-princess-366bp.jpg";
 import ninjaTidalVowP2Lv140Img from "@/assets/ninja-tidalvow-p2-lv140.jpg";
 import monkP3Duchess56bImg from "@/assets/monk-p3-duchess-56b.jpg";
 import monkFlowerBelle380bpImg from "@/assets/monk-flowerbelle-380bp.jpg";
-import pirataMaxArchivesImg from "@/assets/pirata-max-archives-lv140.webp";
 import archer1IdealRuneImg from "@/assets/archer-1-ideal-rune-lv140.webp";
-import pirateTriumph0JailImg from "@/assets/pirate-triumph-0jail.webp";
 import waterTaoistSnowWhite467bpImg from "@/assets/water-taoist-snowwhite-467bp.webp";
 import waterTaoistVolcanoLv140Img from "@/assets/water-taoist-volcano-lv140.webp";
 
@@ -60,48 +55,6 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
-  {
-    id: "acc-130",
-    title: "Pirata Max Archives — 2 Epic Archers — 0 Jail",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: pirateTriumph0JailImg,
-    className: "Pirata",
-    prices: [{ label: "Preço", value: "15k CPs" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "0 Jail",
-          "Archives: Max for Pirate",
-          "Pode ser Archer / Ninja / Pirate",
-          "2 Epic Archers · 1x Break Knife Soul",
-          "Lv. 140 SacredSkyPirateP3 (servidor Triumph)",
-          "402 BP | Mythsoul 648",
-          "Noble Rank: Earl (Donation: 15.484.000.000)",
-          "Rune Points: 167.500",
-        ],
-      },
-      {
-        title: "Atributos & Combate",
-        items: [
-          "Build: Pitch Warrior",
-          "SENSE Lv.9 · ARMED Lv.9 · OVERLORD Lv.9",
-        ],
-      },
-      {
-        title: "Equipamentos, Runas & Progressão",
-        items: [
-          "Full set +12 (Super Gems / P-Souls equipados)",
-          "Runas principais em Max · BOSS Lv.6",
-          "Ideal Collection: Stone Cracker Lv.30 · Cold Moon Lv.10 · Thorn Cutter Lv.43",
-          "Runas: Comprehension · Pitching · FrostArrows · Assassin · Acalanatha · TideTrap · SwingingTail · Sacrifice · BurningSky",
-          "Chi: Dragon Lv.99 · Turtle Lv.99 · Tiger Lv.99 · Lv.99 (400 Study Chi)",
-          "Recognition: 90% · 75%",
-        ],
-      },
-    ],
-  },
   {
     id: "acc-131",
     title: "Water Taoist P3 — 467 BP — SnowWhite",
@@ -218,90 +171,6 @@ export const ACCOUNTS: AccountListing[] = [
     ],
   },
   {
-    id: "acc-128",
-    title: "Pirata Max Archives — Lv 140 — 0 Jail",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: pirataMaxArchivesImg,
-    className: "Pirata",
-    prices: [{ label: "Preço", value: "25k CPs" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "0 Jail",
-          "Archives: Max",
-          "Sacred_Star_PirateP3 (servidor Eagle)",
-          "372 BP | Perfection 648",
-          "Noble Rank: Countess (Donation: 33.010.000.001)",
-          "Rune Points: 206.400",
-        ],
-      },
-      {
-        title: "Atributos & Combate",
-        items: [
-          "HP: 75.214 | Magic: 1.200",
-          "Attack: 44.711 ~ 46.208 | Defense: 22.182",
-          "M-Attack: 24.023 | M-Defense: 6.853",
-          "Final P-Attack: +11.152 | Final M-Attack: +7.102",
-          "Final P-Damage: -11.517 | Final M-Damage: -6.752",
-          "P-Strike: 120.70% | Break: 273.6% | Anti-Break: 72.1%",
-          "M-Strike: 47.30% | Immunity: 228.20% | Penetration: 15.00%",
-          "Block: 30.00% | Blessed: 57% | Attack: +210%",
-        ],
-      },
-      {
-        title: "Equipamentos, Runas & Progressão",
-        items: [
-          "Full set +12 (P9)",
-          "Runas principais em Max (10 em Max · 1 Lv.8)",
-          "Ideal Collection: 30.205 · 26.760 · 4.625 · 4.600",
-          "SENSE · ARMED · OVERLORD — Lv.9",
-          "Wings: Love Wings · Spotless Feather · Fluttering Flag",
-          "Astredge: P9 100% · P8 66% · P6 100%",
-          "Recognition: 95% · 90% · 80%",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-124",
-    title: "Fire/Water — Max Archives — 1 Jail",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: octoberAccount2Img,
-    className: "Taoist",
-    prices: [{ label: "Preço", value: "15k CPs" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "Lv. 140 Sacred_Star_Fire_TaoistP3",
-          "401 BP",
-          "Fire/Water — Max archives",
-          "1 Jail",
-          "Rune Points: 211.800"
-        ]
-      },
-      {
-        title: "Atributos & Combate",
-        items: [
-          "P-Strike: 102.60% | Break: 120.8%",
-          "Immunity: 237.90% | Penetration: 21.00%"
-        ]
-      },
-      {
-        title: "Runas, Relíquia & Progressão",
-        items: [
-          "Taoist Tool: Score 13.300 | Mastery Score: 469.000 | Max",
-          "Runas principais em Max",
-          "Relíquia: [Fate] Keen SparklyWesternMirror — 485 Pts",
-          "Astredge: Love Forever — Recognition 90%"
-        ]
-      }
-    ]
-  },
-  {
     id: "acc-125",
     title: "Ninja Sacred Star P5 — 320k Rune Points — 1 Jail",
     badge: "NOVO",
@@ -375,43 +244,6 @@ export const ACCOUNTS: AccountListing[] = [
           "Thorn Cutter Max · Cold Moon Max · Stone Cracker Max",
           "Jiang Hu: Cosmic 20 · Mighty 20 · Heaven 20",
           "Runas principais em Max"
-        ]
-      }
-    ]
-  },
-  {
-    id: "acc-127",
-    title: "Ninja Duke — 60B Donation — 277k Rune Points",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: octoberAccount5Img,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "150k CPs" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "405 BP | Perfection 648",
-          "Noble Rank: Duke (Donation: 60.459.555.552)",
-          "Rune Points: 277.300",
-          "Weapon Archives: 100.380"
-        ]
-      },
-      {
-        title: "Equipamentos & Runas",
-        items: [
-          "Equipamentos +12",
-          "Runas principais em Max",
-          "Wings: MorningFeather · Silent Wings · Mega Phoenix Wings · HolyBlueWings"
-        ]
-      },
-      {
-        title: "Chi & Progressão",
-        items: [
-          "Inner Power: 3.100 (Ranking 55)",
-          "Seal Retreat Study: 400",
-          "P-Attack +2.000 | Max HP +3.500 | Anti-Break +20% | P-Strike +20%",
-          "Astredge Recognition: 90% · 90% · 40%"
         ]
       }
     ]
@@ -1256,12 +1088,12 @@ export const ACCOUNTS: AccountListing[] = [
   },
   {
     id: "acc-94",
-    title: "Ninja Sacred Star P5 — Heavenwonders — 1 Jail — 200k CPs",
+    title: "Ninja Sacred Star P5 — Heavenwonders — 1 Jail — 180k CPs",
     badge: "NOVO",
     badgeColor: "bg-emerald-500",
     image: ninjaHw240kImg,
     className: "Ninja",
-    prices: [{ label: "Preço", value: "200k CPs" }],
+    prices: [{ label: "Preço", value: "180k CPs" }],
     sections: [
       {
         title: "Destaques",
@@ -1269,7 +1101,7 @@ export const ACCOUNTS: AccountListing[] = [
           "Ninja with Heavenwonders",
           "1 Jail",
           "Strike / Immunity Build",
-          "Preço: 200k CPs",
+          "Preço: 180k CPs",
           "Lv. 140 Sacred_Star_NinjaP5",
           "407 BP | Perfection 648",
           "Noble Rank: Prince (Donation: 86.832.000.000)",
@@ -1724,66 +1556,6 @@ export const ACCOUNTS: AccountListing[] = [
         items: [
           "Main Runas em Max (ciclo completo)",
           "Rune Points: 124.600",
-        ],
-      },
-    ],
-  },
-  {
-    id: "acc-79",
-    title: "Ninja Sacred Star P8 — HW/Stun",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: jojoNinjaImg,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "320k CPs" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "Lv. 140 Sacred_Star_NinjaP8",
-          "Ninja Hw/Stun build",
-          "1 Jail",
-          "Perfection 648",
-          "Supreme Diamond VIP",
-          "Rune Points: 416.700",
-        ],
-      },
-      {
-        title: "Atributos",
-        items: [
-          "HP: 90.361 | Magic: 1.500",
-          "Attack: 64.810 ~ 68.516 | Defense: 33.588",
-          "M-Attack: 27.813 | M-Defense: 9.273",
-          "Dodge: 107 | Agility: 1.073 | Accuracy: 256",
-          "Attack: 1.070 | M-Def: 108% | Blessed: 57%",
-          "Final P-Attack: +13.264 | Final M-Attack: +9.384",
-          "Final P-Damage: +14.698 | Final M-Damage: +8.687",
-          "P-Strike: 145.50% | Block: 30.00%",
-          "Break: 27.26% | Anti-Break: 90.40% | M-Strike: 61.20%",
-          "Immunity: 245.50% | Penetration: 15.00%",
-          "Detoxication: 72% | Parry: 7.00% | Lucky Strike: 7.00%",
-          "Dash Rate: 5.00% | Dodge Rate: 13.40% | Hit Rate: 15.80%",
-          "Resist: 1.50%",
-          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
-        ],
-      },
-      {
-        title: "Runas & Gear",
-        items: [
-          "Main Runas em Max (ciclo completo)",
-          "Rune Points: 416.700",
-          "Recognition: 95% / 95% / 60%",
-          "3 unbound yellow rune +9",
-          "8 credit runes",
-          "Retreat chi: 4x P strike",
-          "Unbound steed / Boot",
-        ],
-      },
-      {
-        title: "Jiang Hu & Progressão",
-        items: [
-          "Jiang Hu: Heavenly 20 | Mighty 21 | Cosmic 20",
-          "Equipamentos +12 com sockets",
         ],
       },
     ],
