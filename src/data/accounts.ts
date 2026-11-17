@@ -3,7 +3,6 @@ import octoberAccount4Img from "@/assets/account-oct18-4.jpg";
 import waterImg from "@/assets/water.jpg";
 import decenteWaterImg from "@/assets/decente-water.png";
 import waterIdealImg from "@/assets/water-ideal.png";
-import waterOpImg from "@/assets/water-op.jpg";
 import pirate420kImg from "@/assets/pirate-420k.jpg";
 import pirate100kImg from "@/assets/pirate-100k.jpg";
 
@@ -1802,61 +1801,6 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
-  {
-    id: "acc-29",
-    title: "Ótima oportunidade Water account",
-    badge: "PREMIUM",
-    badgeColor: "bg-cyan-500",
-    image: waterOpImg,
-    className: "Taoist",
-    prices: [{ label: "Preço", value: "A combinar" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Lv. 127 Sacred Sky Water Taoist P1",
-          "5.09B Donation",
-          "Warmaster Lady P8 · Victorious Buddha P6",
-          "Conqueror Xiang Yu P2 · Huntress Artemis P6",
-          "Anti-break: 319.5% · Immunity: 237.5%",
-          "P-Strike: 89.4% · Break: 36%",
-        ],
-      },
-      {
-        title: "Runas",
-        items: [
-          "Rune Points: 140.200",
-          "Iron Bone (+9) Yellow",
-          "Circle of Life (+9) Yellow",
-          "SoaringSpirit DragonSoul P7 · Lvl 6",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "Full set +12 (LegendStarTower, KylinBoots, OxhideArmor)",
-          "LegendHeavenFan, LightNecklace, RidingCrop, CopperKing",
-          "Steed +12 Lineage 1619",
-          "Spotless Feather wings",
-        ],
-      },
-      {
-        title: "Inner Power",
-        items: [
-          "Superb Manual · Violet Glow · Divine North Skill",
-          "The Essence of Yin",
-          "Dragon Lv99 · Turtle Lv99 · Phoenix Lv65 · Tiger Lv97",
-          "Recognition: 90% / 40%",
-        ],
-      },
-    ],
-  },
-
-
-
-
-
-
   {
     id: "acc-53",
     title: "Sell Water Max Archive 0 BJ",
