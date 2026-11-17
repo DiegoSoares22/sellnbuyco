@@ -4,3 +4,4 @@
 - [x] Add the "Archer 1 Ideal Rune — Lv 140 — 0 Jail" listing at 25k CPs and verify it in the preview.
 - [x] Add the Triumph pirate (15k CPs, 0 Jail), the SnowWhite water taoist (150k CPs) and the Volcano water taoist (25k CPs); verify prices and images in the preview.
 - [x] Remove acc-79, acc-124, acc-127, acc-128, acc-130 and change acc-94 (Ninja Sacred Star P5 — Heavenwonders) to 180k CPs; verify in the preview.
+- [x] Remove the "Ótima oportunidade Water account" listing (acc-29) and its image; verify in the preview.
