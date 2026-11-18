@@ -40,6 +40,9 @@ import monkFlowerBelle380bpImg from "@/assets/monk-flowerbelle-380bp.jpg";
 import archer1IdealRuneImg from "@/assets/archer-1-ideal-rune-lv140.webp";
 import waterTaoistSnowWhite467bpImg from "@/assets/water-taoist-snowwhite-467bp.webp";
 import waterTaoistVolcanoLv140Img from "@/assets/water-taoist-volcano-lv140.webp";
+import warriorSunshineP5Img from "@/assets/warrior-sunshine-p5.png";
+import archerSunshineP1Img from "@/assets/archer-sunshine-p1.png";
+import ninjaHeavenwondersP2Img from "@/assets/ninja-heavenwonders-p2.png";
 
 
 export interface AccountListing {
@@ -54,6 +57,120 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-133",
+    title: "Warrior Sacred Star P5 — Servidor Sunshine — 0 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: warriorSunshineP5Img,
+    className: "Warrior",
+    prices: [{ label: "Preço", value: "4k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 SacredSeaWarriorP5 (servidor Sunshine)",
+          "402 BP | Mythsoul 239",
+          "Noble Rank: Countess (Donation: 5.077.000.000)",
+          "Rune Points: 108.700",
+          "0 Jail",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP 74.094 · Attack 45.440–46.922 · Defense 30.267",
+          "Break 112,4% · P-Strike 204,54% · Immunity 202,64%",
+          "Cosmic 20 · Mighty 20 · Heavenl 23",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Progressão",
+        items: [
+          "Full set +12 com P-Souls",
+          "Runas principais em Max",
+          "Chi: Dragon Lv.45 · Phoenix Lv.29 · Turtle Lv.26 (Study Chi)",
+          "Recognition: 70%",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-134",
+    title: "Archer Sacred Star P1 — Servidor Sunshine — 0 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: archerSunshineP1Img,
+    className: "Archer",
+    prices: [{ label: "Preço", value: "4k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 SacredSeaArcherP1 (servidor Sunshine)",
+          "399 BP | Mythsoul 170",
+          "Noble Rank: Countess (Donation: 4.746.000.000)",
+          "Rune Points: 83.900",
+          "0 Jail",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP 75.278 · Attack 40.420–41.729 · Defense 19.360",
+          "Break 232,9% · P-Strike 105,60% · Immunity 169,16%",
+          "Stone Cracker Lv.15 · Thorn Cutter Lv.33",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Progressão",
+        items: [
+          "Full set +12 com P-Souls",
+          "Runas principais em Max",
+          "Chi: Dragon Lv.54 · Phoenix Lv.81 · Turtle Lv.69 (Study Chi)",
+          "Recognition: 60%",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-135",
+    title: "Ninja w/ Heavenwonders — 0 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaHeavenwondersP2Img,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Sacred_Star_NinjaP2 (Fu Seeker)",
+          "457 BP | Mythsoul 648",
+          "Rune Points: 198.700",
+          "Heavenwonders",
+          "0 Jail",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP 78.609 · Attack 53.572–56.918 · Defense 33.871",
+          "Break 263,2% · P-Strike 118,50% · Immunity 217,40%",
+          "Flame Ninja: Total Score 81.000 (Grade 15, Talent 4)",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Progressão",
+        items: [
+          "Full set +12 com P-Souls",
+          "Runas principais em Max",
+          "Chi: Turtle Lv.99 · Tiger Lv.99 · Dragon Lv.99 · Phoenix Lv.94 (2.296.793 Chi Pts)",
+          "Recognition: 95% · 80%",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-131",
     title: "Water Taoist P3 — 467 BP — SnowWhite",
