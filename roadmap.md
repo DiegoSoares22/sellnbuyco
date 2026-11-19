@@ -5,3 +5,4 @@
 - [x] Add the Triumph pirate (15k CPs, 0 Jail), the SnowWhite water taoist (150k CPs) and the Volcano water taoist (25k CPs); verify prices and images in the preview.
 - [x] Remove acc-79, acc-124, acc-127, acc-128, acc-130 and change acc-94 (Ninja Sacred Star P5 — Heavenwonders) to 180k CPs; verify in the preview.
 - [x] Remove the "Ótima oportunidade Water account" listing (acc-29) and its image; verify in the preview.
+- [x] Remove "Ótima oportunidade de Ninja c/ HeavenWonders" and "Ninja Sacred Star P5 — Heavenwonders — 1 Jail — 180k CPs"; verify in the preview.

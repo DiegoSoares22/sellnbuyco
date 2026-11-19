@@ -7,7 +7,6 @@ import pirate420kImg from "@/assets/pirate-420k.jpg";
 import pirate100kImg from "@/assets/pirate-100k.jpg";
 
 import pirataImg from "@/assets/pirata.jpg";
-import ninjaHw240kImg from "@/assets/ninja-hw-240k.jpg";
 import ninjaArtemis451bpImg from "@/assets/ninja-artemis-451bp.jpg";
 import archerTigerP7Img from "@/assets/archer-tiger-p7.jpg";
 import waterDuchess458bpImg from "@/assets/water-duchess-458bp.jpg";
@@ -15,7 +14,6 @@ import fireorwaterImg from "@/assets/fireorwater.png";
 
 import sellWaterMaxArchiveImg from "@/assets/sell-water-max-archive.png";
 
-import ninjahw from "@/assets/ninjahw.jpg";
 
 import topWaterArchivesFullImg from "@/assets/top-water-archives-full.jpg";
 import waterFire12kImg from "@/assets/water-fire-12k.png";
@@ -1202,59 +1200,7 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
-  {
-    id: "acc-94",
-    title: "Ninja Sacred Star P5 — Heavenwonders — 1 Jail — 180k CPs",
-    badge: "NOVO",
-    badgeColor: "bg-emerald-500",
-    image: ninjaHw240kImg,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "180k CPs" }],
-    sections: [
-      {
-        title: "Destaques",
-        items: [
-          "Ninja with Heavenwonders",
-          "1 Jail",
-          "Strike / Immunity Build",
-          "Preço: 180k CPs",
-          "Lv. 140 Sacred_Star_NinjaP5",
-          "407 BP | Perfection 648",
-          "Noble Rank: Prince (Donation: 86.832.000.000)",
-          "Rune Points: 333.300",
-          "Ninpo Score: 53.454",
-        ],
-      },
-      {
-        title: "Atributos & Combate",
-        items: [
-          "HP: 84.231 | Magic: 1.500",
-          "Attack: 57.602 ~ 61.308 | Defense: 31.355",
-          "M-Attack: 26.433 | M-Defense: 8.462",
-          "Final P-Attack: +10.824 | Final M-Attack: +7.304",
-          "Final P-Damage: +11.417 | Final M-Damage: +7.404",
-          "P-Strike: 261.40% | Block: 30.00%",
-          "Break: 119.9% | Anti-break: 61.7%",
-          "M-Strike: 53.90% | Immunity: 237.70% | Penetration: 15.00%",
-          "Resistências: Metal 80 / Wood 80 / Water 80 / Fire 80",
-        ],
-      },
-      {
-        title: "Equipamentos, Runas & Sub-Classes",
-        items: [
-          "Rune Points: 333.300 (Stage Bonus HP +5200, P-Atk +3100, M-Atk +4600, P-Stk +15.00%, Break +15.00%, Anti-Brk +15.00%, Imm +15.00%)",
-          "Mount: Steed(+12) (Lineage Level 12 | Lineage: 2461)",
-          "Recognition: 90% / 90% / 80% (21 Heavenly, 20 Mighty, 20 Cosmic)",
-          "LegendNetherArmor(+12) [P7 Armor Soul P-Defense]",
-          "LegendMonsterSaber(+12) [P7.1-handed Soul]",
-          "LegendMoonHeadgear(+12) [P7 Headgear Soul Immunity]",
-          "LegendHeavenNecklace(+12) [P7 Necklace Soul]",
-          "Sub-Classes: P8 (100%), P5 (100%), P7, P8, P7, P5, P4, P3",
-        ],
-      },
-    ],
-  },
-  {
+ {
     id: "acc-93",
     title: "Ninja Sacred Star P5 — 451 BP — Artemis P9 — 369k Runes",
     badge: "NOVO",
@@ -1778,80 +1724,7 @@ export const ACCOUNTS: AccountListing[] = [
       },
     ],
   },
-  {
-    id: "acc-63",
-    title: "Ótima oportunidade de Ninja c/ HeavenWonders",
-    badge: "DESTAQUE",
-    badgeColor: "bg-orange-500",
-    image: ninjahw,
-    className: "Ninja",
-    prices: [{ label: "Preço", value: "55k CPs" }],
-    sections: [
-      {
-        title: "Atributos",
-        items: [
-          "Lv. 109 Sacred Star Ninja P2",
-          "HP: 75.267",
-          "Attack: 43.829 ~ 46.320",
-          "Defense: 21.902",
-          "M-Defense: 7.079",
-          "Final P-Attack: 10.404",
-          "Final M-Damage: 6.129",
-          "P-Strike: 245.50%",
-          "Break: 96.6%",
-          "Anti-Break: 58.1%",
-          "Immunity: 224.86%",
-          "Penetration: 15%",
-        ],
-      },
-      {
-        title: "Progressão",
-        items: [
-          "Rune Points: 264.400",
-          "Ninpo Score: 36.882",
-          "Inner Power: 648",
-          "Weapon Archives: 100.270",
-          "Sacred Star P2",
-        ],
-      },
-      {
-        title: "Equipamentos",
-        items: [
-          "Set Full +12",
-          "Superb Manual",
-          "Violet Glow",
-          "Divine North",
-          "The Essence of Yin",
-          "Myth Soul",
-          "Wings of Slaughter",
-        ],
-      },
-      {
-        title: "Runas e Relíquias",
-        items: [
-          "P-Strike +4.00%",
-          "P-Strike +4.00%",
-          "Immunity +1.66%",
-          "2 atributos de P-Strike",
-          "Durability: 87/90",
-        ],
-      },
-      {
-        title: "Eon Spirit",
-        items: [
-          "Gate of Rest: Lv. 9",
-          "Gate of Pain: Lv. 9",
-          "Gate of View: Lv. 5",
-          "Gate of Death: Lv. 8",
-          "Gate of Dawn: Lv. 8",
-          "Gate of Life: Lv. 5",
-          "Gate of Limit: Lv. 9",
-          "Gate of Shock: Lv. 9",
-        ],
-      },
-    ],
-  },
-  {
+ {
     id: "acc-21",
     title: "Decente Water",
     badge: "DECENTE",
