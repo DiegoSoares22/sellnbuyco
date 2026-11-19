@@ -41,6 +41,7 @@ import waterTaoistVolcanoLv140Img from "@/assets/water-taoist-volcano-lv140.webp
 import warriorSunshineP5Img from "@/assets/warrior-sunshine-p5.png";
 import archerSunshineP1Img from "@/assets/archer-sunshine-p1.png";
 import ninjaHeavenwondersP2Img from "@/assets/ninja-heavenwonders-p2.png";
+import ninjaConquerorBladeImg from "@/assets/ninja-conqueror-blade.webp";
 
 
 export interface AccountListing {
@@ -55,6 +56,45 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-136",
+    title: "Ninja c/ Conqueror Blade — 0 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaConquerorBladeImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Sacred_Star_NinjaP4 (servidor Storm)",
+          "416 BP | Mythsoul 648",
+          "Rune Points: 262.800",
+          "Conqueror Blade",
+          "0 Jail",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP 79.550 · Attack 56.497–59.843 · Defense 32.163",
+          "Break 287,8% · P-Strike 117,60% · Immunity 229,30%",
+          "Anti-break 73,3% · Blessed 57%",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Progressão",
+        items: [
+          "Full set +12 com P-Souls",
+          "Runas principais em Max · Stage Bonus completo",
+          "Tortoise set no equipamento alternativo",
+          "Astredge: Viodragon Club (ChaoticDance Lv.4) · Love Forever (EternalWarsoul Lv.3)",
+          "Relíquia: Beads of Calm Sea — 7.296 Pts",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-133",
     title: "Warrior Sacred Star P5 — Servidor Sunshine — 0 Jail",
