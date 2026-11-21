@@ -118,7 +118,7 @@ export default function Admin() {
           </div>
           <form onSubmit={handleLogin} className="space-y-3">
             <input type="password" value={password} onChange={(e) => { setPassword(e.target.value); setError(false); }}
-              placeholder="Senha de administrador"
+              placeholder="Senha de administrador" aria-label="Senha de administrador"
               className="w-full px-3 py-2 rounded-lg bg-muted border border-border text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50" required />
             {error && (
               <div className="flex items-center gap-2 text-destructive text-sm">

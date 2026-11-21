@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useI18n } from "@/i18n";
 import { buildWa } from "@/lib/whatsapp";
+import { openCookiePreferences } from "@/lib/consent";
 import sellnbuycoLogo from "@/assets/sellnbuyco-logo.png";
 
 const linkClass =
@@ -47,7 +48,7 @@ export const Footer: React.FC = () => {
 
           <nav
             aria-label={lang === "pt" ? "Rodapé" : "Footer"}
-            className="grid grid-cols-2 gap-x-xxl lg:col-span-5 lg:col-start-8"
+            className="grid grid-cols-2 gap-x-xxl gap-y-xl sm:grid-cols-3 lg:col-span-6 lg:col-start-7"
           >
             <div>
               <h2 className="text-caption-sm text-on-primary/80">{lang === "pt" ? "Loja" : "Store"}</h2>
@@ -79,14 +80,47 @@ export const Footer: React.FC = () => {
                 </li>
               </ul>
             </div>
+            {/* No celular cai para a segunda linha, sem a linha de ritmo à esquerda */}
+            <div className="relative sm:before:absolute sm:before:-left-6 sm:before:bottom-0 sm:before:top-0 sm:before:w-px sm:before:bg-on-primary/20">
+              <h2 className="text-caption-sm text-on-primary/80">Legal</h2>
+              <ul className="mt-sm space-y-sm">
+                <li>
+                  <Link to={withLang("/privacidade")} className={linkClass}>
+                    {lang === "pt" ? "Privacidade" : "Privacy"}
+                  </Link>
+                </li>
+                <li>
+                  <Link to={withLang("/termos")} className={linkClass}>
+                    {lang === "pt" ? "Termos de uso" : "Terms of Use"}
+                  </Link>
+                </li>
+                <li>
+                  <Link to={withLang("/cookies")} className={linkClass}>
+                    Cookies
+                  </Link>
+                </li>
+                <li>
+                  <button type="button" onClick={openCookiePreferences} className={`${linkClass} text-left`}>
+                    {lang === "pt" ? "Preferências de cookies" : "Cookie Preferences"}
+                  </button>
+                </li>
+              </ul>
+            </div>
           </nav>
         </div>
 
-        <div className="mt-xxl flex flex-wrap items-center justify-between gap-sm border-t border-on-primary/20 pt-lg text-caption-md text-on-primary/80">
-          <p>
-            © {new Date().getFullYear()} <span translate="no">SellNBuyCO</span>
+        <div className="mt-xxl space-y-sm border-t border-on-primary/20 pt-lg text-caption-md text-on-primary/80">
+          <div className="flex flex-wrap items-center justify-between gap-sm">
+            <p>
+              © {new Date().getFullYear()} <span translate="no">SellNBuyCO</span>
+            </p>
+            <p>{lang === "pt" ? "Bom jogo." : "Good game."}</p>
+          </div>
+          <p className="max-w-[72ch]">
+            {lang === "pt"
+              ? "SellNBuyCO é independente e não tem vínculo com a desenvolvedora nem com a publicadora de Conquer Online. Conquer Online e os elementos do jogo pertencem aos seus titulares."
+              : "SellNBuyCO is independent and not affiliated with the developer or publisher of Conquer Online. Conquer Online and its game elements belong to their respective owners."}
           </p>
-          <p>{lang === "pt" ? "Bom jogo." : "Good game."}</p>
         </div>
       </div>
     </footer>

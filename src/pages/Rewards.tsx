@@ -147,25 +147,21 @@ export default function Rewards() {
     }
     setLoading(true);
 
-    const { data: user } = await supabase
-      .from("users_rewards")
-      .select("*")
-      .eq("account_id", safeId)
-      .maybeSingle();
+    // A verificação de ID + nome acontece no banco (get_rewards_summary); as tabelas não são legíveis direto.
+    const { data, error: rpcError } = await supabase.rpc("get_rewards_summary", {
+      p_account_id: safeId,
+      p_name: safeName,
+    });
+    const summary = data as { transactions: Transaction[]; rewards: Reward[] } | null;
 
-    if (!user) {
+    if (rpcError || !summary) {
       setLoading(false);
-      setError("Não encontramos esse ID. Confira o número e tente de novo, ou fale com a gente no WhatsApp.");
+      setError("Não encontramos uma conta com esse ID e nome. Confira os dados e tente de novo, ou fale com a gente no WhatsApp.");
       return;
     }
 
-    const [txRes, rwRes] = await Promise.all([
-      supabase.from("transactions").select("*").eq("account_id", safeId).order("created_at", { ascending: false }),
-      supabase.from("rewards").select("*").eq("account_id", safeId).order("created_at", { ascending: false }),
-    ]);
-
-    setTransactions((txRes.data || []) as Transaction[]);
-    setRewards((rwRes.data || []) as Reward[]);
+    setTransactions(summary.transactions || []);
+    setRewards(summary.rewards || []);
     setLoading(false);
     setSubmitted(true);
   };
@@ -285,6 +281,15 @@ export default function Rewards() {
                     />
                   </div>
                 </div>
+
+                {/* Aviso de privacidade no ponto de coleta (LGPD, art. 9º) */}
+                <p className="text-caption-md text-mute-light">
+                  Usamos o ID e o nome só para encontrar o seu histórico de compras e recompensas. Saiba mais na{" "}
+                  <Link to="/privacidade" className="link-light">
+                    Política de Privacidade
+                  </Link>
+                  .
+                </p>
 
                 <div aria-live="polite">
                   {error && (

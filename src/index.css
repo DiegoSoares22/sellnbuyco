@@ -283,6 +283,20 @@
     @apply rounded-md border-4 border-canvas-dark bg-surface-dark-card bg-no-repeat;
   }
 
+  /* ---------- Texto corrido das páginas legais (Privacidade, Termos, Cookies) ---------- */
+  .legal-body ul {
+    @apply list-disc space-y-1 pl-5;
+  }
+  .legal-body ol {
+    @apply list-decimal space-y-1 pl-5;
+  }
+  .legal-body strong {
+    @apply font-semibold text-ink;
+  }
+  .legal-body h3 {
+    @apply pt-sm text-heading-md text-ink;
+  }
+
   /* ---------- Campo de texto (text-input) ---------- */
   .text-input {
     @apply h-12 w-full rounded-sm border border-ash-light bg-canvas-light px-md text-body-sm text-ink placeholder:text-mute-light focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary;
