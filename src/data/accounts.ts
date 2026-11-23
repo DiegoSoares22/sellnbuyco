@@ -44,6 +44,7 @@ import ninjaHeavenwondersP2Img from "@/assets/ninja-heavenwonders-p2.png";
 import ninjaConquerorBladeImg from "@/assets/ninja-conqueror-blade.webp";
 import archer2Epics1IdealRuneImg from "@/assets/archer-2-epics-1-ideal-rune.webp";
 import ninjaPerfectHolygrailP8Img from "@/assets/ninja-perfect-holygrail-p8.webp";
+import archer2EpicsWeapon1CreditRuneImg from "@/assets/archer-2-epics-weapon-1-credit-rune.webp";
 
 
 export interface AccountListing {
@@ -58,6 +59,45 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-139",
+    title: "Archer c/ 2 epics weapon | 1 credit rune — 0 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: archer2EpicsWeapon1CreditRuneImg,
+    className: "Archer",
+    prices: [{ label: "Preço", value: "25k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 SacredSkyArcherP2 (servidor FatalBlow)",
+          "2 Epic weapons | 1 Credit Rune",
+          "388 BP | Mythsoul 361 | Rune Points: 154.400",
+          "Noble Rank: King (Contribution: 19.414.999.998)",
+          "0 Jail",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP 78.723 · Attack 48.167–50.959 · Defense 19.332",
+          "Break 86,5% · P-Strike 227,40% · Immunity 208,10%",
+          "Anti-break 59,9% · Blessed 57% · Detoxication 72%",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Progressão",
+        items: [
+          "Full set +12 com P-Souls e gemas",
+          "Runas principais em Max",
+          "Talismãs +12: Fan · Tower · Riding Crop",
+          "Talentos: Stone Cracker Lv.55 · Thorn Cutter Lv.36 · Dragonhowl Lv.31 · Bloodlust Lv.40",
+          "Asas de fogo equipadas",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-138",
     title: "Perfect Holygrail Ninja — 0 Jail",
