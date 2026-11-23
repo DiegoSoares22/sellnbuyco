@@ -28,6 +28,16 @@ describe("October 18 catalog updates", () => {
   });
 });
 
+describe("November 23 catalog updates", () => {
+  it("prices the HolyGrail ninja with and without unbound runes", () => {
+    const account = ACCOUNTS.find((listing) => listing.id === "acc-141");
+    const prices = account?.prices.map((p) => `${p.label}: ${p.value}`) ?? [];
+    expect(prices).toEqual(["C/ runas unbound: 900k CPs", "Sem runas unbound: 550k CPs"]);
+    expect(account?.className).toBe("Ninja");
+    expect(account?.sections.flatMap((section) => section.items)).toContain("1 Jail");
+  });
+});
+
 describe("November 22 catalog updates", () => {
   it("prices the new HeavenWonders ninja at 38k CPs with 0 Jail", () => {
     const account = ACCOUNTS.find((listing) => listing.id === "acc-140");

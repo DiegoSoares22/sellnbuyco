@@ -46,6 +46,7 @@ import ninjaConquerorBladeImg from "@/assets/ninja-conqueror-blade.webp";
 import archer2Epics1IdealRuneImg from "@/assets/archer-2-epics-1-ideal-rune.webp";
 import ninjaPerfectHolygrailP8Img from "@/assets/ninja-perfect-holygrail-p8.webp";
 import archer2EpicsWeapon1CreditRuneImg from "@/assets/archer-2-epics-weapon-1-credit-rune.webp";
+import ninjaHolygrailHwImg from "@/assets/ninja-holygrail-hw.webp";
 
 
 export interface AccountListing {
@@ -60,6 +61,54 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-141",
+    title: "Perfect Ninja c/ HeavenWonders & HolyGrail — 1 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaHolygrailHwImg,
+    className: "Ninja",
+    prices: [
+      { label: "C/ runas unbound", value: "900k CPs" },
+      { label: "Sem runas unbound", value: "550k CPs" },
+    ],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Sacred_Star_NinjaP8 (HolyGrail)",
+          "HeavenWonders",
+          "95746 BP | Mythsoul 648",
+          "Rune Points: 495.500",
+          "Princess (Donation: 232.985.555.546 — Ranking 5)",
+          "1 Jail",
+          "Estoque: 17 runas azuis unbound · 10 runas amarelas",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "Attack 63.137–66.843 · Defense 32.845 · Magic 1600",
+          "Break 130,7% · P-Strike 304,80% · Immunity 288,70%",
+          "Anti-break 91,3% · Blessed 57% · Detoxication 72%",
+          "Final P-Attack 12.118 · Final P-Damage 12.417",
+          "Resistências Metal / Wood / Water / Fire: 80",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Progressão",
+        items: [
+          "Full set +12 com P-Souls (Moon Headgear · Nether Armor · Monster Saber)",
+          "Runas principais em Max · Stage Bonus: HP 15.000 · P-Atk 6.800 · M-Atk 8.000",
+          "4 Ressonâncias ativas com foco em P-Strike e Immunity",
+          "Talismãs +12: Star Tower · Heaven Fan · Tempest Wing · Riding Crop (Synergized 3239 Pts)",
+          "Ninpo Score: 43.271 · Chi: Stone Cracker Max · Thorn Cutter Max",
+          "Wushu Adept Lv.17 · Dazhui e Yutang Mastery Lv.12 · Outer Gates 31 Cosmic / 31 Mighty / 31 Heavenl",
+          "SENSE · ARMED · OVERLORD: Lv.9 · Asas: Golden Phoenix · Soaring Thunder · Luminous Plume",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-140",
     title: "Ninja c/ HeavenWonders — 0 Jail",

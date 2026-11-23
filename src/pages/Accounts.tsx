@@ -17,7 +17,7 @@ import { toast } from "sonner";
 import { Footer } from "@/components/Footer";
 import { AccountDetailPage } from "@/components/AccountDetailPage";
 import { formatLastUpdated } from "@/lib/lastUpdated";
-import { formatPrice, meaningfulBadge } from "@/lib/price";
+import { formatAllPrices, formatPrice, meaningfulBadge } from "@/lib/price";
 import { buildWa } from "@/lib/whatsapp";
 import { returnFocusProps } from "@/lib/dialogFocus";
 import { ImageZoomDialog } from "@/components/ImageZoomDialog";
@@ -131,6 +131,7 @@ function AccountsList() {
   const zoomLabel = lang === "pt" ? "Ampliar print de" : "Enlarge screenshot of";
   const closeLabel = lang === "pt" ? "Fechar" : "Close";
   const selectedPrice = selected ? formatPrice(selected, lang) : null;
+  const selectedPrices = selected ? formatAllPrices(selected, lang) : [];
   const selectedBadge = selected ? meaningfulBadge(selected.badge) : null;
   const selectedLevel = selected ? getAccountLevel(selected) : null;
   const selectedMeta = selected
@@ -254,6 +255,16 @@ function AccountsList() {
                     {selectedPrice.amount}
                     {selectedPrice.unit && <span className="ml-1.5 text-body-sm text-mute-light">{selectedPrice.unit}</span>}
                   </p>
+                  {selectedPrices.length > 1 && (
+                    <ul className="mt-1 space-y-0.5" translate="no">
+                      {selectedPrices.map((p, i) => (
+                        <li key={i} className="text-caption-md text-mute-light">
+                          {p.label}: {p.amount}
+                          {p.unit && <span className="ml-1">{p.unit}</span>}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
 
                   <ul className="mt-lg">
                     {selectedFacts.map((item, i) => (

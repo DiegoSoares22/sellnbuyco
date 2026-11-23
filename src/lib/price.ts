@@ -3,13 +3,12 @@ import type { AccountListing } from "@/data/accounts";
 const LOCALE = { pt: "pt-BR", en: "en-US" } as const;
 
 /**
- * Separa o preço de exibição em valor + moeda, com o número no formato do idioma.
+ * Separa um preço de exibição em valor + moeda, com o número no formato do idioma.
  * "125K CPS" -> { amount: "125k", unit: "CPs" }
  * "$4550 USD" -> { amount: "$4.550" (pt) / "$4,550" (en), unit: "USD" }
  * "A combinar" -> { amount: "A combinar", unit: "" }  (antes virava "A" + "combinar")
  */
-export function formatPrice(account: AccountListing, lang: "pt" | "en" = "pt") {
-  const raw = (account.prices[0]?.value || "").trim();
+function formatPriceValue(raw: string, lang: "pt" | "en") {
 
   if (!raw) {
     return { amount: lang === "pt" ? "A combinar" : "Negotiable", unit: "", negotiable: true };
@@ -37,6 +36,16 @@ export function formatPrice(account: AccountListing, lang: "pt" | "en" = "pt") {
   const amount = `${symbol}${number}${suffix === "K" ? "k" : suffix}`;
   const unit = /^cps?$/i.test(rest.trim()) ? "CPs" : rest.trim();
   return { amount, unit, negotiable: false };
+}
+
+/** Preço em destaque (o primeiro da lista). */
+export function formatPrice(account: AccountListing, lang: "pt" | "en" = "pt") {
+  return formatPriceValue((account.prices[0]?.value || "").trim(), lang);
+}
+
+/** Todos os preços do anúncio, cada um com a sua etiqueta ("C/ runas unbound", etc.). */
+export function formatAllPrices(account: AccountListing, lang: "pt" | "en" = "pt") {
+  return account.prices.map((p) => ({ label: p.label, ...formatPriceValue(p.value.trim(), lang) }));
 }
 
 /** Badges que aparecem em quase todos os anúncios não informam nada no card. */

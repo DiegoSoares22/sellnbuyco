@@ -5,7 +5,7 @@ import { useAccountStore } from "@/hooks/useAccountStore";
 import { useI18n } from "@/i18n";
 import { AccountListing } from "@/data/accounts";
 import { getAccountLevel } from "@/lib/accountFilters";
-import { formatPrice, meaningfulBadge } from "@/lib/price";
+import { formatAllPrices, formatPrice, meaningfulBadge } from "@/lib/price";
 import { getHighlights } from "@/lib/highlights";
 
 interface AccountCardProps {
@@ -29,6 +29,8 @@ export const AccountCard: React.FC<AccountCardProps> = ({ account, onSelect, onI
   const level = getAccountLevel(account);
   const favorited = isFavorite(account.id);
   const price = formatPrice(account, lang);
+  // Anúncios com dois preços (ex.: com e sem runas unbound) mostram o outro logo abaixo
+  const altPrices = account.prices.length > 1 ? formatAllPrices(account, lang).slice(1) : [];
   const badge = meaningfulBadge(account.badge);
 
   const detailsHref = withLang(`/accounts/${account.id}`);
@@ -98,10 +100,17 @@ export const AccountCard: React.FC<AccountCardProps> = ({ account, onSelect, onI
         </p>
 
         <div className="mt-auto flex items-end justify-between gap-3 pt-md">
-          <p className="tabular text-price-md text-ink">
-            {price.amount}
-            {price.unit && <span className="ml-1.5 text-caption-md text-mute-light">{price.unit}</span>}
-          </p>
+          <div className="min-w-0">
+            <p className="tabular text-price-md text-ink">
+              {price.amount}
+              {price.unit && <span className="ml-1.5 text-caption-md text-mute-light">{price.unit}</span>}
+            </p>
+            {altPrices.length > 0 && (
+              <p className="mt-1 text-caption-md text-mute-light" translate="no">
+                {altPrices.map((p) => `${p.label}: ${p.amount}${p.unit ? ` ${p.unit}` : ""}`).join(" · ")}
+              </p>
+            )}
+          </div>
           <Link to={detailsHref} className="link-light relative z-10 shrink-0 text-caption-md">
             {lang === "pt" ? "Ver detalhes" : "View Details"}
           </Link>
