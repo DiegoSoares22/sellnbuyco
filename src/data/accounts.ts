@@ -43,6 +43,7 @@ import archerSunshineP1Img from "@/assets/archer-sunshine-p1.png";
 import ninjaHeavenwondersP2Img from "@/assets/ninja-heavenwonders-p2.png";
 import ninjaConquerorBladeImg from "@/assets/ninja-conqueror-blade.webp";
 import archer2Epics1IdealRuneImg from "@/assets/archer-2-epics-1-ideal-rune.webp";
+import ninjaPerfectHolygrailP8Img from "@/assets/ninja-perfect-holygrail-p8.webp";
 
 
 export interface AccountListing {
@@ -57,6 +58,45 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-138",
+    title: "Perfect Holygrail Ninja — 0 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaPerfectHolygrailP8Img,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "800k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Sacred_Star_NinjaP8",
+          "648 BP | Rune Points: 464.600",
+          "Noble Rank: Prince (Donation: 327.281.222.219) — Ranking 4",
+          "Runas ideais em Max (+9)",
+          "0 Jail",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP 94.199 · Attack 63.788–67.494 · Defense 37.648",
+          "Break 103,2% · P-Strike 299,80% · Immunity 150,21%",
+          "Anti-break 289,5% · Blessed 57% · Block 30,00%",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Progressão",
+        items: [
+          "Full set +12 com 2 sockets e gemas",
+          "Runas em Max: XP Devourer · Supreme Armor · Invincible Resolve · Cosmic Balance · Unbreakable · Tortoise Predator · Battle Reaper · Honed Soul",
+          "Talismãs Lendários +12: LegendHeavenFan · LegendStarTower · LegendRidingCrop",
+          "Relíquia: [Loyal Firmness] ImperialTripodVessel — 4.529 Pts (Synergized)",
+          "Steed +12 · Lineage 12 (945.928 pts) · Asas: Scorpius · FairyWings · VioletLightning · MoonlightWings",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-137",
     title: "Archer c/ 2 epics | 1 ideal rune — 0 Jail",
