@@ -8,3 +8,4 @@
 - [x] Remove "Ótima oportunidade de Ninja c/ HeavenWonders" and "Ninja Sacred Star P5 — Heavenwonders — 1 Jail — 180k CPs"; verify in the preview.
 - [x] Add "Ninja c/ Conqueror Blade — 0 Jail" (A combinar) and verify the card and image in the preview.
 - [x] Add "Archer c/ 2 epics | 1 ideal rune — 0 Jail" at 40k CPs and verify the card and image in the preview.
+- [x] Add "Perfect Holygrail Ninja — 0 Jail" at 800k CPs and verify the card and image in the preview.
