@@ -28,6 +28,21 @@ describe("October 18 catalog updates", () => {
   });
 });
 
+describe("November 22 catalog updates", () => {
+  it("prices the new HeavenWonders ninja at 38k CPs with 0 Jail", () => {
+    const account = ACCOUNTS.find((listing) => listing.id === "acc-140");
+    expect(account?.prices[0]?.value).toBe("38k CPs");
+    expect(account?.title).toBe("Ninja c/ HeavenWonders — 0 Jail");
+    expect(account?.sections.flatMap((section) => section.items)).toContain("0 Jail");
+  });
+
+  it("keeps the earlier Heavenwonders listing negotiable", () => {
+    const account = ACCOUNTS.find((listing) => listing.id === "acc-135");
+    expect(account?.prices[0]?.value).toBe("A combinar");
+    expect(account?.title).toBe("Ninja w/ Heavenwonders — 0 Jail");
+  });
+});
+
 describe("November 6 catalog updates", () => {
   it.each([
     ["acc-131", "150k CPs"],

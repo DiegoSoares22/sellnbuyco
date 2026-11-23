@@ -10,3 +10,4 @@
 - [x] Add "Archer c/ 2 epics | 1 ideal rune — 0 Jail" at 40k CPs and verify the card and image in the preview.
 - [x] Add "Perfect Holygrail Ninja — 0 Jail" at 800k CPs and verify the card and image in the preview.
 - [x] Add "Archer c/ 2 epics weapon | 1 credit rune — 0 Jail" at 25k CPs and verify the card and image in the preview.
+- [x] Add "Ninja c/ HeavenWonders — 0 Jail" (acc-140) at 38k CPs as its own card, keeping the earlier "Ninja w/ Heavenwonders — A combinar" untouched; verify both in the preview.

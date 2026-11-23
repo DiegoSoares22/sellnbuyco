@@ -41,6 +41,7 @@ import waterTaoistVolcanoLv140Img from "@/assets/water-taoist-volcano-lv140.webp
 import warriorSunshineP5Img from "@/assets/warrior-sunshine-p5.png";
 import archerSunshineP1Img from "@/assets/archer-sunshine-p1.png";
 import ninjaHeavenwondersP2Img from "@/assets/ninja-heavenwonders-p2.png";
+import ninjaHeavenwonders38kImg from "@/assets/ninja-heavenwonders-38k.webp";
 import ninjaConquerorBladeImg from "@/assets/ninja-conqueror-blade.webp";
 import archer2Epics1IdealRuneImg from "@/assets/archer-2-epics-1-ideal-rune.webp";
 import ninjaPerfectHolygrailP8Img from "@/assets/ninja-perfect-holygrail-p8.webp";
@@ -59,6 +60,47 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-140",
+    title: "Ninja c/ HeavenWonders — 0 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaHeavenwonders38kImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "38k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Sacred_Star_NinjaP2 (Fu Seeker)",
+          "457 BP | Mythsoul 648",
+          "Rune Points: 198.700",
+          "HeavenWonders",
+          "0 Jail",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP 78.609 · Attack 53.572–56.918 · Defense 33.871",
+          "Break 263,2% · P-Strike 118,50% · Immunity 217,40%",
+          "Anti-break 58,8% · Blessed 54% · Detoxication 72%",
+          "Flame Ninja: Total Score 81.000 (Grade 15, Talent 4)",
+          "Resistências Metal / Wood / Water / Fire: 80",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Progressão",
+        items: [
+          "Full set +12 com P-Souls",
+          "Runas principais em Max",
+          "Chi: Turtle Lv.99 · Tiger Lv.99 · Dragon Lv.99 · Phoenix Lv.94 (2.296.793 Chi Pts)",
+          "Selos: Fire / Water / Earth / Wind / Lightning (vários em MAX)",
+          "Recognition: 95% · 80%",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-139",
     title: "Archer c/ 2 epics weapon | 1 credit rune — 0 Jail",
