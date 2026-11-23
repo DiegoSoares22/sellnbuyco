@@ -42,6 +42,7 @@ import warriorSunshineP5Img from "@/assets/warrior-sunshine-p5.png";
 import archerSunshineP1Img from "@/assets/archer-sunshine-p1.png";
 import ninjaHeavenwondersP2Img from "@/assets/ninja-heavenwonders-p2.png";
 import ninjaConquerorBladeImg from "@/assets/ninja-conqueror-blade.webp";
+import archer2Epics1IdealRuneImg from "@/assets/archer-2-epics-1-ideal-rune.webp";
 
 
 export interface AccountListing {
@@ -56,6 +57,45 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-137",
+    title: "Archer c/ 2 epics | 1 ideal rune — 0 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: archer2Epics1IdealRuneImg,
+    className: "Archer",
+    prices: [{ label: "Preço", value: "40k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Hawk Archer (servidor FatalBlow)",
+          "2 Epic Archers | 1 Ideal Rune",
+          "405 BP | Mythsoul 648",
+          "Noble Rank: Duke (Donation: 24.143.999.998)",
+          "0 Jail",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP 83.850 · Attack 53.350–56.142 · Defense 29.520",
+          "Break 107,1% · P-Strike 280,30% · Immunity 231,00%",
+          "Anti-break 73,0% · Blessed 57% · Block 30,00%",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Progressão",
+        items: [
+          "Full set +12 com P-Souls",
+          "Runas principais em Max · Stage Bonus completo",
+          "Tortoise set no equipamento alternativo",
+          "Asas: Sparrow Feather · Violet Lightning · Violet Cloud Wing",
+          "Talentos: Sense Lv.9 · Overlord Lv.9 · Stone Cracker Lv.51 · Thorn Cutter Lv.45",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-136",
     title: "Ninja c/ Conqueror Blade — 0 Jail",
