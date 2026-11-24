@@ -78,7 +78,7 @@ export const ACCOUNTS: AccountListing[] = [
         items: [
           "Lv. 140 Sacred_Star_NinjaP8 (HolyGrail)",
           "HeavenWonders",
-          "95746 BP | Mythsoul 648",
+          "Mythsoul 648",
           "Rune Points: 495.500",
           "Princess (Donation: 232.985.555.546 — Ranking 5)",
           "1 Jail",
