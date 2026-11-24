@@ -124,10 +124,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      get_rewards_summary: {
-        Args: { p_account_id: string; p_name: string }
-        Returns: Json
-      }
+      [_ in never]: never
     }
     Enums: {
       [_ in never]: never
