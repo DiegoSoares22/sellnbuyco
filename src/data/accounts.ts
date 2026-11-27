@@ -3,7 +3,7 @@ import octoberAccount4Img from "@/assets/account-oct18-4.jpg";
 import waterImg from "@/assets/water.jpg";
 import decenteWaterImg from "@/assets/decente-water.png";
 import waterIdealImg from "@/assets/water-ideal.png";
-import pirate420kImg from "@/assets/pirate-420k.jpg";
+import pirateDeath488bpImg from "@/assets/pirate-death-488bp.webp";
 import pirate100kImg from "@/assets/pirate-100k.jpg";
 
 import pirataImg from "@/assets/pirata.jpg";
@@ -31,6 +31,16 @@ import archer2Epics1IdealRuneImg from "@/assets/archer-2-epics-1-ideal-rune.webp
 import ninjaPerfectHolygrailP8Img from "@/assets/ninja-perfect-holygrail-p8.webp";
 import archer2EpicsWeapon1CreditRuneImg from "@/assets/archer-2-epics-weapon-1-credit-rune.webp";
 import ninjaHolygrailHwImg from "@/assets/ninja-holygrail-hw.webp";
+import ninjaPerfectBreakP8Img from "@/assets/ninja-perfect-break-p8.jpg";
+import ninja4IdealRunesP4Img from "@/assets/ninja-4-ideal-runes-p4.jpg";
+import ninjaHeavenwondersEpicP1Img from "@/assets/ninja-heavenwonders-epic-p1.jpg";
+import ninjaHeavenwondersRetreatP8Img from "@/assets/ninja-heavenwonders-retreat-p8.jpg";
+import fireTaoistPerfect521kImg from "@/assets/fire-taoist-perfect-521k.webp";
+import ninjaPerfect111kNinpoImg from "@/assets/ninja-perfect-111k-ninpo.webp";
+import ninjaIniciantesP1Lv109Img from "@/assets/ninja-iniciantes-p1-lv109.webp";
+import archerIniciantesP3Img from "@/assets/archer-iniciantes-p3.webp";
+import waterTaoistPerfectP5Img from "@/assets/water-taoist-perfect-p5-archives.webp";
+import ninjaInicianteP3EarlImg from "@/assets/ninja-iniciante-p3-earl.webp";
 
 
 export interface AccountListing {
@@ -45,6 +55,414 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-151",
+    title: "Ninja p/ iniciante — 0 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaInicianteP3EarlImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "A combinar" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Sacred_Star_NinjaP3",
+          "Rune Points: 192.800 · Ninpo Score 42.880",
+          "Earl (Donation: 23.692.089.994)",
+          "0 Jail",
+          "Preço: A combinar",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP 76.874 · Attack 53.392–56.738 · Defense 25.696",
+          "Break 269,0% · P-Strike 107,60% · Immunity 213,97%",
+          "Anti-break 58,1% · Block 30% · Blessed 57% · Detoxication 72%",
+          "Final P-Attack 12.059 · Final P-Damage 12.705",
+          "Resistências Metal / Wood / Water / Fire: 80",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Progressão",
+        items: [
+          "Runas principais em Max · Gates Lv.9",
+          "Viodragon Club Recognition 90% · Sphere Astredge Recognition 80%",
+          "Mighty Dragon 15 · Heavenly Tiger 19 · Cosmic Roc 15",
+          "Weapon Archives: Belt · Governor · Conception",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-150",
+    title: "Perfect Water c/ 4 credit runes — 0 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: waterTaoistPerfectP5Img,
+    className: "Taoist",
+    prices: [{ label: "Preço", value: "130k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Sacred_Star_Water_TaoistP5",
+          "4 runas credit · Max Archives",
+          "Rune Points: 273.400 | Mythsoul 648",
+          "Countess (Donation: 28.852.000.000)",
+          "0 Jail",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP 88.362 · M-Attack 38.273 · Defense 32.613 · M-Defense 9.658",
+          "M-Strike 85,70% · Immunity 266,80% · Anti-break 291,7% · Penetration 29%",
+          "Block 30% · Blessed 52% · Detoxication 72%",
+          "Final M-Attack 13.304 · Final M-Damage 13.102",
+          "Resistências Metal / Wood / Water / Fire: 80",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Progressão",
+        items: [
+          "Unbound · 2 socket gem · Super Hossu -3",
+          "Runas principais em Max · Stage Bonus: HP 4.200 · P-Atk 2.300 · M-Atk 3.600 · P-Stk / M-Stk / Imm 15% · Break / Anti-Brk 15%",
+          "Outer Gates 20 Heavenl / 20 Mighty / 20 Cosmic · Recognition: 90% · 90% · 25%",
+          "Steed +12 (Blazehoof · Lineage 7.707)",
+          "Sub-Classes: P8 100% · P8 100% · P7 100% · P7 100%",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-149",
+    title: "Decent Archer p/ iniciantes — 0 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: archerIniciantesP3Img,
+    className: "Archer",
+    prices: [{ label: "Preço", value: "16k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Sacred_Star_ArcherP3",
+          "Rune Points: 184.500 | Mythsoul 648",
+          "Huntress Artemis (P9 Celestial Archer)",
+          "Contribution: 13.455.000.000",
+          "0 Jail",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP 86.497 · Attack 50.035–51.344 · Defense 28.603",
+          "Break 258,8% · P-Strike 115,30% · Immunity 222,90%",
+          "Anti-break 58,7% · Block 30% · Blessed 49% · Detoxication 72%",
+          "Final P-Attack 10.214 · Final P-Damage 10.254",
+          "Resistências Metal / Wood / Water / Fire: 80",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Progressão",
+        items: [
+          "LegendArchonWand (+8) · P6 WandSoul · LegendMoonHeadgear (+12) · P7 HeadgearSoul",
+          "Runas principais em Max · Recognition: 95% · 80%",
+          "Inner Power: Superb Manual · Violet Glow · Divine North Skill · Essence of Yin",
+          "Chi: Stone Cracker Lv.46 · Cold Moon Lv.27 · Thorn Cutter Max",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-148",
+    title: "Ninja p/ iniciantes — 0 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaIniciantesP1Lv109Img,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "9k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 109 Sacred_Star_NinjaP1",
+          "Rune Points: 173.900 | Mythsoul 545",
+          "LegendSkyHammer (+12) e SacredSkyHammer (+12) · P7 1-handedSoul",
+          "Divine North Skill (A): Perfect",
+          "0 Jail",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP 75.180 · Attack 43.748–46.218 · Defense 18.462",
+          "Break 265,5% · P-Strike 111,60% · Immunity 224,65%",
+          "Anti-break 58,2% · Block 30% · Blessed 57% · Detoxication 72%",
+          "Final P-Attack 10.412 · Final P-Damage 10.489",
+          "Resistências Metal / Wood / Water / Fire: 80",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Progressão",
+        items: [
+          "Runas principais em Max · Stage Bonus: HP 3.700 · P-Atk 1.500 · M-Atk 2.600 · P-Stk / Imm 12% · Break / Anti-Brk 15%",
+          "Inner Power: Superb Manual · Violet Glow · Divine North Skill · Essence of Yin",
+          "Chi: Stone Cracker Lv.24 · Cold Moon Lv.7 · Thorn Cutter Lv.39",
+          "Steed +11 (Lineage Level 11) · Viodragon Club Recognition 55%",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-147",
+    title: "Perfect Ninja Account 111k Ninpo — 0 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaPerfect111kNinpoImg,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "1400k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Sacred_Star_NinjaP8 · HolyGrail",
+          "HeavenWonders & Stun · Break ou Strike (on retreat)",
+          "Ninpo 111.139 (Ranking 1) · Ninpo Score 60.172",
+          "Rune Points: 540.700 · 19 runas amarelas e 5 azuis unbound · 25 amarelas credit · todas as azuis",
+          "Prince (Donation: 252.944.999.997 — Ranking 7)",
+          "0 Jail",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP 103.984 · Attack 65.047–68.753 · Defense 33.225",
+          "Break 270,1% · P-Strike 150,31% · Immunity 290,80%",
+          "Anti-break 76,0% · Block 30% · Blessed 57% · Detoxication 72%",
+          "Final P-Attack 13.350",
+          "Resistências Metal / Wood / Water / Fire: 80",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Progressão",
+        items: [
+          "Gear unbound (exceto asas e montaria)",
+          "Relíquias +9: Silent Blade · StrikeBooster · DeadlySight · TortoiseBreaker · Healer · Sturdiness",
+          "Gates Lv.9 · Yutang Point Lv.12 · Dazhui Point Lv.11 · Weidao Point Lv.9",
+          "Asas: Golden Papilio (Fancy) · HolyWings · CelestialWings · Supreme",
+          "Sub-Classes: P9 100% · P9 100% · P9 100% · P9 100% · P8 100% · P7 100%",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-146",
+    title: "Perfect Fire Taoist 521k rune score — 0 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: fireTaoistPerfect521kImg,
+    className: "Taoist",
+    prices: [{ label: "Preço", value: "1650k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Spark Fire Taoist",
+          "Rune Points: 521.500 · 13 runas Ideal · 20 runas amarelas credit · todas as runas azuis",
+          "Princess (Donation: 360.313.999.981 — Ranking 4)",
+          "112k essences · Lineage 2.000.000 · Rankings altos em Archives",
+          "0 Jail",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP 111.955 · M-Attack 105.049 · Defense 29.661 · M-Defense 12.347",
+          "M-Strike 106,20% · Immunity 302,80% · Break 156,3% · Penetration 73%",
+          "Anti-break 82,1% · Block 30% · Blessed 56% · Detoxication 72%",
+          "Final M-Attack 17.315 · Final M-Damage 15.862",
+          "Resistências Metal / Wood / Water / Fire: 80",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Progressão",
+        items: [
+          "Runas principais em Max · Stage Bonus: HP 18.000 · P-Atk 7.800 · M-Atk 9.000 · P-Stk / M-Stk / Imm 25% · Break / Anti-Brk 25%",
+          "SENSE · ARMED · OVERLORD Lv.9 · Dragonhowl · Bloodlust · Redcourse Lv.32",
+          "Outer Gates 52 Heavenl / 51 Mighty / 54 Cosmic · Mythsoul 648",
+          "Huiyin Point Lv.21 · Weidao Point Lv.20 · Zhongshu Point Lv.20",
+          "Steed +12 · Asas: Dragon Flight · Astral Thunder · Golden Papilio (Fancy)",
+          "Sub-Classes: P9 100% · P9 100% · P9 100% · P9 100% · P9 100%",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-145",
+    title: "Ninja c/ Heavenwonders (Break/Strike on retreat) — 1 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaHeavenwondersRetreatP8Img,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "305k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Sacred_Star_NinjaP8",
+          "HeavenWonders + Stun · Break / Strike on retreat",
+          "Rune Points: 420.200 · 4 runas amarelas unbound",
+          "Princess (Donation: 106.621.000.996 — Ranking 13) · 35k CPs bound",
+          "1 Jail",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP 91.929 · Attack 64.176–67.882 · Defense 32.861",
+          "Break 288,8% · P-Strike 144,70% · Immunity 243,70%",
+          "Anti-break 89,0% · Block 30% · Blessed 57% · Detoxication 72%",
+          "Final P-Attack 12.699 · Final P-Damage 14.203",
+          "Resistências Metal / Wood / Water / Fire: 80",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Progressão",
+        items: [
+          "LegendSkyHammer (+12) · P7 1-handedSoul · LegendRocBoots (+12) · P3 BootsDragonSoul · Steed +12",
+          "Runas principais em Max · 2 Ressonâncias · Stage Bonus: HP 12.000 · P-Atk 6.000 · M-Atk 6.000 · P-Stk / M-Stk / Imm 22,5% · Break / Anti-Brk 25%",
+          "Gates Lv.9 · Outer Gates 20 Heavenl / 21 Mighty / 20 Cosmic · Mythsoul 648",
+          "Recognition: 100% · 95% · 60%",
+          "Sub-Classes: P9 100% · P8 100% · P8 100% · P7 100%",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-144",
+    title: "Ninja c/ Heavenwonders (1x Epic weapon) — 0 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaHeavenwondersEpicP1Img,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "25k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Sacred_Star_NinjaP1",
+          "Heaven's Wonder (Bloodline Sigil Lv.9)",
+          "1x Epic weapon: LegendDemonScythe (+12) · P7 ScytheSoul",
+          "Rune Points: 193.800",
+          "Earl (Donation: 50.652.000.000)",
+          "0 Jail",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP 75.320 · Attack 51.726–55.221 · Defense 31.210",
+          "Break 240,4% · P-Strike 116,90% · Immunity 210,60%",
+          "Anti-break 59,8% · Block 30% · Blessed 57% · Detoxication 72%",
+          "Final P-Attack 11.966 · Final P-Damage 12.304",
+          "Resistências Metal / Wood / Water / Fire: 80",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Progressão",
+        items: [
+          "Runas principais em Max · Stage Bonus: HP 3.700 · P-Atk 1.500 · M-Atk 2.600 · P-Stk / M-Stk / Imm 12% · Break / Anti-Brk 15%",
+          "Outer Gates 20 Heavenl / 20 Mighty / 20 Cosmic",
+          "Sub-Classes: P7 100% · P7 100% · P6 100% · P6 100%",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-143",
+    title: "Ninja/Warrior/Pirate 4 ideal runes & bom donate — 0 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninja4IdealRunesP4Img,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "35k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Sacred_Star_NinjaP4",
+          "4 runas Ideal | Mythsoul 648",
+          "Rune Points: 279.700",
+          "Duchess (Donation: 78.341.000.100 — Ranking 44)",
+          "0 Jail",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP 76.331 · Attack 51.484–54.830 · Defense 31.736",
+          "Break 118,5% · P-Strike 246,50% · Immunity 216,20%",
+          "Anti-break 58,1% · Block 30% · Blessed 41% · Detoxication 72%",
+          "Final P-Attack 11.929 · Final P-Damage 11.208",
+          "Resistências Metal / Wood / Water / Fire: 80",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Progressão",
+        items: [
+          "Runas principais em Max · Stage Bonus: HP 4.200 · P-Atk 2.300 · M-Atk 3.600 · P-Stk / M-Stk / Imm / Break / Anti-Brk 15%",
+          "SENSE Lv.7 · ARMED Lv.3 · OVERLORD Lv.3",
+          "Recognition: 90% · 40%",
+          "Sub-Classes: P9 100% · P9 100% · P9 100% · P8 100%",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acc-142",
+    title: "Perfect Break Account — 0 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaPerfectBreakP8Img,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "270k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 140 Sacred_Star_NinjaP8",
+          "Break 295,1% | Mythsoul 648",
+          "Rune Points: 353.500",
+          "Prince (Donation: 78.299.999.985 — Ranking 11)",
+          "0 Jail",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP 86.824 · Attack 63.313–67.019 · Defense 33.908",
+          "Break 295,1% · P-Strike 118,70% · Immunity 272,40%",
+          "Anti-break 77,5% · Block 30% · Blessed 57% · Detoxication 72%",
+          "Final P-Attack 13.990 · Final P-Damage 15.068",
+          "Resistências Metal / Wood / Water / Fire: 80",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Progressão",
+        items: [
+          "Runas principais em Max · Stage Bonus: HP 6.500 · P-Atk 4.000 · M-Atk 4.600 · P-Stk / M-Stk / Imm 18%",
+          "Relíquias +9: Supreme Armor · Honed Soul · Unbreakable · Battle Reaper",
+          "Ninpo Score: 49.944 · Gates Lv.9 · Outer Gates 20 Heavenl / 20 Mighty / 20 Cosmic",
+          "Recognition: 90% · 90% · 65%",
+          "Sub-Classes: P8 100% · P8 100% · P7 100% · P6 100%",
+          "Asas: Golden Papilio (Fancy) · VioletLightning · VioletCloudWing",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-141",
     title: "Perfect Ninja c/ HeavenWonders & HolyGrail — 1 Jail",
@@ -951,9 +1369,9 @@ export const ACCOUNTS: AccountListing[] = [
     title: "Death Pirate 488 BP — 1 Jail",
     badge: "NOVO",
     badgeColor: "bg-emerald-500",
-    image: pirate420kImg,
+    image: pirateDeath488bpImg,
     className: "Pirata",
-    prices: [{ label: "Preço", value: "370k CPs" }],
+    prices: [{ label: "Preço", value: "340k CPs" }],
     sections: [
       {
         title: "Destaques",

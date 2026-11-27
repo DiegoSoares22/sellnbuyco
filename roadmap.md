@@ -13,3 +13,14 @@
 - [x] Add "Ninja c/ HeavenWonders — 0 Jail" (acc-140) at 38k CPs as its own card, keeping the earlier "Ninja w/ Heavenwonders — A combinar" untouched; verify both in the preview.
 - [ ] Verify "Perfect Ninja c/ HeavenWonders & HolyGrail — 1 Jail" with the uploaded image, 900k CPs with unbound runes and 550k CPs without them.
 - [x] Remove 16 sold listings (acc-106 to acc-122: Ninja, Archer, Pirate and Monk) and their orphan images; verify in the preview.
+- [x] Add "Perfect Break Account — 0 Jail" (Ninja P8, acc-142) at 270k CPs and verify the card and image in the preview.
+- [x] Add "Ninja/Warrior/Pirate 4 ideal runes & bom donate — 0 Jail" (acc-143) at 35k CPs and verify the card and image in the preview.
+- [x] Add "Ninja c/ Heavenwonders (1x Epic weapon) — 0 Jail" (acc-144) at 25k CPs and verify the card and image in the preview.
+- [x] Add "Ninja c/ Heavenwonders (Break/Strike on retreat) — 1 Jail" (acc-145) at 305k CPs and verify the card and image in the preview.
+- [x] Add "Perfect Fire Taoist 521k rune score — 0 Jail" (acc-146) at 1650k CPs and verify the card, image and price filter in the preview.
+- [x] Add "Perfect Ninja Account 111k Ninpo — 0 Jail" (acc-147) at 1400k CPs and verify the card and image in the preview.
+- [x] Add "Ninja p/ iniciantes — 0 Jail" (acc-148) at 9k CPs and verify the card and image in the preview.
+- [x] Add "Decent Archer p/ iniciantes — 0 Jail" (acc-149) at 16k CPs and verify the card and image in the preview.
+- [x] Add "Perfect Water c/ 4 credit runes — 0 Jail" (acc-150) at 130k CPs and verify the card and image in the preview.
+- [x] Replace the image of "Death Pirate 488 BP — 1 Jail" (acc-83) and change its price to 340k CPs; verify in the preview.
+- [x] Add "Ninja p/ iniciante — 0 Jail" (acc-151, A combinar) and verify the card and image in the preview.
