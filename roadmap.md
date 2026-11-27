@@ -11,7 +11,8 @@
 - [x] Add "Perfect Holygrail Ninja — 0 Jail" at 800k CPs and verify the card and image in the preview.
 - [x] Add "Archer c/ 2 epics weapon | 1 credit rune — 0 Jail" at 25k CPs and verify the card and image in the preview.
 - [x] Add "Ninja c/ HeavenWonders — 0 Jail" (acc-140) at 38k CPs as its own card, keeping the earlier "Ninja w/ Heavenwonders — A combinar" untouched; verify both in the preview.
-- [ ] Verify "Perfect Ninja c/ HeavenWonders & HolyGrail — 1 Jail" with the uploaded image, 900k CPs with unbound runes and 550k CPs without them.
+- [x] Verify "Perfect Ninja c/ HeavenWonders & HolyGrail — 1 Jail" with the uploaded image, 900k CPs with unbound runes and 550k CPs without them.
+- [x] Remove "Archer c/ 2 epics | 1 ideal rune — 0 Jail" and verify its absence in the catalog.
 - [x] Remove 16 sold listings (acc-106 to acc-122: Ninja, Archer, Pirate and Monk) and their orphan images; verify in the preview.
 - [x] Add "Perfect Break Account — 0 Jail" (Ninja P8, acc-142) at 270k CPs and verify the card and image in the preview.
 - [x] Add "Ninja/Warrior/Pirate 4 ideal runes & bom donate — 0 Jail" (acc-143) at 35k CPs and verify the card and image in the preview.

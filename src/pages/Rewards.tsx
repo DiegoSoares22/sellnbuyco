@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Gift, ArrowLeft, MessageCircle, Loader2, AlertCircle, TrendingUp, History, Sparkles, Dices, FileText, Table } from "lucide-react";
 import { Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
+import type { SupabaseClient } from "@supabase/supabase-js";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { Footer } from "@/components/Footer";
 import { buildWa } from "@/lib/whatsapp";
@@ -148,7 +149,7 @@ export default function Rewards() {
     setLoading(true);
 
     // A verificação de ID + nome acontece no banco (get_rewards_summary); as tabelas não são legíveis direto.
-    const { data, error: rpcError } = await supabase.rpc("get_rewards_summary", {
+    const { data, error: rpcError } = await (supabase as SupabaseClient).rpc("get_rewards_summary", {
       p_account_id: safeId,
       p_name: safeName,
     });

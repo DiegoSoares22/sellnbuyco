@@ -8,7 +8,7 @@ import { toast } from "sonner";
 import { Footer } from "@/components/Footer";
 import { AccountCard } from "@/components/AccountCard";
 import { ImageZoomDialog } from "@/components/ImageZoomDialog";
-import { formatPrice, meaningfulBadge } from "@/lib/price";
+import { formatAllPrices, formatPrice, meaningfulBadge } from "@/lib/price";
 import { getHighlights } from "@/lib/highlights";
 import { SIDE_CROPS, cropStyle } from "@/lib/printCrops";
 import { buildWa } from "@/lib/whatsapp";
@@ -39,6 +39,7 @@ export const AccountDetailPage: React.FC<AccountDetailPageProps> = ({ account })
 
   const level = getAccountLevel(account);
   const price = formatPrice(account, lang);
+  const prices = formatAllPrices(account, lang);
   const badge = meaningfulBadge(account.badge);
   const chips = [account.className, level ? `Level ${level}` : null, ...getHighlights(account)].filter(Boolean) as string[];
 
@@ -108,6 +109,15 @@ export const AccountDetailPage: React.FC<AccountDetailPageProps> = ({ account })
                 {price.amount}
                 {price.unit && <span className="ml-1.5 text-body-sm text-mute-dark">{price.unit}</span>}
               </p>
+              {prices.length > 1 && (
+                <ul className="mt-1 space-y-0.5" translate="no">
+                  {prices.map((p) => (
+                    <li key={p.label} className="text-caption-md text-mute-dark">
+                      {p.label}: {p.amount} {p.unit}
+                    </li>
+                  ))}
+                </ul>
+              )}
               <div className="mt-lg space-y-sm">
                 <a
                   href={buildWa(t("wa.interestAccount", { title: account.title }))}

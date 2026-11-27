@@ -29,6 +29,10 @@ describe("October 18 catalog updates", () => {
 });
 
 describe("November 23 catalog updates", () => {
+  it("removes the requested Archer while preserving the other two-epic listing", () => {
+    expect(ACCOUNTS.some((account) => account.id === "acc-137")).toBe(false);
+    expect(ACCOUNTS.some((account) => account.id === "acc-139")).toBe(true);
+  });
   it("prices the HolyGrail ninja with and without unbound runes", () => {
     const account = ACCOUNTS.find((listing) => listing.id === "acc-141");
     const prices = account?.prices.map((p) => `${p.label}: ${p.value}`) ?? [];
