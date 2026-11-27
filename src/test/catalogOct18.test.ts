@@ -1,6 +1,15 @@
 import { describe, expect, it } from "vitest";
 import { ACCOUNTS } from "@/data/accounts";
 
+describe("November 27 catalog updates", () => {
+  it("prices the beginner-friendly Lv 119 account at 25k CPs with 0 Jail", () => {
+    const account = ACCOUNTS.find((listing) => listing.id === "acc-152");
+    expect(account?.prices[0]?.value).toBe("25k CPs");
+    expect(account?.title).toBe("Account boa p/ iniciante — Lv 119 — 0 Jail");
+    expect(account?.sections.flatMap((section) => section.items)).toContain("0 Jail");
+  });
+});
+
 describe("October 18 catalog updates", () => {
   it.each([
     ["acc-125", "90k CPs"],

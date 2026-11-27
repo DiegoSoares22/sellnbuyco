@@ -40,6 +40,7 @@ import ninjaIniciantesP1Lv109Img from "@/assets/ninja-iniciantes-p1-lv109.webp";
 import archerIniciantesP3Img from "@/assets/archer-iniciantes-p3.webp";
 import waterTaoistPerfectP5Img from "@/assets/water-taoist-perfect-p5-archives.webp";
 import ninjaInicianteP3EarlImg from "@/assets/ninja-iniciante-p3-earl.webp";
+import ninjaInicianteLv119Img from "@/assets/ninja-iniciante-lv119.webp";
 
 
 export interface AccountListing {
@@ -54,6 +55,47 @@ export interface AccountListing {
 }
 
 export const ACCOUNTS: AccountListing[] = [
+  {
+    id: "acc-152",
+    title: "Account boa p/ iniciante — Lv 119 — 0 Jail",
+    badge: "NOVO",
+    badgeColor: "bg-emerald-500",
+    image: ninjaInicianteLv119Img,
+    className: "Ninja",
+    prices: [{ label: "Preço", value: "25k CPs" }],
+    sections: [
+      {
+        title: "Destaques",
+        items: [
+          "Lv. 119 NinjaMasterP5 · Servidor [Honor]",
+          "Earl (Donation: 10.653.000.000)",
+          "Rune Points: 147.700 · Mythsoul 396",
+          "Ninpo Score 25.193 · VIP 6",
+          "0 Jail",
+        ],
+      },
+      {
+        title: "Atributos & Combate",
+        items: [
+          "HP 69.685 · Attack 44.588–48.087 · Defense 25.964",
+          "M-Attack 21.780 · M-Defense 7.220 · Magic 1.200",
+          "Break 74,7% · P-Strike 234,10% · Immunity 105,10%",
+          "Anti-break 297,7% · Block 30% · Blessed 55% · Detoxication 72%",
+          "Final P-Attack 11.869 · Final P-Damage 12.169",
+        ],
+      },
+      {
+        title: "Equipamentos, Runas & Progressão",
+        items: [
+          "Set completo +12 · Talismãs +12 · 3 sockets",
+          "Runas principais em Max · Stage Bonus: HP 3.700 · P-Atk 1.500 · M-Atk 1.600 · Break / Anti-Brk 15%",
+          "Gates: Dawn 6 · Rest 7 · Pain 5 · View 5 · Death 6 · Sigils Lv.9",
+          "Recognition 90% · 15%",
+          "Eonspirits: P8 100% · P7 100% ×3 · P6 100% ×2 · P5 100% ×3",
+        ],
+      },
+    ],
+  },
   {
     id: "acc-151",
     title: "Ninja p/ iniciante — 0 Jail",
